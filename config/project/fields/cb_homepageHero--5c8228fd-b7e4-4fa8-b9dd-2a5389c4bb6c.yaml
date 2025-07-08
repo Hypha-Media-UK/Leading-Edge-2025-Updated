@@ -1,0 +1,155 @@
+columnSuffix: null
+handle: cb_homepageHero
+instructions: null
+name: 'Homepage Hero'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - 0b155622-bbc9-40f5-873c-4bd8679538d7
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    0:
+                      - name
+                      - Content
+                    1:
+                      - uid
+                      - 62dcb9bb-b42c-4481-bb0e-0f16d5ac8339
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - heroTitle
+                            2:
+                              - label
+                              - 'Hero Title'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 25
+                            10:
+                              - dateAdded
+                              - '2025-07-07T15:20:35+00:00'
+                            11:
+                              - uid
+                              - a24ad4c1-9582-4804-ac74-3be76f589132
+                            14:
+                              - fieldUid
+                              - d51d5a9b-69fe-4e13-acd6-d4f9a20ccae1 # Title Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - heroImage
+                            2:
+                              - label
+                              - 'Hero Image'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 25
+                            10:
+                              - dateAdded
+                              - '2025-07-07T15:20:35+00:00'
+                            11:
+                              - uid
+                              - e8288296-f641-4dbd-bfb6-029d8fde04f7
+                            14:
+                              - fieldUid
+                              - 04ddff7f-52ed-458a-bc0c-a3a9d4b76f4d # Single Image
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - heroSubText
+                            2:
+                              - label
+                              - 'Hero Sub Text'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-07-07T15:20:35+00:00'
+                            11:
+                              - uid
+                              - f85c7cad-d8b7-43b3-b340-eb65afcbcdfa
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-07T15:26:23+00:00'
+                            11:
+                              - uid
+                              - e9c9141e-093d-4d4b-b5e7-ffb6bc22d740
+                            14:
+                              - fieldUid
+                              - 3e7a3e99-ba2f-44b4-966e-e6783dd7e3c1 # Hero Buttons
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: pane
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

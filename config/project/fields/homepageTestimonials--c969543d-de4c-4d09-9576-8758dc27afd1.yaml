@@ -1,0 +1,123 @@
+columnSuffix: null
+handle: homepageTestimonials
+instructions: null
+name: 'Testimonials Section'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - fa2b9c76-b9fc-4b73-8b20-d6a42e0a52d4
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    0:
+                      - name
+                      - Content
+                    1:
+                      - uid
+                      - dcb7c6ca-3acc-44f6-9c46-a21b65e05f47
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - sectionTitle
+                            2:
+                              - label
+                              - 'Section Title'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-08T09:30:43+00:00'
+                            11:
+                              - uid
+                              - fa1d3d7a-ad81-4acd-bf9a-fc894da950d1
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - sectionSubText
+                            2:
+                              - label
+                              - 'Section Sub Text'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-08T09:45:36+00:00'
+                            11:
+                              - uid
+                              - 74ec4219-32c6-4a2b-b18d-9ec2d97f14b3
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-08T09:30:43+00:00'
+                            11:
+                              - uid
+                              - d34337be-f17e-4a7f-bd2f-a95fda3bc2a6
+                            14:
+                              - fieldUid
+                              - 48ff7023-466f-423c-a293-c4ebec9ab0a4 # Testimonials
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: pane
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

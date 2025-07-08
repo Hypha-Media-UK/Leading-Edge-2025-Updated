@@ -1,0 +1,519 @@
+// Modal Component Styles
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .modal-content {
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+    
+    &.modal-small {
+      max-width: 400px;
+      width: 90%;
+    }
+    
+    &.modal-medium {
+      max-width: 800px;
+      width: 90%;
+    }
+    
+    &.modal-large {
+      max-width: 900px;
+      width: 90%;
+    }
+    
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: $primary-color;
+      cursor: pointer;
+      z-index: 10;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        color: $accent-color;
+        background-color: rgba($primary-color, 0.1);
+      }
+    }
+    
+    .modal-body {
+      padding: 0;
+    }
+  }
+  
+  &.active .modal-content {
+    transform: scale(1);
+  }
+}
+
+// Team Member Modal Styles
+#team-member-modal {
+  .member-profile-grid {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    width: 100%;
+    height: 100%;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .member-image-container {
+    height: 100%;
+    min-height: 450px;
+    overflow: hidden;
+    position: relative;
+    
+    @media (max-width: 768px) {
+      min-height: 350px;
+    }
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+  }
+  
+  .member-content {
+    padding: 2.5rem;
+    
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      color: $primary-color;
+    }
+    
+    .member-modal-title {
+      font-size: 1.2rem;
+      color: $accent-color;
+      margin-bottom: 1.8rem;
+      font-weight: 500;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba($primary-color, 0.1);
+    }
+    
+    .member-bio {
+      margin-bottom: 2rem;
+      
+      p {
+        line-height: 1.8;
+        color: custom-lighten($primary-color, 20%);
+      }
+    }
+    
+    .member-specialties {
+      margin-bottom: 2rem;
+      
+      h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: $primary-color;
+      }
+      
+      .specialty-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        
+        .specialty-tag {
+          background-color: $bg-light;
+          padding: 0.5rem 1rem;
+          border-radius: 30px;
+          font-size: 0.9rem;
+          color: $primary-color;
+          font-weight: 500;
+          display: inline-block;
+        }
+      }
+    }
+    
+    .member-social {
+      margin-bottom: 2rem;
+      
+      .instagram-link {
+        color: #C13584;
+        font-weight: 500;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          transform: translateY(-2px);
+        }
+        
+        i {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+    
+    .booking-cta {
+      margin-top: 2.5rem;
+      
+      .btn {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-decoration: none;
+        text-align: center;
+        transition: all 0.3s ease;
+        
+        &.primary {
+          background-color: $accent-color;
+          color: white;
+          border: 2px solid $accent-color;
+          
+          &:hover {
+            background-color: custom-darken($accent-color, 10%);
+            border-color: custom-darken($accent-color, 10%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Job Position Modal Styles
+#position-modal {
+  .modal-body {
+    padding: 2.5rem;
+  }
+  
+  .position-content {
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      color: $primary-color;
+    }
+    
+    .position-meta {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.8rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba($primary-color, 0.1);
+      
+      .type {
+        background-color: rgba($accent-color, 0.1);
+        color: $accent-color;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-right: 1rem;
+      }
+      
+      .location {
+        color: custom-lighten($primary-color, 30%);
+        font-size: 0.9rem;
+        
+        i {
+          margin-right: 0.3rem;
+        }
+      }
+    }
+    
+    .position-description {
+      margin-bottom: 2rem;
+      
+      p {
+        line-height: 1.8;
+        color: custom-lighten($primary-color, 20%);
+      }
+    }
+    
+    .position-responsibilities, 
+    .position-requirements {
+      margin-bottom: 2rem;
+      
+      h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: $primary-color;
+      }
+      
+      ul {
+        margin-left: 1.5rem;
+        
+        li {
+          color: custom-lighten($primary-color, 20%);
+          margin-bottom: 0.8rem;
+          line-height: 1.6;
+          position: relative;
+        }
+      }
+    }
+    
+    .apply-cta {
+      margin-top: 2.5rem;
+      
+      .btn {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-decoration: none;
+        text-align: center;
+        transition: all 0.3s ease;
+        
+        &.primary {
+          background-color: $accent-color;
+          color: white;
+          border: 2px solid $accent-color;
+          
+          &:hover {
+            background-color: custom-darken($accent-color, 10%);
+            border-color: custom-darken($accent-color, 10%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+// News Article Modal Styles
+#news-article-modal {
+  .modal-body {
+    padding: 2rem;
+  }
+  
+  .news-detail-content {
+    .back-button {
+      margin-bottom: 2rem;
+      
+      .modal-back-btn {
+        background: none;
+        border: 2px solid $primary-color;
+        color: $primary-color;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background-color: $primary-color;
+          color: white;
+        }
+        
+        i {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+    
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: $primary-color;
+      line-height: 1.3;
+    }
+    
+    .news-meta {
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      
+      .date, .author, .category {
+        color: custom-lighten($primary-color, 30%);
+        font-size: 0.95rem;
+        display: inline-flex;
+        align-items: center;
+        
+        i {
+          margin-right: 5px;
+          color: $accent-color;
+        }
+      }
+    }
+    
+    .news-image {
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      overflow: hidden;
+      
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+    
+    .news-text {
+      color: custom-lighten($primary-color, 20%);
+      line-height: 1.8;
+      
+      p {
+        margin-bottom: 1.5rem;
+      }
+      
+      h4 {
+        font-size: 1.4rem;
+        color: $primary-color;
+        margin: 2rem 0 1rem;
+      }
+      
+      ul {
+        padding-left: 1.5rem;
+        margin-bottom: 1.5rem;
+        
+        li {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+    
+    .share-links {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid $bg-light;
+      
+      p {
+        font-weight: 600;
+        color: $primary-color;
+        margin-bottom: 1rem;
+      }
+      
+      .social-share {
+        display: flex;
+        gap: 1rem;
+        
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: $bg-light;
+          color: $primary-color;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background-color: $accent-color;
+            color: white;
+            transform: translateY(-3px);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile Responsive Styles
+@media (max-width: 768px) {
+  .modal-overlay .modal-content {
+    width: 95%;
+    max-height: 90vh;
+    
+    &.modal-large,
+    &.modal-medium {
+      width: 95%;
+    }
+  }
+  
+  #team-member-modal .member-content,
+  #position-modal .modal-body,
+  #news-article-modal .modal-body {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-overlay {
+    align-items: flex-start;
+    padding: 1rem 0;
+  }
+  
+  .modal-overlay .modal-content {
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    border-radius: 0;
+    margin: 0;
+  }
+  
+  .modal-overlay .modal-close {
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2.2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: $primary-color;
+    z-index: 20;
+  }
+  
+  #team-member-modal .member-content,
+  #position-modal .modal-body,
+  #news-article-modal .modal-body {
+    padding: 1rem;
+  }
+}
+
+// Animation keyframes
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Accessibility improvements
+.modal-overlay {
+  &:focus-within {
+    outline: none;
+  }
+}
+
+// Prevent body scroll when modal is open
+body.modal-open {
+  overflow: hidden;
+}

@@ -1,0 +1,30 @@
+
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>{{ entry.homepageServiceSection.sectionTitle }}</h2>
+                <p>{{ entry.homepageServiceSection.sectionSubText }}</p>
+            </div>
+            <div class="services-grid">
+                {% for service in entry.homepageServiceSection.mx_servicesCards %}
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="{{ service.cardImage.one().url() }}" alt="{{ service.title }}">
+                        </div>
+                        <div class="service-content">
+                            <h3>{{ service.title }}</h3>
+                            <p>{{ service.cardText }}</p>
+                            {% if service.cardLink and service.cardLink.label %}
+                            <a href="{{ service.cardLink }}" class="service-link">{{ service.cardLink.label }}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            {% if entry.homepageServiceSection.sectionLink %}
+                <div class="section-cta">
+                    <a href="{{ entry.homepageServiceSection.sectionLink }}" class="btn primary">{{ entry.homepageServiceSection.sectionLink.label }}</a>
+                </div>
+            {% endif %}
+        </div>
+    </section>

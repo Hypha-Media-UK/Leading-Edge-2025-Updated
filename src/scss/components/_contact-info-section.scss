@@ -1,0 +1,28 @@
+// Contact Info Section Component Styles (extracted from Vue ContactInfoSection.vue)
+.contact-info-section {
+  padding: 5rem 0;
+  background-color: white;
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    gap: 3rem;
+    
+    @media (max-width: 991px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .contact-form-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba($primary-color, 0.08);
+  }
+  
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

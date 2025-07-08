@@ -1,0 +1,40 @@
+// Call to Action Component Styles (extracted from Vue CallToAction.vue)
+.cta-section {
+  background-size: cover;
+  background-position: center;
+  color: $primary-color;
+  text-align: center;
+  padding: 5rem 0;
+  
+  .cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+    
+    .section-header {
+      margin-bottom: 2rem;
+      
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: $primary-color;
+      }
+      
+      p {
+        font-size: 1.1rem;
+        color: custom-lighten($primary-color, 20%);
+        line-height: 1.6;
+      }
+    }
+    
+    .btn.primary {
+      background-color: $accent-color;
+      color: white;
+      border-color: $accent-color;
+      
+      &:hover {
+        background-color: transparent;
+        color: $accent-color;
+      }
+    }
+  }
+}

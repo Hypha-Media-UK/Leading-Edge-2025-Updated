@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: mx_servicesCards
+instructions: null
+name: 'Services Cards'
+searchable: false
+settings:
+  createButtonLabel: 'Add a Card'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - c4bebee5-c1d4-47bf-be47-8bcfeb2783ec # Services Cards
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: 3
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: true
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

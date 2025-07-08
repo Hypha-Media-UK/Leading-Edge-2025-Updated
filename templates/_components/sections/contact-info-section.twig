@@ -1,0 +1,51 @@
+{# Contact Info Section Component Macro #}
+{% macro contactInfoSection(formTitle, formSubtitle, serviceOptions, timeOptions, locationAddress, mapImage, mapLink, openingHours, contactItems, socialLinks) %}
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-form-container">
+                    {% from '_components/forms/contact-form.twig' import contactForm %}
+                    {{ contactForm(formTitle, formSubtitle, serviceOptions, timeOptions) }}
+                </div>
+
+                <div class="contact-details">
+                    {% from '_components/ui/contact-card.twig' import contactCard %}
+                    
+                    {# Location Card #}
+                    {{ contactCard(
+                        'location',
+                        'Our Location',
+                        'fas fa-map-marker-alt',
+                        locationAddress,
+                        mapImage,
+                        mapLink
+                    ) }}
+
+                    {# Opening Hours Card #}
+                    {{ contactCard(
+                        'hours',
+                        'Opening Hours',
+                        'far fa-clock',
+                        '',
+                        '',
+                        '',
+                        openingHours
+                    ) }}
+
+                    {# Connect Card #}
+                    {{ contactCard(
+                        'connect',
+                        'Connect With Us',
+                        'fas fa-phone-alt',
+                        '',
+                        '',
+                        '',
+                        [],
+                        contactItems,
+                        socialLinks
+                    ) }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endmacro %}

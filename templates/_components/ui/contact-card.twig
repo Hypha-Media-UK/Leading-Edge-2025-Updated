@@ -1,0 +1,62 @@
+{# Contact Card Component Macro #}
+{% macro contactCard(type, title, icon, address, mapImage, mapLink, hours, contactItems, socialLinks) %}
+    <div class="contact-card">
+        {% if icon %}
+            <div class="icon">
+                <i class="{{ icon }}"></i>
+            </div>
+        {% endif %}
+        <h3>{{ title }}</h3>
+        
+        {% if type == 'location' %}
+            {% if address %}
+                <div class="address-text">{{ address|nl2br }}</div>
+            {% endif %}
+            {% if mapImage or mapLink %}
+                <div class="map-container">
+                    {% if mapImage %}
+                        <div class="map-image" style="background-image: url('{{ mapImage }}');"></div>
+                    {% endif %}
+                    {% if mapLink %}
+                        {% from '_components/ui/button.twig' import button as btn %}
+                        {{ btn('Get Directions', 'primary', mapLink, '_blank') }}
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% elseif type == 'hours' and hours %}
+            <ul class="hours-list">
+                {% for day in hours %}
+                    <li{% if day.closed %} class="closed"{% endif %}>
+                        <span class="day">{{ day.day }}:</span>
+                        <span class="time">{{ day.time }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% elseif type == 'connect' %}
+            {% if contactItems %}
+                <ul class="contact-list">
+                    {% for item in contactItems %}
+                        <li>
+                            {% if item.icon %}<i class="{{ item.icon }}"></i>{% endif %}
+                            {% if item.link %}
+                                <a href="{{ item.link }}">{{ item.text }}</a>
+                            {% else %}
+                                <span>{{ item.text }}</span>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            
+            {% if socialLinks %}
+                <div class="social-icons">
+                    {% for link in socialLinks %}
+                        <a href="{{ link.url }}" aria-label="{{ link.label }}" target="_blank">
+                            <i class="{{ link.icon }}"></i>
+                        </a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endmacro %}

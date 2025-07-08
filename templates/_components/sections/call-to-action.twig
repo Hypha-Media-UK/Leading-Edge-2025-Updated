@@ -1,0 +1,24 @@
+{# Call to Action Section Component #}
+{% macro callToAction(title, text, buttonText, buttonLink, backgroundImage = '', backgroundColor = 'gradient', buttonVariant = 'primary') %}
+    {% set backgroundStyle = '' %}
+    {% if backgroundImage %}
+        {% set backgroundStyle = 'background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(\'' ~ backgroundImage ~ '\');' %}
+    {% elseif backgroundColor == 'gradient' %}
+        {% set backgroundStyle = 'background-image: linear-gradient(to right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95));' %}
+    {% else %}
+        {% set backgroundStyle = 'background-color: ' ~ backgroundColor ~ ';' %}
+    {% endif %}
+    
+    <section class="cta-section" style="{{ backgroundStyle }}">
+        <div class="container">
+            <div class="cta-content">
+                <div class="section-header">
+                    <h2>{{ title }}</h2>
+                    <p>{{ text }}</p>
+                </div>
+                {% from '_components/ui/button.twig' import button as btn %}
+                {{ btn(buttonText, buttonVariant, buttonLink) }}
+            </div>
+        </div>
+    </section>
+{% endmacro %}

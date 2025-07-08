@@ -1,0 +1,59 @@
+// FAQ Section Component Styles (extracted from Vue FAQSection.vue)
+.faq-section {
+  background-color: $light-color;
+  padding: 5rem 0;
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: $primary-color;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      color: custom-lighten($primary-color, 20%);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
+    
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .faq-item {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba($primary-color, 0.05);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba($primary-color, 0.1);
+    }
+    
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: $primary-color;
+      line-height: 1.4;
+    }
+    
+    p {
+      color: custom-lighten($primary-color, 20%);
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+}

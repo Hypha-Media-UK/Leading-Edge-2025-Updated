@@ -1,0 +1,19 @@
+{% extends "_layout.twig" %}
+
+{% block title %}The Leading Edge - Premium Hair & Beauty Salon in Hyde, Cheshire{% endblock %}
+{% block description %}Experience true beauty and elegance at The Leading Edge. Premium hair and beauty services in Hyde, Cheshire. Expert stylists, quality products, luxurious environment.{% endblock %}
+{% block pageCss %}home{% endblock %}
+{% block pageJs %}home-js{% endblock %}
+{% block pageClass %}home{% endblock %}
+
+{% block content %}
+<div class="home-page">
+    {% include '_components/sections/hero.twig' %}
+    {% include '_components/sections/virtues.twig' %}
+    {% include '_components/sections/services-preview.twig' %}
+    {% include '_components/sections/testimonials.twig' %}
+    {% include '_components/sections/products-showcase.twig' %}
+    {% include '_components/sections/instagram-feed.twig' %}
+    {% include '_components/sections/call-to-action.twig' %}
+</div>
+{% endblock %}

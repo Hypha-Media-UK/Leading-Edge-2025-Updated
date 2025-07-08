@@ -1,0 +1,261 @@
+// Promotions Grid Component Styles (extracted from Vue PromotionsGrid.vue)
+.promotions-section {
+  background-color: $light-color;
+  padding: 5rem 0;
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: $primary-color;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      color: custom-lighten($primary-color, 20%);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  
+  .promotions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  // Flip card styles
+  .flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      
+      &.flipped {
+        transform: rotateY(180deg);
+      }
+    }
+    
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+    
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+  }
+  
+  .promotion-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 8px;
+    }
+    
+    &.friend-offer::before {
+      background: linear-gradient(to right, $accent-color, custom-lighten($accent-color, 15%));
+    }
+    
+    &.nhs-offer::before {
+      background: linear-gradient(to right, #404E5C, #6A7A8C);
+    }
+    
+    &.student-offer::before {
+      background: linear-gradient(to right, #D0D171, custom-lighten(#D0D171, 15%));
+    }
+    
+    .card-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.8rem;
+    }
+    
+    &.friend-offer .card-icon {
+      background-color: rgba($accent-color, 0.1);
+      color: $accent-color;
+    }
+    
+    &.nhs-offer .card-icon {
+      background-color: rgba(#404E5C, 0.1);
+      color: #404E5C;
+    }
+    
+    &.student-offer .card-icon {
+      background-color: rgba(#D0D171, 0.1);
+      color: custom-darken(#D0D171, 15%);
+    }
+    
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      color: $primary-color;
+    }
+    
+    h3 {
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      color: $primary-color;
+      position: relative;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 2px;
+        background-color: $accent-color;
+      }
+    }
+    
+    .offer-highlight {
+      margin: 1rem 0;
+      
+      span {
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        border-radius: 30px;
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+    }
+    
+    &.friend-offer .offer-highlight span {
+      background-color: rgba($accent-color, 0.1);
+      color: $accent-color;
+    }
+    
+    &.nhs-offer .offer-highlight span {
+      background-color: rgba(#404E5C, 0.1);
+      color: #404E5C;
+    }
+    
+    &.student-offer .offer-highlight span {
+      background-color: rgba(#D0D171, 0.1);
+      color: custom-darken(#D0D171, 20%);
+    }
+    
+    .promotion-description {
+      color: custom-lighten($primary-color, 20%);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+    
+    .terms-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 0 1rem;
+      margin-bottom: 1.5rem;
+      
+      p {
+        margin-bottom: 0.8rem;
+        font-size: 0.95rem;
+        color: custom-lighten($primary-color, 15%);
+        text-align: left;
+      }
+    }
+    
+    .terms-toggle {
+      background: none;
+      border: none;
+      color: $accent-color;
+      cursor: pointer;
+      font-weight: 600;
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      
+      i {
+        margin-left: 0.5rem;
+        transition: transform 0.3s ease;
+      }
+      
+      &:hover {
+        color: custom-darken($accent-color, 10%);
+        
+        i {
+          transform: rotate(90deg);
+        }
+      }
+    }
+    
+    .flip-back-btn {
+      background: none;
+      border: none;
+      color: $accent-color;
+      cursor: pointer;
+      font-weight: 600;
+      padding: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 0;
+      
+      i {
+        margin-right: 0.5rem;
+      }
+      
+      &:hover {
+        color: custom-darken($accent-color, 10%);
+      }
+    }
+    
+    .promotion-actions {
+      margin-top: auto;
+      
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .promotions-section {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .promotion-card {
+    padding: 1.5rem;
+  }
+}

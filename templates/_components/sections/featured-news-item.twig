@@ -1,0 +1,23 @@
+{# Featured News Item Component Macro #}
+{% macro featuredNewsItem(article) %}
+    <div class="featured-news" data-modal-target="news-modal-{{ article.id }}">
+        <div class="featured-image">
+            <img src="{{ article.image }}" alt="{{ article.title }}">
+            <div class="featured-overlay">
+                <span class="featured-tag">Featured</span>
+            </div>
+        </div>
+        <div class="featured-content">
+            <div class="news-meta">
+                <span class="date"><i class="far fa-calendar-alt"></i> {{ article.date }}</span>
+                {% if article.author %}
+                    <span class="author"><i class="far fa-user"></i> {{ article.author }}</span>
+                {% endif %}
+            </div>
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.excerpt }}</p>
+            {% from '_components/ui/button.twig' import button as btn %}
+            {{ btn('Read More', 'text', '#', '', 'button', 'read-more-btn', 'fas fa-arrow-right') }}
+        </div>
+    </div>
+{% endmacro %}

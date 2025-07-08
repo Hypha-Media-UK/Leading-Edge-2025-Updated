@@ -1,0 +1,107 @@
+{% extends "_layout.twig" %}
+
+{% block title %}Offers & Gift Vouchers - The Leading Edge{% endblock %}
+{% block description %}Enjoy exclusive discounts and special promotions at The Leading Edge{% endblock %}
+{% block pageCss %}offers{% endblock %}
+{% block pageJs %}offers-js{% endblock %}
+{% block pageClass %}offers{% endblock %}
+
+{% block content %}
+<div class="offers-page">
+    {# Page Header with Gift Voucher CTA #}
+    {% from '_components/ui/page-header.twig' import pageHeader %}
+    {{ pageHeader(
+        'Offers & Gift Vouchers',
+        'Enjoy exclusive discounts and special promotions at The Leading Edge',
+        '<div class="gift-voucher-cta">
+            <a href="https://leadingedgehairandbeauty.co.uk/gift-vouchers" target="_blank" class="btn primary-special">
+                <i class="fas fa-gift"></i> Gift Vouchers Available Here
+            </a>
+        </div>'
+    ) }}
+
+    {# Promotions Grid #}
+    {% from '_components/sections/promotions-grid.twig' import promotionsGrid %}
+    {{ promotionsGrid(
+        '',
+        '',
+        [
+            {
+                id: 'friend',
+                title: 'Refer a Friend',
+                icon: 'fas fa-user-friends',
+                highlight: '£10 Voucher',
+                description: 'Receive a £10 gift voucher from us when you refer a friend. Share the beauty experience with your loved ones and get rewarded!',
+                buttonText: 'Book Now',
+                buttonLink: '/contact',
+                cardClass: 'friend-offer',
+                terms: [
+                    'Referral must be a new client to The Leading Edge',
+                    'Voucher issued after your friend\'s first appointment',
+                    'Vouchers valid for 3 months from issue date',
+                    'Cannot be combined with other offers',
+                    'Management reserves the right to withdraw this offer at any time'
+                ]
+            },
+            {
+                id: 'nhs',
+                title: 'Nurses & Doctors',
+                icon: 'fas fa-hospital',
+                highlight: '10% Discount',
+                description: 'We\'re proud to support our healthcare heroes! All NHS and Council staff can enjoy a 10% discount on all services with valid ID.',
+                buttonText: 'Book Now',
+                buttonLink: '/contact',
+                cardClass: 'nhs-offer',
+                terms: [
+                    'Valid NHS or Council staff ID must be presented',
+                    'Discount applies to all salon services',
+                    'Cannot be combined with other offers',
+                    'Not applicable on retail products',
+                    'Management reserves the right to withdraw this offer at any time'
+                ]
+            },
+            {
+                id: 'student',
+                title: 'Student Discount',
+                icon: 'fas fa-graduation-cap',
+                highlight: '10% OFF Tue & Wed',
+                description: 'Calling all students! Enjoy 10% off all services every Tuesday and Wednesday with a valid student ID. Perfect for a mid-week beauty boost!',
+                buttonText: 'Book Now',
+                buttonLink: '/contact',
+                cardClass: 'student-offer',
+                terms: [
+                    'Valid student ID must be presented',
+                    'Offer valid only on Tuesdays and Wednesdays',
+                    'Subject to availability',
+                    'Cannot be combined with other offers',
+                    'Not applicable on retail products',
+                    'Management reserves the right to withdraw this offer at any time'
+                ]
+            }
+        ],
+        '550px'
+    ) }}
+
+    {# Gift Vouchers Section #}
+    {% from '_components/sections/gift-voucher-section.twig' import giftVoucherSection %}
+    {{ giftVoucherSection(
+        '',
+        '',
+        'Purchase Gift Vouchers',
+        'fas fa-gift',
+        'https://leadingedgehairandbeauty.co.uk/gift-vouchers',
+        true,
+        'The perfect gift for any occasion'
+    ) }}
+
+    {# Call to Action Section #}
+    {% from '_components/sections/call-to-action.twig' import callToAction %}
+    {{ callToAction(
+        'Ready to Experience The Leading Edge?',
+        'Book your appointment today and take advantage of our exclusive offers.',
+        'Book Now',
+        '/contact',
+        'gradient'
+    ) }}
+</div>
+{% endblock %}

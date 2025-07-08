@@ -1,0 +1,14 @@
+// Contact page specific styles
+
+// Import main styles (includes variables, components, global styles)
+@import 'main';
+
+// Import additional components needed for contact page
+@import 'components/page-header';
+@import 'components/contact-info-section';
+@import 'components/contact-form';
+@import 'components/contact-card';
+@import 'components/faq-section';
+
+// Import contact page specific styles
+@import 'pages/contact';

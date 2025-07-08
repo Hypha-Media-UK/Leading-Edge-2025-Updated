@@ -1,0 +1,149 @@
+columnSuffix: null
+handle: homepageServiceSection
+instructions: null
+name: 'Services Section'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - 6520e331-fcb5-4142-906c-26920b7d8f50
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    0:
+                      - name
+                      - Content
+                    1:
+                      - uid
+                      - 9aa80519-d5ba-4d3c-b939-1aabe2ac2410
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - sectionTitle
+                            2:
+                              - label
+                              - 'Section Title'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-08T08:45:30+00:00'
+                            11:
+                              - uid
+                              - 40346795-ae7a-4e04-a7e7-54c475620127
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - sectionSubText
+                            2:
+                              - label
+                              - 'Section Sub Text'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-08T08:56:18+00:00'
+                            11:
+                              - uid
+                              - 279854c7-78c2-4242-b8a1-025e2e7ee935
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-08T08:45:30+00:00'
+                            11:
+                              - uid
+                              - cb22c49c-0998-4e90-83b3-05dd806f6a6a
+                            14:
+                              - fieldUid
+                              - 43665714-2299-44fa-abf3-97b45c8a12c7 # Services Cards
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-08T09:05:58+00:00'
+                            11:
+                              - uid
+                              - 5883a247-1f70-4353-8cad-3e3688889f9b
+                            14:
+                              - fieldUid
+                              - 54b32803-64e0-46aa-bacf-ecddf2f5db7a # Section Link
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

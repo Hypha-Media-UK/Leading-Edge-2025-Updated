@@ -1,0 +1,104 @@
+// Team Grid Component Styles (extracted from Vue TeamGrid.vue and TeamMemberCard.vue)
+.team-section {
+  padding: 5rem 0;
+  background-color: white;
+  
+  .team-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: $primary-color;
+    }
+    
+    p {
+      color: custom-lighten($primary-color, 20%);
+      line-height: 1.6;
+    }
+  }
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+  
+  .team-member {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-10px);
+      
+      .member-overlay {
+        opacity: 1;
+      }
+    }
+    
+    .member-image {
+      height: 350px;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 5px 15px rgba($primary-color, 0.1);
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+      
+      &:hover img {
+        transform: scale(1.05);
+      }
+      
+      .member-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($accent-color, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        
+        span {
+          color: white;
+          font-weight: 600;
+          font-size: 1.2rem;
+          padding: 0.8rem 1.5rem;
+          border: 2px solid white;
+          border-radius: 4px;
+        }
+      }
+    }
+    
+    .member-info {
+      padding: 1.5rem 0;
+      text-align: center;
+      
+      h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+        color: $primary-color;
+      }
+      
+      .member-role {
+        color: $accent-color;
+        font-weight: 500;
+      }
+    }
+  }
+}

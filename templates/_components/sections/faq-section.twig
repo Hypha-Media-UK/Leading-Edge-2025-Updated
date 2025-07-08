@@ -1,0 +1,22 @@
+{# FAQ Section Component Macro #}
+{% macro faqSection(title, description, faqs) %}
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>{{ title|default('Frequently Asked Questions') }}</h2>
+                {% if description %}
+                    <p>{{ description }}</p>
+                {% endif %}
+            </div>
+            
+            <div class="faq-grid">
+                {% for faq in faqs %}
+                    <div class="faq-item">
+                        <h3>{{ faq.question }}</h3>
+                        <p>{{ faq.answer }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endmacro %}

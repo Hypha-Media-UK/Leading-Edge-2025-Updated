@@ -1,0 +1,17 @@
+{# Culture Section Component Macro #}
+{% macro cultureSection(title, paragraphs, imagePath) %}
+    <section class="culture-section">
+        <div class="container">
+            <div class="culture-content">
+                <div class="culture-text">
+                    <h2>{{ title|default('Our Workplace Culture') }}</h2>
+                    {% for paragraph in paragraphs %}
+                        <p{% if loop.last %} class="last-child"{% endif %}>{{ paragraph }}</p>
+                    {% endfor %}
+                </div>
+                
+                <div class="culture-image" style="background-image: url('{{ imagePath|default('/images/new/misc/culture.webp') }}');"></div>
+            </div>
+        </div>
+    </section>
+{% endmacro %}

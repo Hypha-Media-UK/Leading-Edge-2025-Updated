@@ -1,0 +1,13 @@
+// Careers page specific styles
+
+// Import main styles (includes variables, components, global styles)
+@import 'main';
+
+// Import additional components needed for careers page
+@import 'components/benefits-section';
+@import 'components/jobs-grid';
+@import 'components/careers-application-form';
+@import 'components/culture-section';
+
+// Import careers page specific styles
+@import 'pages/careers';

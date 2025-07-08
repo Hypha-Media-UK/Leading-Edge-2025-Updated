@@ -1,0 +1,79 @@
+{# Contact Form Component Macro #}
+{% macro contactForm(title, subtitle, serviceOptions, timeOptions) %}
+    <div class="form-header">
+        <h2>{{ title|default('Book an Appointment') }}</h2>
+        <p>{{ subtitle|default('Fill out the form below and we\'ll get back to you within 24 hours to confirm your booking.') }}</p>
+    </div>
+
+    <div class="form-success" style="display: none;">
+        <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h3>Thank You!</h3>
+        <p>Your appointment request has been received. We'll contact you shortly to confirm your booking.</p>
+        {% from '_components/ui/button.twig' import button as btn %}
+        {{ btn('Book Another Appointment', 'primary', '#', '', 'button', 'reset-form-btn') }}
+    </div>
+
+    <form class="contact-form" method="post" action="">
+        <div class="form-field">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+            <div class="error-message"></div>
+        </div>
+
+        <div class="form-field">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="Your email address" required>
+            <div class="error-message"></div>
+        </div>
+
+        <div class="form-field">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+            <div class="error-message"></div>
+        </div>
+
+        <div class="form-field">
+            <label for="service">Service *</label>
+            <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                {% for option in serviceOptions %}
+                    <option value="{{ option.value }}">{{ option.label }}</option>
+                {% endfor %}
+            </select>
+            <div class="error-message"></div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-field">
+                <label for="date">Preferred Date *</label>
+                <input type="date" id="date" name="date" required>
+                <div class="error-message"></div>
+            </div>
+
+            <div class="form-field">
+                <label for="time">Preferred Time *</label>
+                <select id="time" name="time" required>
+                    <option value="">Select a time</option>
+                    {% for option in timeOptions %}
+                        <option value="{{ option.value }}">{{ option.label }}</option>
+                    {% endfor %}
+                </select>
+                <div class="error-message"></div>
+            </div>
+        </div>
+
+        <div class="form-field">
+            <label for="message">Additional Notes</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about any special requirements or questions"></textarea>
+        </div>
+
+        <div class="form-alert" style="display: none;">
+            <p>Please fix the errors in the form before submitting.</p>
+        </div>
+
+        {% from '_components/ui/button.twig' import button as btn %}
+        {{ btn('Book Appointment', 'primary', '#', '', 'submit') }}
+    </form>
+{% endmacro %}

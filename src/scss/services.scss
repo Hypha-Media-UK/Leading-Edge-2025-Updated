@@ -1,0 +1,15 @@
+// Services page specific styles
+
+// Import main styles (includes variables, components, global styles)
+@import 'main';
+
+// Import additional components needed for services page
+@import 'components/page-header';
+@import 'components/service-tabs';
+@import 'components/sub-tabs-row';
+@import 'components/service-content-section';
+@import 'components/service-gallery';
+@import 'components/call-to-action';
+
+// Import services page specific styles
+@import 'pages/services';

@@ -1,0 +1,231 @@
+columnSuffix: null
+handle: socialSection
+instructions: null
+name: 'Social Section'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - 23ec05f7-8c30-49bc-918e-4db6bebaa9b3
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    0:
+                      - name
+                      - Content
+                    1:
+                      - uid
+                      - 000bbdc2-d0d5-47bc-8fe0-f6f220eee90e
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - sectionTitle
+                            2:
+                              - label
+                              - 'Section Title'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-08T11:02:37+00:00'
+                            11:
+                              - uid
+                              - 58919e2e-f096-4ff0-bfb5-ebb0a191881a
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - sectionSubText
+                            2:
+                              - label
+                              - 'Section Sub Text'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-08T11:02:37+00:00'
+                            11:
+                              - uid
+                              - 23e46c5e-4de0-4869-97a3-72dc7147da15
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - socialImages
+                            2:
+                              - label
+                              - 'Social Images'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 75
+                            10:
+                              - dateAdded
+                              - '2025-07-08T11:04:10+00:00'
+                            11:
+                              - uid
+                              - 4a1210cd-c66d-4dd3-8625-4791766faf89
+                            14:
+                              - fieldUid
+                              - f117f59d-5600-46e1-8a81-3dec61d0f0c9 # Six Images
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - overlayIcon
+                            2:
+                              - label
+                              - 'Overlay Icon'
+                            3:
+                              - instructions
+                              - 'Visit https://fontawesome.com/icons/ and use the text for the icon e.g. fa-instagram'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 25
+                            10:
+                              - dateAdded
+                              - '2025-07-08T12:43:48+00:00'
+                            11:
+                              - uid
+                              - 568f497c-0723-4b63-b5ac-3cb0dc804105
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - linkToSocial
+                            2:
+                              - label
+                              - 'Link to Social'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-07-08T11:04:10+00:00'
+                            11:
+                              - uid
+                              - 2f3d0702-1183-41d9-88e2-f8c709b2e4db
+                            14:
+                              - fieldUid
+                              - 30d70629-c8e5-40db-9f27-dd7dd53d0afb # Card Link
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - buttonIcon
+                            2:
+                              - label
+                              - 'Button Icon'
+                            3:
+                              - instructions
+                              - 'Visit https://fontawesome.com/icons/ and use the text for the icon e.g. fa-instagram'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-07-08T11:07:16+00:00'
+                            11:
+                              - uid
+                              - 98bed0e2-e964-45d1-ba2e-c7647c14aa48
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

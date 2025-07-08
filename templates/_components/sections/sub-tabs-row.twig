@@ -1,0 +1,10 @@
+{# Sub Tabs Row Component Macro #}
+{% macro subTabsRow(tabs, activeTab) %}
+    <div class="sub-tabs-container">
+        {% for tab in tabs %}
+            <div class="sub-tab{% if activeTab == tab.id %} active{% endif %}" data-tab="{{ tab.id }}">
+                <span>{{ tab.label }}</span>
+            </div>
+        {% endfor %}
+    </div>
+{% endmacro %}

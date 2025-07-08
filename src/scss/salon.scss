@@ -1,0 +1,14 @@
+// Salon page specific styles
+
+// Import main styles (includes variables, components, global styles)
+@import 'main';
+
+// Import additional components needed for salon page
+@import 'components/page-header';
+@import 'components/about-story';
+@import 'components/philosophy-grid';
+@import 'components/interior-gallery';
+@import 'components/call-to-action';
+
+// Import salon page specific styles
+@import 'pages/salon';

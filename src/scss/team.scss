@@ -1,0 +1,13 @@
+// Team page specific styles
+
+// Import main styles (includes variables, components, global styles)
+@import 'main';
+
+// Import additional components needed for team page
+@import 'components/page-header';
+@import 'components/team-grid';
+@import 'components/philosophy-grid'; // Reusing for team values
+@import 'components/call-to-action';
+
+// Import team page specific styles
+@import 'pages/team';

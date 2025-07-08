@@ -1,0 +1,196 @@
+columnSuffix: null
+handle: homepageProductsSection
+instructions: null
+name: 'Products Section'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - b3197c06-8212-4c65-9f51-d68d52f753d3
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    0:
+                      - name
+                      - Content
+                    1:
+                      - uid
+                      - 59f0709e-bc96-4df2-9411-363ebcde470a
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - sectionTitle
+                            2:
+                              - label
+                              - 'Section Title'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-08T10:01:42+00:00'
+                            11:
+                              - uid
+                              - 9d4e8436-e770-41d5-8891-0ccc61d80242
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - sectionSubText
+                            2:
+                              - label
+                              - 'Section Sub Text'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-08T10:01:42+00:00'
+                            11:
+                              - uid
+                              - 6d2d9c8e-325c-4c19-8976-298d8acf8823
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - productImages
+                            2:
+                              - label
+                              - 'Product Images'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-08T10:04:09+00:00'
+                            11:
+                              - uid
+                              - 3096b2e9-6e3f-4842-bb64-15e0ec2ffc48
+                            14:
+                              - fieldUid
+                              - 4ed1b04a-6530-4a34-874c-c5f29f911e66 # Four Images
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - productsLink
+                            2:
+                              - label
+                              - 'Products Link'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-07-08T10:04:09+00:00'
+                            11:
+                              - uid
+                              - 7c90accb-622f-48c6-86b7-4b8dcf4874ac
+                            14:
+                              - fieldUid
+                              - 30d70629-c8e5-40db-9f27-dd7dd53d0afb # Card Link
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - buttonIcon
+                            2:
+                              - label
+                              - 'Button Icon'
+                            3:
+                              - instructions
+                              - 'Visit https://fontawesome.com/icons/ and use the text for the icon e.g. fa-shopping-cart'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-07-08T10:46:35+00:00'
+                            11:
+                              - uid
+                              - 6a28594a-1d03-4d48-9414-51e41ff6d630
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

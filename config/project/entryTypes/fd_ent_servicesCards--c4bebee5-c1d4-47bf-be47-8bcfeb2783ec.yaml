@@ -1,0 +1,107 @@
+color: null
+description: null
+fieldLayouts:
+  021cc889-db54-41fa-862d-9509f1a56a8f:
+    cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:9fa47c6a-d2bd-4623-b62f-2eadaf6b1243'
+      - 'layoutElement:c69994d8-0b66-4de3-9b8b-7f814bb8657a'
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-08T08:45:12+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 04ddff7f-52ed-458a-bc0c-a3a9d4b76f4d # Single Image
+            handle: cardImage
+            includeInCards: true
+            instructions: null
+            label: 'Card Image'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9fa47c6a-d2bd-4623-b62f-2eadaf6b1243
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-07-08T08:41:01+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: 'Card Title'
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 01c05210-f263-452d-b08a-3279b512181a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-08T08:45:12+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: cardText
+            includeInCards: true
+            instructions: null
+            label: 'Card Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c69994d8-0b66-4de3-9b8b-7f814bb8657a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-08T08:45:12+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 30d70629-c8e5-40db-9f27-dd7dd53d0afb # Card Link
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: df0bdf6e-6d81-4ea8-94c1-17939cb24126
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: de32967e-43c2-4f00-bfb7-c6612e4f2fff
+        userCondition: null
+handle: fd_ent_servicesCards
+hasTitleField: true
+icon: null
+name: 'Services Cards'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

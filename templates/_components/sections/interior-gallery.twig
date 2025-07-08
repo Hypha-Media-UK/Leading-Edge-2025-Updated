@@ -1,0 +1,27 @@
+{# Interior Gallery Component Macro #}
+{% macro interiorGallery(title, description, images, content) %}
+    <section class="interior-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>{{ title|default('Our Space') }}</h2>
+                {% if description %}
+                    <p>{{ description }}</p>
+                {% endif %}
+            </div>
+            
+            <div class="gallery">
+                {% for image in images %}
+                    <div class="gallery-item item-{{ loop.index }}">
+                        <img src="{{ image.src }}" alt="{{ image.alt|default('Salon interior') }}">
+                    </div>
+                {% endfor %}
+            </div>
+            
+            {% if content %}
+                <div class="interior-description">
+                    {{ content|raw }}
+                </div>
+            {% endif %}
+        </div>
+    </section>
+{% endmacro %}

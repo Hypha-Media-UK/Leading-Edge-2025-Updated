@@ -1,0 +1,10 @@
+// Main SCSS entry point
+
+// Forward all variables and mixins to make them globally available
+@forward './variables';
+@forward './mixins/layout';
+@forward './mixins/typography';
+@forward './mixins/components';
+
+// Use main styles
+@use './main' as *;

@@ -1,0 +1,108 @@
+// Contact Form Component Styles (extracted from Vue ContactForm.vue)
+.form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: $primary-color;
+  }
+  
+  p {
+    color: custom-lighten($primary-color, 20%);
+  }
+}
+
+.form-success {
+  text-align: center;
+  padding: 2rem;
+  
+  .success-icon {
+    font-size: 4rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+  }
+  
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: $primary-color;
+  }
+  
+  p {
+    margin-bottom: 2rem;
+    color: custom-lighten($primary-color, 20%);
+  }
+}
+
+.contact-form {
+  .form-field {
+    margin-bottom: 1.5rem;
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: $primary-color;
+    }
+    
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid rgba($primary-color, 0.2);
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      
+      &:focus {
+        outline: none;
+        border-color: $accent-color;
+      }
+      
+      &::placeholder {
+        color: custom-lighten($primary-color, 40%);
+      }
+    }
+    
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    
+    .error-message {
+      color: #C62828;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      display: none;
+      
+      &.show {
+        display: block;
+      }
+    }
+  }
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .form-alert {
+    background-color: #FFEBEE;
+    color: #C62828;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    
+    p {
+      margin: 0;
+    }
+  }
+}

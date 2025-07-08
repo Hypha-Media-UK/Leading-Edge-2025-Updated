@@ -1,0 +1,36 @@
+{# Service Content Section Component Macro #}
+{% macro serviceContentSection(title, description = '', services = [], images = [], additionalContent = '') %}
+    <div class="services-content">
+        <div class="services-intro">
+            <h2>{{ title }}</h2>
+            {% if description %}
+                <p>{{ description }}</p>
+            {% endif %}
+        </div>
+        
+        {% if images and images|length > 0 %}
+            {% from '_components/sections/service-gallery.twig' import serviceGallery %}
+            {{ serviceGallery(images) }}
+        {% endif %}
+        
+        {% if additionalContent %}
+            <div class="additional-content">
+                {{ additionalContent|raw }}
+            </div>
+        {% endif %}
+        
+        <div class="services-list">
+            {% for service in services %}
+                <div class="service-item">
+                    <div class="service-info">
+                        <h3>{{ service.title }}</h3>
+                        {% if service.description is defined and service.description %}
+                            <p>{{ service.description }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="service-price">{{ service.price }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}

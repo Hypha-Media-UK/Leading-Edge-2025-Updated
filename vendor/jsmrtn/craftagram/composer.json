@@ -1,0 +1,40 @@
+{
+    "name": "jsmrtn/craftagram",
+    "description": "Grab Instagram content through the Instagram API",
+    "type": "craft-plugin",
+    "version": "4.1.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "craftagram"
+    ],
+    "support": {
+        "docs": "https://github.com/jsmrtn/craftagram/blob/master/README.md",
+        "issues": "https://github.com/jsmrtn/craftagram/issues"
+    },
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Joshua Martin"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^4.0.0|^5.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "jsmrtn\\craftagram\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Craftagram",
+        "handle": "craftagram",
+        "changelogUrl": "https://raw.githubusercontent.com/jsmrtn/craftagram/master/CHANGELOG.md",
+        "components": {
+            "craftagramService": "jsmrtn\\craftagram\\services\\CraftagramService"
+        },
+        "class": "jsmrtn\\craftagram\\Craftagram"
+    }
+}

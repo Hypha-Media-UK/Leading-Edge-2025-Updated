@@ -1,0 +1,27 @@
+{# Philosophy Grid Component Macro #}
+{% macro philosophyGrid(title, description, philosophyItems) %}
+    <section class="philosophy-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>{{ title|default('Our Philosophy') }}</h2>
+                {% if description %}
+                    <p>{{ description }}</p>
+                {% endif %}
+            </div>
+            
+            <div class="philosophy-content">
+                {% for item in philosophyItems %}
+                    <div class="feature-card">
+                        {% if item.icon %}
+                            <div class="icon">
+                                <i class="{{ item.icon }}"></i>
+                            </div>
+                        {% endif %}
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.description }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endmacro %}

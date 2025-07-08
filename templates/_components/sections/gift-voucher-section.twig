@@ -1,0 +1,27 @@
+{# Gift Voucher Section Component Macro #}
+{% macro giftVoucherSection(title, description, buttonText, icon, link, external, subtext) %}
+    <section class="gift-voucher-section">
+        <div class="container">
+            <div class="gift-voucher-content">
+                {% if title %}
+                    <h2>{{ title }}</h2>
+                {% endif %}
+                {% if description %}
+                    <p>{{ description }}</p>
+                {% endif %}
+                
+                <a 
+                    href="{{ link|default('#') }}" 
+                    {% if external|default(true) %}target="_blank"{% endif %}
+                    class="btn gift-voucher-btn"
+                >
+                    <i class="{{ icon|default('fas fa-gift') }}"></i> {{ buttonText|default('Purchase Gift Vouchers') }}
+                </a>
+                
+                {% if subtext %}
+                    <p class="voucher-subtext">{{ subtext }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endmacro %}

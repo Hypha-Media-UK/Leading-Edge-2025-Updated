@@ -1,0 +1,103 @@
+{# News Grid Component Macro #}
+{% macro newsGrid(title, description, articles, categories, activeCategory, showFilters) %}
+    <section class="news-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>{{ title|default('Latest News') }}</h2>
+                {% if description %}
+                    <p>{{ description }}</p>
+                {% endif %}
+            </div>
+            
+            {% if showFilters|default(true) and categories %}
+                <div class="news-filters">
+                    <div class="category-filter">
+                        <span class="filter-item{% if activeCategory|default('all') == 'all' %} active{% endif %}" data-category="all">
+                            All
+                        </span>
+                        {% for category in categories %}
+                            <span class="filter-item{% if activeCategory == category.slug %} active{% endif %}" data-category="{{ category.slug }}">
+                                {{ category.name }}
+                            </span>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            
+            <div class="news-grid">
+                {% for article in articles %}
+                    <div class="news-card" data-modal-target="news-modal-{{ article.id }}">
+                        <div class="news-image">
+                            <img src="{{ article.image }}" alt="{{ article.title }}">
+                            <div class="news-date">
+                                <span class="day">{{ article.date|date('j') }}</span>
+                                <span class="month">{{ article.date|date('M') }}</span>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <h3>{{ article.title }}</h3>
+                            <p class="news-excerpt">{{ article.excerpt }}</p>
+                            
+                            <div class="news-meta">
+                                {% if article.author %}
+                                    <span class="news-author">
+                                        <i class="far fa-user"></i> {{ article.author }}
+                                    </span>
+                                {% endif %}
+                                {% if article.category %}
+                                    <span class="news-category">
+                                        <i class="far fa-folder"></i> {{ article.category }}
+                                    </span>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="news-actions">
+                                {% from '_components/ui/button.twig' import button as btn %}
+                                {{ btn('Read More', 'secondary', '#', '', 'button', 'read-more-btn', '', 'small') }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        {# Individual modals for each news article #}
+        {% for article in articles %}
+            <div id="news-modal-{{ article.id }}" class="modal-overlay" style="display: none;">
+                <div class="modal-content modal-large">
+                    <button class="modal-close" aria-label="Close modal">&times;</button>
+                    <div class="modal-body">
+                        <div class="news-article-header">
+                            <img src="{{ article.image }}" alt="{{ article.title }}" class="news-modal-image">
+                            <div class="article-meta">
+                                <h1 class="news-modal-title">{{ article.title }}</h1>
+                                <div class="article-info">
+                                    <span class="news-modal-date">{{ article.date|date('F j, Y') }}</span>
+                                    <span class="news-modal-author">{{ article.author }}</span>
+                                    <span class="news-modal-category">{{ article.category }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-modal-content">
+                            {{ article.content|raw }}
+                        </div>
+                        <div class="modal-actions">
+                            <div class="social-share">
+                                <span>Share this article:</span>
+                                <a href="#" class="share-btn facebook" title="Share on Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="share-btn twitter" title="Share on Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="share-btn linkedin" title="Share on LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+{% endmacro %}

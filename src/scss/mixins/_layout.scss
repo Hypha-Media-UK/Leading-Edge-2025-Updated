@@ -1,0 +1,94 @@
+// Layout and container mixins
+
+/// Standard container mixin with responsive padding
+/// @param {Number} $max-width [1200px] - Maximum width of the container
+@mixin container($max-width: 1200px) {
+  width: 100%;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  
+  @media (min-width: 992px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/// Flexbox row with spacing
+/// @param {Number} $gap [1rem] - Gap between items
+/// @param {String} $justify [flex-start] - Justify content value
+/// @param {String} $align [center] - Align items value
+@mixin flex-row($gap: 1rem, $justify: flex-start, $align: center) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: $gap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+/// Flexbox column with spacing
+/// @param {Number} $gap [1rem] - Gap between items
+/// @param {String} $justify [flex-start] - Justify content value
+/// @param {String} $align [stretch] - Align items value
+@mixin flex-column($gap: 1rem, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+/// Grid layout with responsive columns
+/// @param {Number} $min-col-width [280px] - Minimum column width
+/// @param {Number} $gap [1.5rem] - Gap between grid items
+@mixin responsive-grid($min-col-width: 280px, $gap: 1.5rem) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min-col-width, 1fr));
+  grid-gap: $gap;
+}
+
+/// Standard section padding
+/// @param {Number} $top [5rem] - Top padding
+/// @param {Number} $bottom [5rem] - Bottom padding
+@mixin section-padding($top: 5rem, $bottom: 5rem) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+  
+  @media (max-width: 768px) {
+    padding-top: calc($top * 0.7);
+    padding-bottom: calc($bottom * 0.7);
+  }
+}
+
+/// Positions an element at center of its container
+@mixin center-element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/// Creates a fixed aspect ratio container
+/// @param {Number} $width [16] - Width ratio
+/// @param {Number} $height [9] - Height ratio
+@mixin aspect-ratio($width: 16, $height: 9) {
+  position: relative;
+  
+  &::before {
+    content: "";
+    display: block;
+    padding-top: ($height / $width) * 100%;
+  }
+  
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,12 @@
+{# Service Gallery Component Macro #}
+{% macro serviceGallery(images) %}
+    {% if images and images|length > 0 %}
+        <div class="services-gallery">
+            {% for image in images %}
+                <div class="gallery-item">
+                    <img src="{{ image.src }}" alt="{{ image.alt|default('Service Gallery Image') }}">
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endmacro %}

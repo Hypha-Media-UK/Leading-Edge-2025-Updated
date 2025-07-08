@@ -1,0 +1,95 @@
+color: lime
+description: null
+fieldLayouts:
+  5f5951e9-b224-48ff-b9f2-c7cfed270e44:
+    cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:616689a5-5fec-4142-8a38-4ef766515ec8'
+      - 'layoutElement:ec33dc46-eea5-425d-ab2a-5a842c3a213a'
+      - 'layoutElement:5f28a237-fa8b-4477-8e3e-ed171eeace0f'
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-08T09:29:58+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 04ddff7f-52ed-458a-bc0c-a3a9d4b76f4d # Single Image
+            handle: customerPhoto
+            includeInCards: true
+            instructions: null
+            label: 'Customer Photo'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ec33dc46-eea5-425d-ab2a-5a842c3a213a
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-08T09:38:38+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: b5144bca-43e4-4a75-8d36-4405e3f2629a # Testimonial Text
+            handle: null
+            includeInCards: true
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5f28a237-fa8b-4477-8e3e-ed171eeace0f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-08T09:29:58+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: customerName
+            includeInCards: true
+            instructions: null
+            label: 'Customer Name'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 616689a5-5fec-4142-8a38-4ef766515ec8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-08T09:29:58+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: customerCite
+            includeInCards: false
+            instructions: null
+            label: 'Customer Citation'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3188acf5-633f-4634-bbb7-803f2d578fde
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 364fb52b-0fd0-402b-a558-26f3b6dfd740
+        userCondition: null
+handle: ent_mx_testimonials
+hasTitleField: false
+icon: null
+name: Testimonials
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

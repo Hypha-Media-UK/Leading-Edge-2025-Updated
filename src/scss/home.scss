@@ -1,0 +1,13 @@
+// Home page specific styles
+
+// Import main styles (includes variables, components, global styles)
+@import 'main';
+
+// Import home page components
+@import 'components/features';
+@import 'components/services-preview';
+@import 'components/testimonials';
+@import 'components/call-to-action';
+
+// Import home page specific styles
+@import 'pages/home';

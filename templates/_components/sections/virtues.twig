@@ -1,0 +1,18 @@
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>{{ entry.homepageVirtuesSection.sectionTitle }}</h2>
+            </div>
+            <div class="features-grid">
+                {% for virtue in entry.homepageVirtuesSection.mx_virtuesCards %}
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid {{ virtue.virtueIcon }}"></i>
+                        </div>
+                        <h3>{{ virtue.title }}</h3>
+                        <p>{{ virtue.cardText }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>

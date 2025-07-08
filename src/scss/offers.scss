@@ -1,0 +1,13 @@
+// Offers page specific styles
+
+// Import main styles (includes variables, components, global styles)
+@import 'main';
+
+// Import additional components needed for offers page
+@import 'components/page-header';
+@import 'components/promotions-grid';
+@import 'components/gift-voucher-section';
+@import 'components/call-to-action';
+
+// Import offers page specific styles
+@import 'pages/offers';

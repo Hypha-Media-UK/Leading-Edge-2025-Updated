@@ -1,0 +1,104 @@
+#ddev-generated
+# If you remove the ddev-generated line above you
+# are responsible for maintaining this file. DDEV will not then
+# update it, for example if you add `additional_hostnames`, etc.
+
+http:
+  routers:
+    tle-25-temp-web-80-http:
+      entrypoints:
+        - http-80
+      rule: HostRegexp(`^tle-25-temp\.ddev\.site$`)
+      
+      service: "tle-25-temp-web-80"
+      ruleSyntax: v3
+      tls: false
+      # middlewares:
+      #   - "tle-25-temp-redirectHttps"
+    tle-25-temp-web-8025-http:
+      entrypoints:
+        - http-8025
+      rule: HostRegexp(`^tle-25-temp\.ddev\.site$`)
+      
+      service: "tle-25-temp-web-8025"
+      ruleSyntax: v3
+      tls: false
+      # middlewares:
+      #   - "tle-25-temp-redirectHttps"
+    tle-25-temp-xhgui-80-http:
+      entrypoints:
+        - http-8143
+      rule: HostRegexp(`^tle-25-temp\.ddev\.site$`)
+      
+      service: "tle-25-temp-xhgui-80"
+      ruleSyntax: v3
+      tls: false
+      # middlewares:
+      #   - "tle-25-temp-redirectHttps"
+    
+    
+    
+    tle-25-temp-web-80-https:
+      entrypoints:
+        - http-443
+      rule: HostRegexp(`^tle-25-temp\.ddev\.site$`)
+      
+      service: "tle-25-temp-web-80"
+      ruleSyntax: v3
+      
+      tls: true
+      
+    tle-25-temp-web-8025-https:
+      entrypoints:
+        - http-8026
+      rule: HostRegexp(`^tle-25-temp\.ddev\.site$`)
+      
+      service: "tle-25-temp-web-8025"
+      ruleSyntax: v3
+      
+      tls: true
+      
+    
+    tle-25-temp-xhgui-80-https:
+      entrypoints:
+        - http-8142
+      rule: HostRegexp(`^tle-25-temp\.ddev\.site$`)
+      
+      service: "tle-25-temp-xhgui-80"
+      ruleSyntax: v3
+      
+      tls: true
+      
+    
+
+  middlewares:
+    tle-25-temp-redirectHttps:
+      redirectScheme:
+        scheme: https
+        permanent: true
+
+  services:
+    tle-25-temp-web-80:
+      loadbalancer:
+        servers:
+          - url: http://ddev-tle-25-temp-web:80
+        
+    tle-25-temp-web-8025:
+      loadbalancer:
+        servers:
+          - url: http://ddev-tle-25-temp-web:8025
+        
+    
+    
+    tle-25-temp-xhgui-80:
+      loadbalancer:
+        servers:
+          - url: http://ddev-tle-25-temp-xhgui:80
+        
+    
+    
+
+tls:
+  certificates:
+    - certFile: /mnt/ddev-global-cache/traefik/certs/tle-25-temp.crt
+      keyFile: /mnt/ddev-global-cache/traefik/certs/tle-25-temp.key

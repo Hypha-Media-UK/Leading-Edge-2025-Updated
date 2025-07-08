@@ -1,0 +1,18 @@
+    
+    
+    <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ entry.cb_homepageHero.heroImage.one().url() }}')">
+        <div class="container">
+            <div class="hero-content">
+                <div class="text-content">
+                    <h1>{{ entry.cb_homepageHero.heroTitle }}</h1>
+                    <p>{{ entry.cb_homepageHero.heroSubText }}</p>
+                </div>
+                
+                <div class="hero-buttons">
+                    {% for button in entry.cb_homepageHero.heroButtons %}
+                        <a href="{{ button.buttonLink }}" {% if button.highlighted %}class="btn primary"{% else %} class="btn secondary"{% endif %}>{{ button.buttonText }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>

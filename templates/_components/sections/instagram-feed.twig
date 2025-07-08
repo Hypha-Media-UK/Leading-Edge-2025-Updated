@@ -1,0 +1,28 @@
+    <section class="instagram-feed">
+        <div class="container">
+            <div class="section-header">
+                <h2>{{ entry.socialSection.sectionTitle }}</h2>
+                <p>{{ entry.socialSection.sectionSubText }}</p>
+            </div>
+            <div class="instagram-grid">
+                {% for image in entry.socialSection.socialImages %}
+                    <div class="instagram-item">
+                        <a href="" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ image.url }}" alt="image.title">
+                            <div class="instagram-overlay">
+                                <i class="fab {{ entry.socialSection.overlayIcon }}"></i>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+
+            {% if entry.socialSection.linkToSocial and entry.socialSection.linkToSocial.label %}
+                <div class="instagram-cta">
+                     <a href="{{ entry.socialSection.linkToSocial }}" class="btn secondary">
+                     <i class="fab {{ entry.socialSection.buttonIcon }} btn-icon"></i>
+                     {{ entry.socialSection.linkToSocial.label }}</a>
+                </div>
+            {% endif %}
+        </div>
+    </section>

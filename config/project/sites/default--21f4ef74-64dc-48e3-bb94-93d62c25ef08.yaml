@@ -1,0 +1,9 @@
+baseUrl: $PRIMARY_SITE_URL
+enabled: true
+handle: default
+hasUrls: true
+language: en-GB
+name: TLE-2025
+primary: true
+siteGroup: d9707244-1d4e-4b5b-9d06-b6055492603e # TLE-2025
+sortOrder: 1

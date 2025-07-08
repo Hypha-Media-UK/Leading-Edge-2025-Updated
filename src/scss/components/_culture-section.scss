@@ -1,0 +1,48 @@
+// Culture Section Component Styles (extracted from Vue CultureSection.vue)
+.culture-section {
+  background-color: $light-color;
+  padding: 5rem 0;
+  
+  .culture-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    
+    @media (max-width: 991px) {
+      grid-template-columns: 1fr;
+    }
+    
+    .culture-text {
+      h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+        color: $primary-color;
+      }
+      
+      p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        color: custom-lighten($primary-color, 20%);
+        
+        &.last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    
+    .culture-image {
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba($primary-color, 0.1);
+      object-fit: cover;
+      
+      @media (max-width: 991px) {
+        height: 300px;
+        margin-top: 2rem;
+      }
+    }
+  }
+}

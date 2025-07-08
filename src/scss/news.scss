@@ -1,0 +1,13 @@
+// News page specific styles
+
+// Import main styles (includes variables, components, global styles)
+@import 'main';
+
+// Import additional components needed for news page
+@import 'components/page-header';
+@import 'components/featured-news-item';
+@import 'components/news-grid';
+@import 'components/news-article-card';
+
+// Import news page specific styles
+@import 'pages/news';

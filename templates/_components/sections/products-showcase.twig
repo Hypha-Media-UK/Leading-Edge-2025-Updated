@@ -1,0 +1,22 @@
+    <section class="products-showcase">
+        <div class="container">
+            <div class="section-header">
+                <h2>{{ entry.homepageProductsSection.sectionTitle }}</h2>
+                <p>{{ entry.homepageProductsSection.sectionSubText }}</p>
+            </div>
+            <div class="products-grid">
+                {% for product in entry.homepageProductsSection.productImages %}
+                    <div class="product-item">
+                        <img src="{{ product.url }}" alt="{{ product.title }}">
+                    </div>
+                {% endfor %}
+            </div>
+            {% if entry.homepageProductsSection.productsLink and entry.homepageProductsSection.productsLink.label %}
+                <div class="section-cta">
+                     <a href="{{ entry.homepageProductsSection.productsLink }}" class="btn primary">
+                     <i class="fas {{ entry.homepageProductsSection.buttonIcon }} btn-icon"></i>
+                     {{ entry.homepageProductsSection.productsLink.label }}</a>
+                </div>
+            {% endif %}
+        </div>
+    </section>

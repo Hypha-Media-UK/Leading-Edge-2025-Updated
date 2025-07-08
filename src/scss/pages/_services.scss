@@ -1,0 +1,41 @@
+// Services Page Styles (extracted from Vue ServiceDetail.vue)
+.services-detail-page {
+  // Most styles are now in the individual components
+  
+  .services-intro {
+    padding: 3rem 0;
+    background-color: white;
+    
+    .intro-content {
+      max-width: 900px;
+      margin: 0 auto;
+      
+      p {
+        line-height: 1.8;
+        color: custom-lighten($primary-color, 20%);
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+  
+  .services-tabs {
+    padding: 2rem 0 5rem;
+    background-color: white;
+  }
+  
+  .treatment-section {
+    margin-bottom: 2rem;
+    
+    h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: $primary-color;
+    }
+    
+    p {
+      color: custom-lighten($primary-color, 20%);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+  }
+}

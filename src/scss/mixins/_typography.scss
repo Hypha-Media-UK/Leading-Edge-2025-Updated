@@ -1,0 +1,106 @@
+// Typography mixins and text styling helpers
+
+/// Section heading with consistent styling
+/// @param {String} $color [$primary-color] - Heading color
+/// @param {String} $align [left] - Text alignment
+@mixin section-heading($color: $primary-color, $align: left) {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: $color;
+  text-align: $align;
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/// Section subheading with consistent styling
+/// @param {String} $color [custom-lighten($primary-color, 20%)] - Subheading color
+/// @param {String} $align [left] - Text alignment
+@mixin section-subheading($color: custom-lighten($primary-color, 20%), $align: left) {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: $color;
+  text-align: $align;
+  max-width: 800px;
+  
+  @if $align == center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/// Body text styling
+/// @param {String} $color [custom-lighten($primary-color, 20%)] - Text color
+/// @param {Number} $line-height [1.8] - Line height
+@mixin body-text($color: custom-lighten($primary-color, 20%), $line-height: 1.8) {
+  font-size: 1rem;
+  line-height: $line-height;
+  color: $color;
+  
+  p {
+    margin-bottom: 1.5rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/// Small/caption text styling
+/// @param {String} $color [custom-lighten($primary-color, 30%)] - Text color
+@mixin small-text($color: custom-lighten($primary-color, 30%)) {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: $color;
+}
+
+/// Price text styling
+/// @param {String} $color [$accent-color] - Price color
+/// @param {Boolean} $bold [true] - Whether to bold the text
+@mixin price-text($color: $accent-color, $bold: true) {
+  font-size: 1.1rem;
+  color: $color;
+  font-weight: if($bold, 700, 400);
+}
+
+/// Style a link with hover state
+/// @param {String} $color [$accent-color] - Link color
+/// @param {String} $hover-color [custom-darken($accent-color, 10%)] - Hover color
+/// @param {Boolean} $underline [false] - Whether to underline the link
+@mixin link-style($color: $accent-color, $hover-color: custom-darken($accent-color, 10%), $underline: false) {
+  color: $color;
+  text-decoration: if($underline, underline, none);
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: $hover-color;
+    text-decoration: underline;
+  }
+}
+
+/// Truncate text with ellipsis
+/// @param {Number} $lines [1] - Number of lines to show before truncating
+@mixin truncate-text($lines: 1) {
+  @if $lines == 1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/// Add a text shadow for better readability on images
+/// @param {String} $color [rgba(0, 0, 0, 0.5)] - Shadow color
+@mixin text-shadow-overlay($color: rgba(0, 0, 0, 0.5)) {
+  text-shadow: 0 1px 3px $color;
+}

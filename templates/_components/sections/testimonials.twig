@@ -1,0 +1,43 @@
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>{{ entry.homepageTestimonials.sectionTitle }}</h2>
+                {% if entry.homepageTestimonials.sectionSubText %}
+                    <p>{{ entry.homepageTestimonials.sectionSubText }}</p>
+                {% endif %}
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-container">
+                    {% for testimonial in entry.homepageTestimonials.testimonials %}
+                        <div class="testimonial-wrapper" data-testimonial-index="{{ loop.index0 }}" {% if loop.first %}style="opacity: 1;"{% else %}style="opacity: 0;"{% endif %}>
+                            <div class="testimonial">
+                                <div class="quote">"</div>
+                                <p>{{ testimonial.testimonialText }}</p>
+                                <div class="client">
+                                    <div class="client-image">
+                                        <img src="{{ testimonial.customerPhoto.one().url() }}" alt="{{ testimonial.customerName }} - {{ testimonial.customerCite }}">
+                                    </div>
+                                    <div class="client-info">
+                                        <h4>{{ testimonial.customerName }}</h4>
+                                        <span>{{ testimonial.customerCite }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="testimonial-controls">
+                    <div class="testimonial-arrows">
+                        <button class="arrow prev" aria-label="Previous testimonial">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="arrow next" aria-label="Next testimonial">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

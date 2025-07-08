@@ -1,0 +1,153 @@
+{# Base Modal Component #}
+{% macro modal(id, size = 'medium', closeButton = true) %}
+    <div id="{{ id }}" class="modal-overlay" style="display: none;">
+        <div class="modal-content modal-{{ size }}">
+            {% if closeButton %}
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+            {% endif %}
+            <div class="modal-body">
+                {# Content will be populated by JavaScript #}
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{# Team Member Modal Template #}
+{% macro teamMemberModal() %}
+    <div id="team-member-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content modal-large">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <div class="member-profile-grid">
+                    <div class="member-image-container">
+                        <img src="" alt="" class="member-modal-image">
+                    </div>
+                    <div class="member-content">
+                        <h2 class="member-modal-name"></h2>
+                        <p class="member-modal-title"></p>
+                        
+                        <div class="member-bio">
+                            <p class="member-modal-bio"></p>
+                        </div>
+                        
+                        <div class="member-specialties">
+                            <h3>Specialties</h3>
+                            <div class="specialty-tags">
+                                {# Populated by JavaScript #}
+                            </div>
+                        </div>
+                        
+                        <div class="member-social">
+                            <a href="#" class="instagram-link" target="_blank">
+                                <i class="fab fa-instagram"></i> <span class="instagram-handle"></span>
+                            </a>
+                        </div>
+                        
+                        <div class="booking-cta">
+                            <a href="/contact" class="btn primary">
+                                Book with <span class="member-first-name"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{# Job Position Modal Template #}
+{% macro jobPositionModal() %}
+    <div id="position-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content modal-medium">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <div class="position-content">
+                    <h2 class="position-title"></h2>
+                    <div class="position-meta">
+                        <span class="type"></span>
+                        <span class="location">
+                            <i class="fas fa-map-marker-alt"></i> 
+                            <span class="location-text"></span>
+                        </span>
+                    </div>
+                    
+                    <div class="position-description">
+                        <p></p>
+                    </div>
+                    
+                    <div class="position-responsibilities">
+                        <h3>Responsibilities</h3>
+                        <ul class="responsibilities-list">
+                            {# Populated by JavaScript #}
+                        </ul>
+                    </div>
+                    
+                    <div class="position-requirements">
+                        <h3>Requirements</h3>
+                        <ul class="requirements-list">
+                            {# Populated by JavaScript #}
+                        </ul>
+                    </div>
+                    
+                    <div class="apply-cta">
+                        <a href="#application-form" class="btn primary apply-btn">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{# News Article Modal Template #}
+{% macro newsArticleModal() %}
+    <div id="news-article-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content modal-large">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <div class="news-detail-content">
+                    <div class="back-button">
+                        <button class="btn secondary modal-back-btn">
+                            <i class="fas fa-arrow-left"></i> Back to News
+                        </button>
+                    </div>
+                    
+                    <h2 class="news-modal-title"></h2>
+                    <div class="news-meta">
+                        <span class="date">
+                            <i class="far fa-calendar-alt"></i> 
+                            <span class="news-modal-date"></span>
+                        </span>
+                        <span class="author">
+                            <i class="far fa-user"></i> 
+                            <span class="news-modal-author"></span>
+                        </span>
+                        <span class="category">
+                            <i class="far fa-folder"></i> 
+                            <span class="news-modal-category"></span>
+                        </span>
+                    </div>
+                    
+                    <div class="news-image">
+                        <img src="" alt="" class="news-modal-image">
+                    </div>
+                    
+                    <div class="news-text">
+                        <div class="news-modal-content">
+                            {# Content populated by JavaScript #}
+                        </div>
+                    </div>
+                    
+                    <div class="share-links">
+                        <p>Share this article:</p>
+                        <div class="social-share">
+                            <a href="#" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Share on Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Share via Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

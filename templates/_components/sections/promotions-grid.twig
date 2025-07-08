@@ -1,0 +1,76 @@
+{# Promotions Grid Component Macro #}
+{% macro promotionsGrid(title, description, promotions, cardHeight) %}
+    <section class="promotions-section">
+        <div class="container">
+            {% if title or description %}
+                <div class="section-header">
+                    {% if title %}
+                        <h2>{{ title }}</h2>
+                    {% endif %}
+                    {% if description %}
+                        <p>{{ description }}</p>
+                    {% endif %}
+                </div>
+            {% endif %}
+            
+            <div class="promotions-grid">
+                {% for promotion in promotions %}
+                    <div class="promotion-item" data-promotion-id="{{ promotion.id }}">
+                        <div class="flip-card" style="height: {{ cardHeight|default('550px') }};">
+                            <div class="flip-card-inner">
+                                {# Front Side #}
+                                <div class="flip-card-front">
+                                    <div class="promotion-card {{ promotion.cardClass }}">
+                                        {% if promotion.icon %}
+                                            <div class="card-icon">
+                                                <i class="{{ promotion.icon }}"></i>
+                                            </div>
+                                        {% endif %}
+                                        <h2>{{ promotion.title }}</h2>
+                                        {% if promotion.highlight %}
+                                            <div class="offer-highlight">
+                                                <span>{{ promotion.highlight }}</span>
+                                            </div>
+                                        {% endif %}
+                                        <p class="promotion-description">{{ promotion.description }}</p>
+                                        <button class="terms-toggle" data-flip-card>
+                                            Terms & Conditions <i class="fas fa-sync"></i>
+                                        </button>
+                                        <div class="promotion-actions">
+                                            {% from '_components/ui/button.twig' import button as btn %}
+                                            {{ btn(
+                                                promotion.buttonText|default('Book Now'), 
+                                                promotion.buttonVariant|default('primary'), 
+                                                promotion.buttonLink|default('#'), 
+                                                '', 
+                                                'button', 
+                                                '', 
+                                                '', 
+                                                promotion.buttonSize|default('small')
+                                            ) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                {# Back Side #}
+                                <div class="flip-card-back">
+                                    <div class="promotion-card {{ promotion.cardClass }}">
+                                        <h3>Terms & Conditions</h3>
+                                        <div class="terms-content">
+                                            {% for term in promotion.terms %}
+                                                <p>• {{ term }}</p>
+                                            {% endfor %}
+                                        </div>
+                                        <button class="flip-back-btn" data-flip-card>
+                                            <i class="fas fa-arrow-left"></i> Back to Offer
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endmacro %}

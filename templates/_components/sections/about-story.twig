@@ -1,0 +1,17 @@
+{# About Story Component Macro #}
+{% macro aboutStory(title, image, imageAlt, content) %}
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="{{ image }}" alt="{{ imageAlt|default('About us image') }}">
+                </div>
+                
+                <div class="about-text">
+                    <h2>{{ title|default('Our Story') }}</h2>
+                    {{ content|raw }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endmacro %}

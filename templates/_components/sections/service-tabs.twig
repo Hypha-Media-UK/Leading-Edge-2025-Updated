@@ -1,0 +1,13 @@
+{# Service Tabs Component Macro #}
+{% macro serviceTabs(tabs, activeTab) %}
+    <div class="tabs-container">
+        {% for tab in tabs %}
+            <div class="tab{% if activeTab == tab.id %} active{% endif %}" data-tab="{{ tab.id }}">
+                {% if tab.icon is defined %}
+                    <i class="{{ tab.icon }}"></i>
+                {% endif %}
+                <span>{{ tab.label }}</span>
+            </div>
+        {% endfor %}
+    </div>
+{% endmacro %}
