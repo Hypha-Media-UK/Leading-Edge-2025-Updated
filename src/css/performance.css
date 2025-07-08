@@ -1,20 +1,106 @@
-/* Performance Optimizations for Scroll and Animations */
+/* Modern CSS Animation System with Scroll-Driven Animations */
 
 @layer utilities {
 
-/* Scroll Performance Optimizations */
-.scroll-optimized {
-  contain: layout style paint;
-  will-change: transform;
-  transform: translateZ(0);
+/* ===== KEYFRAME ANIMATIONS ===== */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* GPU Acceleration for Interactive Elements */
-.gpu-accelerated {
-  will-change: transform;
-  transform: translateZ(0);
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MODERN SCROLL-DRIVEN ANIMATIONS ===== */
+/* For browsers that support CSS scroll-driven animations */
+@supports (animation-timeline: view()) {
+  .scroll-reveal-modern {
+    animation: fade-in-up 0.8s ease-out;
+    animation-timeline: view();
+    animation-range: entry 0% entry 80%;
+    animation-delay: var(--stagger-delay, 0ms);
+  }
+  
+  .scroll-reveal-modern.service-card {
+    animation-name: fade-in-scale;
+    animation-duration: 0.6s;
+  }
+  
+  .scroll-reveal-modern.testimonial-wrapper {
+    animation-name: fade-in-up;
+    animation-duration: 0.6s;
+  }
+}
+
+/* ===== INTERSECTION OBSERVER FALLBACK ===== */
+/* For browsers without scroll-driven animation support */
+@supports not (animation-timeline: view()) {
+  .scroll-reveal-fallback {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: var(--stagger-delay, 0ms);
+  }
+  
+  .scroll-reveal-fallback.feature-card,
+  .scroll-reveal-fallback.service-card {
+    transform: scale(0.95);
+    transition: opacity 0.6s ease-out,
+                transform 0.6s ease-out;
+  }
+  
+  .scroll-reveal-fallback.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .scroll-reveal-fallback.feature-card.visible,
+  .scroll-reveal-fallback.service-card.visible {
+    transform: scale(1);
+  }
+}
+
+/* ===== HERO ANIMATIONS ===== */
+.hero-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: hero-entrance 1s ease-out forwards;
+  animation-delay: var(--animation-delay, 0s);
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+.scroll-reveal-modern,
+.scroll-reveal-fallback,
+.hero-animate {
+  will-change: transform, opacity;
+  transform: translateZ(0); /* Force GPU acceleration */
   backface-visibility: hidden;
-  perspective: 1000px;
 }
 
 /* Optimize hover effects to prevent layout thrashing */
@@ -40,7 +126,77 @@
   transform: translateZ(0);
 }
 
-/* Animation performance classes */
+/* Prevent layout shifts during animations */
+.layout-stable {
+  contain: layout;
+}
+
+/* ===== RESPONSIVE OPTIMIZATIONS ===== */
+@media (max-width: 768px) {
+  .scroll-reveal-modern,
+  .scroll-reveal-fallback {
+    animation-duration: 0.5s;
+    transition-duration: 0.5s;
+  }
+  
+  .hero-animate {
+    animation-duration: 0.8s;
+  }
+  
+  .hover-optimized:hover {
+    transform: translateY(-2px) translateZ(0);
+  }
+  
+  /* Mobile scroll optimizations */
+  .mobile-scroll-optimized {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
+}
+
+/* High refresh rate display optimizations */
+@media (min-resolution: 120dpi) {
+  .scroll-reveal-modern,
+  .scroll-reveal-fallback,
+  .hero-animate {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+  }
+}
+
+/* ===== ACCESSIBILITY: REDUCED MOTION SUPPORT ===== */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal-modern,
+  .scroll-reveal-fallback,
+  .hero-animate,
+  .hover-optimized {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  
+  .scroll-reveal-fallback {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
+.gpu-accelerated {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.transform-optimized {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Legacy support for existing classes */
 .animate-fade-in {
   opacity: 0;
   transform: translateY(20px) translateZ(0);
@@ -50,82 +206,6 @@
 .animate-fade-in.visible {
   opacity: 1;
   transform: translateY(0) translateZ(0);
-}
-
-/* Intersection Observer optimized animations */
-.io-fade-up {
-  opacity: 0;
-  transform: translate3d(0, 30px, 0);
-  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.io-fade-up.visible {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-}
-
-.io-scale-up {
-  opacity: 0;
-  transform: scale(0.95) translateZ(0);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.io-scale-up.visible {
-  opacity: 1;
-  transform: scale(1) translateZ(0);
-}
-
-/* Prevent layout shifts during animations */
-.layout-stable {
-  contain: layout;
-}
-
-/* Optimize transforms for better performance */
-.transform-optimized {
-  transform: translateZ(0);
-  will-change: transform;
-  backface-visibility: hidden;
-}
-
-/* Mobile-specific optimizations */
-@media (max-width: 768px) {
-  .mobile-scroll-optimized {
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior-y: contain;
-  }
-  
-  /* Reduce animation complexity on mobile */
-  .hover-optimized:hover {
-    transform: translateY(-2px) translateZ(0);
-  }
-}
-
-/* High refresh rate display optimizations */
-@media (min-resolution: 120dpi) {
-  .high-refresh-optimized {
-    will-change: transform;
-    transform: translateZ(0);
-  }
-}
-
-/* Prefers reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  .animate-fade-in,
-  .io-fade-up,
-  .io-scale-up,
-  .hover-optimized {
-    transition: none !important;
-    animation: none !important;
-    transform: none !important;
-  }
-  
-  .animate-fade-in,
-  .io-fade-up.visible,
-  .io-scale-up.visible {
-    opacity: 1;
-    transform: none;
-  }
 }
 
 } /* End @layer utilities */

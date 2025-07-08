@@ -52,106 +52,145 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// GSAP animations (if GSAP is loaded)
-if (typeof gsap !== 'undefined') {
-    // Register ScrollTrigger plugin
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    if (!prefersReducedMotion) {
-        // Optimize ScrollTrigger settings for better performance
-        ScrollTrigger.config({
-            limitCallbacks: true,
-            syncInterval: 150
-        });
-
-        // Hero text animation (no ScrollTrigger needed)
-        const heroContent = document.querySelector('.hero-content');
-        if (heroContent) {
-            const tl = gsap.timeline();
-            
-            if (heroContent.querySelector('h1')) {
-                tl.fromTo(heroContent.querySelector('h1'),
-                    { opacity: 0, y: 30 },
-                    { opacity: 1, y: 0, duration: 1, delay: 0.5 }
-                );
-            }
-            
-            if (heroContent.querySelector('p')) {
-                tl.fromTo(heroContent.querySelector('p'),
-                    { opacity: 0, y: 20 },
-                    { opacity: 1, y: 0, duration: 1, delay: 0.7 }, "-=0.8"
-                );
-            }
-            
-            if (heroContent.querySelector('.hero-buttons')) {
-                tl.fromTo(heroContent.querySelector('.hero-buttons'),
-                    { opacity: 0, y: 20 },
-                    { opacity: 1, y: 0, duration: 1, delay: 0.9 }, "-=0.8"
-                );
-            }
-        }
-
-        // Combine similar animations into batches to reduce ScrollTrigger instances
-        const animateCards = (selector, animationProps) => {
-            const cards = gsap.utils.toArray(selector);
-            if (cards.length > 0) {
-                gsap.set(cards, animationProps.from);
-                
-                ScrollTrigger.batch(cards, {
-                    onEnter: (elements) => {
-                        gsap.to(elements, {
-                            ...animationProps.to,
-                            stagger: 0.15,
-                            overwrite: true
-                        });
-                    },
-                    start: "top 85%",
-                    once: true
-                });
-            }
-        };
-
-        // Feature cards animation
-        animateCards('.feature-card', {
-            from: { opacity: 0, y: 30 },
-            to: { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
-        });
-
-        // Service cards animation
-        animateCards('.service-card', {
-            from: { opacity: 0, scale: 0.95 },
-            to: { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }
-        });
-
-        // Testimonial cards animation
-        animateCards('.testimonial-card', {
-            from: { opacity: 0, y: 20 },
-            to: { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
-        });
-
-        // Basic section fade-in (reduced from all sections to key sections only)
-        const keySections = gsap.utils.toArray('.hero, .services-section, .testimonials-section');
-        if (keySections.length > 0) {
-            ScrollTrigger.batch(keySections, {
-                onEnter: (elements) => {
-                    gsap.fromTo(elements, 
-                        { opacity: 0, y: 30 },
-                        { 
-                            opacity: 1, 
-                            y: 0, 
-                            duration: 0.8, 
-                            stagger: 0.2,
-                            ease: "power2.out",
-                            overwrite: true
-                        }
-                    );
-                },
-                start: "top 80%",
-                once: true
-            });
+// Modern CSS + Intersection Observer Animation System
+class ModernAnimations {
+    constructor() {
+        this.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        this.supportsScrollTimeline = CSS.supports('animation-timeline', 'view()');
+        
+        if (!this.prefersReducedMotion) {
+            this.init();
         }
     }
+    
+    init() {
+        // Initialize hero animations immediately
+        this.initHeroAnimations();
+        
+        // Initialize scroll-based animations
+        if (this.supportsScrollTimeline) {
+            this.initModernScrollAnimations();
+        } else {
+            this.initIntersectionObserver();
+        }
+    }
+    
+    initHeroAnimations() {
+        const heroContent = document.querySelector('.hero-content');
+        if (!heroContent) return;
+        
+        // Add stagger delays to hero elements
+        const h1 = heroContent.querySelector('h1');
+        const p = heroContent.querySelector('p');
+        const buttons = heroContent.querySelector('.hero-buttons');
+        
+        if (h1) {
+            h1.style.setProperty('--animation-delay', '0.5s');
+            h1.classList.add('hero-animate');
+        }
+        
+        if (p) {
+            p.style.setProperty('--animation-delay', '0.7s');
+            p.classList.add('hero-animate');
+        }
+        
+        if (buttons) {
+            buttons.style.setProperty('--animation-delay', '0.9s');
+            buttons.classList.add('hero-animate');
+        }
+    }
+    
+    initModernScrollAnimations() {
+        // For browsers that support CSS scroll-driven animations
+        const animatedElements = document.querySelectorAll(
+            '.service-card, .testimonial-wrapper, .hero, .services-preview, .testimonials, .virtues, .products-showcase'
+        );
+        
+        animatedElements.forEach(element => {
+            element.classList.add('scroll-reveal-modern');
+        });
+        
+        // Add stagger delays for card groups
+        this.addStaggerDelays('.service-card', 100);
+        this.addStaggerDelays('.testimonial-wrapper', 150);
+    }
+    
+    initIntersectionObserver() {
+        // Fallback for browsers without scroll-driven animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.animateElement(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all animatable elements
+        const elements = document.querySelectorAll(
+            '.service-card, .testimonial-wrapper, .hero, .services-preview, .testimonials, .virtues, .products-showcase'
+        );
+        
+        elements.forEach(element => {
+            element.classList.add('scroll-reveal-fallback');
+            observer.observe(element);
+        });
+        
+        // Set up staggered animations for card groups
+        this.setupStaggeredGroups();
+    }
+    
+    animateElement(element) {
+        if (element.classList.contains('service-card') || 
+            element.classList.contains('testimonial-wrapper')) {
+            this.animateCardGroup(element);
+        } else {
+            element.classList.add('visible');
+        }
+    }
+    
+    animateCardGroup(triggerElement) {
+        // Find the parent container and animate all cards within it
+        const container = triggerElement.closest('.services-grid, .testimonial-container, section');
+        if (!container) {
+            triggerElement.classList.add('visible');
+            return;
+        }
+        
+        const cards = container.querySelectorAll('.service-card, .testimonial-wrapper');
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.add('visible');
+            }, index * 100);
+        });
+    }
+    
+    setupStaggeredGroups() {
+        // Group cards by their container for staggered animation
+        const cardContainers = document.querySelectorAll('.services-grid, .testimonial-container');
+        
+        cardContainers.forEach(container => {
+            const cards = container.querySelectorAll('.service-card, .testimonial-wrapper');
+            cards.forEach((card, index) => {
+                card.style.setProperty('--stagger-delay', `${index * 100}ms`);
+            });
+        });
+    }
+    
+    addStaggerDelays(selector, delayIncrement) {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach((element, index) => {
+            element.style.setProperty('--stagger-delay', `${index * delayIncrement}ms`);
+        });
+    }
 }
+
+// Initialize the animation system
+document.addEventListener('DOMContentLoaded', () => {
+    new ModernAnimations();
+});

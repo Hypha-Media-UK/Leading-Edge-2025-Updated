@@ -3,25 +3,24 @@
   "version": "1.0.0",
   "description": "Modern CSS build pipeline for Leading Edge website",
   "scripts": {
-    "css:build": "postcss src/css/*.css --dir web/_dist/css/ --ext .css",
-    "css:watch": "postcss src/css/*.css --dir web/_dist/css/ --ext .css --watch",
-    "css:dev": "postcss src/css/*.css --dir web/_dist/css/ --ext .css --map",
-    "build": "npm run css:build",
-    "dev": "npm run css:watch"
-  },
-  "devDependencies": {
-    "postcss": "^8.4.32",
-    "postcss-cli": "^11.0.0",
-    "postcss-import": "^15.1.0",
-    "postcss-nesting": "^12.0.2",
-    "autoprefixer": "^10.4.16",
-    "cssnano": "^6.0.2",
-    "postcss-preset-env": "^9.3.0"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "watch": "vite build --watch"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "devDependencies": {
+    "@vitejs/plugin-legacy": "^7.0.0",
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.0.7",
+    "postcss": "^8.5.6",
+    "postcss-import": "^16.1.1",
+    "postcss-nesting": "^13.0.2",
+    "vite": "^7.0.3"
+  }
 }
