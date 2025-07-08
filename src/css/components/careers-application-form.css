@@ -42,7 +42,6 @@
         & label {
           display: block;
           margin-block-end: 0.5rem;
-          font-weight: 500;
           color: var(--primary-color);
         }
 

@@ -78,4 +78,23 @@
   }
 }
 
+/* Instagram CTA specific button styling */
+.instagram-cta {
+  text-align: center;
+  
+  & .btn.secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    
+    &:hover {
+      background-color: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+  }
+}
+
 } /* End @layer components */

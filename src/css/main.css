@@ -6,6 +6,7 @@
 /* Import variables and utilities */
 @import 'variables.css';
 @import 'utilities.css';
+@import 'performance.css';
 
 /* Import external stylesheets */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
@@ -33,6 +34,33 @@ html, body {
   color: var(--primary-color);
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+/* Optimize scrolling performance */
+html {
+  scroll-padding-top: 100px; /* Account for fixed header */
+}
+
+/* GPU acceleration for elements that transform frequently */
+.feature-card,
+.service-card,
+.testimonial-card,
+.btn,
+.card {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Optimize animations for better performance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

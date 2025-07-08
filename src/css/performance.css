@@ -1,0 +1,131 @@
+/* Performance Optimizations for Scroll and Animations */
+
+@layer utilities {
+
+/* Scroll Performance Optimizations */
+.scroll-optimized {
+  contain: layout style paint;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* GPU Acceleration for Interactive Elements */
+.gpu-accelerated {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize hover effects to prevent layout thrashing */
+.hover-optimized {
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, opacity 0.2s ease-out;
+  will-change: transform;
+}
+
+.hover-optimized:hover {
+  transform: translateY(-3px) translateZ(0);
+}
+
+/* Smooth scroll container optimization */
+.smooth-scroll-container {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* Reduce paint operations during scroll */
+.scroll-paint-optimized {
+  contain: paint;
+  transform: translateZ(0);
+}
+
+/* Animation performance classes */
+.animate-fade-in {
+  opacity: 0;
+  transform: translateY(20px) translateZ(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+}
+
+/* Intersection Observer optimized animations */
+.io-fade-up {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.io-fade-up.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.io-scale-up {
+  opacity: 0;
+  transform: scale(0.95) translateZ(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.io-scale-up.visible {
+  opacity: 1;
+  transform: scale(1) translateZ(0);
+}
+
+/* Prevent layout shifts during animations */
+.layout-stable {
+  contain: layout;
+}
+
+/* Optimize transforms for better performance */
+.transform-optimized {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  .mobile-scroll-optimized {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
+  
+  /* Reduce animation complexity on mobile */
+  .hover-optimized:hover {
+    transform: translateY(-2px) translateZ(0);
+  }
+}
+
+/* High refresh rate display optimizations */
+@media (min-resolution: 120dpi) {
+  .high-refresh-optimized {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+}
+
+/* Prefers reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .io-fade-up,
+  .io-scale-up,
+  .hover-optimized {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  .animate-fade-in,
+  .io-fade-up.visible,
+  .io-scale-up.visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+} /* End @layer utilities */

@@ -131,7 +131,6 @@
   font-size: 1.2rem;
   color: var(--accent-color);
   margin-bottom: 1.8rem;
-  font-weight: 500;
   padding-bottom: 0.8rem;
   border-bottom: 1px solid rgba(64, 78, 92, 0.1);
 }
@@ -167,7 +166,6 @@
   border-radius: 30px;
   font-size: 0.9rem;
   color: var(--primary-color);
-  font-weight: 500;
   display: inline-block;
 }
 
@@ -177,7 +175,6 @@
 
 #team-member-modal .member-content .member-social .instagram-link {
   color: #C13584;
-  font-weight: 500;
   text-decoration: none;
   display: inline-block;
   transition: all 0.3s ease;
@@ -244,7 +241,6 @@
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
   font-size: 0.9rem;
-  font-weight: 500;
   margin-right: 1rem;
 }
 

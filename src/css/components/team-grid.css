@@ -96,7 +96,6 @@
 
       & .member-role {
         color: var(--accent-color);
-        font-weight: 500;
       }
     }
   }

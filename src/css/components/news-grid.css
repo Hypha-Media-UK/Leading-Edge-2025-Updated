@@ -98,7 +98,6 @@
         cursor: pointer;
         transition: all 0.3s ease;
         color: var(--primary-color);
-        font-weight: 500;
 
         &:hover {
           background-color: color-mix(in srgb, var(--accent-color) 35%, white);
