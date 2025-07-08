@@ -1,0 +1,82 @@
+@layer components {
+
+/* Features Section Component Styles */
+.features {
+  padding-block: 5rem;
+  background-color: var(--light-color);
+
+  & .section-header {
+    text-align: center;
+    margin-block-end: 3rem;
+
+    & h2 {
+      font-size: 2.5rem;
+      margin-block-end: 1rem;
+      color: var(--primary-color);
+
+      @media (max-width: 1200px) {
+        font-size: 2.2rem;
+        margin-block-end: 0.9rem;
+      }
+
+      @media (max-width: 992px) {
+        font-size: 2rem;
+        margin-block-end: 0.8rem;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+        margin-block-end: 0.7rem;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 1.6rem;
+        margin-block-end: 0.6rem;
+      }
+    }
+  }
+
+  & .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  & .feature-card {
+    background-color: white;
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 20px color-mix(in srgb, var(--primary-color) 5%, transparent);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px color-mix(in srgb, var(--primary-color) 10%, transparent);
+    }
+
+    & .feature-icon {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      margin-block-end: 1.5rem;
+    }
+
+    & h3 {
+      font-size: 1.4rem;
+      margin-block-end: 1rem;
+      color: var(--primary-color);
+    }
+
+    & p {
+      color: var(--primary-color-light);
+      line-height: 1.6;
+    }
+  }
+}
+
+} /* End @layer components */

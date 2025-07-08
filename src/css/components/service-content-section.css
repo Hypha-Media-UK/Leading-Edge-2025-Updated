@@ -1,0 +1,87 @@
+@layer components {
+
+/* Service Content Section Component Styles (extracted from Vue ServiceContentSection.vue) */
+.services-content {
+  & .services-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+
+    & h2 {
+      font-size: 2.2rem;
+      margin-block-end: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    & p {
+      color: var(--primary-color-light);
+      line-height: 1.6;
+      margin-block-end: 1rem;
+    }
+  }
+
+  & .additional-content {
+    max-width: 900px;
+    margin: 0 auto 2rem;
+  }
+
+  & .services-list {
+    max-width: 900px;
+    margin: 0 auto;
+
+    & .service-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      margin-block-end: 1.5rem;
+      background-color: var(--bg-light);
+      border-radius: 8px;
+      box-shadow: 0 5px 15px color-mix(in srgb, var(--primary-color) 5%, transparent);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px color-mix(in srgb, var(--primary-color) 10%, transparent);
+      }
+
+      & .service-info {
+        flex: 1;
+
+        & h3 {
+          font-size: 1.3rem;
+          margin-block-end: 0.5rem;
+          color: var(--primary-color);
+        }
+
+        & p {
+          color: var(--primary-color-light);
+          margin: 0;
+        }
+      }
+
+      & .service-price {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--accent-color);
+        margin-inline-start: 1.5rem;
+        white-space: nowrap;
+      }
+
+      @media (max-width: 576px) {
+        flex-direction: column;
+        text-align: center;
+
+        & .service-info {
+          margin-block-end: 1rem;
+        }
+
+        & .service-price {
+          margin-inline-start: 0;
+        }
+      }
+    }
+  }
+}
+
+} /* End @layer components */

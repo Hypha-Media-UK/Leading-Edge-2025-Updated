@@ -1,0 +1,56 @@
+/* Offers Page Styles */
+
+/* Import base styles */
+@import 'variables.css';
+@import 'utilities.css';
+@import 'main.css';
+
+/* Import required components */
+@import 'components/buttons.css';
+@import 'components/header.css';
+@import 'components/footer.css';
+@import 'components/modal.css';
+@import 'components/page-header.css';
+@import 'components/promotions-grid.css';
+@import 'components/gift-voucher-section.css';
+
+@layer components {
+
+/* Offers Page Styles (extracted from Vue OffersGiftVouchers.vue) */
+.offers-page {
+  /* Page-specific styles */
+
+  & .gift-voucher-cta {
+    margin-block-start: 2rem;
+
+    & .btn.primary-special {
+      background-color: white;
+      color: var(--accent-color);
+      border: 2px solid white;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      transform-origin: center;
+      transition: all 0.3s ease;
+      text-decoration: none;
+
+      & i {
+        font-size: 1.2rem;
+      }
+
+      &:hover {
+        background-color: var(--accent-color);
+        color: white;
+        border-color: var(--accent-color);
+        transform: translateY(-5px) scale(1.03);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+} /* End @layer components */

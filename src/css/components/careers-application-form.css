@@ -1,0 +1,119 @@
+@layer components {
+
+/* Careers Application Form Component Styles (extracted from Vue CareersApplicationForm.vue) */
+.application-section {
+  background-color: white;
+  padding-block: 5rem;
+
+  & .section-header {
+    text-align: center;
+    margin-block-end: 3rem;
+
+    & h2 {
+      font-size: 2.5rem;
+      margin-block-end: 1rem;
+      color: var(--primary-color);
+    }
+
+    & p {
+      font-size: 1.1rem;
+      color: var(--primary-color-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  & .application-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 3rem;
+    box-shadow: 0 5px 20px color-mix(in srgb, var(--primary-color) 8%, transparent);
+
+    @media (max-width: 576px) {
+      padding: 2rem 1.5rem;
+    }
+
+    & .application-form {
+      & .form-group {
+        margin-block-end: 1.5rem;
+
+        & label {
+          display: block;
+          margin-block-end: 0.5rem;
+          font-weight: 500;
+          color: var(--primary-color);
+        }
+
+        & input,
+        & select,
+        & textarea {
+          width: 100%;
+          padding: 0.8rem 1rem;
+          border: 1px solid var(--bg-light);
+          border-radius: 4px;
+          font-family: inherit;
+          font-size: 1rem;
+          transition: border-color 0.3s ease;
+
+          &:focus {
+            outline: none;
+            border-color: var(--accent-color);
+          }
+        }
+
+        & .file-upload {
+          & input[type="file"] {
+            border: 1px dashed var(--bg-light);
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+
+            &:hover {
+              border-color: var(--accent-color);
+            }
+          }
+
+          & .file-info {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-block-start: 0.5rem;
+          }
+        }
+      }
+
+      & .btn {
+        width: 100%;
+      }
+    }
+  }
+
+  /* Button Styles for the form */
+  & .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+
+    &.primary {
+      background-color: var(--accent-color);
+      color: white;
+      border-color: var(--accent-color);
+
+      &:hover {
+        background-color: color-mix(in srgb, var(--accent-color) 90%, black);
+        border-color: color-mix(in srgb, var(--accent-color) 90%, black);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px color-mix(in srgb, black 10%, transparent);
+      }
+    }
+  }
+}
+
+} /* End @layer components */

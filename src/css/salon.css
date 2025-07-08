@@ -1,0 +1,26 @@
+/* Salon Page Styles */
+
+/* Import base styles */
+@import 'variables.css';
+@import 'utilities.css';
+@import 'main.css';
+
+/* Import required components */
+@import 'components/buttons.css';
+@import 'components/header.css';
+@import 'components/footer.css';
+@import 'components/modal.css';
+@import 'components/page-header.css';
+@import 'components/interior-gallery.css';
+@import 'components/about-story.css';
+@import 'components/philosophy-grid.css';
+
+@layer components {
+
+/* Salon Page Styles (extracted from Vue OurSalon.vue) */
+.our-salon-page {
+  /* Styles specific to the salon page wrapper */
+  /* Most styles are now in the individual components */
+}
+
+} /* End @layer components */

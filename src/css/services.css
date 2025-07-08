@@ -1,0 +1,63 @@
+/* Services Page Styles */
+
+/* Import base styles */
+@import 'variables.css';
+@import 'utilities.css';
+@import 'main.css';
+
+/* Import required components */
+@import 'components/buttons.css';
+@import 'components/header.css';
+@import 'components/footer.css';
+@import 'components/modal.css';
+@import 'components/page-header.css';
+@import 'components/service-tabs.css';
+@import 'components/service-content-section.css';
+@import 'components/service-gallery.css';
+@import 'components/sub-tabs-row.css';
+
+@layer components {
+
+/* Services Page Styles (extracted from Vue ServiceDetail.vue) */
+.services-detail-page {
+  /* Most styles are now in the individual components */
+
+  & .services-intro {
+    padding: 3rem 0;
+    background-color: white;
+
+    & .intro-content {
+      max-width: 900px;
+      margin: 0 auto;
+
+      & p {
+        line-height: 1.8;
+        color: var(--primary-color-light);
+        margin-block-end: 1.5rem;
+      }
+    }
+  }
+
+  & .services-tabs {
+    padding: 2rem 0 5rem;
+    background-color: white;
+  }
+
+  & .treatment-section {
+    margin-block-end: 2rem;
+
+    & h3 {
+      font-size: 1.6rem;
+      margin-block-end: 1rem;
+      color: var(--primary-color);
+    }
+
+    & p {
+      color: var(--primary-color-light);
+      line-height: 1.8;
+      margin-block-end: 1rem;
+    }
+  }
+}
+
+} /* End @layer components */

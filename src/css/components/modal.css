@@ -1,0 +1,522 @@
+@layer components {
+
+/* Modal Component Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-overlay .modal-content {
+  position: relative;
+  background-color: white;
+  border-radius: 8px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay .modal-content.modal-small {
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal-overlay .modal-content.modal-medium {
+  max-width: 800px;
+  width: 90%;
+}
+
+.modal-overlay .modal-content.modal-large {
+  max-width: 900px;
+  width: 90%;
+}
+
+.modal-overlay .modal-content .modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay .modal-content .modal-close:hover {
+  color: var(--accent-color);
+  background-color: rgba(64, 78, 92, 0.1);
+}
+
+.modal-overlay .modal-content .modal-body {
+  padding: 0;
+}
+
+.modal-overlay.active .modal-content {
+  transform: scale(1);
+}
+
+/* Team Member Modal Styles */
+#team-member-modal .member-profile-grid {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  #team-member-modal .member-profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+#team-member-modal .member-image-container {
+  height: 100%;
+  min-height: 450px;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  #team-member-modal .member-image-container {
+    min-height: 350px;
+  }
+}
+
+#team-member-modal .member-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+#team-member-modal .member-content {
+  padding: 2.5rem;
+}
+
+#team-member-modal .member-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+#team-member-modal .member-content .member-modal-title {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  margin-bottom: 1.8rem;
+  font-weight: 500;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(64, 78, 92, 0.1);
+}
+
+#team-member-modal .member-content .member-bio {
+  margin-bottom: 2rem;
+}
+
+#team-member-modal .member-content .member-bio p {
+  line-height: 1.8;
+  color: color-mix(in srgb, var(--primary-color) 80%, white);
+}
+
+#team-member-modal .member-content .member-specialties {
+  margin-bottom: 2rem;
+}
+
+#team-member-modal .member-content .member-specialties h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+#team-member-modal .member-content .member-specialties .specialty-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+#team-member-modal .member-content .member-specialties .specialty-tags .specialty-tag {
+  background-color: var(--bg-light);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  display: inline-block;
+}
+
+#team-member-modal .member-content .member-social {
+  margin-bottom: 2rem;
+}
+
+#team-member-modal .member-content .member-social .instagram-link {
+  color: #C13584;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+#team-member-modal .member-content .member-social .instagram-link:hover {
+  transform: translateY(-2px);
+}
+
+#team-member-modal .member-content .member-social .instagram-link i {
+  margin-right: 0.5rem;
+}
+
+#team-member-modal .member-content .booking-cta {
+  margin-top: 2.5rem;
+}
+
+#team-member-modal .member-content .booking-cta .btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+#team-member-modal .member-content .booking-cta .btn.primary {
+  background-color: var(--accent-color);
+  color: white;
+  border: 2px solid var(--accent-color);
+}
+
+#team-member-modal .member-content .booking-cta .btn.primary:hover {
+  background-color: var(--accent-color-dark);
+  border-color: var(--accent-color-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Job Position Modal Styles */
+#position-modal .modal-body {
+  padding: 2.5rem;
+}
+
+#position-modal .position-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+#position-modal .position-content .position-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(64, 78, 92, 0.1);
+}
+
+#position-modal .position-content .position-meta .type {
+  background-color: rgba(197, 143, 49, 0.1);
+  color: var(--accent-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-right: 1rem;
+}
+
+#position-modal .position-content .position-meta .location {
+  color: color-mix(in srgb, var(--primary-color) 70%, white);
+  font-size: 0.9rem;
+}
+
+#position-modal .position-content .position-meta .location i {
+  margin-right: 0.3rem;
+}
+
+#position-modal .position-content .position-description {
+  margin-bottom: 2rem;
+}
+
+#position-modal .position-content .position-description p {
+  line-height: 1.8;
+  color: color-mix(in srgb, var(--primary-color) 80%, white);
+}
+
+#position-modal .position-content .position-responsibilities,
+#position-modal .position-content .position-requirements {
+  margin-bottom: 2rem;
+}
+
+#position-modal .position-content .position-responsibilities h3,
+#position-modal .position-content .position-requirements h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+#position-modal .position-content .position-responsibilities ul,
+#position-modal .position-content .position-requirements ul {
+  margin-left: 1.5rem;
+}
+
+#position-modal .position-content .position-responsibilities ul li,
+#position-modal .position-content .position-requirements ul li {
+  color: color-mix(in srgb, var(--primary-color) 80%, white);
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+  position: relative;
+}
+
+#position-modal .position-content .apply-cta {
+  margin-top: 2.5rem;
+}
+
+#position-modal .position-content .apply-cta .btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+#position-modal .position-content .apply-cta .btn.primary {
+  background-color: var(--accent-color);
+  color: white;
+  border: 2px solid var(--accent-color);
+}
+
+#position-modal .position-content .apply-cta .btn.primary:hover {
+  background-color: var(--accent-color-dark);
+  border-color: var(--accent-color-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* News Article Modal Styles */
+#news-article-modal .modal-body {
+  padding: 2rem;
+}
+
+#news-article-modal .news-detail-content .back-button {
+  margin-bottom: 2rem;
+}
+
+#news-article-modal .news-detail-content .back-button .modal-back-btn {
+  background: none;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#news-article-modal .news-detail-content .back-button .modal-back-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+#news-article-modal .news-detail-content .back-button .modal-back-btn i {
+  margin-right: 0.5rem;
+}
+
+#news-article-modal .news-detail-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  line-height: 1.3;
+}
+
+#news-article-modal .news-detail-content .news-meta {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+#news-article-modal .news-detail-content .news-meta .date,
+#news-article-modal .news-detail-content .news-meta .author,
+#news-article-modal .news-detail-content .news-meta .category {
+  color: color-mix(in srgb, var(--primary-color) 70%, white);
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+#news-article-modal .news-detail-content .news-meta .date i,
+#news-article-modal .news-detail-content .news-meta .author i,
+#news-article-modal .news-detail-content .news-meta .category i {
+  margin-right: 5px;
+  color: var(--accent-color);
+}
+
+#news-article-modal .news-detail-content .news-image {
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#news-article-modal .news-detail-content .news-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#news-article-modal .news-detail-content .news-text {
+  color: color-mix(in srgb, var(--primary-color) 80%, white);
+  line-height: 1.8;
+}
+
+#news-article-modal .news-detail-content .news-text p {
+  margin-bottom: 1.5rem;
+}
+
+#news-article-modal .news-detail-content .news-text h4 {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin: 2rem 0 1rem;
+}
+
+#news-article-modal .news-detail-content .news-text ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#news-article-modal .news-detail-content .news-text ul li {
+  margin-bottom: 0.5rem;
+}
+
+#news-article-modal .news-detail-content .share-links {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--bg-light);
+}
+
+#news-article-modal .news-detail-content .share-links p {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+#news-article-modal .news-detail-content .share-links .social-share {
+  display: flex;
+  gap: 1rem;
+}
+
+#news-article-modal .news-detail-content .share-links .social-share a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--bg-light);
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+#news-article-modal .news-detail-content .share-links .social-share a:hover {
+  background-color: var(--accent-color);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .modal-overlay .modal-content {
+    width: 95%;
+    max-height: 90vh;
+  }
+  
+  .modal-overlay .modal-content.modal-large,
+  .modal-overlay .modal-content.modal-medium {
+    width: 95%;
+  }
+  
+  #team-member-modal .member-content,
+  #position-modal .modal-body,
+  #news-article-modal .modal-body {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-overlay {
+    align-items: flex-start;
+    padding: 1rem 0;
+  }
+  
+  .modal-overlay .modal-content {
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    border-radius: 0;
+    margin: 0;
+  }
+  
+  .modal-overlay .modal-close {
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2.2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--primary-color);
+    z-index: 20;
+  }
+  
+  #team-member-modal .member-content,
+  #position-modal .modal-body,
+  #news-article-modal .modal-body {
+    padding: 1rem;
+  }
+}
+
+/* Animation keyframes */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Accessibility improvements */
+.modal-overlay:focus-within {
+  outline: none;
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+} /* End @layer components */

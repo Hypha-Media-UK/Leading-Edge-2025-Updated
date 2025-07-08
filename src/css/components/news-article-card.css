@@ -1,0 +1,113 @@
+@layer components {
+
+/* News Article Card Component Styles (extracted from Vue NewsArticleCard.vue) */
+.news-card {
+  background-color: white !important;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px color-mix(in srgb, var(--primary-color) 8%, transparent);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px color-mix(in srgb, var(--primary-color) 15%, transparent);
+
+    & .news-image img {
+      transform: scale(1.05);
+    }
+  }
+
+  & .news-image {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    & .news-date {
+      position: absolute;
+      inset-block-start: 15px;
+      inset-inline-end: 15px;
+      background-color: var(--accent-color);
+      color: white;
+      text-align: center;
+      padding: 8px 15px;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+
+      & .day {
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-block-end: 2px;
+      }
+
+      & .month {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+    }
+  }
+
+  & .news-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    & h3 {
+      font-size: 1.3rem;
+      margin-block-end: 1rem;
+      color: var(--primary-color);
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+
+    & .news-excerpt {
+      margin-block-end: 1.5rem;
+      color: var(--primary-color-light);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    & .news-meta {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-block-end: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      & .news-author,
+      & .news-category {
+        display: inline-flex;
+        align-items: center;
+
+        & i {
+          margin-inline-end: 5px;
+        }
+      }
+    }
+
+    & .news-actions {
+      margin-block-start: auto;
+    }
+  }
+}
+
+} /* End @layer components */

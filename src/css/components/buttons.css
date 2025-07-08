@@ -1,0 +1,81 @@
+@layer components {
+
+/* Modern Button Component with Nesting */
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: var(--transition-base);
+  border: 2px solid transparent;
+  cursor: pointer;
+
+  &.primary {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+
+    &:hover {
+      background-color: var(--accent-color-dark);
+      border-color: var(--accent-color-dark);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+  }
+
+  &.secondary {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+
+    &:hover {
+      background-color: white;
+      color: var(--primary-color);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+  }
+
+  &.tertiary {
+    background-color: var(--accent-color-light);
+    color: white;
+    border-color: var(--accent-color-light);
+
+    &:hover {
+      background-color: color-mix(in srgb, var(--accent-color) 75%, white);
+      border-color: color-mix(in srgb, var(--accent-color) 75%, white);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+  }
+
+  &.primary-special {
+    background-color: white;
+    color: var(--accent-color);
+    border: 2px solid white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:hover {
+      background-color: var(--accent-color);
+      color: white;
+      border-color: var(--accent-color);
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: var(--shadow-xl);
+    }
+
+    & i {
+      font-size: 1.2rem;
+    }
+  }
+
+  & .btn-icon {
+    margin-inline-end: 0.5rem;
+  }
+}
+
+} /* End @layer components */

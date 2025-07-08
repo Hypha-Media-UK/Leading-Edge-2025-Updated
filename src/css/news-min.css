@@ -1,0 +1,17 @@
+/* News Page Styles */
+
+/* Import base styles */
+@import 'variables.css';
+@import 'utilities.css';
+@import 'main.css';
+
+/* Import required components */
+@import 'components/buttons.css';
+@import 'components/header.css';
+@import 'components/footer.css';
+@import 'components/modal.css';
+
+/* News page specific styles will be added here as needed */
+.news-page {
+  /* News page container styles */
+}

@@ -1,0 +1,17 @@
+/* Services Page Styles */
+
+/* Import base styles */
+@import 'variables.css';
+@import 'utilities.css';
+@import 'main.css';
+
+/* Import required components */
+@import 'components/buttons.css';
+@import 'components/header.css';
+@import 'components/footer.css';
+@import 'components/modal.css';
+
+/* Services page specific styles will be added here as needed */
+.services-page {
+  /* Services page container styles */
+}

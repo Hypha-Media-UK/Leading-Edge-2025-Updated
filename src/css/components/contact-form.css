@@ -1,0 +1,112 @@
+@layer components {
+
+/* Contact Form Component Styles (extracted from Vue ContactForm.vue) */
+.form-header {
+  text-align: center;
+  margin-block-end: 2rem;
+
+  & h2 {
+    font-size: 2rem;
+    margin-block-end: 1rem;
+    color: var(--primary-color);
+  }
+
+  & p {
+    color: var(--primary-color-light);
+  }
+}
+
+.form-success {
+  text-align: center;
+  padding: 2rem;
+
+  & .success-icon {
+    font-size: 4rem;
+    color: #4CAF50;
+    margin-block-end: 1rem;
+  }
+
+  & h3 {
+    font-size: 1.8rem;
+    margin-block-end: 1rem;
+    color: var(--primary-color);
+  }
+
+  & p {
+    margin-block-end: 2rem;
+    color: var(--primary-color-light);
+  }
+}
+
+.contact-form {
+  & .form-field {
+    margin-block-end: 1.5rem;
+
+    & label {
+      display: block;
+      margin-block-end: 0.5rem;
+      font-weight: 500;
+      color: var(--primary-color);
+    }
+
+    & input,
+    & select,
+    & textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid color-mix(in srgb, var(--primary-color) 20%, transparent);
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: var(--accent-color);
+      }
+
+      &::placeholder {
+        color: color-mix(in srgb, var(--primary-color) 60%, white);
+      }
+    }
+
+    & textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    & .error-message {
+      color: #C62828;
+      font-size: 0.875rem;
+      margin-block-start: 0.25rem;
+      display: none;
+
+      &.show {
+        display: block;
+      }
+    }
+  }
+
+  & .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  & .form-alert {
+    background-color: #FFEBEE;
+    color: #C62828;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-block-end: 1.5rem;
+
+    & p {
+      margin: 0;
+    }
+  }
+}
+
+} /* End @layer components */

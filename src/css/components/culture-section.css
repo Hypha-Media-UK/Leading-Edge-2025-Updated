@@ -1,0 +1,52 @@
+@layer components {
+
+/* Culture Section Component Styles (extracted from Vue CultureSection.vue) */
+.culture-section {
+  background-color: var(--bg-light);
+  padding-block: 5rem;
+
+  & .culture-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+
+    @media (max-width: 991px) {
+      grid-template-columns: 1fr;
+    }
+
+    & .culture-text {
+      & h2 {
+        font-size: 2.2rem;
+        margin-block-end: 1.5rem;
+        color: var(--primary-color);
+      }
+
+      & p {
+        margin-block-end: 1.5rem;
+        line-height: 1.8;
+        color: var(--primary-color-light);
+
+        &:last-child {
+          margin-block-end: 0;
+        }
+      }
+    }
+
+    & .culture-image {
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px color-mix(in srgb, var(--primary-color) 10%, transparent);
+      object-fit: cover;
+
+      @media (max-width: 991px) {
+        height: 300px;
+        margin-block-start: 2rem;
+      }
+    }
+  }
+}
+
+} /* End @layer components */
