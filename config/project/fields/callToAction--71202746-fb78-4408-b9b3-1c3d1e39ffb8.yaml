@@ -1,0 +1,161 @@
+columnSuffix: null
+handle: callToAction
+instructions: null
+name: 'Call to Action'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - 7ec3f92e-e97a-47f9-a68e-331cc2fce64d
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    0:
+                      - name
+                      - Content
+                    1:
+                      - uid
+                      - 861433c5-5422-42e7-9c28-f74bc76a1113
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - sectionTitle
+                            2:
+                              - label
+                              - SectionTitle
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-09T17:21:13+00:00'
+                            11:
+                              - uid
+                              - 0f6396f5-63b5-46c2-a935-ed73bd4971c4
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - sectionSubTitle
+                            2:
+                              - label
+                              - 'Section Sub Title'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-09T17:21:13+00:00'
+                            11:
+                              - uid
+                              - d3b61915-e231-4081-a649-bb456eed60f6
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - backgroundImage
+                            2:
+                              - label
+                              - 'Section Background Image'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 25
+                            10:
+                              - dateAdded
+                              - '2025-07-09T17:21:13+00:00'
+                            11:
+                              - uid
+                              - e1099666-e2ae-44a4-b9b1-8115b1bfa727
+                            14:
+                              - fieldUid
+                              - 04ddff7f-52ed-458a-bc0c-a3a9d4b76f4d # Single Image
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - sectionButton
+                            2:
+                              - label
+                              - 'Section Button'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 75
+                            10:
+                              - dateAdded
+                              - '2025-07-09T17:27:18+00:00'
+                            11:
+                              - uid
+                              - 5e3f4d2d-3e83-45c5-9de0-2efe8769f437
+                            14:
+                              - fieldUid
+                              - b3726252-6c72-46e5-b01e-d92574299019 # Single Button
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

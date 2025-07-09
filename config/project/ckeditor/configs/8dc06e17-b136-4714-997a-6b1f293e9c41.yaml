@@ -1,0 +1,6 @@
+headingLevels: false
+name: 'Bold, Italic and Link'
+toolbar:
+  - bold
+  - italic
+  - link

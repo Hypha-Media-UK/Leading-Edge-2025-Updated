@@ -1,0 +1,152 @@
+columnSuffix: null
+handle: summarySection
+instructions: null
+name: 'Summary Section'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - 74a2695a-038b-4268-89d5-9676a76ed85f
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    1:
+                      - uid
+                      - 31dc290c-1781-4f69-899e-2576265a3477
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - sectionTitle
+                            2:
+                              - label
+                              - 'Section Title'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-09T11:20:06+00:00'
+                            11:
+                              - uid
+                              - 28005c11-1e07-4c41-8f81-03972488f7d5
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - sectionSubTitle
+                            2:
+                              - label
+                              - 'Section Sub Title'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-09T11:20:06+00:00'
+                            11:
+                              - uid
+                              - 498e6ac9-6849-4712-8e3d-e315be645f28
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - sectionImages
+                            2:
+                              - label
+                              - 'Section Images'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-09T11:20:06+00:00'
+                            11:
+                              - uid
+                              - e0616f38-c63f-4c2f-8581-8eac170fc287
+                            14:
+                              - fieldUid
+                              - 4ed1b04a-6530-4a34-874c-c5f29f911e66 # Four Images
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-09T11:20:06+00:00'
+                            11:
+                              - uid
+                              - b76c037a-e008-400f-a3f2-c4dcecd5ca1d
+                            14:
+                              - fieldUid
+                              - 10dcb136-b8a7-4325-90fe-c0cda2e1ebd1 # Simple Text
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

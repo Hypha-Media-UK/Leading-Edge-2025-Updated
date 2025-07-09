@@ -13,6 +13,7 @@
 @import 'components/testimonials.css';
 @import 'components/simple-cards.css';
 @import 'components/services-preview.css';
+@import 'components/call-to-action.css';
 
 @layer components {
 

@@ -1,4 +1,4 @@
-dateModified: 1752055013
+dateModified: 1752082202
 email:
   fromEmail: access@hypha.media
   fromName: TLE-2025
@@ -24,8 +24,10 @@ meta:
     4ed1b04a-6530-4a34-874c-c5f29f911e66: 'Four Images' # Four Images
     5c8228fd-b7e4-4fa8-b9dd-2a5389c4bb6c: 'Homepage Hero' # Homepage Hero
     5d6f4599-0482-49dc-b4e6-eb7db8af869d: 'Basic with H2' # Basic with H2
+    8dc06e17-b136-4714-997a-6b1f293e9c41: 'Bold, Italic and Link' # Bold, Italic and Link
     9ab1b041-ae5f-451c-aa7a-e7dda1e2d1f9: 'Title Field' # Title Field
     9b42751e-b87f-4957-8c54-5a457d443a7f: 'Basic with H2' # Basic with H2
+    10dcb136-b8a7-4325-90fe-c0cda2e1ebd1: 'Simple Text' # Simple Text
     21f4ef74-64dc-48e3-bb94-93d62c25ef08: TLE-2025 # TLE-2025
     30d70629-c8e5-40db-9f27-dd7dd53d0afb: 'Card Link' # Card Link
     45b3edbc-893f-4d31-acaa-4f187ee99099: Cards # Cards
@@ -42,9 +44,12 @@ meta:
     224318bf-f739-48f8-b570-dc4deefe6f0e: Testimonials # Testimonials
     26138429-fcf3-4e89-a520-7bfdbd1591ee: Assets # Assets
     43665714-2299-44fa-abf3-97b45c8a12c7: 'Services Cards' # Services Cards
+    71202746-fb78-4408-b9b3-1c3d1e39ffb8: 'Call to Action' # Call to Action
+    a6966eba-abc7-43bd-aad8-95073f426a6d: 'Summary Section' # Summary Section
     b79b4e43-e6c0-4c44-9a15-f07ccdaa5d37: 'Products Section' # Products Section
     b2608e5b-6a78-41bb-b819-04900f98ce1a: 'Social Section' # Social Section
     b5144bca-43e4-4a75-8d36-4405e3f2629a: 'Testimonial Text' # Testimonial Text
+    b3726252-6c72-46e5-b01e-d92574299019: 'Single Button' # Single Button
     c4bebee5-c1d4-47bf-be47-8bcfeb2783ec: 'Services Cards' # Services Cards
     c969543d-de4c-4d09-9576-8758dc27afd1: 'Testimonials Section' # Testimonials Section
     d51d5a9b-69fe-4e13-acd6-d4f9a20ccae1: 'Title Text' # Title Text

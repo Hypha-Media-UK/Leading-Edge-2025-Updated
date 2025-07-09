@@ -13,29 +13,7 @@
     {% include '_components/sections/simple-cards.twig' with {
         cardVariant: 'light'
     } %}
-
-    {#
-    {% from '_components/sections/interior-gallery.twig' import interiorGallery %}
-    {{ interiorGallery(
-        'Our Space',
-        'Step into a world of relaxation and beauty',
-        [
-            { src: '/images/new/internal/int1.webp', alt: 'Salon interior - Main area' },
-            { src: '/images/new/internal/int2.webp', alt: 'Salon interior - Styling station' },
-            { src: '/images/new/internal/int3.webp', alt: 'Salon interior - Treatment area' },
-            { src: '/images/new/internal/int4.webp', alt: 'Salon interior - Reception' }
-        ],
-        '<p>Our salon is designed to be a haven of tranquility amidst the bustle of everyday life. With thoughtfully designed spaces, comfortable seating, and ambient lighting, we\'ve created an environment that soothes the senses while our expert team takes care of your beauty needs.</p>
-        <p>From our reception area to our styling stations and treatment rooms, every corner of The Leading Edge is crafted to enhance your experience and ensure you leave feeling refreshed and rejuvenated.</p>'
-    ) }}
-
-    {% from '_components/sections/call-to-action.twig' import callToAction %}
-    {{ callToAction(
-        'Experience The Leading Edge Difference',
-        'Book your appointment today and step into a world of luxury and expert care.',
-        'Book Now',
-        '/contact'
-    ) }}
-     #}
+    {% include '_components/sections/summary-section.twig' %}
+    {% include '_components/sections/call-to-action.twig' %}
 </div>
 {% endblock %}

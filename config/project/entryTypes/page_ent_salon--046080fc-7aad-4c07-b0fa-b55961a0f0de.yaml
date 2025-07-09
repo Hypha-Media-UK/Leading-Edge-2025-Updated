@@ -58,6 +58,40 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2025-07-09T11:20:32+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: a6966eba-abc7-43bd-aad8-95073f426a6d # Summary Section
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 277de136-d919-4a7c-9569-f5d10adab526
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-09T17:21:33+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 71202746-fb78-4408-b9b3-1c3d1e39ffb8 # Call to Action
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3b82a188-74b7-477a-9e07-4a0b7e198de9
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: bbd57b02-3afa-4bef-a4b4-2e46019e5076
         userCondition: null

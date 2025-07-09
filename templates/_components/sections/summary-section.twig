@@ -1,0 +1,20 @@
+    <section class="interior-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>{{ entry.summarySection.sectionTitle }}</h2>
+                <p>{{ entry.summarySection.sectionSubTitle }}</p>
+            </div>
+            <div class="gallery">
+                {% for image in entry.summarySection.sectionImages %}
+                    <div class="gallery-item item-{{ loop.index }}">
+                        <img src="{{ image.url() }}" alt="{{ image.title }}">
+                    </div>
+                {% endfor %}
+            </div>
+            {% if entry.summarySection.simpleText %}
+            <div class="interior-description">
+                {{ entry.summarySection.simpleText }}
+            </div>
+            {% endif %}
+        </div>
+    </section>
