@@ -78,7 +78,8 @@
       color: rgba(255, 255, 255, 0.9);
     }
 
-    & .feature-card {
+    /* Only apply card background if no card variant is specified */
+    &:not([class*="features--card-"]) .feature-card {
       background-color: rgba(255, 255, 255, 0.95);
     }
   }
@@ -95,7 +96,8 @@
       color: rgba(255, 255, 255, 0.9);
     }
 
-    & .feature-card {
+    /* Only apply card background if no card variant is specified */
+    &:not([class*="features--card-"]) .feature-card {
       background-color: rgba(255, 255, 255, 0.95);
     }
   }
@@ -112,13 +114,15 @@
       color: rgba(255, 255, 255, 0.9);
     }
 
-    & .feature-card {
+    /* Only apply card background if no card variant is specified */
+    &:not([class*="features--card-"]) .feature-card {
       background-color: rgba(255, 255, 255, 0.95);
     }
   }
 
   & .feature-card {
-    background-color: white;
+    background-color: var(--card-bg-color, white);
+    color: var(--card-text-color, var(--primary-color));
     padding: 2.5rem 2rem;
     border-radius: 8px;
     text-align: center;
@@ -132,20 +136,64 @@
 
     & .feature-icon {
       font-size: 2.5rem;
-      color: var(--accent-color);
+      color: var(--card-icon-color, var(--accent-color));
       margin-block-end: 1.5rem;
     }
 
     & h3 {
       font-size: 1.4rem;
       margin-block-end: 1rem;
-      color: var(--primary-color);
+      color: var(--card-heading-color, var(--primary-color));
     }
 
     & p {
-      color: var(--primary-color-light);
+      color: var(--card-text-light-color, var(--primary-color-light));
       line-height: 1.6;
     }
+  }
+
+  /* Card color variants */
+  &.features--card-dark {
+    --card-bg-color: var(--primary-color);
+    --card-text-color: white;
+    --card-heading-color: white;
+    --card-text-light-color: rgba(255, 255, 255, 0.9);
+    --card-icon-color: var(--accent-color);
+  }
+
+  &.features--card-accent {
+    --card-bg-color: var(--accent-color);
+    --card-text-color: white;
+    --card-heading-color: white;
+    --card-text-light-color: rgba(255, 255, 255, 0.9);
+    --card-icon-color: white;
+  }
+
+  &.features--card-primary {
+    --card-bg-color: var(--primary-color);
+    --card-text-color: white;
+    --card-heading-color: white;
+    --card-text-light-color: rgba(255, 255, 255, 0.9);
+    --card-icon-color: var(--accent-color);
+  }
+
+  &.features--card-light {
+    --card-bg-color: #f8f9fa;
+    --card-text-color: var(--primary-color);
+    --card-heading-color: var(--primary-color);
+    --card-text-light-color: var(--primary-color-light);
+    --card-icon-color: var(--accent-color);
+  }
+
+  &.features--card-transparent {
+    --card-bg-color: rgba(255, 255, 255, 0.1);
+    --card-text-color: inherit;
+    --card-heading-color: inherit;
+    --card-text-light-color: inherit;
+    --card-icon-color: var(--accent-color);
+    
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
 

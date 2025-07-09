@@ -1,6 +1,7 @@
     {# Set default values for optional parameters #}
     {% set cardCount = cardCount ?? entry.cardsSection.mx_simpleCards|length %}
     {% set backgroundVariant = backgroundVariant ?? 'default' %}
+    {% set cardVariant = cardVariant ?? 'default' %}
     {% set customClass = customClass ?? '' %}
     
     {# Build CSS classes based on parameters #}
@@ -10,6 +11,9 @@
     {% endif %}
     {% if backgroundVariant != 'default' %}
         {% set sectionClasses = sectionClasses|merge(['features--' ~ backgroundVariant ~ '-bg']) %}
+    {% endif %}
+    {% if cardVariant != 'default' %}
+        {% set sectionClasses = sectionClasses|merge(['features--card-' ~ cardVariant]) %}
     {% endif %}
     {% if customClass %}
         {% set sectionClasses = sectionClasses|merge([customClass]) %}
