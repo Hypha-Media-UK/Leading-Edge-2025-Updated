@@ -28,3 +28,4 @@ Thumbs.db
 
 # CodeKit (legacy)
 config.codekit3
+.DS_Store

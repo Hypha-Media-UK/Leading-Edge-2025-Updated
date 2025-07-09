@@ -1,0 +1,38 @@
+    {# Set default values for optional parameters #}
+    {% set cardCount = cardCount ?? entry.cardsSection.mx_simpleCards|length %}
+    {% set backgroundVariant = backgroundVariant ?? 'default' %}
+    {% set customClass = customClass ?? '' %}
+    
+    {# Build CSS classes based on parameters #}
+    {% set sectionClasses = ['features'] %}
+    {% if cardCount >= 4 %}
+        {% set sectionClasses = sectionClasses|merge(['features--four-cards']) %}
+    {% endif %}
+    {% if backgroundVariant != 'default' %}
+        {% set sectionClasses = sectionClasses|merge(['features--' ~ backgroundVariant ~ '-bg']) %}
+    {% endif %}
+    {% if customClass %}
+        {% set sectionClasses = sectionClasses|merge([customClass]) %}
+    {% endif %}
+
+    <section class="{{ sectionClasses|join(' ') }}">
+        <div class="container">
+            <div class="section-header">
+                <h2>{{ entry.cardsSection.sectionTitle }}</h2>
+                {% if entry.cardsSection.subTitle %}
+                <p>{{ entry.cardsSection.subTitle }}</p>
+                {% endif %}
+            </div>
+            <div class="features-grid">
+                {% for virtue in entry.cardsSection.mx_simpleCards %}
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid {{ virtue.virtueIcon }}"></i>
+                        </div>
+                        <h3>{{ virtue.title }}</h3>
+                        <p>{{ virtue.cardText }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>

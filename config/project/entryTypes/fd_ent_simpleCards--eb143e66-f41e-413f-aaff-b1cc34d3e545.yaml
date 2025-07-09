@@ -1,0 +1,89 @@
+color: amber
+description: null
+fieldLayouts:
+  2de75cf1-a5c1-4401-845c-9e9cc00b8b1f:
+    cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:b17ef90b-6729-4e8e-90b4-5dd1685325b2'
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-07-08T07:38:47+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: 'Card Title'
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 3b0b3764-f3d1-471e-be04-0ecf16ea09a5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-08T07:42:23+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: cardText
+            includeInCards: true
+            instructions: null
+            label: 'Card Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b17ef90b-6729-4e8e-90b4-5dd1685325b2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-08T08:24:26+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: virtueIcon
+            includeInCards: false
+            instructions: 'Visit https://fontawesome.com/icons/ and use the text for the icon e.g. fa-leaf'
+            label: Icon
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 39291855-d367-4b20-bb2c-744c49a726ca
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 6578e02d-7936-4062-86a3-3339eb01f43f
+        userCondition: null
+handle: fd_ent_simpleCards
+hasTitleField: true
+icon: null
+name: 'Simple Cards'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

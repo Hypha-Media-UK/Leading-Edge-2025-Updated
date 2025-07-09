@@ -41,4 +41,22 @@ return array (
       'craftagramService' => 'jsmrtn\\craftagram\\services\\CraftagramService',
     ),
   ),
+  'verbb/field-manager' => 
+  array (
+    'class' => 'verbb\\fieldmanager\\FieldManager',
+    'basePath' => $vendorDir . '/verbb/field-manager/src',
+    'handle' => 'field-manager',
+    'aliases' => 
+    array (
+      '@verbb/fieldmanager' => $vendorDir . '/verbb/field-manager/src',
+    ),
+    'name' => 'Field Manager',
+    'version' => '4.0.3',
+    'description' => 'Manage your fields and field groups with ease.',
+    'developer' => 'Verbb',
+    'developerUrl' => 'https://verbb.io',
+    'developerEmail' => 'support@verbb.io',
+    'documentationUrl' => 'https://github.com/verbb/field-manager',
+    'changelogUrl' => 'https://raw.githubusercontent.com/verbb/field-manager/craft-5/CHANGELOG.md',
+  ),
 );

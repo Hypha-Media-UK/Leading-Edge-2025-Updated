@@ -8,51 +8,13 @@
 
 {% block content %}
 <div class="our-salon-page">
-    {# Page Header #}
-    {% from '_components/ui/page-header.twig' import pageHeader %}
-    {{ pageHeader('Our Salon', '') }}
+    {% include '_components/ui/page-header.twig' %}
+    {% include '_components/sections/about-story.twig' %}
+    {% include '_components/sections/simple-cards.twig' with {
+        backgroundVariant: 'alt'
+    } %}
 
-    {# About Us Section #}
-    {% from '_components/sections/about-story.twig' import aboutStory %}
-    {{ aboutStory(
-        'Our Story',
-        '/images/new/staff/team.webp',
-        'The Leading Edge salon team',
-        '<p>Founded in 2010, The Leading Edge was born from a passion for creating a salon experience that blends luxurious comfort with exceptional skill. Our journey began with a simple vision: to create a space where clients can relax, rejuvenate, and leave feeling both beautiful and confident.</p>
-        <p>Over the years, we\'ve grown from a small team of dedicated stylists to a full-service salon with a reputation for excellence. Our commitment to continuous education ensures that our team stays at the forefront of industry trends and techniques.</p>
-        <p>Today, The Leading Edge stands as a testament to our dedication to the craft of hair and beauty, serving clients from all walks of life who share our appreciation for quality and attention to detail.</p>'
-    ) }}
-
-    {# Philosophy Section #}
-    {% from '_components/sections/philosophy-grid.twig' import philosophyGrid %}
-    {{ philosophyGrid(
-        'Our Philosophy',
-        '',
-        [
-            {
-                title: 'Client-Centered',
-                description: 'We believe that every client deserves personalized attention and services tailored to their unique needs and preferences.',
-                icon: 'fas fa-heart'
-            },
-            {
-                title: 'Excellence',
-                description: 'We strive for excellence in everything we do, from the quality of our services to the ambiance of our salon.',
-                icon: 'fas fa-trophy'
-            },
-            {
-                title: 'Sustainability',
-                description: 'We are committed to sustainable practices and using products that are kind to both our clients and the environment.',
-                icon: 'fas fa-seedling'
-            },
-            {
-                title: 'Continuous Learning',
-                description: 'We believe in the power of education and ensure our team stays updated with the latest techniques and trends.',
-                icon: 'fas fa-book'
-            }
-        ]
-    ) }}
-
-    {# Salon Interior Section #}
+    {#
     {% from '_components/sections/interior-gallery.twig' import interiorGallery %}
     {{ interiorGallery(
         'Our Space',
@@ -67,7 +29,6 @@
         <p>From our reception area to our styling stations and treatment rooms, every corner of The Leading Edge is crafted to enhance your experience and ensure you leave feeling refreshed and rejuvenated.</p>'
     ) }}
 
-    {# CTA Section #}
     {% from '_components/sections/call-to-action.twig' import callToAction %}
     {{ callToAction(
         'Experience The Leading Edge Difference',
@@ -75,5 +36,6 @@
         'Book Now',
         '/contact'
     ) }}
+     #}
 </div>
 {% endblock %}

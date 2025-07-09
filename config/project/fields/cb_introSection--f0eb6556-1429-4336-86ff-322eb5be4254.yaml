@@ -1,0 +1,97 @@
+columnSuffix: null
+handle: cb_introSection
+instructions: null
+name: 'Intro Section'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - b1c00e34-9dab-4faa-97d8-606652e6ba44
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    0:
+                      - name
+                      - Content
+                    1:
+                      - uid
+                      - fe05b7d7-b60e-407f-89c1-49f3fec2148d
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - introPhoto
+                            2:
+                              - label
+                              - 'Intro Photo'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 25
+                            10:
+                              - dateAdded
+                              - '2025-07-09T08:58:12+00:00'
+                            11:
+                              - uid
+                              - 908577ca-aba6-4a12-8385-e8bd2bf2e7bb
+                            14:
+                              - fieldUid
+                              - 04ddff7f-52ed-458a-bc0c-a3a9d4b76f4d # Single Image
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - introText
+                            2:
+                              - label
+                              - 'Intro Text'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 75
+                            10:
+                              - dateAdded
+                              - '2025-07-09T09:01:51+00:00'
+                            11:
+                              - uid
+                              - 142aa15d-567a-46df-916c-b02423b97f51
+                            14:
+                              - fieldUid
+                              - 9b42751e-b87f-4957-8c54-5a457d443a7f # Basic with H2
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

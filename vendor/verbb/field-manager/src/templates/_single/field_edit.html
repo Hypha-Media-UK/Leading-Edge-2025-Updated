@@ -1,0 +1,93 @@
+{% import "_includes/forms" as forms %}
+
+<div class="content">
+    <div class="main">
+        <div class="elements">
+            <form>
+                <input type="hidden" name="redirect" value="field-manager">
+                
+                {% if field is defined %}
+                    <input type="hidden" name="fieldId" value="{{ field.id }}">
+                {% endif %}
+                
+                {{ forms.textField({
+                    first: true,
+                    label: "Name"|t('app'),
+                    instructions: "What this field will be called in the control panel."|t('app'),
+                    id: 'name',
+                    name: 'name',
+                    value: field.name,
+                    errors: field.getErrors('name'),
+                    required: true,
+                    autofocus: true
+                }) }}
+
+                {{ forms.textField({
+                    label: "Handle"|t('app'),
+                    instructions: "How you’ll refer to this field in the templates."|t('app'),
+                    id: 'handle',
+                    name: 'handle',
+                    class: 'code',
+                    autocorrect: false,
+                    autocapitalize: false,
+                    maxlength: 64,
+                    value: field.handle,
+                    errors: field.getErrors('handle'),
+                    required: true,
+                }) }}
+
+                {{ forms.textareaField({
+                    label: "Instructions"|t('app'),
+                    instructions: "Helper text to guide the author."|t('app'),
+                    id: 'instructions',
+                    class: 'nicetext',
+                    name: 'instructions',
+                    value: field.instructions,
+                    errors: field.getErrors('instructions'),
+                }) }}
+
+                {{ forms.checkboxField({
+                    label: "Use this field’s values as search keywords?"|t('app'),
+                    id: 'searchable',
+                    name: 'searchable',
+                    checked: field.searchable
+                }) }}
+
+                {{ forms.selectField({
+                    label: "Field Type"|t('app'),
+                    instructions: "What type of field is this?"|t('app'),
+                    warning: (fieldId is not empty and not field.hasErrors('type') ? "Changing this may result in data loss."|t('app')),
+                    id: 'type',
+                    name: 'type',
+                    options: fieldTypeOptions,
+                    value: className(field),
+                    toggle: true
+                }) }}
+
+                {{ missingFieldPlaceholder|raw }}
+
+                <hr>
+
+                {% for type in allFieldTypes %}
+                    {% set isCurrent = (type == className(field)) %}
+                    <div id="{{ type|id }}"{% if not isCurrent %} class="hidden"{% endif %}>
+                        {% namespace 'types['~type~']' %}
+                            {% set _field = isCurrent ? field : craft.app.fields.createField(type) %}
+                            {{ _field.getSettingsHtml()|raw }}
+                        {% endnamespace %}
+                    </div>
+                {% endfor %}
+            </form>
+        </div>
+
+        <div class="centeralign">
+            <div class="spinner loadingmore hidden"></div>
+        </div>
+    </div>
+</div>
+
+{% if field is empty or field.handle is empty %}
+    {% js %}
+        new Craft.HandleGenerator('#name', '#handle');
+    {% endjs %}
+{% endif %}

@@ -679,8 +679,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '3.0.0',
-                1 => '1.0|2.0|3.0',
+                0 => '1.0|2.0|3.0',
+                1 => '3.0.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -1061,6 +1061,24 @@
             'reference' => '2d5b3964cc21d0188633d7ddce732dc8e874db02',
             'type' => 'library',
             'install_path' => __DIR__ . '/../twig/twig',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'verbb/base' => array(
+            'pretty_version' => '3.0.9',
+            'version' => '3.0.9.0',
+            'reference' => 'c731693efdd65c4d7015e98c62631b79422bcd8a',
+            'type' => 'yii-module',
+            'install_path' => __DIR__ . '/../verbb/base',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'verbb/field-manager' => array(
+            'pretty_version' => '4.0.3',
+            'version' => '4.0.3.0',
+            'reference' => 'dcb654555159ac4812f62907f59efbcc626da276',
+            'type' => 'craft-plugin',
+            'install_path' => __DIR__ . '/../verbb/field-manager',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

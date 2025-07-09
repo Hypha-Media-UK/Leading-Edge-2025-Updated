@@ -1,0 +1,8 @@
+headingLevels:
+  - 2
+name: 'Basic with H2'
+toolbar:
+  - heading
+  - bold
+  - italic
+  - link

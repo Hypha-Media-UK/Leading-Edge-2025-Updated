@@ -1,0 +1,123 @@
+columnSuffix: null
+handle: cardsSection
+instructions: null
+name: 'Cards Section'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - dbbaa739-f3fc-4c54-a25d-1ff597887e17
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    0:
+                      - name
+                      - Content
+                    1:
+                      - uid
+                      - 4568c83f-a91f-4165-8d3e-c857f1d8be8b
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - sectionTitle
+                            2:
+                              - label
+                              - 'Section Title'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-08T07:48:56+00:00'
+                            11:
+                              - uid
+                              - 4b6e3b3a-86a2-43a7-a238-035fb72d0e71
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - subTitle
+                            2:
+                              - label
+                              - Subtitle
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-09T09:56:53+00:00'
+                            11:
+                              - uid
+                              - f5a98834-549b-40ba-a648-be1d01dabb6b
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-08T07:48:56+00:00'
+                            11:
+                              - uid
+                              - f4508005-8819-4e86-928e-786ea98874a7
+                            14:
+                              - fieldUid
+                              - 45b3edbc-893f-4d31-acaa-4f187ee99099 # Cards
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: pane
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

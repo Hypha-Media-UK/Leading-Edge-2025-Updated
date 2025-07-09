@@ -1,16 +1,9 @@
-{# Page Header Component Macro #}
-{% macro pageHeader(title, description = '', extraContent = '') %}
     <section class="page-header">
         <div class="container">
-            <h1>{{ title }}</h1>
+            <h1>{{ entry.cb_pageHeader.pageTitle }}</h1>
             <div class="separator"></div>
-            {% if description %}
-                <p>{{ description }}</p>
-            {% endif %}
-            
-            {% if extraContent %}
-                {{ extraContent|raw }}
+            {% if entry.cb_pageHeader.subHeading %}
+                <p>{{ entry.cb_pageHeader.subHeading }}</p>
             {% endif %}
         </div>
     </section>
-{% endmacro %}

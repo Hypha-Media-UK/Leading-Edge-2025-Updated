@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: mx_simpleCards
+instructions: null
+name: Cards
+searchable: false
+settings:
+  createButtonLabel: 'Add a Card'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - eb143e66-f41e-413f-aaff-b1cc34d3e545 # Simple Cards
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: 4
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: true
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

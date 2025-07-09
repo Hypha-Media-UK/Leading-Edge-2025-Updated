@@ -5,6 +5,7 @@
     "craftcms/ckeditor": "^4.9.0",
     "craftcms/cms": "5.8.4",
     "jsmrtn/craftagram": "^4.1.0",
+    "verbb/field-manager": "^4.0.3",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {

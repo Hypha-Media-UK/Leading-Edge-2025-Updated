@@ -60,6 +60,8 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
         array (
             'voku\\helper\\' => 12,
             'voku\\' => 5,
+            'verbb\\fieldmanager\\' => 19,
+            'verbb\\base\\' => 11,
         ),
         's' => 
         array (
@@ -302,9 +304,17 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
         ),
         'voku\\' => 
         array (
-            0 => __DIR__ . '/..' . '/voku/portable-utf8/src/voku',
-            1 => __DIR__ . '/..' . '/voku/stop-words/src/voku',
+            0 => __DIR__ . '/..' . '/voku/stop-words/src/voku',
+            1 => __DIR__ . '/..' . '/voku/portable-utf8/src/voku',
             2 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
+        ),
+        'verbb\\fieldmanager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/verbb/field-manager/src',
+        ),
+        'verbb\\base\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/verbb/base/src',
         ),
         'samdark\\log\\tests\\' => 
         array (
@@ -317,8 +327,8 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
         ),
         'nystudio107\\codeeditor\\' => 
         array (
@@ -596,8 +606,8 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
         ),
         'League\\Uri\\' => 
         array (
-            0 => __DIR__ . '/..' . '/league/uri-interfaces',
-            1 => __DIR__ . '/..' . '/league/uri',
+            0 => __DIR__ . '/..' . '/league/uri',
+            1 => __DIR__ . '/..' . '/league/uri-interfaces',
         ),
         'League\\HTMLToMarkdown\\' => 
         array (
@@ -613,9 +623,9 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
         ),
         'Illuminate\\Support\\' => 
         array (
-            0 => __DIR__ . '/..' . '/illuminate/macroable',
-            1 => __DIR__ . '/..' . '/illuminate/conditionable',
-            2 => __DIR__ . '/..' . '/illuminate/collections',
+            0 => __DIR__ . '/..' . '/illuminate/collections',
+            1 => __DIR__ . '/..' . '/illuminate/macroable',
+            2 => __DIR__ . '/..' . '/illuminate/conditionable',
         ),
         'Illuminate\\Contracts\\' => 
         array (
@@ -6263,6 +6273,33 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
         'samdark\\log\\tests\\PsrArrayLoggerFactory' => __DIR__ . '/..' . '/samdark/yii2-psr-log-target/tests/PsrArrayLoggerFactory.php',
         'samdark\\log\\tests\\PsrTargetLevelsTest' => __DIR__ . '/..' . '/samdark/yii2-psr-log-target/tests/PsrTargetLevelsTest.php',
         'samdark\\log\\tests\\PsrTargetTest' => __DIR__ . '/..' . '/samdark/yii2-psr-log-target/tests/PsrTargetTest.php',
+        'verbb\\base\\Base' => __DIR__ . '/..' . '/verbb/base/src/Base.php',
+        'verbb\\base\\LogTrait' => __DIR__ . '/..' . '/verbb/base/src/LogTrait.php',
+        'verbb\\base\\assetbundles\\CpAsset' => __DIR__ . '/..' . '/verbb/base/src/assetbundles/CpAsset.php',
+        'verbb\\base\\base\\Module' => __DIR__ . '/..' . '/verbb/base/src/base/Module.php',
+        'verbb\\base\\controllers\\SettingsController' => __DIR__ . '/..' . '/verbb/base/src/controllers/SettingsController.php',
+        'verbb\\base\\elements\\db\\CachedElementQuery' => __DIR__ . '/..' . '/verbb/base/src/elements/db/CachedElementQuery.php',
+        'verbb\\base\\elements\\db\\CachedElementQueryTrait' => __DIR__ . '/..' . '/verbb/base/src/elements/db/CachedElementQueryTrait.php',
+        'verbb\\base\\helpers\\ArrayHelper' => __DIR__ . '/..' . '/verbb/base/src/helpers/ArrayHelper.php',
+        'verbb\\base\\helpers\\Locale' => __DIR__ . '/..' . '/verbb/base/src/helpers/Locale.php',
+        'verbb\\base\\helpers\\Plugin' => __DIR__ . '/..' . '/verbb/base/src/helpers/Plugin.php',
+        'verbb\\base\\helpers\\UrlHelper' => __DIR__ . '/..' . '/verbb/base/src/helpers/UrlHelper.php',
+        'verbb\\base\\services\\Templates' => __DIR__ . '/..' . '/verbb/base/src/services/Templates.php',
+        'verbb\\base\\twig\\SecurityPolicy' => __DIR__ . '/..' . '/verbb/base/src/twig/SecurityPolicy.php',
+        'verbb\\base\\twigextensions\\Extension' => __DIR__ . '/..' . '/verbb/base/src/twigextensions/Extension.php',
+        'verbb\\fieldmanager\\FieldManager' => __DIR__ . '/..' . '/verbb/field-manager/src/FieldManager.php',
+        'verbb\\fieldmanager\\assetbundles\\FieldManagerAsset' => __DIR__ . '/..' . '/verbb/field-manager/src/assetbundles/FieldManagerAsset.php',
+        'verbb\\fieldmanager\\base\\PluginTrait' => __DIR__ . '/..' . '/verbb/field-manager/src/base/PluginTrait.php',
+        'verbb\\fieldmanager\\controllers\\AuditController' => __DIR__ . '/..' . '/verbb/field-manager/src/controllers/AuditController.php',
+        'verbb\\fieldmanager\\controllers\\BaseController' => __DIR__ . '/..' . '/verbb/field-manager/src/controllers/BaseController.php',
+        'verbb\\fieldmanager\\helpers\\Plugin' => __DIR__ . '/..' . '/verbb/field-manager/src/helpers/Plugin.php',
+        'verbb\\fieldmanager\\models\\Settings' => __DIR__ . '/..' . '/verbb/field-manager/src/models/Settings.php',
+        'verbb\\fieldmanager\\services\\Audit' => __DIR__ . '/..' . '/verbb/field-manager/src/services/Audit.php',
+        'verbb\\fieldmanager\\services\\Export' => __DIR__ . '/..' . '/verbb/field-manager/src/services/Export.php',
+        'verbb\\fieldmanager\\services\\Import' => __DIR__ . '/..' . '/verbb/field-manager/src/services/Import.php',
+        'verbb\\fieldmanager\\services\\Service' => __DIR__ . '/..' . '/verbb/field-manager/src/services/Service.php',
+        'verbb\\fieldmanager\\twigextensions\\Extension' => __DIR__ . '/..' . '/verbb/field-manager/src/twigextensions/Extension.php',
+        'verbb\\fieldmanager\\variables\\FieldManagerVariable' => __DIR__ . '/..' . '/verbb/field-manager/src/variables/FieldManagerVariable.php',
         'voku\\helper\\ASCII' => __DIR__ . '/..' . '/voku/portable-ascii/src/voku/helper/ASCII.php',
         'voku\\helper\\AntiXSS' => __DIR__ . '/..' . '/voku/anti-xss/src/voku/helper/AntiXSS.php',
         'voku\\helper\\Bootup' => __DIR__ . '/..' . '/voku/portable-utf8/src/voku/helper/Bootup.php',

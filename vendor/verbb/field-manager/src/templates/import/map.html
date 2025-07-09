@@ -1,0 +1,375 @@
+{% extends 'field-manager/_layouts' %}
+{% import '_includes/forms' as forms %}
+{% import _self as fieldManagerMacros %}
+
+{% set title = 'Import' %}
+{% set selectedTab = 'import' %}
+
+{% set fullPageForm = true %}
+
+{% block submitButton %}
+    <button type="submit" class="btn submit">{{ 'Import' | t('field-manager') }}</button>
+{% endblock %}
+
+{% block blockContent %}
+
+{% set importOptions = [
+    { label: 'Don‘t Import' | t('field-manager'), value: 'noimport' },
+    { label: 'Include' | t('field-manager'), value: 'include' },
+] %}
+
+<p>{{ 'Choose how you want to import your fields. You can modify the Name and Handle for each field.' | t('field-manager') }}</p>
+
+<input type="hidden" name="action" value="field-manager/base/import">
+<input type="hidden" name="data" value="{{ craft.app.request.param('data') }}">
+
+<table id="fieldmapping" class="data editable fullwidth collapsible">
+    <thead>
+        <th style="width: 40%;">{{ 'Field Name' | t('field-manager') }}</th>
+        <th style="width: 40%;">{{ 'Field Handle' | t('field-manager') }}</th>
+        <th style="width: 10%;">{{ 'Field Type' | t('field-manager') }}</th>
+        <th style="width: 10%;">
+            {{ forms.selectField({
+                id: 'importAll',
+                name: 'importAll',
+                options: importOptions,
+            }) }}
+        </th>
+    </thead>
+    <tbody>
+        {% for index, field in fields %}
+            {% namespace 'fields[' ~ index ~ ']' %}
+                <tr data-row-id="{{ index }}">
+                    <td class="textarea icon-arrow">
+                        {{ forms.textField({
+                            id: 'name',
+                            name: 'name',
+                            value: field.name,
+                        }) }}
+                    </td>
+
+                    <td class="textarea {% if errors[field.handle] is defined %}has-error{% endif %}">
+                        {{ forms.textField({
+                            id: 'handle',
+                            name: 'handle',
+                            class: 'code',
+                            value: field.handle,
+                        }) }}
+
+                        {% if errors[field.handle] is defined %}
+                            <span class="errors">
+                                {% if errors[field.handle] is iterable %}
+                                    <code>{{ errors[field.handle] | json_encode }}</code>
+                                {% else %}
+                                    {{ errors[field.handle].getFirstError('handle') }}
+                                {% endif %}
+                            </span>
+                        {% endif %}
+                    </td>
+
+                    {% if field.type and field.type != 'craft\\fields\\MissingField' %}
+                        <td>{{ displayName(field.type) }}</td>
+
+                        {% set hasNestedFields = '' %}
+
+                        {% if field.type == 'craft\\fields\\Matrix' %}
+                            {% set hasNestedFields = 'select-type-matrix' %}
+                        {% elseif field.type == 'benf\\neo\\Field' %}
+                            {% set hasNestedFields = 'select-type-neo' %}
+                        {% elseif field.type == 'verbb\\supertable\\fields\\SuperTableField' %}
+                            {% set hasNestedFields = 'select-type-super-table' %}
+                        {% endif %}
+
+                        <td class="thin">
+                            {{ forms.selectField({
+                                id: 'import',
+                                class: 'importSelect ' ~ hasNestedFields,
+                                name: 'import',
+                                options: importOptions,
+                            }) }}
+                        </td>
+                    {% else %}
+                        <td><span class="error">{{ field.type }}</span></td>
+                        <td class="thin"></td>
+                    {% endif %}
+                </tr>
+
+                {% if field.type == 'craft\\fields\\Matrix' %}
+
+                    {{ fieldManagerMacros.matrixField(index, field) }}
+
+                {% elseif field.type == 'benf\\neo\\Field' %}
+
+                    {{ fieldManagerMacros.neoField(index, field) }}
+
+                {% elseif field.type == 'verbb\\supertable\\fields\\SuperTableField' %}
+
+                    {{ fieldManagerMacros.superTableField(index, field) }}
+
+                {% endif %}
+            {% endnamespace %}
+        {% endfor %}
+    </tbody>
+</table>
+
+<div class="buttons">
+    <a href="javascript: window.history.go(-1)" class="btn submit">{{ 'Back' | t('field-manager') }}</a>
+</div>
+
+{% endblock %}
+
+{% macro superTableField(index, field) %}
+    {% import '_includes/forms' as forms %}
+    {% import _self as fieldManagerMacros %}
+
+    {% set options = [
+        { label: 'Don‘t Import' | t('field-manager'), value: 'noimport' },
+        { label: 'Include' | t('field-manager'), value: 'include' },
+    ] %}
+
+    {% for blockType in field.settings.blockTypes %}
+        {% set blockIndex = loop.index %}
+
+        {% for blockTypeField in blockType.fields %}
+            {% namespace 'settings[blockTypes][new' ~ blockIndex ~ '][fields][new' ~ loop.index ~ ']' %}
+                {{ fieldManagerMacros.nestedField(blockTypeField, index) }}
+            {% endnamespace %}
+        {% endfor %}
+    {% endfor %}
+{% endmacro %}
+
+{% macro matrixField(index, field) %}
+    {% import '_includes/forms' as forms %}
+    {% import _self as fieldManagerMacros %}
+
+    {% set options = [
+        { label: 'Don‘t Import' | t('field-manager'), value: 'noimport' },
+        { label: 'Include' | t('field-manager'), value: 'include' },
+    ] %}
+
+    {% for entryTypeId, entryType in field.settings.entryTypes %}
+        {% set entryIndex = loop.index0 %}
+
+        <tr data-row-id="{{ index }}" data-blocktype-id="{{ entryTypeId }}" class="row-blocktype">
+            <td class="textarea icon-arrow">
+                {{ forms.textField({
+                    id: 'name',
+                    name: 'settings[entryTypes][' ~ entryIndex ~ '][name]',
+                    value: entryType.name,
+                }) }}
+            </td>
+
+            <td class="textarea">
+                {{ forms.textField({
+                    id: 'handle',
+                    name: 'settings[entryTypes][' ~ entryIndex ~ '][handle]',
+                    class: 'code',
+                    value: entryType.handle,
+                }) }}
+            </td>
+
+            <td>{{ 'Entry Type' | t('field-manager') }}</td>
+
+            <td class="thin">
+                {{ forms.selectField({
+                    id: 'import',
+                    class: 'importSelect importSelectNested select-blocktype',
+                    name: 'settings[entryTypes][' ~ entryIndex ~ '][import]',
+                    options: options,
+                }) }}
+            </td>
+        </tr>
+
+        {% if entryType.fieldLayout is not null %}
+            {% set fieldLayout = craft.fieldManager.createFieldLayoutFromConfig(entryType.fieldLayout) %}
+
+            {% for entryTypeTabIndex, entryTypeFieldTab in fieldLayout.getTabs() %}
+                {% for fieldLayoutElementIndex, fieldLayoutElement in entryTypeFieldTab.elements %}
+                    {% namespace 'settings[entryTypes][' ~ entryIndex ~ '][fieldLayout][' ~ entryTypeTabIndex ~ '][' ~ fieldLayoutElementIndex ~ ']' %}
+                        {{ fieldManagerMacros.nestedFieldLayoutElement(fieldLayoutElement, index, entryTypeId, true) }}
+                    {% endnamespace %}
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+{% macro neoField(index, field) %}
+    {% import '_includes/forms' as forms %}
+    {% import _self as fieldManagerMacros %}
+
+    {% set options = [
+        { label: 'Don‘t Import' | t('field-manager'), value: 'noimport' },
+        { label: 'Include' | t('field-manager'), value: 'include' },
+    ] %}
+
+    {% for blockTypeId, blockType in field.settings.blockTypes %}
+        {% set blockIndex = loop.index %}
+
+        <tr data-row-id="{{ index }}" data-blocktype-id="{{ blockTypeId }}" class="row-blocktype">
+            <td class="textarea icon-arrow">
+                {{ forms.textField({
+                    id: 'name',
+                    name: 'settings[blockTypes][new' ~ blockIndex ~ '][name]',
+                    value: blockType.name,
+                }) }}
+            </td>
+
+            <td class="textarea">
+                {{ forms.textField({
+                    id: 'handle',
+                    name: 'settings[blockTypes][new' ~ blockIndex ~ '][handle]',
+                    class: 'code',
+                    value: blockType.handle,
+                }) }}
+            </td>
+
+            <td>{{ 'Blocktype' | t('field-manager') }}</td>
+
+            <td class="thin">
+                {{ forms.selectField({
+                    id: 'import',
+                    class: 'importSelect importSelectNested select-blocktype',
+                    name: 'settings[blockTypes][new' ~ blockIndex ~ '][import]',
+                    options: options,
+                }) }}
+            </td>
+        </tr>
+
+        {% if blockType.fieldLayout is not null %}
+            {% set fieldLayout = craft.fieldManager.createFieldLayoutFromConfig(blockType.fieldLayout) %}
+
+            {% for blockTypeTabIndex, blockTypeFieldTab in fieldLayout.getTabs() %}
+                {% for fieldLayoutElementIndex, fieldLayoutElement in blockTypeFieldTab.elements %}
+                    {% namespace 'settings[blockTypes][new' ~ blockIndex ~ '][fieldLayout][' ~ blockTypeTabIndex ~ '][' ~ fieldLayoutElementIndex ~ ']' %}
+                        {{ fieldManagerMacros.nestedFieldLayoutElement(fieldLayoutElement, index, blockTypeId, true) }}
+                    {% endnamespace %}
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+{% macro nestedField(field, index, blockTypeId = '', readonly = false) %}
+    {% import '_includes/forms' as forms %}
+    {% import _self as fieldManagerMacros %}
+
+    {% set options = [
+        { label: 'Don‘t Import' | t('field-manager'), value: 'noimport' },
+        { label: 'Include' | t('field-manager'), value: 'include' },
+    ] %}
+
+    <tr data-row-id="{{ index }}" {% if blockTypeId %}data-blocktype-id="{{ blockTypeId }}"{% endif %} class="row-blocktype-field">
+        <td class="textarea icon-arrow">
+            {{ forms.textField({
+                id: 'name',
+                name: 'name',
+                value: field.name,
+                readonly: readonly,
+            }) }}
+        </td>
+
+        <td class="textarea">
+            {{ forms.textField({
+                id: 'handle',
+                name: 'handle',
+                class: 'code',
+                value: field.handle,
+                readonly: readonly,
+            }) }}
+        </td>
+
+        {% if field.type and field.type != 'craft\\fields\\MissingField' %}
+            <td>{{ displayName(field.type) }}</td>
+
+            <td class="thin">
+                {{ forms.selectField({
+                    id: 'import',
+                    class: 'importSelect importSelectNested',
+                    name: 'import',
+                    options: options,
+                }) }}
+            </td>
+        {% else %}
+            <td><span class="error">{{ field.type }}</span></td>
+            <td class="thin"></td>
+        {% endif %}
+    </tr>
+{% endmacro %}
+
+{% macro nestedFieldLayoutElement(fieldLayoutElement, index, blockTypeId = '', readonly = false) %}
+    {% import '_includes/forms' as forms %}
+    {% import _self as fieldManagerMacros %}
+
+    {% set options = [
+        { label: 'Don‘t Import' | t('field-manager'), value: 'noimport' },
+        { label: 'Include' | t('field-manager'), value: 'include' },
+    ] %}
+
+    {% if className(fieldLayoutElement) == 'craft\\fieldlayoutelements\\CustomField' %}
+        {% set field = fieldLayoutElement.getField() %}
+
+        <tr data-row-id="{{ index }}" {% if blockTypeId %}data-blocktype-id="{{ blockTypeId }}"{% endif %} class="row-blocktype-field">
+            <td class="textarea icon-arrow">
+                {{ forms.textField({
+                    id: 'name',
+                    name: 'name',
+                    value: field.name,
+                    readonly: readonly,
+                }) }}
+            </td>
+
+            <td class="textarea">
+                {{ forms.textField({
+                    id: 'handle',
+                    name: 'handle',
+                    class: 'code',
+                    value: field.handle,
+                    readonly: readonly,
+                }) }}
+            </td>
+
+            {% if className(field) != 'craft\\fields\\MissingField' %}
+                <td>{{ displayName(className(field)) }}</td>
+
+                <td class="thin">
+                    {{ forms.selectField({
+                        id: 'import',
+                        class: 'importSelect importSelectNested',
+                        name: 'import',
+                        options: options,
+                    }) }}
+                </td>
+            {% else %}
+                <td><span class="error">{{ className(field) }}</span></td>
+                <td class="thin"></td>
+            {% endif %}
+        </tr>
+    {% else %}
+        <tr data-row-id="{{ index }}" {% if blockTypeId %}data-blocktype-id="{{ blockTypeId }}"{% endif %} class="row-blocktype-field">
+            <td class="textarea icon-arrow">
+                {{ forms.textField({
+                    id: 'name',
+                    name: 'name',
+                    value: displayName(fieldLayoutElement),
+                    readonly: readonly,
+                }) }}
+            </td>
+
+            <td class="textarea">
+                
+            </td>
+
+            <td>{{ displayName(fieldLayoutElement) }}</td>
+
+            <td class="thin">
+                {{ forms.selectField({
+                    id: 'import',
+                    class: 'importSelect importSelectNested',
+                    name: 'import',
+                    options: options,
+                }) }}
+            </td>
+        </tr>
+    {% endif %}
+{% endmacro %}

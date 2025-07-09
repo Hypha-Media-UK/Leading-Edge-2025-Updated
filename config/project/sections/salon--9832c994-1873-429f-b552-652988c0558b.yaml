@@ -1,0 +1,28 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 046080fc-7aad-4c07-b0fa-b55961a0f0de # Salon
+handle: salon
+maxAuthors: 1
+name: Salon
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  21f4ef74-64dc-48e3-bb94-93d62c25ef08: # TLE-2025
+    enabledByDefault: true
+    hasUrls: true
+    template: salon.twig
+    uriFormat: salon
+type: single

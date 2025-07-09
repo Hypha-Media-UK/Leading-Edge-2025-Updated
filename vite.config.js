@@ -52,8 +52,8 @@ export default defineConfig({
       }
     },
     
-    // Minification settings
-    minify: 'terser',
+    // Minification settings for production only
+    minify: process.env.NODE_ENV === 'production' ? 'terser' : false,
     terserOptions: {
       compress: {
         drop_console: true,
@@ -62,7 +62,7 @@ export default defineConfig({
     },
     
     // CSS settings
-    cssMinify: true
+    cssMinify: process.env.NODE_ENV === 'production'
   },
   
   // PostCSS configuration
@@ -72,18 +72,39 @@ export default defineConfig({
         require('postcss-import'),
         require('postcss-nesting'),
         require('autoprefixer'),
-        require('cssnano')({
-          preset: 'default'
-        })
+        ...(process.env.NODE_ENV === 'production' ? [require('cssnano')({ preset: 'default' })] : [])
       ]
     }
   },
   
   // Development server settings
   server: {
+    host: '0.0.0.0',
     port: 3000,
     open: false,
-    cors: true
+    cors: true,
+    https: false,
+    hmr: {
+      port: 3000,
+      host: 'localhost'
+    },
+    proxy: {
+      // Proxy all requests except /_dist/ to DDEV site
+      '^(?!/_dist/).*': {
+        target: 'https://tle-2025.ddev.site',
+        changeOrigin: true,
+        secure: false,
+        ws: true,
+        configure: (proxy, options) => {
+          proxy.on('error', (err, req, res) => {
+            console.log('Proxy error:', err);
+          });
+          proxy.on('proxyReq', (proxyReq, req, res) => {
+            proxyReq.setHeader('Host', 'tle-2025.ddev.site');
+          });
+        }
+      }
+    }
   },
   
   // Base path for assets

@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "Modern CSS build pipeline for Leading Edge website",
   "scripts": {
-    "dev": "vite",
+    "dev": "npm run build:watch & npm run dev:serve",
+    "dev:hmr": "npm run build:watch & npm run dev:serve",
+    "dev:serve": "vite --host 0.0.0.0 --port 3000",
     "build": "vite build",
-    "preview": "vite preview",
-    "watch": "vite build --watch"
+    "build:watch": "vite build --watch",
+    "preview": "vite preview"
   },
   "browserslist": [
     "> 1%",

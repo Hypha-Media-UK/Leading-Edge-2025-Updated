@@ -1,0 +1,74 @@
+color: null
+description: null
+fieldLayouts:
+  9067c2eb-f8d0-4635-9c7f-f04f9df26abc:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-09T09:09:22+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 75d5ff91-e0e7-479a-b047-041d2c3e1649 # Page Header
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0247bd2b-a19a-4e73-a304-1ca9006fbe68
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-09T08:58:16+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: f0eb6556-1429-4336-86ff-322eb5be4254 # Intro Section
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 47ee3b4b-b166-43fe-9e57-1ed7e7c76522
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-09T09:40:47+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 3b68cd98-cd43-4ae2-8d02-61222bda35ba # Cards Section
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b3183abc-3525-4d35-b47e-c80a12a4aa98
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: bbd57b02-3afa-4bef-a4b4-2e46019e5076
+        userCondition: null
+handle: page_ent_salon
+hasTitleField: false
+icon: null
+name: Salon
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{cb_pageHeader.pageTitle}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
