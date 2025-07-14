@@ -8,8 +8,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const subTabsWrappers = document.querySelectorAll('.sub-tabs-wrapper');
     const serviceContentSections = document.querySelectorAll('.service-content-section');
     
-    let activeMainTab = 'allHair';
-    let activeSubTab = 'cuttingStyling';
+    let activeMainTab = null;
+    let activeSubTab = null;
+    
+    // Initialize with first tab active
+    if (mainTabs.length > 0) {
+        const firstMainTab = mainTabs[0];
+        activeMainTab = firstMainTab.getAttribute('data-tab');
+        
+        // Find first sub tab for the first main tab
+        const firstSubTabWrapper = document.querySelector(`[data-main-tab="${activeMainTab}"]`);
+        if (firstSubTabWrapper) {
+            const firstSubTab = firstSubTabWrapper.querySelector('.sub-tab');
+            if (firstSubTab) {
+                activeSubTab = firstSubTab.getAttribute('data-tab');
+            }
+        }
+        
+        // Initialize the display
+        updateContentSections();
+    }
     
     // Main tab click handlers
     mainTabs.forEach(tab => {
@@ -44,23 +62,20 @@ document.addEventListener('DOMContentLoaded', function() {
             const mainTabId = wrapper.getAttribute('data-main-tab');
             if (mainTabId === tabId) {
                 wrapper.style.display = 'block';
-                // Set default sub tab for this main tab
-                if (tabId === 'allHair') {
-                    activeSubTab = 'cuttingStyling';
-                } else if (tabId === 'beautyNails') {
-                    activeSubTab = 'bodyWaxing';
-                } else if (tabId === 'massageAesthetics') {
-                    activeSubTab = 'bodyMassage';
-                }
                 
-                // Update sub tab active states
+                // Set first sub tab as active for this main tab
                 const subTabs = wrapper.querySelectorAll('.sub-tab');
-                subTabs.forEach(subTab => {
-                    subTab.classList.remove('active');
-                    if (subTab.getAttribute('data-tab') === activeSubTab) {
-                        subTab.classList.add('active');
-                    }
-                });
+                if (subTabs.length > 0) {
+                    activeSubTab = subTabs[0].getAttribute('data-tab');
+                    
+                    // Update sub tab active states
+                    subTabs.forEach(subTab => {
+                        subTab.classList.remove('active');
+                        if (subTab.getAttribute('data-tab') === activeSubTab) {
+                            subTab.classList.add('active');
+                        }
+                    });
+                }
             } else {
                 wrapper.style.display = 'none';
             }
@@ -74,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
         activeSubTab = subTabId;
         
         // Update sub tab active states in current wrapper
-        const currentWrapper = document.querySelector(`.sub-tabs-wrapper[data-main-tab="${activeMainTab}"]`);
+        const currentWrapper = document.querySelector(`[data-main-tab="${activeMainTab}"]`);
         if (currentWrapper) {
             const subTabs = currentWrapper.querySelectorAll('.sub-tab');
             subTabs.forEach(subTab => {
@@ -90,11 +105,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function updateContentSections() {
-        const targetSection = `${activeMainTab}-${activeSubTab}`;
-        
         serviceContentSections.forEach(section => {
             const sectionTab = section.getAttribute('data-tab');
-            if (sectionTab === targetSection) {
+            if (sectionTab === activeSubTab) {
                 section.style.display = 'block';
             } else {
                 section.style.display = 'none';
