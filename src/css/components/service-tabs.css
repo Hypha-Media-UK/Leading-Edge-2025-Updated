@@ -26,7 +26,7 @@
     }
 
     & i {
-      display: block;
+      display: block!important;
       font-size: 1.8rem;
       margin-block-end: 0.8rem;
     }
