@@ -861,6 +861,7 @@ return [
     'Includes activating/deactivating user accounts, resetting passwords, and changing email addresses.' => 'Includes activating/deactivating user accounts, resetting passwords, and changing email addresses.',
     'Includes read-only access to user data and most content, via element selector modals and other means.' => 'Includes read-only access to user data and most content, via element selector modals and other means.',
     'Includes suspending, unsuspending, and unlocking user accounts.' => 'Includes suspending, unsuspending, and unlocking user accounts.',
+    'Including a Content Block field recursively is not allowed.' => 'Including a Content Block field recursively is not allowed.',
     'Incorrect current password.' => 'Incorrect current password.',
     'Incorrect password.' => 'Incorrect password.',
     'Indexing assets: {progress}' => 'Indexing assets: {progress}',

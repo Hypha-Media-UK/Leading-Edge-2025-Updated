@@ -14,6 +14,7 @@
         cardVariant: 'light'
     } %}
     {% include '_components/sections/summary-section.twig' %}
+    {% if entry.callToAction.sectionTitle %}
     {% include '_components/sections/call-to-action.twig' %}
-</div>
+    {% endif %}</div>
 {% endblock %}

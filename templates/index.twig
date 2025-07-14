@@ -14,6 +14,7 @@
     {% include '_components/sections/testimonials.twig' %}
     {% include '_components/sections/products-showcase.twig' %}
     {% include '_components/sections/instagram-feed.twig' %}
+    {% if entry.callToAction.sectionTitle %}
     {% include '_components/sections/call-to-action.twig' %}
-</div>
+    {% endif %}</div>
 {% endblock %}

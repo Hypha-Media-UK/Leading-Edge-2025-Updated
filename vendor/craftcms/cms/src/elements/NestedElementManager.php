@@ -1316,7 +1316,7 @@ JS, [
 
             foreach ($elements as $element) {
                 // If the element is a revision, see if we can reassign it to a new primary owner
-                if ($element->getIsRevision()) {
+                if ($element->getIsRevision() && !isset($element->dateDeleted)) {
                     $newOwnerId = (new Query())
                         ->select(['ownerId'])
                         ->from(Table::ELEMENTS_OWNERS)

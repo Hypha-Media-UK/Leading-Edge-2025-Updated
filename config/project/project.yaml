@@ -1,4 +1,26 @@
-dateModified: 1752082202
+dateModified: 1752485893
+elementSources:
+  craft\elements\Entry:
+    -
+      key: '*'
+      type: native
+    -
+      key: singles
+      type: native
+    -
+      heading: Structures
+      key: 'heading:5ed19833-d0be-413d-b83f-739235094aeb'
+      type: heading
+    -
+      defaultSort:
+        - structure
+        - asc
+      defaultViewMode: ''
+      disabled: false
+      key: 'section:d60136f4-9baf-4f3c-9a20-bbd1bf47b28a' # Services
+      tableAttributes:
+        - status
+      type: native
 email:
   fromEmail: access@hypha.media
   fromName: TLE-2025
@@ -24,6 +46,7 @@ meta:
     4ed1b04a-6530-4a34-874c-c5f29f911e66: 'Four Images' # Four Images
     5c8228fd-b7e4-4fa8-b9dd-2a5389c4bb6c: 'Homepage Hero' # Homepage Hero
     5d6f4599-0482-49dc-b4e6-eb7db8af869d: 'Basic with H2' # Basic with H2
+    6b06e17d-cfab-4245-9e41-3857c8657bdc: 'Individual Service' # Individual Service
     8dc06e17-b136-4714-997a-6b1f293e9c41: 'Bold, Italic and Link' # Bold, Italic and Link
     9ab1b041-ae5f-451c-aa7a-e7dda1e2d1f9: 'Title Field' # Title Field
     9b42751e-b87f-4957-8c54-5a457d443a7f: 'Basic with H2' # Basic with H2
@@ -36,12 +59,14 @@ meta:
     54b32803-64e0-46aa-bacf-ecddf2f5db7a: 'Section Link' # Section Link
     70cbf51f-c6a4-4501-ab10-6544b0adb9fd: Simple # Simple
     75d5ff91-e0e7-479a-b047-041d2c3e1649: 'Page Header' # Page Header
+    91bf7b22-c506-4a80-8c0d-506bf77a3dfc: 'Sub Services' # Sub Services
     223fbc1e-4eb0-4383-82ba-1041ce5b1e00: Homepage # Homepage
     392d336a-d1e6-4233-89d7-cf232f91adb8: 'Bold and Italic' # Bold and Italic
     678e5f0a-719b-48e9-85b7-506679f364f5: Homepage # Homepage
     9832c994-1873-429f-b552-652988c0558b: Salon # Salon
     046080fc-7aad-4c07-b0fa-b55961a0f0de: Salon # Salon
     224318bf-f739-48f8-b570-dc4deefe6f0e: Testimonials # Testimonials
+    5521768b-fe93-4d18-b281-f9a472cf9dca: 'All Services' # All Services
     26138429-fcf3-4e89-a520-7bfdbd1591ee: Assets # Assets
     43665714-2299-44fa-abf3-97b45c8a12c7: 'Services Cards' # Services Cards
     71202746-fb78-4408-b9b3-1c3d1e39ffb8: 'Call to Action' # Call to Action
@@ -49,11 +74,16 @@ meta:
     b79b4e43-e6c0-4c44-9a15-f07ccdaa5d37: 'Products Section' # Products Section
     b2608e5b-6a78-41bb-b819-04900f98ce1a: 'Social Section' # Social Section
     b5144bca-43e4-4a75-8d36-4405e3f2629a: 'Testimonial Text' # Testimonial Text
+    b42073cc-57b6-4636-b08c-5b9bb29facb4: 'Sub Service Intro' # Sub Service Intro
     b3726252-6c72-46e5-b01e-d92574299019: 'Single Button' # Single Button
+    bd8fab1a-d105-471a-a842-1dc57f562d2e: 'All Services' # All Services
     c4bebee5-c1d4-47bf-be47-8bcfeb2783ec: 'Services Cards' # Services Cards
     c969543d-de4c-4d09-9576-8758dc27afd1: 'Testimonials Section' # Testimonials Section
+    cd54e7f4-5c22-4c1f-97e1-6e017ee1fcc6: 'Sub Service' # Sub Service
     d51d5a9b-69fe-4e13-acd6-d4f9a20ccae1: 'Title Text' # Title Text
+    d60136f4-9baf-4f3c-9a20-bbd1bf47b28a: Services # Services
     d9707244-1d4e-4b5b-9d06-b6055492603e: TLE-2025 # TLE-2025
+    e21536ab-798f-4de7-9666-70903d331159: Services # Services
     eb143e66-f41e-413f-aaff-b1cc34d3e545: 'Simple Cards' # Simple Cards
     f0eb6556-1429-4336-86ff-322eb5be4254: 'Intro Section' # Intro Section
     f117f59d-5600-46e1-8a81-3dec61d0f0c9: 'Six Images' # Six Images

@@ -107,9 +107,9 @@
             'dev_requirement' => false,
         ),
         'craftcms/cms' => array(
-            'pretty_version' => '5.8.4',
-            'version' => '5.8.4.0',
-            'reference' => 'f7702ae97d20f0c2d41b97a8fc39ede527579594',
+            'pretty_version' => '5.8.6',
+            'version' => '5.8.6.0',
+            'reference' => '4e864823c108b2bc989fee6b3249aa76380ff6ae',
             'type' => 'library',
             'install_path' => __DIR__ . '/../craftcms/cms',
             'aliases' => array(),
@@ -539,9 +539,9 @@
             'dev_requirement' => false,
         ),
         'phpstan/phpdoc-parser' => array(
-            'pretty_version' => '2.1.0',
-            'version' => '2.1.0.0',
-            'reference' => '9b30d6fd026b2c132b3985ce6b23bec09ab3aa68',
+            'pretty_version' => '2.2.0',
+            'version' => '2.2.0.0',
+            'reference' => 'b9e61a61e39e02dd90944e9115241c7f7e76bfd8',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpstan/phpdoc-parser',
             'aliases' => array(),
@@ -679,8 +679,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '3.0.0',
+                0 => '3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache' => array(

@@ -298,15 +298,15 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
         ),
         'voku\\helper\\' => 
         array (
-            0 => __DIR__ . '/..' . '/voku/urlify/src/voku/helper',
+            0 => __DIR__ . '/..' . '/voku/anti-xss/src/voku/helper',
             1 => __DIR__ . '/..' . '/voku/email-check/src/voku/helper',
-            2 => __DIR__ . '/..' . '/voku/anti-xss/src/voku/helper',
+            2 => __DIR__ . '/..' . '/voku/urlify/src/voku/helper',
         ),
         'voku\\' => 
         array (
-            0 => __DIR__ . '/..' . '/voku/stop-words/src/voku',
+            0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
             1 => __DIR__ . '/..' . '/voku/portable-utf8/src/voku',
-            2 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
+            2 => __DIR__ . '/..' . '/voku/stop-words/src/voku',
         ),
         'verbb\\fieldmanager\\' => 
         array (
@@ -326,9 +326,9 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
         ),
         'phpDocumentor\\Reflection\\' => 
         array (
-            0 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
+            0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'nystudio107\\codeeditor\\' => 
         array (
@@ -624,8 +624,8 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
         'Illuminate\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/collections',
-            1 => __DIR__ . '/..' . '/illuminate/macroable',
-            2 => __DIR__ . '/..' . '/illuminate/conditionable',
+            1 => __DIR__ . '/..' . '/illuminate/conditionable',
+            2 => __DIR__ . '/..' . '/illuminate/macroable',
         ),
         'Illuminate\\Contracts\\' => 
         array (
@@ -2487,6 +2487,7 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
         'PHPStan\\PhpDocParser\\Ast\\PhpDoc\\RequireExtendsTagValueNode' => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src/Ast/PhpDoc/RequireExtendsTagValueNode.php',
         'PHPStan\\PhpDocParser\\Ast\\PhpDoc\\RequireImplementsTagValueNode' => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src/Ast/PhpDoc/RequireImplementsTagValueNode.php',
         'PHPStan\\PhpDocParser\\Ast\\PhpDoc\\ReturnTagValueNode' => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src/Ast/PhpDoc/ReturnTagValueNode.php',
+        'PHPStan\\PhpDocParser\\Ast\\PhpDoc\\SealedTagValueNode' => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src/Ast/PhpDoc/SealedTagValueNode.php',
         'PHPStan\\PhpDocParser\\Ast\\PhpDoc\\SelfOutTagValueNode' => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src/Ast/PhpDoc/SelfOutTagValueNode.php',
         'PHPStan\\PhpDocParser\\Ast\\PhpDoc\\TemplateTagValueNode' => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src/Ast/PhpDoc/TemplateTagValueNode.php',
         'PHPStan\\PhpDocParser\\Ast\\PhpDoc\\ThrowsTagValueNode' => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src/Ast/PhpDoc/ThrowsTagValueNode.php',

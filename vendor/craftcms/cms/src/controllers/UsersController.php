@@ -1790,7 +1790,7 @@ JS);
 
         // Is this public registration, and was the user going to be activated automatically?
         $publicActivation = $isPublicRegistration && $user->getStatus() === User::STATUS_ACTIVE;
-        $loggedIn = $publicActivation && !Craft::$app->getUser()->getIsGuest();
+        $loggedIn = $publicActivation && $this->_maybeLoginUserAfterAccountActivation($user);
         $returnCsrfToken = $returnCsrfToken || $loggedIn;
 
         if ($this->request->getAcceptsJson()) {

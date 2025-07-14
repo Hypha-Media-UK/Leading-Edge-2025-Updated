@@ -1,0 +1,28 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: e21536ab-798f-4de7-9666-70903d331159 # Services
+handle: services
+maxAuthors: 1
+name: Services
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  21f4ef74-64dc-48e3-bb94-93d62c25ef08: # TLE-2025
+    enabledByDefault: true
+    hasUrls: true
+    template: services.twig
+    uriFormat: our-services
+type: single

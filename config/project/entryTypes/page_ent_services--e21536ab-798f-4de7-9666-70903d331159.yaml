@@ -1,0 +1,91 @@
+color: null
+description: null
+fieldLayouts:
+  1bc2e931-4f9c-4446-91b0-ba10e106877e:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-14T08:23:14+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 75d5ff91-e0e7-479a-b047-041d2c3e1649 # Page Header
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5eb0a339-f580-4fa2-846c-cfc149e71ba4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-14T08:28:32+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 71202746-fb78-4408-b9b3-1c3d1e39ffb8 # Call to Action
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 972b8df4-1ad4-4960-97e1-1d6c63d6b863
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-14T08:44:47+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 10dcb136-b8a7-4325-90fe-c0cda2e1ebd1 # Simple Text
+            handle: introText
+            includeInCards: false
+            instructions: null
+            label: 'Intro Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e8a35014-d39c-4c46-bc67-20d10c08bd47
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-14T09:11:54+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: bd8fab1a-d105-471a-a842-1dc57f562d2e # All Services
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3d80548a-15d0-4423-876d-740b137cc96f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 3b94ee76-bd25-4801-86b5-f7a403c12626
+        userCondition: null
+handle: page_ent_services
+hasTitleField: false
+icon: null
+name: Services
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: 'Our Services'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

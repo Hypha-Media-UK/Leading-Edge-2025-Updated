@@ -1364,7 +1364,8 @@ SQL)->execute();
     public function getEntryTypesBySectionId(int $sectionId): array
     {
         // todo: remove this after the next breakpoint
-        if (Craft::$app->getDb()->columnExists(Table::ENTRYTYPES, 'sectionId')) {
+        $db = Craft::$app->getDb();
+        if ($db->columnExists(Table::ENTRYTYPES, 'sectionId')) {
             $results = $this->_createEntryTypeQuery()
                 ->where([
                     'sectionId' => $sectionId,
@@ -1375,12 +1376,18 @@ SQL)->execute();
             return array_map(fn(array $result) => new EntryType($result), $results);
         }
 
-        $entryTypes = (new Query())
-            ->select(['id' => 'typeId', 'name', 'handle', 'description'])
+        $query = (new Query())
+            ->select(['id' => 'typeId', 'name', 'handle'])
             ->from(Table::SECTIONS_ENTRYTYPES)
             ->where(['sectionId' => $sectionId])
-            ->orderBy(['sortOrder' => SORT_ASC])
-            ->all();
+            ->orderBy(['sortOrder' => SORT_ASC]);
+
+        // todo: remove after the next breakpoint
+        if ($db->columnExists(Table::ENTRYTYPES, 'description')) {
+            $query->addSelect('description');
+        }
+
+        $entryTypes = $query->all();
 
         return array_values(array_filter(
             array_map(fn($entryType) => $this->getEntryType($entryType), $entryTypes),

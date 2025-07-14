@@ -1,0 +1,74 @@
+color: null
+description: null
+fieldLayouts:
+  b3c0f12e-412f-4d5c-ad1a-c1ca18bebd37:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-14T09:16:11+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: mainServiceTitle
+            includeInCards: false
+            instructions: null
+            label: 'Main Service Title'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2bb9f6fe-0a23-41f7-99f2-7dda339662a3
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-14T09:17:27+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: mainTabText
+            includeInCards: false
+            instructions: null
+            label: 'Main Tab Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f39a9177-368a-4537-9dcf-69ec27342aab
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-14T09:19:56+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 91bf7b22-c506-4a80-8c0d-506bf77a3dfc # Sub Services
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4ef3969e-bfe2-4824-87d6-8ea72c8f65f0
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 9adfd172-d41b-454d-ab76-900b58faf992
+        userCondition: null
+handle: allServices
+hasTitleField: false
+icon: null
+name: 'All Services'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

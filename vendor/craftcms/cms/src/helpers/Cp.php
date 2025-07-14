@@ -1287,7 +1287,7 @@ JS, [
         }
 
         $first = array_shift($elements);
-        $html = Html::beginTag('div', ['class' => 'inline-chips']) .
+        $html = Html::beginTag('div', ['class' => ['inline-chips', 'no-truncate']]) .
             static::elementChipHtml($first, [
                 'showDraftName' => $showDraftName,
                 'showLabel' => $showLabel,

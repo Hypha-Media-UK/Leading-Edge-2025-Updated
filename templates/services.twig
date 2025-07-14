@@ -8,19 +8,14 @@
 
 {% block content %}
 <div class="services-detail-page">
-    {# Page Header #}
-    {% from '_components/ui/page-header.twig' import pageHeader %}
-    {{ pageHeader(
-        'Salon Services',
-        'Our award-winning salon is operated by a dynamic, creative and professional team all head hunted for their skills and knowledge'
-    ) }}
+    {% include '_components/ui/page-header.twig' %}
+
 
     {# Services Intro #}
     <section class="services-intro">
         <div class="container">
             <div class="intro-content">
-                <p>All our stylists are supported with training through the "Wella Academy" where they learn new skills and techniques to keep up to date with all the latest colours and trends. Rest assured our team will give you valuable tips and advice on how to keep your style and hair in tip top condition.</p>
-                <p>We continually score 4.91 out of 5 in over 1800 independent reviews carried out by visitors to our salon.</p>
+                {{ entry.introText }}
             </div>
         </div>
     </section>
@@ -168,14 +163,9 @@
             </div>
         </div>
     </section>
+    {% if entry.callToAction.sectionTitle %}
+    {% include '_components/sections/call-to-action.twig' %}
+    {% endif %}
 
-    {# Booking CTA #}
-    {% from '_components/sections/call-to-action.twig' import callToAction %}
-    {{ callToAction(
-        'Ready to book your appointment?',
-        'Our team of expert stylists and beauty professionals are ready to help you look and feel your best.',
-        'Book Appointment',
-        '/contact'
-    ) }}
 </div>
 {% endblock %}
