@@ -20,147 +20,88 @@
         </div>
     </section>
 
-    {# Services Tabs #}
+    {# Services Tabs - Dynamic Content from CraftCMS #}
     <section class="services-tabs">
         <div class="container">
-            {# Main Tabs #}
-            {% from '_components/sections/service-tabs.twig' import serviceTabs %}
-            {{ serviceTabs([
-                { id: 'allHair', label: 'All Hair', icon: 'fas fa-cut' },
-                { id: 'beautyNails', label: 'Beauty & Nails', icon: 'fas fa-spa' },
-                { id: 'massageAesthetics', label: 'Massage & Aesthetics', icon: 'fas fa-hand-sparkles' }
-            ], 'allHair') }}
-            
-            {# Sub Tabs - Hair Services #}
-            <div class="sub-tabs-wrapper" data-main-tab="allHair">
-                {% from '_components/sections/sub-tabs-row.twig' import subTabsRow %}
-                {{ subTabsRow([
-                    { id: 'cuttingStyling', label: 'Cutting & Styling' },
-                    { id: 'treatments', label: 'Treatments' },
-                    { id: 'highlights', label: 'Highlights' },
-                    { id: 'tints', label: 'Tints' },
-                    { id: 'occasions', label: 'Occasions' }
-                ], 'cuttingStyling') }}
-            </div>
-            
-            {# Sub Tabs - Beauty & Nails #}
-            <div class="sub-tabs-wrapper" data-main-tab="beautyNails" style="display: none;">
-                {% from '_components/sections/sub-tabs-row.twig' import subTabsRow %}
-                {{ subTabsRow([
-                    { id: 'bodyWaxing', label: 'Body Waxing' },
-                    { id: 'facialWaxThreading', label: 'Facial Wax & Threading' },
-                    { id: 'eyesNails', label: 'Eyes & Nails' }
-                ], 'bodyWaxing') }}
-            </div>
-            
-            {# Sub Tabs - Massage & Aesthetics #}
-            <div class="sub-tabs-wrapper" data-main-tab="massageAesthetics" style="display: none;">
-                {% from '_components/sections/sub-tabs-row.twig' import subTabsRow %}
-                {{ subTabsRow([
-                    { id: 'bodyMassage', label: 'Body Massage' },
-                    { id: 'facialMassage', label: 'Facial Massage' },
-                    { id: 'aestheticTreatments', label: 'Treatments' }
-                ], 'bodyMassage') }}
-            </div>
-            
-            {# Service Content Sections #}
-            
-            {# Hair Services - Cutting & Styling #}
-            <div class="service-content-section" data-tab="allHair-cuttingStyling">
-                {% from '_components/sections/service-content-section.twig' import serviceContentSection %}
-                {{ serviceContentSection(
-                    'Hair Styling & Haircare for Women',
-                    'We currently have a team of 8 fully qualified hairdressers who are all highly experienced and are available to cater for all your needs including colouring, cutting and perms. Supported by the Wella educational team they are well trained and fully up to date with all the latest cuts, colours and trends.<br><br>The Wella name is synonymous with innovative hair care and they are consistently the first to market with new technologies developed to meet the ever-changing needs of the consumer. The Wella brand is one of the most recognisable in the industry and is a guarantee of performance and quality all in keeping with our brand and ethos. We also have an extensive range of styling and haircare products for sale from Wella, Mood, Nioxin, and American Crew.',
-                    [
-                        { title: 'SHAMPOO CUT & BLOW DRY', price: '£30.00' },
-                        { title: 'RE-STYLE CUT & FINISH', price: '£36.00' },
-                        { title: 'LONG HAIR CUT & BLOW DRY', price: '£36.00' },
-                        { title: 'SHAMPOO & BLOW DRY', price: '£20.00' },
-                        { title: 'LONG HAIR BLOW DRY', price: '£24.00' },
-                        { title: 'FRINGE TRIM', price: '£4.00' }
-                    ],
-                    [
-                        { src: '/images/new/misc/style1.webp', alt: 'Hair Styling Example 1' },
-                        { src: '/images/new/misc/style2.webp', alt: 'Hair Styling Example 2' },
-                        { src: '/images/new/misc/style3.webp', alt: 'Hair Styling Example 3' },
-                        { src: '/images/new/misc/style4.webp', alt: 'Hair Styling Example 4' }
-                    ]
-                ) }}
-            </div>
-            
-            {# Hair Services - Treatments #}
-            <div class="service-content-section" data-tab="allHair-treatments" style="display: none;">
-                <h2>Hair Treatments</h2>
-                <div class="service-description">
-                    <p>We provide both Kerastraight and Olaplex treatments as well as a full range of quality products to enhance and maintain the natural beauty of your hair from Wella and Mood.</p>
+            {% if entry.mx_allServices|length %}
+                {# Main Tabs - Dynamic #}
+                <div class="tabs-container">
+                    {% for mainService in entry.mx_allServices %}
+                        <div class="tab{% if loop.first %} active{% endif %}" data-tab="service-{{ mainService.id }}">
+                            {% if mainService.tabIcon %}
+                                <i class="fas {{ mainService.tabIcon }}"></i>
+                            {% endif %}
+                            <span>{{ mainService.mainTabText }}</span>
+                        </div>
+                    {% endfor %}
                 </div>
-                <div class="services-list">
-                    <div class="service-item">
-                        <span class="service-title">MILK_SHAKE INTEGRITY</span>
-                        <span class="service-price">£15.00</span>
-                    </div>
-                    <div class="service-item">
-                        <span class="service-title">MILK_SHAKE PAPAYA</span>
-                        <span class="service-price">£9.50</span>
-                    </div>
-                    <div class="service-item">
-                        <span class="service-title">MILK_SHAKE COCOA</span>
-                        <span class="service-price">£9.50</span>
-                    </div>
-                    <div class="service-item">
-                        <span class="service-title">WELLA INVIGO MASK</span>
-                        <span class="service-price">£10.00</span>
-                    </div>
-                    <div class="service-item">
-                        <span class="service-title">OLAPLEX FROM</span>
-                        <span class="service-price">£12.00</span>
-                    </div>
-                    <div class="service-item">
-                        <span class="service-title">FABRIQ INC SHAMP / COND</span>
-                        <span class="service-price">£169.00</span>
-                    </div>
-                </div>
-                <div class="treatment-section">
-                    <h3>Kerastraight</h3>
-                    <p>Today there is a real demand for shiny, healthy and easy to manage hair. This gave the inspiration behind Fabriq's award-winning range of treatments all available in our salon. As well as leaving the hair feeling healthy, straighter, stronger and possessing a maximum enhanced shine Fabriq will also repair and strengthen the hair simultaneously. We use an advanced range of Protein treatments.</p>
-                </div>
-                <div class="treatment-section">
-                    <h3>Olaplex</h3>
-                    <p>Olaplex is known as "The One Ingredient Changes Everything". It was designed by scientists in Materials and Chemistry who both came from the world of cosmetics and science. Olaplex has a single active ingredient which is designed to reconnect the disulphide bonds broken by the process of permanent hair colouring and lightening.</p>
-                    <p>Here at The Leading Edge we can say hand on heart that once you have tried the Olaplex treatment you will wonder why you have been without it before.</p>
-                </div>
-            </div>
-            
-            {# Additional service sections would continue here... #}
-            {# For brevity, I'll add a placeholder for the remaining sections #}
-            <div class="service-content-section" data-tab="allHair-highlights" style="display: none;">
-                <h2>Highlights</h2>
-                <div class="service-description">
-                    <p>We provide an extensive range of colouring techniques, to bring you the latest looks and the fashion styles you see in magazines and in the media. All our qualified stylists are trained in the latest techniques and stay at the forefront of hair fashion.</p>
-                </div>
-                <div class="services-list">
-                    <div class="service-item">
-                        <span class="service-title">FULL HEAD HIGHLIGHTS</span>
-                        <span class="service-price">from £65.00</span>
-                    </div>
-                    <div class="service-item">
-                        <span class="service-title">HALF HEAD HIGHLIGHTS</span>
-                        <span class="service-price">from £55.00</span>
-                    </div>
-                    <div class="service-item">
-                        <span class="service-title">T-SECTION HIGHLIGHTS</span>
-                        <span class="service-price">from £45.00</span>
-                    </div>
-                    <div class="service-item">
-                        <span class="service-title">BALAYAGE</span>
-                        <span class="service-price">from £70.00</span>
-                    </div>
-                    <div class="service-item">
-                        <span class="service-title">COLOUR CORRECTION</span>
-                        <span class="service-price">Price on consultation</span>
-                    </div>
-                </div>
-            </div>
+                
+                {# Sub Tabs and Content - Dynamic #}
+                {% for mainService in entry.mx_allServices %}
+                    {# Sub Tabs for this main service #}
+                    {% if mainService.mx_subServices|length %}
+                        <div class="sub-tabs-wrapper" data-main-tab="service-{{ mainService.id }}"{% if not loop.first %} style="display: none;"{% endif %}>
+                            <div class="sub-tabs-container">
+                                {% for subService in mainService.mx_subServices %}
+                                    <div class="sub-tab{% if loop.first %} active{% endif %}" data-tab="service-{{ mainService.id }}-{{ subService.id }}">
+                                        <span>{{ subService.subTabText }}</span>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                
+                {# Service Content Sections - Dynamic #}
+                {% for mainService in entry.mx_allServices %}
+                    {% for subService in mainService.mx_subServices %}
+                        <div class="service-content-section" data-tab="service-{{ mainService.id }}-{{ subService.id }}"{% if not (loop.parent.loop.first and loop.first) %} style="display: none;"{% endif %}>
+                            <div class="services-content">
+                                <div class="services-intro">
+                                    {% if subService.subTitle %}
+                                        <h2>{{ subService.subTitle }}</h2>
+                                    {% endif %}
+                                    
+                                    {# Sub Service Intro Content #}
+                                    {% if subService.subServiceIntro.introText %}
+                                        <div class="service-description">
+                                            {{ subService.subServiceIntro.introText }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                
+                                {# Intro Images #}
+                                {% if subService.subServiceIntro.introImages|length %}
+                                    <div class="services-gallery">
+                                        {% for image in subService.subServiceIntro.introImages %}
+                                            <div class="gallery-item">
+                                                <img src="{{ image.url }}" alt="{{ image.alt ?: image.title }}" />
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                                
+                                {# Price List #}
+                                {% if subService.priceList|length %}
+                                    <div class="services-list">
+                                        {% for priceItem in subService.priceList %}
+                                            <div class="service-item">
+                                                <div class="service-info">
+                                                    <h3>{{ priceItem.title }}</h3>
+                                                    {% if priceItem.summary %}
+                                                        <p>{{ priceItem.summary }}</p>
+                                                    {% endif %}
+                                                </div>
+                                                <div class="service-price">{{ priceItem.price }}</div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
         </div>
     </section>
     {% if entry.callToAction.sectionTitle %}

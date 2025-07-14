@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: priceList
+instructions: null
+name: 'Price List'
+searchable: false
+settings:
+  createButtonLabel: 'Add Service and Price'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 55300cfe-bdf4-4ff4-8cb4-41e6c4d57622 # Service Type
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: true
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

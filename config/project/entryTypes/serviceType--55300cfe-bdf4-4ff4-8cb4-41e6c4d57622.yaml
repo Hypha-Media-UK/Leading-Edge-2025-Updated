@@ -1,0 +1,89 @@
+color: null
+description: null
+fieldLayouts:
+  f4277d76-e11e-461b-8755-0e3ea10b52d7:
+    cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:c2b0540a-1814-4abe-8b0b-e8b9583e9c72'
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-07-14T09:58:09+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: 'Service Name'
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 0d7f11d8-adf8-4cc4-93c1-ac4fe0aff16c
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-14T10:00:33+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: price
+            includeInCards: true
+            instructions: null
+            label: Price
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c2b0540a-1814-4abe-8b0b-e8b9583e9c72
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-14T10:00:33+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: summary
+            includeInCards: false
+            instructions: null
+            label: Summary
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5d1f0c8e-053b-47fc-a985-1b0658661d8d
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 9d6d8111-6baf-4d08-9127-29ef4234c092
+        userCondition: null
+handle: serviceType
+hasTitleField: true
+icon: null
+name: 'Service Type'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

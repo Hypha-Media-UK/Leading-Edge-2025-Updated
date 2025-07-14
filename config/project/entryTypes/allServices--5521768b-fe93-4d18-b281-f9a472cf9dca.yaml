@@ -1,4 +1,4 @@
-color: null
+color: lime
 description: null
 fieldLayouts:
   b3c0f12e-412f-4d5c-ad1a-c1ca18bebd37:
@@ -40,7 +40,24 @@ fieldLayouts:
             uid: f39a9177-368a-4537-9dcf-69ec27342aab
             userCondition: null
             warning: null
-            width: 50
+            width: 25
+          -
+            dateAdded: '2025-07-14T10:46:15+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: tabIcon
+            includeInCards: false
+            instructions: null
+            label: Icon
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5b3cde3e-b3b1-471d-a53a-1d54addc4bf8
+            userCondition: null
+            warning: null
+            width: 25
           -
             dateAdded: '2025-07-14T09:19:56+00:00'
             editCondition: null

@@ -1,10 +1,10 @@
 columnSuffix: null
-handle: subServices
+handle: mx_subServices
 instructions: null
 name: 'Sub Services'
 searchable: false
 settings:
-  createButtonLabel: null
+  createButtonLabel: 'New Service'
   defaultIndexViewMode: cards
   enableVersioning: false
   entryTypes:
@@ -19,11 +19,11 @@ settings:
   includeTableView: false
   maxEntries: null
   minEntries: null
-  pageSize: 50
+  pageSize: null
   propagationKeyFormat: null
   propagationMethod: all
   showCardsInGrid: true
-  viewMode: cards
+  viewMode: blocks
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Matrix
