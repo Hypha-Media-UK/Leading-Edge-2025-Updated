@@ -1,0 +1,91 @@
+color: null
+description: null
+fieldLayouts:
+  07d9b4de-8a58-43bb-ad21-a84388c5aecd:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-15T09:46:10+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 75d5ff91-e0e7-479a-b047-041d2c3e1649 # Page Header
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 526dcd01-3d14-4e26-b31c-03f4360e00da
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-15T09:46:10+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 69b12cc6-3150-4b5d-9318-88d440f5431e # Location
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3651d43f-f3c1-4770-a9d1-040fadaa05c9
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-15T09:46:10+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 2bc6cf54-0be9-41dd-950d-f337f8afa9ce # Opening Hours
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5e9d4b8b-ebf0-42a1-a4f8-a8992209b0a9
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-15T10:02:11+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 5c61d44f-616f-4ae5-b273-cdb67ecfff52 # Connect
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f8b4eeff-10e4-43e9-a0a1-045c54caa9f4
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: fcf164ca-2c96-42a9-ab23-2db60d051f2a
+        userCondition: null
+handle: page_ent_contact
+hasTitleField: false
+icon: null
+name: Contact
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: 'Contact Us'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

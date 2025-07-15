@@ -1,0 +1,152 @@
+columnSuffix: null
+handle: connect
+instructions: null
+name: Connect
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - 0c144551-b129-4700-87c4-4dc2cbcd34b4
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    0:
+                      - name
+                      - Content
+                    1:
+                      - uid
+                      - 6801da75-ddd3-4817-85ec-cf777a71d268
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - blockTitle
+                            2:
+                              - label
+                              - Title
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 75
+                            10:
+                              - dateAdded
+                              - '2025-07-15T10:02:06+00:00'
+                            11:
+                              - uid
+                              - 0ed99930-a5a6-4262-9461-a81e133d1384
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - blockIcon
+                            2:
+                              - label
+                              - Icon
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 25
+                            10:
+                              - dateAdded
+                              - '2025-07-15T10:02:06+00:00'
+                            11:
+                              - uid
+                              - cb44de7b-75c0-4a28-8a54-84a8a3d40a98
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - cb_phone
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-07-15T10:02:06+00:00'
+                            11:
+                              - uid
+                              - 2254ab01-5792-4632-8148-665d9e92f512
+                            14:
+                              - fieldUid
+                              - 0af69162-000c-4bb3-a42e-77f5a08558e3 # Phone
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-07-15T10:02:06+00:00'
+                            11:
+                              - uid
+                              - 49984d1d-6af0-4361-978c-33434f2b4a56
+                            14:
+                              - fieldUid
+                              - a0d638c3-37dd-42c0-bcdc-25e945644b12 # Email
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: pane
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

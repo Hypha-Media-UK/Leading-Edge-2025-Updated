@@ -1,0 +1,94 @@
+columnSuffix: null
+handle: cb_emailAddress
+instructions: null
+name: Email
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - b270e3c5-c867-472f-817e-21009cffb5cf
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    1:
+                      - uid
+                      - 0071d3ab-deec-46b5-a89b-6328a4172daa
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - emailAddress
+                            2:
+                              - label
+                              - Email
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 75
+                            10:
+                              - dateAdded
+                              - '2025-07-15T10:01:35+00:00'
+                            11:
+                              - uid
+                              - 9058d117-0ab4-4d0d-975d-d029e190ae4e
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - emailIcon
+                            2:
+                              - label
+                              - Icon
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 25
+                            10:
+                              - dateAdded
+                              - '2025-07-15T10:01:35+00:00'
+                            11:
+                              - uid
+                              - 1002b883-e469-4734-aa1c-abebab5c7311
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

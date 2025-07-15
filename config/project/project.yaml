@@ -1,4 +1,4 @@
-dateModified: 1752570494
+dateModified: 1752573751
 elementSources:
   craft\elements\Entry:
     -
@@ -39,12 +39,16 @@ graphql:
     expiryDate: null
 meta:
   __names__:
+    0af69162-000c-4bb3-a42e-77f5a08558e3: Phone # Phone
     0f026b4b-1c4d-43fd-9071-50babbe0d30d: 'Services Section' # Services Section
+    2bc6cf54-0be9-41dd-950d-f337f8afa9ce: 'Opening Hours' # Opening Hours
+    2fa578a2-b3ab-4fef-8fb9-2e9b9145a907: Contact # Contact
     3b0f3bfb-1b7f-4be0-94f0-0a2f29509f4f: Team # Team
     3b68cd98-cd43-4ae2-8d02-61222bda35ba: 'Cards Section' # Cards Section
     3e7a3e99-ba2f-44b4-966e-e6783dd7e3c1: 'Hero Buttons' # Hero Buttons
     04ddff7f-52ed-458a-bc0c-a3a9d4b76f4d: 'Single Image' # Single Image
     4ed1b04a-6530-4a34-874c-c5f29f911e66: 'Four Images' # Four Images
+    5c61d44f-616f-4ae5-b273-cdb67ecfff52: Connect # Connect
     5c8228fd-b7e4-4fa8-b9dd-2a5389c4bb6c: 'Homepage Hero' # Homepage Hero
     5d6f4599-0482-49dc-b4e6-eb7db8af869d: 'Basic with H2' # Basic with H2
     8dc06e17-b136-4714-997a-6b1f293e9c41: 'Bold, Italic and Link' # Bold, Italic and Link
@@ -54,10 +58,13 @@ meta:
     21f4ef74-64dc-48e3-bb94-93d62c25ef08: TLE-2025 # TLE-2025
     30d70629-c8e5-40db-9f27-dd7dd53d0afb: 'Card Link' # Card Link
     35f4bfc2-4432-43df-bd81-7ccfd0e7a7f1: Team # Team
+    43d74a4b-22f2-481f-9e51-582bfd8ccd86: Times # Times
     45b3edbc-893f-4d31-acaa-4f187ee99099: Cards # Cards
     48ff7023-466f-423c-a293-c4ebec9ab0a4: Testimonials # Testimonials
     54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9: 'Straight Text' # Straight Text
     54b32803-64e0-46aa-bacf-ecddf2f5db7a: 'Section Link' # Section Link
+    69b12cc6-3150-4b5d-9318-88d440f5431e: Location # Location
+    69d4f867-81b3-416a-b6d1-35d2428bf5dd: Contact # Contact
     70cbf51f-c6a4-4501-ab10-6544b0adb9fd: Simple # Simple
     75d5ff91-e0e7-479a-b047-041d2c3e1649: 'Page Header' # Page Header
     91bf7b22-c506-4a80-8c0d-506bf77a3dfc: 'Sub Services' # Sub Services
@@ -73,6 +80,7 @@ meta:
     26138429-fcf3-4e89-a520-7bfdbd1591ee: Assets # Assets
     43665714-2299-44fa-abf3-97b45c8a12c7: 'Services Cards' # Services Cards
     71202746-fb78-4408-b9b3-1c3d1e39ffb8: 'Call to Action' # Call to Action
+    a0d638c3-37dd-42c0-bcdc-25e945644b12: Email # Email
     a6966eba-abc7-43bd-aad8-95073f426a6d: 'Summary Section' # Summary Section
     b79b4e43-e6c0-4c44-9a15-f07ccdaa5d37: 'Products Section' # Products Section
     b2608e5b-6a78-41bb-b819-04900f98ce1a: 'Social Section' # Social Section

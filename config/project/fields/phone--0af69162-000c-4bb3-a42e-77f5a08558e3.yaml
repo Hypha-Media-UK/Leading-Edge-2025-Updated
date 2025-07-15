@@ -1,0 +1,94 @@
+columnSuffix: null
+handle: phone
+instructions: null
+name: Phone
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - 336a0988-5d13-4f94-97d0-230d958e1f6c
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    1:
+                      - uid
+                      - 2218dbe5-b063-4296-a565-d18e802a8bcc
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - phoneNumber
+                            2:
+                              - label
+                              - Number
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 75
+                            10:
+                              - dateAdded
+                              - '2025-07-15T09:59:56+00:00'
+                            11:
+                              - uid
+                              - f3eb48ed-ffd4-4872-afa0-d7a39d85ede6
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - phoneIcon
+                            2:
+                              - label
+                              - Icon
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 25
+                            10:
+                              - dateAdded
+                              - '2025-07-15T09:59:56+00:00'
+                            11:
+                              - uid
+                              - 74b95b16-b362-4aa1-8e3c-e3a4fba06184
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

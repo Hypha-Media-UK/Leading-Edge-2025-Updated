@@ -1,0 +1,123 @@
+columnSuffix: null
+handle: openingHours
+instructions: null
+name: 'Opening Hours'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - ed5fa848-ec03-4416-bb7a-d34d528db619
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    0:
+                      - name
+                      - Content
+                    1:
+                      - uid
+                      - 82c90fca-9dcf-4757-8c4c-98fb16756634
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - blockTitle
+                            2:
+                              - label
+                              - Title
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 75
+                            10:
+                              - dateAdded
+                              - '2025-07-15T09:44:24+00:00'
+                            11:
+                              - uid
+                              - c34eff0a-50f2-4791-89b5-75377decdfa1
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - blockIcon
+                            2:
+                              - label
+                              - Icon
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 25
+                            10:
+                              - dateAdded
+                              - '2025-07-15T09:44:24+00:00'
+                            11:
+                              - uid
+                              - 749986a0-25fe-4a50-8b4c-26252b5a92b0
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-15T09:44:24+00:00'
+                            11:
+                              - uid
+                              - cc817a75-0f11-4f00-867b-dab1f65cdd7c
+                            14:
+                              - fieldUid
+                              - 43d74a4b-22f2-481f-9e51-582bfd8ccd86 # Times
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: pane
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

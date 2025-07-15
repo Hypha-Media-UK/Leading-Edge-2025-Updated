@@ -1,0 +1,75 @@
+columnSuffix: null
+handle: openingTimes
+instructions: null
+name: Times
+searchable: false
+settings:
+  addRowLabel: 'Add a Day'
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Day
+            -
+              - handle
+              - day
+            -
+              - width
+              - 50%
+            -
+              - type
+              - singleline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - Open
+            -
+              - handle
+              - openTime
+            -
+              - width
+              - 25%
+            -
+              - type
+              - singleline
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - Closed
+            -
+              - handle
+              - closedTime
+            -
+              - width
+              - 25%
+            -
+              - type
+              - singleline
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+        -
+          - col2
+          - ''
+        -
+          - col3
+          - ''
+  maxRows: null
+  minRows: 1
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table
