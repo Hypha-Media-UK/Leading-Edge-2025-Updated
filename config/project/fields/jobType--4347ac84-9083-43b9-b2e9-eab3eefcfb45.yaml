@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: jobType
+instructions: null
+name: 'Job Type'
+searchable: false
+settings:
+  default: true
+  offLabel: 'Part Time'
+  onLabel: 'Full Time'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

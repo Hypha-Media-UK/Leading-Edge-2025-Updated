@@ -1,0 +1,155 @@
+columnSuffix: null
+handle: cb_currentOpportunities
+instructions: null
+name: 'Current Opportunities'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - af62d9b0-0af5-4740-9b33-aba71748d254
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    0:
+                      - name
+                      - Content
+                    1:
+                      - uid
+                      - fc9e07c4-dd74-4de8-b274-7360964af0cd
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - sectionTitle
+                            2:
+                              - label
+                              - 'Section Title'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-15T16:14:40+00:00'
+                            11:
+                              - uid
+                              - 73f5da8a-373b-4309-8f1d-3b32a430651d
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - sectionSubText
+                            2:
+                              - label
+                              - 'Section Subtext'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-15T16:14:40+00:00'
+                            11:
+                              - uid
+                              - 9f4fd999-1b8c-4220-9c0d-bbdf01a300e0
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-15T16:14:40+00:00'
+                            11:
+                              - uid
+                              - bd67d2aa-fcf7-4db0-9e5d-b4fa7c86a788
+                            14:
+                              - fieldUid
+                              - 88590e6e-50fb-4242-94c5-5cdabdb88f86 # Job Descriptions
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - noVacancies
+                            2:
+                              - label
+                              - 'NO Vacancies Text'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-15T16:21:29+00:00'
+                            11:
+                              - uid
+                              - f3328715-17fd-4895-8577-667831d3f461
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: pane
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

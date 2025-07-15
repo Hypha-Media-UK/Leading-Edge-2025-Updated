@@ -1,0 +1,121 @@
+color: null
+description: null
+fieldLayouts:
+  1c23391e-43d5-41aa-ae76-c9584026734e:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-07-15T16:05:07+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: 'Job Title'
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 8be804cb-2495-4054-ab8a-8c9209026452
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-15T16:14:04+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 4347ac84-9083-43b9-b2e9-eab3eefcfb45 # Job Type
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: aeee56b7-88b4-40ce-9098-7421787c94ba
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-15T16:14:04+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 10dcb136-b8a7-4325-90fe-c0cda2e1ebd1 # Simple Text
+            handle: briefSummary
+            includeInCards: false
+            instructions: null
+            label: 'Brief Summary'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5be3a1bd-bbb9-4db3-bf73-6fd541cc0d56
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-15T16:14:04+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: b8de7878-afc8-4f97-8281-a4b2d990dee4 # Responsibilities
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8dbb931e-123e-469f-baa8-f9e0922c487e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-15T16:14:04+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: e72fbf57-838b-4a23-af94-8aba3641a43c # Requirements
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1ea8bdf2-0ecc-401b-b504-ebe3b45ce893
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b1c2a17f-7291-49a8-a2c6-fbedf00bf635
+        userCondition: null
+handle: mx_jobDescriptions
+hasTitleField: true
+icon: null
+name: 'Job Descriptions'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

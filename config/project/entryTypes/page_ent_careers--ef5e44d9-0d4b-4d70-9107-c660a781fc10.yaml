@@ -1,0 +1,91 @@
+color: null
+description: null
+fieldLayouts:
+  b31750af-4210-416f-ab76-7c9e9936539e:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-15T16:03:27+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 75d5ff91-e0e7-479a-b047-041d2c3e1649 # Page Header
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3e57583d-3752-4bc9-a7aa-404145a89de3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-15T16:03:27+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 3b68cd98-cd43-4ae2-8d02-61222bda35ba # Cards Section
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b1197f39-1e16-4abc-b289-12b37da9f26a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-15T16:14:42+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 784bb5e4-8286-4b99-85c7-5bdf3d014a6d # Current Opportunities
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b9abd13d-7ec3-4de9-8e5f-92dff768b83c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-15T16:25:48+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: f0eb6556-1429-4336-86ff-322eb5be4254 # Intro Section
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f1ec8599-f42c-48ac-a848-fa2be7fa0160
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: d8b8abcd-99f6-4e32-89c6-dd4eea9e786a
+        userCondition: null
+handle: page_ent_careers
+hasTitleField: false
+icon: null
+name: Careers
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: Careers
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

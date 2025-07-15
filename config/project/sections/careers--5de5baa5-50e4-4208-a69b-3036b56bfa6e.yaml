@@ -1,0 +1,28 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: ef5e44d9-0d4b-4d70-9107-c660a781fc10 # Careers
+handle: careers
+maxAuthors: 1
+name: Careers
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  21f4ef74-64dc-48e3-bb94-93d62c25ef08: # TLE-2025
+    enabledByDefault: true
+    hasUrls: true
+    template: careers.twig
+    uriFormat: careers
+type: single
