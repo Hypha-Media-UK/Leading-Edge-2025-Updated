@@ -1,0 +1,94 @@
+columnSuffix: null
+handle: cb_contactForm
+instructions: null
+name: 'Contact Form'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - 6ba6ff16-05df-4ea7-9183-8b5d7155114f
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    1:
+                      - uid
+                      - 77d158af-de6d-4ae7-8c29-76d1262cf186
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - blockTitle
+                            2:
+                              - label
+                              - Title
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-15T10:16:49+00:00'
+                            11:
+                              - uid
+                              - 6f1d962d-73a3-4e1a-81ec-00202f168d0f
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - formIntro
+                            2:
+                              - label
+                              - 'Form Intro'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-15T10:16:49+00:00'
+                            11:
+                              - uid
+                              - cc07b2ab-4bd5-4fb6-96d9-085f8acc28ff
+                            14:
+                              - fieldUid
+                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

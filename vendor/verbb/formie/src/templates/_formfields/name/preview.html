@@ -1,0 +1,24 @@
+<div v-if="field.settings.useMultipleFields">
+    <div class="fui-row" v-for="(row, rowIndex) in field.settings.rows">
+        <template v-for="(field, fieldIndex) in row.fields">
+            <div v-if="field.settings.enabled && field.settings.handle == 'prefix'" class="fui-col-2">
+                <label class="fui-field-label">${ field.settings.label } <span v-if="field.settings.required" class="error">*</span></label>
+
+                <select class="fui-field-select" :value="field.settings.defaultValue">
+                    <option value="" disabled selected>${ field.settings.placeholder }</option>
+                    <option v-for="prefix in fieldType.data.prefixOptions" :value="prefix.value">${ prefix.label }</option>
+                </select>
+            </div>
+
+            <div v-else-if="field.settings.enabled" class="fui-col-auto">
+                <label class="fui-field-label">${ field.settings.label } <span v-if="field.settings.required" class="error">*</span></label>
+                <input type="text" class="fui-field-input" :placeholder="field.settings.placeholder" :value="field.settings.defaultValue">
+            </div>
+        </template>
+    </div>
+</div>
+
+<div v-else>
+    <input type="text" class="fui-field-input" :placeholder="field.settings.placeholder" :value="field.settings.defaultValue">
+    <span class="fui-field-icon">{{ field.getSvgIcon() | raw }}</span>
+</div>

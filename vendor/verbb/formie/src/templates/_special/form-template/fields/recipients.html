@@ -1,0 +1,20 @@
+{% set originalField = field %}
+
+{# Override the `field` with the correct display type, populated from the Recipients field #}
+{% set field = originalField.getDisplayTypeField() %}
+
+{% if originalField.displayType == 'hidden' %}
+    {{ formieInclude('fields/hidden') }}
+{% endif %}
+
+{% if originalField.displayType == 'dropdown' %}
+    {{ formieInclude('fields/dropdown') }}
+{% endif %}
+
+{% if originalField.displayType == 'checkboxes' %}
+    {{ formieInclude('fields/checkboxes') }}
+{% endif %}
+
+{% if originalField.displayType == 'radio' %}
+    {{ formieInclude('fields/radio') }}
+{% endif %}

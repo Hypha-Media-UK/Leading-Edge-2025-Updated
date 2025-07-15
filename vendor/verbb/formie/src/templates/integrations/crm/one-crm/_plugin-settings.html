@@ -1,0 +1,72 @@
+{% import '_includes/forms' as forms %}
+{% import 'verbb-base/_macros' as macros %}
+
+{% set displayName = integration.displayName() %}
+
+{% set instructions %}
+### Step 1. Connect to the {name} API
+1. Go to <a href="https://1crm.com" target="_blank">1CRM</a> and login to your account.
+1. Click on the **Admin** dropdown on the top-right of the screen, and select **Administration**.
+1. Click the **API Clients** link.
+1. Click the **Create** button.
+1. Select **Authorization Code** for the **Enabled Grant Types**.
+1. Copy the **ID** from {name} and paste in the **Client ID** field below.
+1. Click the **Change API Secret** button and enter a value.
+1. Copy the **Secret** from {name} and paste in the **Client Secret** field below.
+1. In the **Redirect URL** field, enter the value from the **Redirect URI** field below.
+
+### Step 2. Test Connection
+1. Save this integration.
+1. Click on the **Connect** button in the right-hand sidebar.
+1. You‘ll be redirected to {name}, where you must approve Formie to access your {name} account.
+{% endset %}
+
+<div class="fui-settings-block">
+    {{ instructions | t('formie', { name: displayName }) | md }}
+</div>
+
+{{ macros.proxyField(fieldVariables, 'textField', {
+    readonly: true,
+    label: 'Redirect URI' | t('formie'),
+    instructions: 'Use this URI when setting up your {name} app.' | t('formie'),
+    value: integration.getRedirectUri(),
+}) }}
+
+{% if not craft.app.config.general.allowAdminChanges %}
+    <span class="warning with-icon">
+        {{ 'Integration settings can only be editable on an environment with `allowAdminChanges` enabled.' | t('formie') | md(inlineOnly=true) }}
+    </span>
+{% endif %}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'Client ID' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'clientId',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.clientId ?? '',
+    warning: macros.configWarning('clientId', 'formie'),
+    errors: integration.getErrors('clientId'),
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'Client Secret' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'clientSecret',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.clientSecret ?? '',
+    warning: macros.configWarning('clientSecret', 'formie'),
+    errors: integration.getErrors('clientSecret'),
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'Domain' | t('formie'),
+    instructions: 'Enter your {name} {label} here. e.g. `{link}`' | t('formie', { link: 'https://example.1crmcloud.com' }),
+    name: 'apiDomain',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.apiDomain ?? '',
+    warning: macros.configWarning('apiDomain', 'formie'),
+    errors: integration.getErrors('apiDomain'),
+}) }}

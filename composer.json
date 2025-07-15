@@ -6,6 +6,7 @@
     "craftcms/cms": "5.8.6",
     "jsmrtn/craftagram": "^4.1.0",
     "verbb/field-manager": "^4.0.3",
+    "verbb/formie": "^3.0.31",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {

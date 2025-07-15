@@ -1,0 +1,59 @@
+{% import '_includes/forms' as forms %}
+
+{% extends 'formie/_formfields/field' %}
+
+{% block field %}
+
+{# Keep track of the outer date field #}
+{% set dateField = field %}
+
+{% if field.displayType == 'datePicker' %}
+    {{ forms.text({
+        name: field.handle,
+        value: value ? value | date('c', false, false),
+    }) }}
+{% endif %}
+
+{% if field.displayType == 'calendar' %}
+    {% if field.getIsDate() or field.getIsDateTime() %}
+        {% include 'formie/_formfields/date/_date' %}
+    {% endif %}
+
+    {% if field.getIsTime() or field.getIsDateTime() %}
+        {% include 'formie/_formfields/date/_time' %}
+    {% endif %}
+{% endif %}
+
+{% if field.displayType == 'dropdowns' or field.displayType == 'inputs' %}
+    {% namespace field.handle %}
+        {% for row in field.getRows(false) %}
+            <div class="fui-row">
+                {% for field in row.getFields(false) %}
+                    {# Update the namespace for the field #}
+                    {% do field.setParentField(dateField) %}
+                    
+                    <div class="fui-col-auto">
+                        {% set value = element.getFieldValue(field.fieldKey) ?? field.normalizeValue(field.getDefaultValue(), element) %}
+                        {% set errors = element.getErrors(field.fieldKey) ?? [] %}
+
+                        {# Format the DateTime according to what this field needs #}
+                        {% set char = dateField.getFormattingChar(field.handle) %}
+                        {% set dateValue = value ? (value | date(char, false)) : null %}
+
+                        {# Cast the value properly to remove and zero padding #}
+                        {% if field.handle != 'ampm' and dateValue %}
+                            {% set dateValue = dateValue * 1 %}
+                        {% endif %}
+
+                        {# Be sure to normalize it for the sub-field #}
+                        {% set dateValue = field.normalizeValue(dateValue, element) %}
+
+                        {{ field.getCpInputHtml(dateValue, element) }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    {% endnamespace %}
+{% endif %}
+
+{% endblock %}

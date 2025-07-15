@@ -1,0 +1,35 @@
+{% set hasOptgroups = false %}
+
+{% fieldtag 'fieldInput' %}
+    {% for option in field.getFieldOptions() %}
+        {% if option.optgroup is defined %}
+            {% if hasOptgroups %}
+                </optgroup>
+            {% else %}
+                {% set hasOptgroups = true %}
+            {% endif %}
+
+            <optgroup label="{{ option.optgroup | t('formie') }}">
+        {% else %}
+            {% set disabled = option.disabled ?? false %}
+
+            {# Ensure we cast as strings to compare #}
+            {% if field.multi %}
+                {% set selected = option.value is defined and ('' ~ option.value) in value %}
+            {% else %}
+                {% set selected = option.value is defined and ('' ~ option.value) == ('' ~ value) %}
+            {% endif %}
+
+            {{ tag('option', {
+                value: option.value,
+                selected: selected ?? false,
+                disabled: disabled ?? false,
+                text: option.label | t('formie'),
+            }) }}
+        {% endif %}
+    {% endfor %}
+
+    {% if hasOptgroups %}
+        </optgroup>
+    {% endif %}
+{% endfieldtag %}

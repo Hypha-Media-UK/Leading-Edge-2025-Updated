@@ -143,6 +143,32 @@ settings:
                             14:
                               - fieldUid
                               - a0d638c3-37dd-42c0-bcdc-25e945644b12 # Email
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-07-15T11:28:37+00:00'
+                            11:
+                              - uid
+                              - fbceaae0-02b0-4232-8f09-314b01b1006c
+                            14:
+                              - fieldUid
+                              - 8eed41b9-47a1-4b42-8361-6e2f9dd27c9f # Social Links
             3:
               - cardThumbAlignment
               - end

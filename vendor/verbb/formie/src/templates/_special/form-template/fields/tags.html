@@ -1,0 +1,32 @@
+{% set originalField = field %}
+
+{# Set the value on the field so that we can modify the element query based on that #}
+{% do originalField.populateValue(value, submission) %}
+
+{# Override the `field` with the correct display type, populated from the Recipients field #}
+{% set field = originalField.getDisplayTypeField() %}
+
+{# Get the value for the field, depending on the display type #}
+{% set value = originalField.getDisplayTypeValue(value) %}
+
+{% if originalField.displayType == 'dropdown' %}
+    {% set valueJson = value ? value | map(option => {
+        value: option.label,
+        id: option.value,
+    }) : [] %}
+
+    {{ formieInclude('fields/hidden', {
+        value: valueJson ? valueJson | json_encode : '',
+    }) }}
+
+    {% set cssFile = view.getAssetManager().getPublishedUrl('@verbb/formie/web/assets/frontend/dist/', true, 'css/fields/tags.css') %}
+    {% do view.registerCssFile(cssFile) %}
+{% endif %}
+
+{% if originalField.displayType == 'checkboxes' %}
+    {{ formieInclude('fields/checkboxes') }}
+{% endif %}
+
+{% if originalField.displayType == 'radio' %}
+    {{ formieInclude('fields/radio') }}
+{% endif %}

@@ -1,0 +1,86 @@
+{% import '_includes/forms' as forms %}
+{% import 'verbb-base/_macros' as macros %}
+
+{% set displayName = integration.displayName() %}
+
+{% set instructions %}
+### Step 1. Connect to the Connective {name} API
+1. Go to <a href="https://www.connective.com.au/" target="_blank">Connective</a> and login to your Mercury account.
+1. In the top menu, click the **Admin** tab.
+1. In the left-hand sidebar menu, click the **Integrations** tab.
+1. Copy the **API Key** from {name} and paste in the **API Key** field below.
+1. Copy the **API Token** from {name} and paste in the **API Token** field below.
+
+### Step 2. Test Connection
+1. Save this integration.
+1. Click on the **Refresh** button in the right-hand sidebar.
+{% endset %}
+
+<div class="fui-settings-block">
+    {{ instructions | t('formie', { name: displayName }) | md }}
+</div>
+
+{% if not craft.app.config.general.allowAdminChanges %}
+    <span class="warning with-icon">
+        {{ 'Integration settings can only be editable on an environment with `allowAdminChanges` enabled.' | t('formie') | md(inlineOnly=true) }}
+    </span>
+{% endif %}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'API Key' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'apiKey',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.apiKey ?? '',
+    warning: macros.configWarning('apiKey', 'formie'),
+    errors: integration.getErrors('apiKey'),
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'API Token' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'apiToken',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.apiToken ?? '',
+    warning: macros.configWarning('apiToken', 'formie'),
+    errors: integration.getErrors('apiToken'),
+}) }}
+
+{% set useUat = integration.settings.useUat ?? false %}
+
+{{ macros.proxyField(fieldVariables, 'booleanMenuField', {
+    label: 'Use UAT' | t('formie'),
+    instructions: 'Whether to use the {name} UAT for testing.' | t('formie'),
+    name: 'useUat',
+    includeEnvVars: true,
+    value: useUat,
+    warning: macros.configWarning('useUat', 'formie'),
+    errors: integration.getErrors('useUat'),
+    toggle: 'uat',
+}) }}
+
+<div id="uat" class="{{ not useUat ? 'hidden' }}">
+    {{ macros.proxyField(fieldVariables, 'autosuggestField', {
+        label: 'UAT API Key' | t('formie'),
+        instructions: 'Enter your {name} {label} here.' | t('formie'),
+        name: 'uatKey',
+        required: true,
+        suggestEnvVars: true,
+        value: integration.settings.uatKey ?? '',
+        warning: macros.configWarning('uatKey', 'formie'),
+        errors: integration.getErrors('uatKey'),
+    }) }}
+
+    {{ macros.proxyField(fieldVariables, 'autosuggestField', {
+        label: 'UAT API Token' | t('formie'),
+        instructions: 'Enter your {name} {label} here.' | t('formie'),
+        name: 'uatToken',
+        required: true,
+        suggestEnvVars: true,
+        value: integration.settings.uatToken ?? '',
+        warning: macros.configWarning('uatToken', 'formie'),
+        errors: integration.getErrors('uatToken'),
+    }) }}
+</div>

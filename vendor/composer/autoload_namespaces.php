@@ -6,6 +6,8 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'SecurityLib' => array($vendorDir . '/ircmaxell/security-lib/lib'),
+    'RandomLib' => array($vendorDir . '/paragonie/random-lib/lib'),
     'ML\\IRI' => array($vendorDir . '/ml/iri'),
     'HTMLPurifier' => array($vendorDir . '/ezyang/htmlpurifier/library'),
 );

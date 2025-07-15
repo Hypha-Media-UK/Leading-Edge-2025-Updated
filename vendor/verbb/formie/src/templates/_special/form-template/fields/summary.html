@@ -1,0 +1,20 @@
+{# Only show values if there's a current submission, to prevent abuse #}
+{% set submission = submission ?? form.getCurrentSubmission() %}
+
+{% fieldtag 'fieldSummaryBlocks' %}
+    {% if submission %}
+        {{ fieldtag('fieldSummaryHeading') }}<br>
+
+        {% for info in submission.getValuesForSummary() %}
+            {% fieldtag 'fieldSummaryBlock' %}
+                {{ fieldtag('fieldSummaryLabel', {
+                    text: info.field.label,
+                }) }}<br>
+
+                {{ fieldtag('fieldSummaryValue', {
+                    text: info.html,
+                }) }}<br>
+            {% endfieldtag %}
+        {% endfor %}
+    {% endif %}
+{% endfieldtag %}

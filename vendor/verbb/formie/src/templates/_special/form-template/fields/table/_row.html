@@ -1,0 +1,14 @@
+{% for colId, col in field.columns %}
+    {% set index = index ?? 0 %}
+    {% set rowId = "row-#{index}-#{colId}" %}
+
+    {% fieldtag 'fieldTableBodyColumn' %}
+        {{ formieInclude(['fields/table/_columns/' ~ col.type, 'fields/table/_columns/singleline']) }}
+    {% endfieldtag %}
+{% endfor %}
+
+{% if not field.static %}
+    <td data-col-remove>
+        {{ fieldtag('fieldRemoveButton') }}
+    </td>
+{% endif %}

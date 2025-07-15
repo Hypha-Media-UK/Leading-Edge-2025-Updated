@@ -1,0 +1,72 @@
+{% import '_includes/forms' as forms %}
+{% import 'verbb-base/_macros' as macros %}
+
+{% set displayName = integration.displayName() %}
+
+{% set instructions %}
+### Step 1. Connect to the {name} API
+1. Go to <a href="https://www.pipelinersales.com/" target="_blank">{name}</a> and login to your account.
+1. In the top main menu, click on **Menu** icon in the far-left of the screen (9 dots).
+1. In the top sub-menu, click on the **Obtain API Key**.
+1. Copy the **API Token** from {name} and paste in the **API Token** field below.
+1. Copy the **API Password** from {name} and paste in the **API Password** field below.
+1. Copy the **API Space ID** from {name} and paste in the **API Space ID** field below.
+
+### Step 2. Test Connection
+1. Save this integration.
+1. Click on the **Refresh** button in the right-hand sidebar.
+{% endset %}
+
+<div class="fui-settings-block">
+    {{ instructions | t('formie', { name: displayName }) | md }}
+</div>
+
+{% if not craft.app.config.general.allowAdminChanges %}
+    <span class="warning with-icon">
+        {{ 'Integration settings can only be editable on an environment with `allowAdminChanges` enabled.' | t('formie') | md(inlineOnly=true) }}
+    </span>
+{% endif %}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'API Token' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'apiToken',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.apiToken ?? '',
+    warning: macros.configWarning('apiToken', 'formie'),
+    errors: integration.getErrors('apiToken'),
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'API Password' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'apiPassword',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.apiPassword ?? '',
+    warning: macros.configWarning('apiPassword', 'formie'),
+    errors: integration.getErrors('apiPassword'),
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'API Space ID' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'apiSpaceId',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.apiSpaceId ?? '',
+    warning: macros.configWarning('apiSpaceId', 'formie'),
+    errors: integration.getErrors('apiSpaceId'),
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'API Service URL' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'apiServiceUrl',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.apiServiceUrl ?? '',
+    warning: macros.configWarning('apiServiceUrl', 'formie'),
+    errors: integration.getErrors('apiServiceUrl'),
+}) }}

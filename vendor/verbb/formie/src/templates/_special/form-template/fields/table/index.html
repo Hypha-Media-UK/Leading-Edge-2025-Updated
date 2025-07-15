@@ -1,0 +1,67 @@
+{{ hiddenInput(field.getHtmlName(), '') }}
+
+{% fieldtag 'fieldTable' %}
+    {% fieldtag 'fieldTableHeader' %}
+        {% fieldtag 'fieldTableHeaderRow' %}
+            {% for colId, col in field.columns %}
+                {{ fieldtag('fieldTableHeaderColumn', {
+                    text: col.heading | t('formie') | md(inlineOnly=true) | nl2br,
+                }) }}
+            {% endfor %}
+        {% endfieldtag %}
+    {% endfieldtag %}
+
+    {% fieldtag 'fieldTableBody' %}
+        {% if value %}
+            {% for rowId, row in value %}
+                {% fieldtag 'fieldTableBodyRow' %}
+                    {{ formieInclude('fields/table/_row', {
+                        index: rowId,
+                        row: row,
+                    }) }}
+                {% endfieldtag %}
+            {% endfor %}
+        {% elseif field.defaults %}
+            {% for default in field.defaults %}
+                {% fieldtag 'fieldTableBodyRow' %}
+                    {{ formieInclude('fields/table/_row', {
+                        index: loop.index0,
+                        row: default,
+                    }) }}
+                {% endfieldtag %}
+            {% endfor %}
+        {% elseif field.minRows > 0 %}
+            {% for i in 1..field.minRows %}
+                {% fieldtag 'fieldTableBodyRow' %}
+                    {{ formieInclude('fields/table/_row', {
+                        index: loop.index0,
+                        row: [],
+                    }) }}
+                {% endfieldtag %}
+            {% endfor %}
+        {% endif %}
+    {% endfieldtag %}
+{% endfieldtag %}
+
+{{ fieldtag('fieldAddButton') }}
+
+{% set includeScriptsInline = renderOptions.includeScriptsInline ?? false %}
+
+{% if includeScriptsInline %}
+    {# For GraphQL requests we need to render this inline #}
+    <script type="text/x-template" data-table-template="{{ field.handle }}">{% apply spaceless %}
+        {{ formieInclude('fields/table/_row', {
+            index: '__ROW__',
+            row: [],
+        }) }}
+    {% endapply %}</script>
+{% else %}
+    {# Have to use the `script` tag here to place the script outside of a Vue3 wrapper #}
+    {# as Vue3 will strip out inline `script` tags (all other scenarios would be fine) #}
+    {% script with { type: 'text/x-template', 'data-table-template': field.handle } %}{% apply spaceless %}
+        {{ formieInclude('fields/table/_row', {
+            index: '__ROW__',
+            row: [],
+        }) }}
+    {% endapply %}{% endscript %}
+{% endif %}

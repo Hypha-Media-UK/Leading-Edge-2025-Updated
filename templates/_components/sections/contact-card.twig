@@ -1,0 +1,54 @@
+<div class="contact-card">
+    <div class="icon">
+        <i class="fas {{ entry.location.blockIcon }}"></i>
+    </div>
+    <h3>{{ entry.location.blockTitle }}</h3>
+    <div class="address-text">
+        {{ entry.location.address|nl2br }}
+    </div>
+    <div class="map-container">
+        <div class="map-image" style="background-image: url('{{ entry.location.locationImage.one().url}}')">
+        </div>
+            <a href="{{ entry.location.mapLink }}" class="btn primary">{{ entry.location.mapLink.label }}</a>
+    </div>
+</div>
+
+<div class="contact-card">
+    <div class="icon">
+        <i class="fas {{ entry.openingHours.blockIcon }}"></i>
+    </div>
+    <h3>{{ entry.openingHours.blockTitle }}</h3>
+    <ul class="hours-list">
+        {% for day in entry.openingHours.openingTimes %}
+            <li>
+                <span class="day">{{ day.day }}:</span>
+                <span class="time">{{ day.openTime }}</span>
+                <span class="time">{{ day.closedTime }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="contact-card">
+    <div class="icon">
+        <i class="fas {{ entry.connect.blockIcon }}"></i>
+    </div>
+    <h3>{{ entry.connect.blockTitle }}</h3>
+    <ul class="contact-list">
+        <li>
+            <i class="fas {{ entry.connect.cb_phone.phoneIcon }}"></i>
+                <a href="{{ entry.connect.cb_phone.phoneNumber }}">{{ entry.connect.cb_phone.phoneNumber }}</a>
+        </li>
+        <li>
+            <i class="fas {{ entry.connect.cb_emailAddress.emailIcon }}"></i>
+                <a href="{{ entry.connect.cb_emailAddress.emailAddress }}">{{ entry.connect.cb_emailAddress.emailAddress }}</a>
+        </li>
+    </ul>
+    <div class="social-icons">
+        {% for link in entry.connect.socialLinks %}
+            <a href="{{ link.link }}" aria-label="{{ link.platform }}" target="_blank">
+                <i class="fab {{ link.icon }}"></i>
+            </a>
+        {% endfor %}
+    </div>
+</div>

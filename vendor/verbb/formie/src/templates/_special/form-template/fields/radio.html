@@ -1,0 +1,20 @@
+{# Allow passing in a set list of options #}
+{% set fieldOptions = fieldOptions ?? field.getFieldOptions() %}
+
+{% fieldtag 'fieldOptions' %}
+    {% for option in fieldOptions %}
+        {# Ensure we cast as strings to compare #}
+        {% set selected = option.value is defined and ('' ~ option.value) == ('' ~ value) %}
+
+        {% fieldtag 'fieldOption' %}
+            {{ fieldtag('fieldInput', {
+                value: option.value ?? false,
+                checked: selected,
+            }) }}
+
+            {% fieldtag 'fieldOptionLabel' %}
+                {{- option.label | t('formie') -}}
+            {% endfieldtag %}
+        {% endfieldtag %}
+    {% endfor %}
+{% endfieldtag %}

@@ -142,7 +142,7 @@ settings:
                               - false
                             9:
                               - width
-                              - 100
+                              - 50
                             10:
                               - dateAdded
                               - '2025-07-15T09:40:49+00:00'
@@ -152,6 +152,38 @@ settings:
                             14:
                               - fieldUid
                               - b3726252-6c72-46e5-b01e-d92574299019 # Single Button
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - locationImage
+                            2:
+                              - label
+                              - Image
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 50
+                            10:
+                              - dateAdded
+                              - '2025-07-15T13:07:14+00:00'
+                            11:
+                              - uid
+                              - 61ddc410-ce30-4ee2-a36e-ea30cf0fa810
+                            14:
+                              - fieldUid
+                              - 04ddff7f-52ed-458a-bc0c-a3a9d4b76f4d # Single Image
             3:
               - cardThumbAlignment
               - end

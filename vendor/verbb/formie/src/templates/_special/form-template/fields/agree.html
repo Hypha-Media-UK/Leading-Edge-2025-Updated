@@ -1,0 +1,14 @@
+{{ hiddenInput(field.getHtmlName(), '', {
+    'data-fui-input-type': 'agree',
+}) }}
+
+{% fieldtag 'fieldOption' %}
+    {{ fieldtag('fieldInput', {
+        value: '1',
+        checked: value ? true : false,
+    }) }}
+
+    {{ fieldtag('fieldOptionLabel', {
+        text: field.getDescriptionHtml(),
+    }) }}
+{% endfieldtag %}

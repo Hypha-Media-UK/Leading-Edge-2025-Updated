@@ -1,0 +1,118 @@
+[
+    {
+        "title": "Get Started",
+        "collapsable": false,
+        "children": [
+            "get-started/installation-setup",
+            "get-started/requirements",
+            "get-started/configuration",
+            "get-started/troubleshooting",
+            "get-started/upgrading-from-v2"
+        ]
+    },
+    {
+        "title": "Feature Tour",
+        "collapsable": false,
+        "children": [
+            "feature-tour/forms",
+            "feature-tour/multi-page-forms",
+            "feature-tour/fields",
+            "feature-tour/conditions",
+            "feature-tour/synced-fields",
+            "feature-tour/existing-fields",
+            "feature-tour/submissions",
+            "feature-tour/email-notifications",
+            "feature-tour/sent-notifications",
+            "feature-tour/integrations",
+            "feature-tour/stencils",
+            "feature-tour/spam-protection",
+            "feature-tour/form-templates",
+            "feature-tour/email-templates",
+            "feature-tour/data-retention",
+            "feature-tour/import-export",
+            "feature-tour/support",
+            "feature-tour/headless"
+        ]
+    },
+    {
+        "title": "Template Guides",
+        "collapsable": false,
+        "children": [
+            "template-guides/available-variables",
+            "template-guides/rendering-forms",
+            "template-guides/rendering-pages",
+            "template-guides/rendering-fields",
+            "template-guides/email-templates",
+            "template-guides/pdf-templates",
+            "template-guides/cached-forms",
+            "template-guides/editing-submissions",
+            "template-guides/populating-forms",
+            "template-guides/selecting-forms",
+            "template-guides/relations",
+            "template-guides/google-tag-manager",
+            "template-guides/craft-forms"
+        ]
+    },
+    {
+        "title": "Theming",
+        "collapsable": false,
+        "children": [
+            "theming/overview",
+            "theming/theme-config",
+            "theming/template-overrides",
+            "theming/custom-rendering",
+            "theming/render-options"
+        ]
+    },
+    {
+        "title": "Getting Elements",
+        "collapsable": false,
+        "children": [
+            "getting-elements/form-queries",
+            "getting-elements/submission-queries"
+        ]
+    },
+    {
+        "title": "Integrations",
+        "collapsable": false,
+        "children": [
+            "integrations/address-providers",
+            "integrations/captchas",
+            "integrations/elements",
+            "integrations/email-marketing",
+            "integrations/crm",
+            "integrations/payments",
+            "integrations/webhooks",
+            "integrations/miscellaneous"
+        ]
+    },
+    {
+        "title": "Developers",
+        "collapsable": false,
+        "children": [
+            "developers/events",
+            "developers/hooks",
+            "developers/form",
+            "developers/page",
+            "developers/row",
+            "developers/field",
+            "developers/submission",
+            "developers/notification",
+            "developers/custom-field",
+            "developers/custom-integration",
+            "developers/front-end-css",
+            "developers/front-end-js",
+            "developers/javascript-api",
+            "developers/graphql",
+            "developers/console-commands"
+        ]
+    },
+    {
+        "title": "Guides",
+        "collapsable": false,
+        "children": [
+            "guides/migrating-from-freeform",
+            "guides/migrating-from-sprout-forms"
+        ]
+    }
+]

@@ -1,0 +1,67 @@
+{% extends 'formie/_layouts/settings' %}
+
+{% import '_includes/forms' as forms %}
+{% import 'verbb-base/_macros' as macros %}
+
+{% block content %}
+
+<h2>{{ 'Notifications' | t('formie') }}</h2>
+
+<form action="" method="post" accept-charset="UTF-8" data-saveshortcut>
+    <input type="hidden" name="action" value="formie/settings/save-settings">
+    {{ redirectInput('formie/settings/notifications') }}
+    {{ csrfInput() }}
+
+    {% namespace 'settings' %}
+        {{ forms.textField({
+            first: true,
+            label: 'Empty Value Placeholder' | t('formie'),
+            instructions: 'When a field has no value and considered "empty", this text will be shown in email notifications.' | t('formie'),
+            name: 'emptyValuePlaceholder',
+            value: settings.emptyValuePlaceholder,
+            warning: macros.configWarning('emptyValuePlaceholder', 'formie'),
+        }) }}
+
+        {{ forms.lightswitchField({
+            label: 'Send Email Alert for Failed Notification' | t('formie'),
+            instructions: 'Enable this option send nominated email addresses an alert email when an email notification cannot be delivered.' | t('formie'),
+            name: 'sendEmailAlerts',
+            on: settings.sendEmailAlerts,
+            warning: macros.configWarning('sendEmailAlerts', 'formie'),
+            toggle: 'send-alerts',
+        }) }}
+
+        <div id="send-alerts" class="{{ not settings.sendEmailAlerts ? 'hidden' }}">
+            {{ forms.editableTableField({
+                label: 'Alert Emails' | t('formie'),
+                instructions: 'The names and email addresses that failed email notification alerts will be sent to.' | t('formie'),
+                id: 'alertEmails',
+                name: 'alertEmails',
+                cols: [
+                    {
+                        type: 'singleline',
+                        heading: 'Name' | t('formie'),
+                    },
+                    {
+                        type: 'singleline',
+                        heading: 'Email' | t('formie'),
+                    },
+                ],
+                rows: settings.alertEmails,
+                addRowLabel: 'Add a name and email' | t('formie'),
+                errors: settings.getErrors('alertEmails'),
+                warning: macros.configWarning('alertEmails', 'formie'),
+                allowAdd: true,
+                allowDelete: true,
+                allowReorder: true,
+            }) }}
+        </div>
+
+    {% endnamespace %}
+
+    <hr>
+
+    <input type="submit" class="btn submit" value="{{ 'Save' | t('formie') }}">
+</form>
+
+{% endblock %}

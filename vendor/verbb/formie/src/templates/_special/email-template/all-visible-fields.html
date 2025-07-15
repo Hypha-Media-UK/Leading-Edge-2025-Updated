@@ -1,0 +1,7 @@
+{% for field in fields %}
+    {% set value = submission.getFieldValue(field.fieldKey) %}
+
+    {% if not field.getIsHidden() and not field.getIsCosmetic() %}
+        {{ formieInclude('field') }}
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,407 @@
+{% extends '_layouts/cp' %}
+{% import '_includes/forms' as forms %}
+{% import 'verbb-base/_macros' as macros %}
+
+{% do view.registerAssetBundle('verbb\\formie\\web\\assets\\cp\\CpAsset') -%}
+
+{% set jsFile = view.getAssetManager().getPublishedUrl('@verbb/formie/web/assets/frontend/dist/', true, 'js/formie.js') %}
+{% do view.registerJsFile(jsFile) %}
+
+{% set isNew = submission.id ? false : true %}
+{% set form = submission.getForm() %}
+
+{% set crumbs = [
+    { label: craft.formie.getPluginName() | t('formie'), url: url('formie') },
+    { label: 'Submissions' | t('formie'), url: url('formie/submissions') },
+] %}
+
+{% if craft.app.getIsMultiSite() %}
+    {% set crumbs = crumbs | unshift({
+        id: 'site-crumb',
+        icon: 'world',
+        label: requestedSite.name | t('site'),
+        menu: {
+            items: siteMenuItems(null, requestedSite),
+            label: 'Select site' | t('site')
+        },
+    }) %}
+{% endif %}
+
+{% if submission.canSave(currentUser) %}
+    {% set fullPageForm = true %}
+{% endif %}
+
+{% set bodyClass = 'fui-body fui-submission' %}
+{% set selectedSubnavItem = 'submissions' %}
+{% set saveShortcutRedirect = '{cpEditUrl}' %}
+
+{% hook 'formie.cp.submissions.edit' %}
+
+{% block actionButton %}
+
+{% if submission.canSave(currentUser) %}
+    <div class="btngroup submit">
+        <input type="submit" class="btn submit" value="{{ 'Save' | t('formie') }}">
+
+        <div class="btn submit menubtn"></div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a class="formsubmit" data-redirect="{{ saveShortcutRedirect | hash }}">
+                        {{ "Save and continue editing" | t('app') }}
+                        <span class="shortcut">⌘S</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="formsubmit" data-param="saveAction" data-value="draft" data-redirect="{{ saveShortcutRedirect | hash }}">
+                        {{ "Save as draft" | t('app') }}
+                    </a>
+                </li>
+            </ul>
+
+            {% if submission.id and submission.canDelete(currentUser) %}
+                <hr>
+                <ul>
+                    <li><a class="formsubmit error" data-action="formie/submissions/delete-submission" data-confirm="{{ 'Are you sure you want to delete this submission?' | t('formie') }}" data-redirect="{{ 'formie/submissions' | hash }}">{{ 'Delete' | t('app') }}</a></li>
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+{% set attributes = {
+    id: form.formId,
+    'data-fui-form': formConfigJson,
+} %}
+
+<div {{ attr(attributes) }}>
+    <div class="fui-i">
+        <input type="hidden" name="action" value="formie/submissions/save-submission">
+        <input type="hidden" name="handle" value="{{ submission.form.handle }}">
+        {{ redirectInput('formie/submissions') }}
+        {{ csrfInput() }}
+
+        {% if not isNew %}
+            <input type="hidden" name="submissionId" value="{{ submission.id }}">
+        {% endif %}
+
+        {% if craft.app.getIsMultiSite() %}
+            <input type="hidden" name="siteId" value="{{ submission.siteId }}">
+        {% endif %}
+
+        <div id="fields">
+            {% for page in submission.getPages() %}
+                <div id="page-{{ page.id }}"{% if not loop.first %} class="hidden"{% endif %}>
+                    {% namespace 'fields' %}
+                        {% for row in page.getRows() %}
+                            {% for field in row.getFields() %}
+                                {% set value = submission.getFieldValue(field.fieldKey) %}
+
+                                {{ field.getCpInputHtml(value, submission) }}
+                            {% endfor %}
+                        {% endfor %}
+                    {% endnamespace %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% hook 'formie.cp.submissions.edit.content' %}
+
+{% endblock %}
+
+{% block details %}
+
+<div id="settings" class="meta">
+    {{ forms.textField({
+        label: 'Title' | t('formie'),
+        id: 'title',
+        name: 'title',
+        value: submission.title,
+        placeholder: 'Enter title' | t('formie'),
+    }) }}
+
+    <div class="field">
+        <div class="heading">
+            <label class="">{{ 'Form' | t('formie') }}</label>
+        </div>
+
+        <div class="input ltr">
+            <a href="{{ submission.form.getCpEditUrl() }}">{{ submission.form }}</a>
+        </div>
+    </div>
+
+    {% if submission.hasStatuses() %}
+        {% set statuses = craft.formie.plugin.statuses.getAllStatuses() %}
+
+        {{ forms.hidden({
+            id: 'statusId',
+            name: 'statusId',
+            value: submission.getStatusModel().id,
+        }) }}
+
+        {% set statusField %}
+            <div>
+                <a id="status-menu-btn" class="btn menubtn" href="javascript:;">
+                    <span class="status {{ submission.getStatusModel().color }}"></span>{{ submission.getStatusModel().name }}
+                </a>
+
+                <div class="menu" id="status-menu-select">
+                    <ul class="padded">
+                        {% for status in statuses %}
+                            <li>
+                                <a data-val="{{ status.id }}" data-label="{{ status.name }}" data-color="{{ status.color }}" {% if submission.statusId == status.id %}class="sel"{% endif %} href="javascript:;">
+                                    <span class="status {{ status.color }}"></span>{{ status.name }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endset %}
+
+        {{ forms.field({
+            label: 'Status' | t('formie'),
+        }, statusField) }}
+    {% endif %}
+
+    {% if form.settings.collectUser %}
+        {% set user = submission.getUser() %}
+
+        {{ forms.elementSelectField({
+            status: submission.getAttributeStatus('userId'),
+            label: 'User' | t('app'),
+            id: 'user',
+            name: 'user',
+            elementType: 'craft\\elements\\User',
+            selectionLabel: 'Choose' | t('app'),
+            limit: 1,
+            elements: user ? [user] : [],
+        }) }}
+    {% endif %}
+</div>
+
+<div id="meta-details" class="meta">
+    {% if submission.isSpam %}
+        <div class="field">
+            <div class="heading">
+                <label class="">{{ 'Status' | t('formie') }}</label>
+            </div>
+
+            <div class="input ltr">
+                <div class="value flex">
+                    {% set captcha = submission.getSpamCaptcha() %}
+                    
+                    {% if captcha %}
+                        <img src="{{ captcha.getIconUrl() }}" alt="{{ captcha.displayName() }}" style="width: 15px; height: 15px;">
+                    {% else %}
+                        <span data-icon="bug" aria-hidden="true"></span>
+                    {% endif %}
+
+                    {{ 'Spam' | t('formie') }} {% if submission.spamReason %}<span class="info">{{ submission.spamReason }}</span>{% endif %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="meta">
+    {{ forms.lightswitchField({
+        label: 'Mark as Spam' | t('formie'),
+        id: 'isSpam',
+        name: 'isSpam',
+        on: submission.isSpam,
+        reverseToggle: '.send-notifications',
+    }) }}
+
+    {% if submission.isSpam %}
+        {{ forms.lightswitchField({
+            label: 'Send Notifications' | t('formie'),
+            instructions: 'Whether any Email Notifications should be sent.' | t('formie'),
+            id: 'sendNotifications',
+            name: 'sendNotifications',
+            fieldClass: 'send-notifications',
+        }) }}
+
+        {{ forms.lightswitchField({
+            label: 'Trigger Integrations' | t('formie'),
+            instructions: 'Whether any Integrations should be triggered.' | t('formie'),
+            id: 'triggerIntegrations',
+            name: 'triggerIntegrations',
+            fieldClass: 'send-notifications',
+        }) }}
+    {% endif %}
+    </div>
+</div>
+
+{% set notifications = form.getNotifications() %}
+
+{% if notifications and not isNew and not submission.isSpam %}
+    <div id="meta-details" class="meta">
+        <div class="field">
+            <div class="heading">
+                <label class="">{{ 'Email' | t('formie') }}</label>
+            </div>
+
+            <div class="input ltr">
+                <a class="js-fui-submission-modal-send-btn btn small" data-id="{{ submission.id }}">{{ 'Send Email Notification' | t('formie') }}</a>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% set integrations = [] %}
+
+{% for integration in craft.formie.plugin.integrations.getAllEnabledIntegrationsForForm(form) %}
+    {% if integration.supportsPayloadSending() %}
+        {% set integrations = integrations | merge([integration]) %}
+    {% endif %}
+{% endfor %}
+
+{% if integrations and not isNew and not submission.isSpam %}
+    <div id="meta-details" class="meta">
+        {% set integrationsField %}
+            <div>
+                <a id="integrations-menu-btn" class="btn menubtn" href="javascript:;">
+                    {{ 'Select an option' | t('formie') }}
+                </a>
+
+                <div class="menu" id="integrations-menu-select">
+                    <ul class="padded">
+                        {% for integration in integrations %}
+                            <li>
+                                <a data-integration-id="{{ integration.id }}" data-submission-id="{{ submission.id }}" data-label="{{ integration.name }}" href="javascript:;">
+                                    {{ integration.name }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <span class="spinner hidden integrations-menu-spinner"></span>
+            </div>
+        {% endset %}
+
+        {{ forms.field({
+            label: 'Integrations' | t('formie'),
+        }, integrationsField) }}
+    </div>
+{% endif %}
+
+{% set paymentSummary = submission.getPaymentSummaryHtml() %}
+
+{% if paymentSummary %}
+    <fieldset class="payments-meta">
+        <legend class="h6">{{ 'Payments' | t('formie') }}</legend>
+
+        {{ paymentSummary | raw }}
+    </fieldset>
+{% endif %}
+
+{% if not isNew %}
+    <div id="meta-details" class="meta read-only">
+        {% block meta %}
+            {% if not isNew %}
+                <div class="data">
+                    <dt class="heading">{{ 'Submission ID' | t('formie') }}</dt>
+                    <dd class="value">{{ submission.id }}</dd>
+                </div>
+            {% endif %}
+
+            {% if submission.isIncomplete %}
+                <div class="data">
+                    <dt class="heading">{{ 'Status' | t('app') }}</dt>
+                    <dd class="value"><span data-icon="draft" aria-hidden="true"></span>{{ 'Incomplete' | t('formie') }}</dd>
+                </div>
+            {% endif %}
+
+            <div class="data">
+                <dt class="heading">{{ 'Created at' | t('app') }}</dt>
+                <dd class="value">{{ submission.dateCreated | datetime('short') }}</dd>
+            </div>
+
+            <div class="data">
+                <dt class="heading">{{ 'Updated at' | t('app') }}</dt>
+                <dd class="value">{{ submission.dateUpdated | datetime('short') }}</dd>
+            </div>
+
+            {% if form.settings.collectIp %}
+                <div class="data">
+                    <dt class="heading">{{ 'IP Address' | t('app') }}</dt>
+                    <dd class="value">{{ submission.ipAddress ?: 'None provided' | t('formie') }}</dd>
+                </div>
+            {% endif %}
+        {% endblock %}
+    </div>
+{% endif %}
+
+{% hook 'formie.cp.submissions.edit.details' %}
+
+{% endblock %}
+
+{% css %}
+
+#integrations-menu-btn {
+    overflow: hidden;
+    max-width: 100%;
+    justify-content: flex-start;
+}
+
+{% endcss %}
+
+{% js %}
+
+$(function () {
+    $statusSelect = $('#status-menu-btn');
+
+    new Garnish.MenuBtn($statusSelect, {
+        onOptionSelect: function(data) {
+            var val = $(data).data('val');
+            var label = $(data).data('label');
+            var color = $(data).data('color');
+            $('#statusId').val(val);
+
+            var html = '<span class="status ' + color + '"></span>' + label;
+            $statusSelect.html(html);
+        }
+    });
+
+    $integrationsSelect = $('#integrations-menu-btn');
+
+    new Garnish.MenuBtn($integrationsSelect, {
+        onOptionSelect: function(data) {
+            var integrationId = $(data).data('integration-id');
+            var submissionId = $(data).data('submission-id');
+            var label = $(data).data('label');
+            var $spinner = $('.integrations-menu-spinner');
+
+            var data = { submissionId: submissionId, integrationId: integrationId };
+
+            if (window.confirm(Craft.t('formie', 'Are you sure you want to trigger the {name} integration?', { name: label }))) {
+                $spinner.removeClass('hidden');
+
+                Craft.sendActionRequest('POST', 'formie/submissions/run-integration', { data })
+                    .then((response) => {
+                        window.location.reload();
+                    })
+                    .catch(({response}) => {
+                        if (response && response.data && response.data.message) {
+                            Craft.cp.displayError(response.data.message);
+                        } else {
+                            Craft.cp.displayError();
+                        }
+                    })
+                    .finally(() => {
+                        $spinner.addClass('hidden');
+                    });
+            }
+        }
+    });
+});
+
+{% endjs %}

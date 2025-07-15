@@ -8,6 +8,7 @@
 /* Import required components */
 @import 'components/buttons.css';
 @import 'components/header.css';
+@import 'components/page-header.css';
 @import 'components/footer.css';
 @import 'components/modal.css';
 @import 'components/contact-form.css';

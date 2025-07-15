@@ -1,0 +1,20 @@
+{% if field.multi %}
+    {# Remove empty elements #}
+    {% set value = value | filter(v => (v ~ '')) %}
+
+    {% if value | length %}
+        <ul>
+            {% for item in value %}
+                {% set displayValue = field.emailValue == 'value' ? (item.value ?? '') : (item.label ?? '') %}
+                    
+                <li>{{ displayValue }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        {{ notification.getPlaceholder() }}
+    {% endif %}
+{% else %}
+    {% set displayValue = field.emailValue == 'value' ? (value.value ?? '') : (value.label ?? '') %}
+
+    {{ displayValue }}
+{% endif %}

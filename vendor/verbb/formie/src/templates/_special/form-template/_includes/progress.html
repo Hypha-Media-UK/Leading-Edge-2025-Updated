@@ -1,0 +1,14 @@
+{% if form.settings.displayPageProgress and form.hasMultiplePages %}
+    {% set pageIndex = form.getCurrentPageIndex() + 1 %}
+    {% set progress = (pageIndex / form.pages | length) * 100 | round %}
+
+    {% formtag 'progressWrapper' %}
+        {% formtag 'progress' %}
+            {% formtag 'progressContainer' %}
+                {{ formtag('progressValue', {
+                    text: progress | round ~ '%',
+                }) }}
+            {% endformtag %}
+        {% endformtag %}
+    {% endformtag %}
+{% endif %}

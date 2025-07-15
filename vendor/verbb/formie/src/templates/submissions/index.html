@@ -1,0 +1,39 @@
+{% extends '_layouts/elementindex' %}
+
+{% set crumbs = [
+    { label: craft.formie.getPluginName() | t('formie'), url: url('formie') },
+    { label: 'Submissions' | t('formie'), url: url('formie/submissions') },
+] %}
+
+{% set title = 'Submissions' | t('formie') %}
+{% set selectedSubnavItem = 'submissions' %}
+
+{% set docTitle = title ~ ' - Formie' %}
+{% set elementType = 'verbb\\formie\\elements\\Submission' %}
+
+{% js %}
+    if (typeof Craft.Formie === 'undefined') {
+        Craft.Formie = {};
+    }
+
+    {% set editableForms = [] %}
+
+    {% for form in craft.formie.forms.all() %}
+        {% if currentUser.can('formie-createSubmissions') or currentUser.can('formie-createSubmissions:' ~ form.uid) %}
+            {% set editableForms = editableForms | merge([{
+                id: form.id,
+                handle: form.handle,
+                name: form.title,
+                sites: craft.app.sites.allSiteIds(),
+                uid: form.uid,
+            }]) %}
+        {% endif %}
+    {% endfor %}
+
+    Craft.Formie.editableForms = {{ editableForms | json_encode() | raw }};
+    Craft.Formie.defaultState = {{ defaultState | json_encode() | raw }};
+
+    {% if formHandle is defined %}
+        window.defaultFormieFormHandle = '{{ formHandle }}';
+    {% endif %}
+{% endjs %}

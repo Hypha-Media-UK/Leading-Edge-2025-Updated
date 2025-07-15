@@ -59,4 +59,22 @@ return array (
     'documentationUrl' => 'https://github.com/verbb/field-manager',
     'changelogUrl' => 'https://raw.githubusercontent.com/verbb/field-manager/craft-5/CHANGELOG.md',
   ),
+  'verbb/formie' => 
+  array (
+    'class' => 'verbb\\formie\\Formie',
+    'basePath' => $vendorDir . '/verbb/formie/src',
+    'handle' => 'formie',
+    'aliases' => 
+    array (
+      '@verbb/formie' => $vendorDir . '/verbb/formie/src',
+    ),
+    'name' => 'Formie',
+    'version' => '3.0.31',
+    'description' => 'The most user-friendly forms plugin for Craft.',
+    'developer' => 'Verbb',
+    'developerUrl' => 'https://verbb.io',
+    'developerEmail' => 'support@verbb.io',
+    'documentationUrl' => 'https://github.com/verbb/formie',
+    'changelogUrl' => 'https://raw.githubusercontent.com/verbb/formie/craft-5/CHANGELOG.md',
+  ),
 );

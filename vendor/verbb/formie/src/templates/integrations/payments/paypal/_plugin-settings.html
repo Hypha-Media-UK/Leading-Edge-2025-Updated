@@ -1,0 +1,53 @@
+{% import '_includes/forms' as forms %}
+{% import 'verbb-base/_macros' as macros %}
+
+{% set displayName = integration.displayName() %}
+
+{% set instructions %}
+### Step 1. Connect to the {name} API
+1. Go to your <a href="https://developer.paypal.com/developer/applications/" target="_blank">PayPal REST API</a> application settings.
+1. Select either **Sandbox** or **Live** and click the **Create App** button.
+1. Enter a **App Name** and select **Merchant** for the **App Type**.
+1. Copy the **Client ID** from {name} and paste in the **Client ID** field below.
+1. Copy the **Secret** from {name} and paste in the **Client Secret** field below.
+
+### Step 2. Test Connection
+1. Save this integration.
+1. Click on the **Refresh** button in the right-hand sidebar.
+{% endset %}
+
+<div class="fui-settings-block">
+    {{ instructions | t('formie', { name: displayName }) | md }}
+</div>
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'Client ID' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'clientId',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.clientId ?? '',
+    warning: macros.configWarning('clientId', 'formie'),
+    errors: integration.getErrors('clientId'),
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'autosuggestField', {
+    label: 'Client Secret' | t('formie'),
+    instructions: 'Enter your {name} {label} here.' | t('formie'),
+    name: 'clientSecret',
+    required: true,
+    suggestEnvVars: true,
+    value: integration.settings.clientSecret ?? '',
+    warning: macros.configWarning('clientSecret', 'formie'),
+    errors: integration.getErrors('clientSecret'),
+}) }}
+
+{{ macros.proxyField(fieldVariables, 'booleanMenuField', {
+    label: 'Use Sandbox' | t('formie'),
+    instructions: 'Whether to use the {name} sandbox.' | t('formie'),
+    name: 'useSandbox',
+    includeEnvVars: true,
+    value: integration.settings.useSandbox ?? false,
+    warning: macros.configWarning('useSandbox', 'formie'),
+    errors: integration.getErrors('useSandbox'),
+}) }}

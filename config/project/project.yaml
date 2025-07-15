@@ -1,4 +1,4 @@
-dateModified: 1752573751
+dateModified: 1752587564
 elementSources:
   craft\elements\Entry:
     -
@@ -52,6 +52,7 @@ meta:
     5c8228fd-b7e4-4fa8-b9dd-2a5389c4bb6c: 'Homepage Hero' # Homepage Hero
     5d6f4599-0482-49dc-b4e6-eb7db8af869d: 'Basic with H2' # Basic with H2
     8dc06e17-b136-4714-997a-6b1f293e9c41: 'Bold, Italic and Link' # Bold, Italic and Link
+    8eed41b9-47a1-4b42-8361-6e2f9dd27c9f: 'Social Links' # Social Links
     9ab1b041-ae5f-451c-aa7a-e7dda1e2d1f9: 'Title Field' # Title Field
     9b42751e-b87f-4957-8c54-5a457d443a7f: 'Basic with H2' # Basic with H2
     10dcb136-b8a7-4325-90fe-c0cda2e1ebd1: 'Simple Text' # Simple Text
@@ -71,6 +72,7 @@ meta:
     223fbc1e-4eb0-4383-82ba-1041ce5b1e00: Homepage # Homepage
     392d336a-d1e6-4233-89d7-cf232f91adb8: 'Bold and Italic' # Bold and Italic
     678e5f0a-719b-48e9-85b7-506679f364f5: Homepage # Homepage
+    1149dbed-328b-4236-b383-2b1408a70240: 'Contact Form' # Contact Form
     3815c76e-4a12-40f8-8dd1-9568da8fdf25: Team # Team
     9832c994-1873-429f-b552-652988c0558b: Salon # Salon
     046080fc-7aad-4c07-b0fa-b55961a0f0de: Salon # Salon
@@ -91,12 +93,14 @@ meta:
     c1e5720b-386a-4bba-8784-306bc80ba4f6: Specialities # Specialities
     c4bebee5-c1d4-47bf-be47-8bcfeb2783ec: 'Services Cards' # Services Cards
     c55dc4be-da97-4592-9d58-444951e11eef: Team # Team
+    c507fba7-fc2b-4910-905a-87d9b1af9d0e: New # New
     c969543d-de4c-4d09-9576-8758dc27afd1: 'Testimonials Section' # Testimonials Section
     cd54e7f4-5c22-4c1f-97e1-6e017ee1fcc6: 'Sub Service' # Sub Service
     d2c3b28c-ed81-4d1d-a2c8-8a4cfff51ecd: 'Price List' # Price List
     d51d5a9b-69fe-4e13-acd6-d4f9a20ccae1: 'Title Text' # Title Text
     d60136f4-9baf-4f3c-9a20-bbd1bf47b28a: Services # Services
     d9707244-1d4e-4b5b-9d06-b6055492603e: TLE-2025 # TLE-2025
+    e2c6ec4d-d46c-47ec-800d-206eea4d27b1: 'Contact Form' # Contact Form
     e21536ab-798f-4de7-9666-70903d331159: Services # Services
     eb38d150-0774-403c-8be3-6b8c480c6f8e: Specialities # Specialities
     eb143e66-f41e-413f-aaff-b1cc34d3e545: 'Simple Cards' # Simple Cards
@@ -116,6 +120,15 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  formie:
+    edition: standard
+    enabled: true
+    licenseKey: BI7KJHTKYAEW7IOBX10NC14C
+    schemaVersion: 3.4.8
+  freeform:
+    edition: express
+    enabled: true
+    schemaVersion: 5.6.2
 system:
   edition: solo
   live: true

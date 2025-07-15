@@ -1,0 +1,75 @@
+columnSuffix: null
+handle: socialLinks
+instructions: null
+name: 'Social Links'
+searchable: false
+settings:
+  addRowLabel: 'Add a Channel'
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Platform
+            -
+              - handle
+              - platform
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - Link
+            -
+              - handle
+              - link
+            -
+              - width
+              - ''
+            -
+              - type
+              - url
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - Icon
+            -
+              - handle
+              - icon
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+        -
+          - col2
+          - ''
+        -
+          - col3
+          - ''
+  maxRows: null
+  minRows: 1
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

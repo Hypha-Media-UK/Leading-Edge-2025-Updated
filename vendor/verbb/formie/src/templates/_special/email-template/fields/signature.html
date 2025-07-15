@@ -1,0 +1,5 @@
+{% if value | length %}
+    <div style="width: 400px;">
+        <img style="max-width: 100% !important; height: auto !important;" src="{{ field.getImageUrl(submission, value) }}" />
+    </div>
+{% endif %}

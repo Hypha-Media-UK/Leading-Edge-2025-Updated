@@ -1,0 +1,18 @@
+{# Keep track of the outer group field #}
+{% set groupField = field %}
+
+{% fieldtag 'nestedFieldRows' %}
+    {% for row in field.getRows() %}
+        {% fieldtag 'nestedFieldRow' %}
+            {% for field in row.getFields() %}
+                {# Update the namespace for the field #}
+                {% do field.setParentField(groupField) %}
+
+                {# Pass in the raw value from this parent field #}
+                {{ craft.formie.renderField(form, field, {
+                    value: value[field.handle] ?? null,
+                }) }}
+            {% endfor %}
+        {% endfieldtag %}
+    {% endfor %}
+{% endfieldtag %}

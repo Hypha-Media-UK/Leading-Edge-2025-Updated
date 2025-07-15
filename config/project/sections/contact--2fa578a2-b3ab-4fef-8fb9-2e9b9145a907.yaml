@@ -13,16 +13,16 @@ previewTargets:
         - label
         - 'Primary entry page'
       -
-        - urlFormat
-        - '{url}'
-      -
         - refresh
         - '1'
+      -
+        - urlFormat
+        - '{url}'
 propagationMethod: all
 siteSettings:
   21f4ef74-64dc-48e3-bb94-93d62c25ef08: # TLE-2025
     enabledByDefault: true
     hasUrls: true
-    template: contact/_entry.twig
+    template: contact.twig
     uriFormat: contact
 type: single

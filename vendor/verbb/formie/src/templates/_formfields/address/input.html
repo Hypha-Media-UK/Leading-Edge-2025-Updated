@@ -1,0 +1,20 @@
+{% extends 'formie/_formfields/field' %}
+
+{% block field %}
+    
+    {% namespace field.handle %}
+        {% for row in field.getRows(false) %}
+            <div class="fui-row">
+                {% for field in row.getFields(false) %}
+                    <div class="fui-col-auto">
+                        {% set value = element.getFieldValue(field.fieldKey) ?? field.normalizeValue(field.getDefaultValue(), null) %}
+                        {% set errors = element.getErrors(field.fieldKey) ?? [] %}
+
+                        {{ field.getCpInputHtml(value, element) }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    {% endnamespace %}
+
+{% endblock %}

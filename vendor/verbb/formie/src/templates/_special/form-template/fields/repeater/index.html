@@ -1,0 +1,32 @@
+{{ hiddenInput(field.getHtmlName(), '') }}
+
+{% fieldtag 'nestedFieldContainer' %}
+    {% if value %}
+        {% for block in value %}
+            {{ formieInclude('fields/repeater/_row', {
+                index: loop.index0,
+            }) }}
+        {% endfor %}
+    {% endif %}
+{% endfieldtag %}
+
+{{ fieldtag('fieldAddButton') }}
+
+{% set includeScriptsInline = renderOptions.includeScriptsInline ?? false %}
+
+{% if includeScriptsInline %}
+    {# For GraphQL requests we need to render this inline #}
+    <script type="text/x-template" data-repeater-template="{{ field.handle }}">{% apply spaceless %}
+        {{ formieInclude('fields/repeater/_row', {
+            index: '__ROW__',
+        }) }}
+    {% endapply %}</script>
+{% else %}
+    {# Have to use the `script` tag here to place the script outside of a Vue3 wrapper #}
+    {# as Vue3 will strip out inline `script` tags (all other scenarios would be fine) #}
+    {% script with { type: 'text/x-template', 'data-repeater-template': field.handle } %}{% apply spaceless %}
+        {{ formieInclude('fields/repeater/_row', {
+            index: '__ROW__',
+        }) }}
+    {% endapply %}{% endscript %}
+{% endif %}
