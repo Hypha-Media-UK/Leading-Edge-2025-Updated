@@ -1,0 +1,23 @@
+columnSuffix: null
+handle: specialities
+instructions: null
+name: Specialities
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  defaultPlacement: end
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
+  showCardsInGrid: false
+  showSearchInput: true
+  showSiteMenu: true
+  source: 'taggroup:eb38d150-0774-403c-8be3-6b8c480c6f8e' # Specialities
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Tags

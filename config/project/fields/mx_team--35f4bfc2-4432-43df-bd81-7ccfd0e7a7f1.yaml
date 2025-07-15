@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: mx_team
+instructions: null
+name: Team
+searchable: false
+settings:
+  createButtonLabel: 'Add Staff'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - c55dc4be-da97-4592-9d58-444951e11eef # Team
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: null
+  minEntries: 1
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: true
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

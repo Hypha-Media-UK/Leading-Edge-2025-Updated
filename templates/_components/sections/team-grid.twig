@@ -1,10 +1,8 @@
 {# Team Grid Component Macro #}
-{% macro teamGrid(title, description, teamMembers) %}
     <section class="team-section">
         <div class="container">
             <div class="team-intro">
-                <h2>{{ title|default('Our Talented Professionals') }}</h2>
-                <p>{{ description|default('The Leading Edge team consists of passionate, highly-trained professionals who are dedicated to their craft. Each team member brings their unique expertise and creative vision to provide you with an exceptional salon experience.') }}</p>
+                {{ entry.introText }}
             </div>
             
             <div class="team-grid">
@@ -70,4 +68,3 @@
             </div>
         {% endfor %}
     </section>
-{% endmacro %}

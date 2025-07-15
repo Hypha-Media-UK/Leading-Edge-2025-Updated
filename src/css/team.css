@@ -12,6 +12,8 @@
 @import 'components/modal.css';
 @import 'components/page-header.css';
 @import 'components/team-grid.css';
+@import 'components/simple-cards.css';
+@import 'components/call-to-action.css';
 
 @layer components {
 
