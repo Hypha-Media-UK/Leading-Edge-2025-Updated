@@ -1,0 +1,92 @@
+@layer components {
+
+/* Social Icons Base Component */
+.social-icons {
+  display: flex;
+  gap: 1.2rem;
+
+  & a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+
+    & i {
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      height: auto;
+      margin: 0;
+      transition: color 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+}
+
+/* Contact Card Context */
+.contact-card .social-icons {
+  justify-content: flex-start;
+  margin-block-start: auto;
+
+  & a {
+    background-color: color-mix(in srgb, var(--primary-color) 8%, transparent);
+    color: var(--primary-color);
+
+    &:hover {
+      background-color: var(--accent-color);
+      color: white;
+      transform: translateY(-3px) scale(1.1);
+      box-shadow: 0 5px 15px color-mix(in srgb, var(--accent-color) 40%, transparent);
+    }
+  }
+}
+
+/* Footer Section Context */
+.footer-section .social-icons {
+  gap: 15px;
+  margin-block-start: 1.5rem;
+
+  & a {
+    width: 44px;
+    height: 44px;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & i {
+      font-size: 1.3rem;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      height: auto;
+      margin: 0;
+      line-height: 1;
+    }
+
+    &:hover {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+      transform: translateY(-3px);
+
+      & i {
+        color: white;
+      }
+    }
+  }
+}
+
+} /* End @layer components */
