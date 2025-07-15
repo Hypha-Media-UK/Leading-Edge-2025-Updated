@@ -83,7 +83,7 @@
 }
 
 /* Team Member Modal Styles */
-#team-member-modal .member-profile-grid {
+.team-member-modal .member-profile-grid {
   display: grid;
   grid-template-columns: 40% 60%;
   width: 100%;
@@ -91,12 +91,12 @@
 }
 
 @media (max-width: 768px) {
-  #team-member-modal .member-profile-grid {
+  .team-member-modal .member-profile-grid {
     grid-template-columns: 1fr;
   }
 }
 
-#team-member-modal .member-image-container {
+.team-member-modal .member-image-container {
   height: 100%;
   min-height: 450px;
   overflow: hidden;
@@ -104,12 +104,12 @@
 }
 
 @media (max-width: 768px) {
-  #team-member-modal .member-image-container {
+  .team-member-modal .member-image-container {
     min-height: 350px;
   }
 }
 
-#team-member-modal .member-image-container img {
+.team-member-modal .member-image-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -117,17 +117,17 @@
   display: block;
 }
 
-#team-member-modal .member-content {
+.team-member-modal .member-content {
   padding: 2.5rem;
 }
 
-#team-member-modal .member-content h2 {
+.team-member-modal .member-content h2 {
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
   color: var(--primary-color);
 }
 
-#team-member-modal .member-content .member-modal-title {
+.team-member-modal .member-content .member-modal-title {
   font-size: 1.2rem;
   color: var(--accent-color);
   margin-bottom: 1.8rem;
@@ -135,32 +135,32 @@
   border-bottom: 1px solid rgba(64, 78, 92, 0.1);
 }
 
-#team-member-modal .member-content .member-bio {
+.team-member-modal .member-content .member-bio {
   margin-bottom: 2rem;
 }
 
-#team-member-modal .member-content .member-bio p {
+.team-member-modal .member-content .member-bio p {
   line-height: 1.8;
   color: color-mix(in srgb, var(--primary-color) 80%, white);
 }
 
-#team-member-modal .member-content .member-specialties {
+.team-member-modal .member-content .member-specialties {
   margin-bottom: 2rem;
 }
 
-#team-member-modal .member-content .member-specialties h3 {
+.team-member-modal .member-content .member-specialties h3 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
   color: var(--primary-color);
 }
 
-#team-member-modal .member-content .member-specialties .specialty-tags {
+.team-member-modal .member-content .member-specialties .specialty-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
 }
 
-#team-member-modal .member-content .member-specialties .specialty-tags .specialty-tag {
+.team-member-modal .member-content .member-specialties .specialty-tags .specialty-tag {
   background-color: var(--bg-light);
   padding: 0.5rem 1rem;
   border-radius: 30px;
@@ -169,30 +169,30 @@
   display: inline-block;
 }
 
-#team-member-modal .member-content .member-social {
+.team-member-modal .member-content .member-social {
   margin-bottom: 2rem;
 }
 
-#team-member-modal .member-content .member-social .instagram-link {
+.team-member-modal .member-content .member-social .instagram-link {
   color: #C13584;
   text-decoration: none;
   display: inline-block;
   transition: all 0.3s ease;
 }
 
-#team-member-modal .member-content .member-social .instagram-link:hover {
+.team-member-modal .member-content .member-social .instagram-link:hover {
   transform: translateY(-2px);
 }
 
-#team-member-modal .member-content .member-social .instagram-link i {
+.team-member-modal .member-content .member-social .instagram-link i {
   margin-right: 0.5rem;
 }
 
-#team-member-modal .member-content .booking-cta {
+.team-member-modal .member-content .booking-cta {
   margin-top: 2.5rem;
 }
 
-#team-member-modal .member-content .booking-cta .btn {
+.team-member-modal .member-content .booking-cta .btn {
   display: inline-block;
   padding: 1rem 2.5rem;
   border-radius: 4px;
@@ -203,13 +203,13 @@
   transition: all 0.3s ease;
 }
 
-#team-member-modal .member-content .booking-cta .btn.primary {
+.team-member-modal .member-content .booking-cta .btn.primary {
   background-color: var(--accent-color);
   color: white;
   border: 2px solid var(--accent-color);
 }
 
-#team-member-modal .member-content .booking-cta .btn.primary:hover {
+.team-member-modal .member-content .booking-cta .btn.primary:hover {
   background-color: var(--accent-color-dark);
   border-color: var(--accent-color-dark);
   transform: translateY(-3px);
@@ -456,7 +456,7 @@
     width: 95%;
   }
   
-  #team-member-modal .member-content,
+  .team-member-modal .member-content,
   #position-modal .modal-body,
   #news-article-modal .modal-body {
     padding: 1.5rem;
@@ -486,7 +486,7 @@
     z-index: 20;
   }
   
-  #team-member-modal .member-content,
+  .team-member-modal .member-content,
   #position-modal .modal-body,
   #news-article-modal .modal-body {
     padding: 1rem;
