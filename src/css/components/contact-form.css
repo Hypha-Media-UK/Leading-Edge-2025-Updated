@@ -3,16 +3,32 @@
 /* Contact Form Component Styles (extracted from Vue ContactForm.vue) */
 .form-header {
   text-align: center;
-  margin-block-end: 2rem;
+  margin-block-end: 3rem;
 
   & h2 {
-    font-size: 2rem;
-    margin-block-end: 1rem;
+    font-size: 2.2rem;
+    margin-block-end: 1.5rem;
     color: var(--primary-color);
+    font-weight: 600;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color) 80%, black));
+      margin: 1rem auto 0;
+      border-radius: 2px;
+    }
   }
 
   & p {
     color: var(--primary-color-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
   }
 }
 
@@ -40,43 +56,51 @@
 
 .contact-form {
   & .form-field {
-    margin-block-end: 1.5rem;
+    margin-block-end: 2rem;
+    position: relative;
 
-        & label {
-          display: block;
-          margin-block-end: 0.5rem;
-          color: var(--primary-color);
-        }
+    & label {
+      display: block;
+      margin-block-end: 0.8rem;
+      color: var(--primary-color);
+      font-weight: 500;
+      font-size: 1rem;
+    }
 
     & input,
     & select,
     & textarea {
       width: 100%;
-      padding: 0.75rem;
-      border: 1px solid color-mix(in srgb, var(--primary-color) 20%, transparent);
-      border-radius: 4px;
+      padding: 1rem 1.2rem;
+      border: 2px solid color-mix(in srgb, var(--primary-color) 15%, transparent);
+      border-radius: 8px;
       font-size: 1rem;
-      transition: border-color 0.3s ease;
+      transition: all 0.3s ease;
+      background-color: #fafafa;
 
       &:focus {
         outline: none;
         border-color: var(--accent-color);
+        background-color: white;
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 10%, transparent);
+        transform: translateY(-1px);
       }
 
       &::placeholder {
-        color: color-mix(in srgb, var(--primary-color) 60%, white);
+        color: color-mix(in srgb, var(--primary-color) 50%, white);
       }
     }
 
     & textarea {
       resize: vertical;
-      min-height: 100px;
+      min-height: 120px;
+      line-height: 1.6;
     }
 
     & .error-message {
       color: #C62828;
       font-size: 0.875rem;
-      margin-block-start: 0.25rem;
+      margin-block-start: 0.5rem;
       display: none;
 
       &.show {
@@ -88,22 +112,60 @@
   & .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
 
     @media (max-width: 576px) {
       grid-template-columns: 1fr;
+      gap: 1rem;
     }
   }
 
   & .form-alert {
     background-color: #FFEBEE;
     color: #C62828;
-    padding: 1rem;
-    border-radius: 4px;
-    margin-block-end: 1.5rem;
+    padding: 1.2rem;
+    border-radius: 8px;
+    margin-block-end: 2rem;
+    border-left: 4px solid #C62828;
 
     & p {
       margin: 0;
+    }
+  }
+
+  /* Submit button container for better spacing */
+  & .form-submit {
+    margin-block-start: 2rem;
+    text-align: center;
+  }
+
+  /* Formie submit button styling - override Formie defaults */
+  & .btn.primary,
+  & button.btn.primary,
+  & [type="submit"].btn.primary {
+    background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color) 85%, black)) !important;
+    color: white !important;
+    border: none !important;
+    padding: 1.2rem 3rem !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+    text-decoration: none !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    display: inline-block !important;
+    box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color) 30%, transparent) !important;
+    margin-top: 1rem !important;
+
+    &:hover {
+      background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color) 90%, black), color-mix(in srgb, var(--accent-color) 75%, black)) !important;
+      transform: translateY(-3px) !important;
+      box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color) 40%, transparent) !important;
+    }
+
+    &:active {
+      transform: translateY(-1px) !important;
     }
   }
 }
