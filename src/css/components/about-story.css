@@ -2,7 +2,7 @@
 
 /* About Story Component Styles (extracted from Vue AboutStory.vue) */
 .about-section {
-  background-color: white;
+  background-color: var(--about-bg-color, white);
   padding-block: 5rem;
 
   & .about-content {
@@ -46,6 +46,54 @@
       font-size: 2.2rem;
       margin-block-end: 1.5rem;
       color: var(--primary-color);
+    }
+  }
+
+  /* Background color variants */
+  &.about-section--pale-blue-bg {
+    --about-bg-color: var(--light-color);
+  }
+
+  &.about-section--white-bg {
+    --about-bg-color: white;
+  }
+
+  &.about-section--alt-bg {
+    --about-bg-color: var(--primary-color);
+    color: white;
+
+    & .about-text h2 {
+      color: white;
+    }
+
+    & .about-text p {
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  &.about-section--dark-bg {
+    --about-bg-color: var(--dark-color);
+    color: white;
+
+    & .about-text h2 {
+      color: white;
+    }
+
+    & .about-text p {
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  &.about-section--accent-bg {
+    --about-bg-color: var(--accent-color);
+    color: white;
+
+    & .about-text h2 {
+      color: white;
+    }
+
+    & .about-text p {
+      color: rgba(255, 255, 255, 0.9);
     }
   }
 }

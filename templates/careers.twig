@@ -9,7 +9,11 @@
 {% block content %}
 <div class="careers-page">
     {% include '_components/sections/page-header.twig' %}
-    {% include '_components/sections/simple-cards.twig' %}
+    {% include '_components/sections/simple-cards.twig' with { 
+        backgroundVariant: 'white',
+        cardVariant: 'pale-blue'
+        } %}
+
     {% include '_components/sections/jobs-grid.twig' %}
 
     {% from '_components/forms/careers-application-form.twig' import careersApplicationForm %}
@@ -22,7 +26,9 @@
             { id: 3, title: 'Salon Receptionist' }
         ]
     ) }}
-    {% include '_components/sections/about-story.twig' %}
+    {% include '_components/sections/about-story.twig' with {
+          backgroundVariant: 'pale-blue'
+    }%}
 
 </div>
 {% endblock %}

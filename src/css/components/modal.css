@@ -78,6 +78,11 @@
   padding: 0;
 }
 
+/* Override default modal-body padding for job position modals */
+.job-position-modal .modal-content .modal-body {
+  padding: 2.5rem;
+}
+
 .modal-overlay.active .modal-content {
   transform: scale(1);
 }
@@ -217,17 +222,17 @@
 }
 
 /* Job Position Modal Styles */
-#position-modal .modal-body {
+.job-position-modal .modal-body {
   padding: 2.5rem;
 }
 
-#position-modal .position-content h2 {
+.job-position-modal .position-title {
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
   color: var(--primary-color);
 }
 
-#position-modal .position-content .position-meta {
+.job-position-modal .position-meta {
   display: flex;
   align-items: center;
   margin-bottom: 1.8rem;
@@ -235,7 +240,7 @@
   border-bottom: 1px solid rgba(64, 78, 92, 0.1);
 }
 
-#position-modal .position-content .position-meta .type {
+.job-position-modal .position-meta .type {
   background-color: rgba(197, 143, 49, 0.1);
   color: var(--accent-color);
   padding: 0.3rem 0.8rem;
@@ -244,54 +249,54 @@
   margin-right: 1rem;
 }
 
-#position-modal .position-content .position-meta .location {
+.job-position-modal .position-meta .location {
   color: color-mix(in srgb, var(--primary-color) 70%, white);
   font-size: 0.9rem;
 }
 
-#position-modal .position-content .position-meta .location i {
+.job-position-modal .position-meta .location i {
   margin-right: 0.3rem;
 }
 
-#position-modal .position-content .position-description {
+.job-position-modal .position-description {
   margin-bottom: 2rem;
 }
 
-#position-modal .position-content .position-description p {
+.job-position-modal .position-description p {
   line-height: 1.8;
   color: color-mix(in srgb, var(--primary-color) 80%, white);
 }
 
-#position-modal .position-content .position-responsibilities,
-#position-modal .position-content .position-requirements {
+.job-position-modal .position-responsibilities,
+.job-position-modal .position-requirements {
   margin-bottom: 2rem;
 }
 
-#position-modal .position-content .position-responsibilities h3,
-#position-modal .position-content .position-requirements h3 {
+.job-position-modal .position-responsibilities h4,
+.job-position-modal .position-requirements h4 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
   color: var(--primary-color);
 }
 
-#position-modal .position-content .position-responsibilities ul,
-#position-modal .position-content .position-requirements ul {
+.job-position-modal .position-responsibilities ul,
+.job-position-modal .position-requirements ul {
   margin-left: 1.5rem;
 }
 
-#position-modal .position-content .position-responsibilities ul li,
-#position-modal .position-content .position-requirements ul li {
+.job-position-modal .position-responsibilities ul li,
+.job-position-modal .position-requirements ul li {
   color: color-mix(in srgb, var(--primary-color) 80%, white);
   margin-bottom: 0.8rem;
   line-height: 1.6;
   position: relative;
 }
 
-#position-modal .position-content .apply-cta {
+.job-position-modal .modal-actions {
   margin-top: 2.5rem;
 }
 
-#position-modal .position-content .apply-cta .btn {
+.job-position-modal .modal-actions .btn {
   display: inline-block;
   padding: 1rem 2.5rem;
   border-radius: 4px;
@@ -302,13 +307,13 @@
   transition: all 0.3s ease;
 }
 
-#position-modal .position-content .apply-cta .btn.primary {
+.job-position-modal .modal-actions .btn.primary {
   background-color: var(--accent-color);
   color: white;
   border: 2px solid var(--accent-color);
 }
 
-#position-modal .position-content .apply-cta .btn.primary:hover {
+.job-position-modal .modal-actions .btn.primary:hover {
   background-color: var(--accent-color-dark);
   border-color: var(--accent-color-dark);
   transform: translateY(-3px);
@@ -457,7 +462,7 @@
   }
   
   .team-member-modal .member-content,
-  #position-modal .modal-body,
+  .job-position-modal .modal-content .modal-body,
   #news-article-modal .modal-body {
     padding: 1.5rem;
   }
@@ -487,7 +492,7 @@
   }
   
   .team-member-modal .member-content,
-  #position-modal .modal-body,
+  .job-position-modal .modal-content .modal-body,
   #news-article-modal .modal-body {
     padding: 1rem;
   }

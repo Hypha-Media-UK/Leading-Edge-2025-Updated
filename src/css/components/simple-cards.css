@@ -120,6 +120,10 @@
     }
   }
 
+  &.features--white-bg {
+    --features-bg-color: white;
+  }
+
   & .feature-card {
     background-color: var(--card-bg-color, white);
     color: var(--card-text-color, var(--primary-color));
@@ -194,6 +198,14 @@
     
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  &.features--card-pale-blue {
+    --card-bg-color: var(--light-color);
+    --card-text-color: var(--primary-color);
+    --card-heading-color: var(--primary-color);
+    --card-text-light-color: var(--primary-color-light);
+    --card-icon-color: var(--accent-color);
   }
 }
 

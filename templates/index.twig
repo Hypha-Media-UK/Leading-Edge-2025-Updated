@@ -9,7 +9,11 @@
 {% block content %}
 <div class="home-page">
     {% include '_components/sections/hero.twig' %}
-    {% include '_components/sections/simple-cards.twig' %}
+    {% include '_components/sections/simple-cards.twig' with { 
+        backgroundVariant: 'pale-blue',
+        cardVariant: 'white'
+    } %}
+
     {% include '_components/sections/services-preview.twig' %}
     {% include '_components/sections/testimonials.twig' %}
     {% include '_components/sections/products-showcase.twig' %}
