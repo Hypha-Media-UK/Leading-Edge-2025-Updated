@@ -10,13 +10,8 @@
 <div class="careers-page">
     {% include '_components/sections/page-header.twig' %}
     {% include '_components/sections/simple-cards.twig' %}
-
-
-    {# Jobs Grid #}
     {% include '_components/sections/jobs-grid.twig' %}
 
-
-    {# Application Form #}
     {% from '_components/forms/careers-application-form.twig' import careersApplicationForm %}
     {{ careersApplicationForm(
         'Apply Now',
@@ -27,18 +22,7 @@
             { id: 3, title: 'Salon Receptionist' }
         ]
     ) }}
-
-    {# Culture Section #}
-    {% from '_components/sections/culture-section.twig' import cultureSection %}
-    {{ cultureSection(
-        'Our Workplace Culture',
-        [
-            'At The Leading Edge, we foster a culture of creativity, respect, and continuous growth. We believe that happy team members provide the best service to our clients, which is why we prioritize creating a positive and supportive work environment.',
-            'We celebrate diversity and believe that each team member brings unique perspectives and talents that contribute to our collective success. Our collaborative approach encourages sharing ideas and learning from one another.',
-            'If you\'re passionate about beauty, dedicated to excellence, and love making people feel their best, we\'d love to hear from you!'
-        ],
-        '/images/new/misc/culture.webp'
-    ) }}
+    {% include '_components/sections/about-story.twig' %}
 
 </div>
 {% endblock %}

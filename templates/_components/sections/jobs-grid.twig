@@ -9,7 +9,7 @@
             {% if entry.cb_currentOpportunities.jobDescriptions %}
                 <div class="positions-grid">
                     {% for position in entry.cb_currentOpportunities.jobDescriptions %}
-                        <div class="position-card" data-modal-target="position-modal-#">
+                        <div class="position-card" data-modal-target="position-modal-{{ position.id }}">
                             <h3>{{ position.title }}</h3>
                             <div class="position-meta">
                             {% if position.jobType %}
@@ -28,7 +28,7 @@
                             {% endif %}
 
 
-                            <a href="#" class="btn primary">View Details</a>
+                            <a href="#" class="btn primary view-details-btn">View Details</a>
                         </div>
                     {% endfor %}
                 </div>
