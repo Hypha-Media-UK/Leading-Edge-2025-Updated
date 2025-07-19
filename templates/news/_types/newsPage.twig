@@ -9,26 +9,13 @@
 {% block content %}
 <div class="news-page">
     {# Page Header #}
-    {% from '_components/ui/page-header.twig' import pageHeader %}
-    {{ pageHeader(
-        'Latest News',
-        'Stay updated with the latest happenings at The Leading Edge'
-    ) }}
+    {% include '_components/sections/page-header.twig' %}
 
     <section class="news-content">
         <div class="container">
             {# Featured News #}
-            {% from '_components/sections/featured-news-item.twig' import featuredNewsItem %}
-            {{ featuredNewsItem({
-                id: 1,
-                title: 'Summer Hair Trends 2025',
-                date: 'June 15, 2025',
-                image: '/images/new/news/news1.webp',
-                excerpt: 'Discover the hottest hair trends for Summer 2025. From beachy waves to bold colors, our stylists share their expert predictions.',
-                category: 'Hair',
-                author: 'Emma Thompson',
-                content: '<p>As we move into the warmer months, hair trends are shifting towards more relaxed, natural-looking styles that embrace texture and movement. This summer, we\'re seeing a beautiful blend of effortless styling with bold color choices that make a statement.</p><h4>Beachy Waves Make a Comeback</h4><p>The effortless, tousled look of beachy waves is dominating summer 2025. This trend focuses on enhancing your hair\'s natural texture rather than fighting against it. Our stylists recommend using sea salt sprays and diffusing techniques to achieve that perfect "just-left-the-beach" look.</p><h4>Bold Color Statements</h4><p>While natural textures are trending, color choices are becoming more adventurous. We\'re seeing clients opt for vibrant highlights, sunset-inspired ombres, and even temporary color washes that can be changed with the seasons.</p><h4>Low-Maintenance Cuts</h4><p>Busy summer schedules call for hairstyles that look great with minimal styling. Layered cuts, long bobs, and textured pixie cuts are perfect for those who want to look polished without spending hours on their hair.</p>'
-            }) }}
+            {% include '_components/sections/featured-news-item.twig' %}
+
 
             {# Featured News Modal #}
             <div id="news-modal-1" class="modal-overlay" style="display: none;">
@@ -72,64 +59,7 @@
                     </div>
                 </div>
             </div>
-
-            {# News Grid #}
-            {% from '_components/sections/news-grid.twig' import newsGrid %}
-            {{ newsGrid(
-                'Latest News',
-                'Stay updated with our latest articles, salon news, and beauty trends',
-                [
-                    {
-                        id: 2,
-                        title: 'New Organic Skincare Line Now Available',
-                        date: 'June 5, 2025',
-                        image: '/images/new/news/news2.webp',
-                        excerpt: 'We\'re excited to announce our new range of organic, cruelty-free skincare products, now available at The Leading Edge.',
-                        category: 'Beauty',
-                        author: 'Sophia Chen',
-                        content: '<p>We\'re thrilled to introduce our carefully curated selection of organic skincare products that align with our commitment to natural beauty and environmental responsibility.</p><h4>Why Organic Skincare?</h4><p>Organic skincare products are formulated without harmful chemicals, synthetic fragrances, or artificial preservatives. This means they\'re gentler on your skin and better for the environment.</p><h4>Our New Product Range</h4><p>Our new line includes cleansers, moisturizers, serums, and treatments that are suitable for all skin types. Each product has been tested by our beauty therapists to ensure they meet our high standards for quality and effectiveness.</p><h4>Book a Consultation</h4><p>Not sure which products are right for your skin? Book a consultation with one of our beauty therapists who can assess your skin type and recommend the perfect routine for you.</p>'
-                    },
-                    {
-                        id: 3,
-                        title: 'Meet Our New Senior Stylist, Alex',
-                        date: 'May 20, 2025',
-                        image: '/images/new/news/news3.webp',
-                        excerpt: 'We\'re delighted to welcome Alex Roberts to our team of talented professionals at The Leading Edge.',
-                        category: 'Team',
-                        author: 'James Wilson',
-                        content: '<p>We\'re excited to welcome Alex Roberts to The Leading Edge family. With over 8 years of experience in high-end salons across London and Paris, Alex brings a wealth of knowledge and creativity to our team.</p><h4>Alex\'s Background</h4><p>Alex trained at the prestigious Vidal Sassoon Academy and has worked with some of the industry\'s most respected stylists. Their expertise in precision cutting and innovative coloring techniques has earned them recognition in several fashion magazines.</p><h4>Specialties</h4><p>Alex specializes in modern cuts, balayage techniques, and hair transformations. They have a particular talent for working with curly and textured hair, helping clients embrace their natural texture while achieving their desired look.</p><h4>Book with Alex</h4><p>Alex is now accepting appointments and we\'re sure you\'ll love their approach to hair styling. Book your consultation today to experience their expertise firsthand.</p>'
-                    },
-                    {
-                        id: 4,
-                        title: 'Bridal Package Special Offer',
-                        date: 'May 10, 2025',
-                        image: '/images/new/news/news4.webp',
-                        excerpt: 'Planning your wedding? Take advantage of our special bridal package that covers all your beauty needs for the big day.',
-                        category: 'Special Offers',
-                        author: 'Emily Parker',
-                        content: '<p>Your wedding day is one of the most important days of your life, and we want to help you look and feel absolutely stunning. Our comprehensive bridal package ensures you\'ll be picture-perfect from head to toe.</p><h4>What\'s Included</h4><p>Our bridal package includes a trial hair and makeup session, wedding day styling, manicure and pedicure, and a relaxing facial treatment one week before your big day. We also offer services for your bridal party.</p><h4>Personalized Consultation</h4><p>Every bride is unique, which is why we start with a detailed consultation to understand your vision, dress style, and venue. This helps us create a look that\'s perfectly tailored to you.</p><h4>Special Pricing</h4><p>Book your bridal package before the end of June and receive 15% off our regular prices. Contact us today to schedule your consultation and secure your wedding date.</p>'
-                    },
-                    {
-                        id: 5,
-                        title: 'Salon Renovation Complete',
-                        date: 'April 25, 2025',
-                        image: '/images/new/news/news5.webp',
-                        excerpt: 'We\'ve upgraded our salon space to enhance your experience. Come visit us to enjoy our new facilities and relaxation areas.',
-                        category: 'Salon',
-                        author: 'Abigail Johnson',
-                        content: '<p>After months of planning and renovation, we\'re thrilled to unveil our newly transformed salon space. Every detail has been carefully considered to create an environment that promotes relaxation and luxury.</p><h4>New Features</h4><p>Our renovation includes new styling stations with improved lighting, a dedicated color bar, expanded treatment rooms, and a comfortable waiting area with complimentary refreshments. We\'ve also added a quiet relaxation zone for clients enjoying longer treatments.</p><h4>Enhanced Experience</h4><p>The new layout allows for better flow and privacy, ensuring each client receives personalized attention in a serene environment. Our investment in new equipment means we can offer even more advanced treatments and services.</p><h4>Grand Reopening</h4><p>Join us for our grand reopening celebration next month, where you can tour the new space and enjoy special offers on our services. We can\'t wait to welcome you to our beautiful new salon!</p>'
-                    }
-                ],
-                [
-                    { slug: 'hair', name: 'Hair' },
-                    { slug: 'beauty', name: 'Beauty' },
-                    { slug: 'team', name: 'Team' },
-                    { slug: 'special-offers', name: 'Special Offers' },
-                    { slug: 'salon', name: 'Salon' }
-                ],
-                'all',
-                true
-            ) }}
+            {% include '_components/sections/news-grid.twig' %}
         </div>
     </section>
 

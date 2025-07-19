@@ -8,32 +8,19 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            autocapitalize: true
-            autocomplete: false
-            autocorrect: true
-            class: null
-            dateAdded: '2025-07-19T09:10:31+00:00'
-            disabled: false
+            dateAdded: '2025-07-19T09:31:10+00:00'
+            editCondition: null
             elementCondition: null
-            id: null
+            fieldUid: 75d5ff91-e0e7-479a-b047-041d2c3e1649 # Page Header
+            handle: null
             includeInCards: false
-            inputType: null
             instructions: null
             label: null
-            max: null
-            min: null
-            name: null
-            orientation: null
-            placeholder: null
             providesThumbs: false
-            readonly: false
-            required: true
-            size: null
-            step: null
+            required: false
             tip: null
-            title: null
-            type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 913e5268-de55-44c0-95da-e1da4f225c55
+            type: craft\fieldlayoutelements\CustomField
+            uid: e4f9c9d3-a61b-4531-bd3d-8e5baec30ad1
             userCondition: null
             warning: null
             width: 100
@@ -41,13 +28,13 @@ fieldLayouts:
         uid: 4db0c3af-d27b-4753-9148-d552423fa2e3
         userCondition: null
 handle: newsPage
-hasTitleField: true
+hasTitleField: false
 icon: null
 name: News
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: '{cb_pageHeader.pageTitle}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
