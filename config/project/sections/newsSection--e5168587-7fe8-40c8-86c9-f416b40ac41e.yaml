@@ -1,0 +1,33 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 5edfc78e-63a4-4023-8fba-f4818a8e32a0 # news-article
+  -
+    uid: dfb73ee5-ea53-4d09-85e2-8ec1dc827d28 # News
+handle: newsSection
+maxAuthors: 1
+name: News
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  21f4ef74-64dc-48e3-bb94-93d62c25ef08: # TLE-2025
+    enabledByDefault: true
+    hasUrls: true
+    template: news/_entry.twig
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: 2
+  uid: 21d7abef-4962-4d5a-933d-a3d58be371a1
+type: structure

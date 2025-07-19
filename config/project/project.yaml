@@ -1,4 +1,4 @@
-dateModified: 1752915974
+dateModified: 1752916819
 elementSources:
   craft\elements\Entry:
     -
@@ -53,6 +53,7 @@ meta:
     5c8228fd-b7e4-4fa8-b9dd-2a5389c4bb6c: 'Homepage Hero' # Homepage Hero
     5d6f4599-0482-49dc-b4e6-eb7db8af869d: 'Basic with H2' # Basic with H2
     5de5baa5-50e4-4208-a69b-3036b56bfa6e: Careers # Careers
+    5edfc78e-63a4-4023-8fba-f4818a8e32a0: news-article # news-article
     8dc06e17-b136-4714-997a-6b1f293e9c41: 'Bold, Italic and Link' # Bold, Italic and Link
     8eed41b9-47a1-4b42-8361-6e2f9dd27c9f: 'Social Links' # Social Links
     9ab1b041-ae5f-451c-aa7a-e7dda1e2d1f9: 'Title Field' # Title Field
@@ -106,9 +107,11 @@ meta:
     d51d5a9b-69fe-4e13-acd6-d4f9a20ccae1: 'Title Text' # Title Text
     d60136f4-9baf-4f3c-9a20-bbd1bf47b28a: Services # Services
     d9707244-1d4e-4b5b-9d06-b6055492603e: TLE-2025 # TLE-2025
+    dfb73ee5-ea53-4d09-85e2-8ec1dc827d28: News # News
     e2c6ec4d-d46c-47ec-800d-206eea4d27b1: 'Contact Form' # Contact Form
     e72fbf57-838b-4a23-af94-8aba3641a43c: Requirements # Requirements
     e21536ab-798f-4de7-9666-70903d331159: Services # Services
+    e5168587-7fe8-40c8-86c9-f416b40ac41e: News # News
     eb38d150-0774-403c-8be3-6b8c480c6f8e: Specialities # Specialities
     eb143e66-f41e-413f-aaff-b1cc34d3e545: 'Simple Cards' # Simple Cards
     ef5e44d9-0d4b-4d70-9107-c660a781fc10: Careers # Careers

@@ -1,0 +1,53 @@
+color: null
+description: null
+fieldLayouts:
+  798a99cf-a713-4ad8-a7ee-fce676e1a33c:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-07-19T09:10:46+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: db97cb04-9e6e-4658-a353-5a5c872beff2
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: a016602f-c543-408d-85ec-d39ca8dfd17a
+        userCondition: null
+handle: newsArticle
+hasTitleField: true
+icon: null
+name: news-article
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
