@@ -330,6 +330,11 @@ abstract class Field extends SavableComponent implements CraftFieldInterface, Fi
         return false;
     }
 
+    public function hasEmailLabel(): bool
+    {
+        return $this->hasLabel();
+    }
+
     public function hasEmailPlaceholder(): bool
     {
         return true;
@@ -424,11 +429,20 @@ abstract class Field extends SavableComponent implements CraftFieldInterface, Fi
             }
         }
 
+        if ($value instanceof EncodableInterface) {
+            $value = $value->decode();
+        }
+
         return $value;
     }
 
     public function serializeValue(mixed $value, ?ElementInterface $element): mixed
     {
+        // Run this first for models that support encoding
+        if ($this->enableContentEncryption && $value instanceof EncodableInterface) {
+            $value = $value->encode();
+        }
+
         if ($value instanceof Serializable) {
             // If the object explicitly defines its savable value, use that
             $value = $value->serialize();
@@ -1528,6 +1542,15 @@ abstract class Field extends SavableComponent implements CraftFieldInterface, Fi
         }
 
         return $handles;
+    }
+
+    public function getSearchKeywords(mixed $value, ElementInterface $element): string
+    {
+        if ($this->enableContentEncryption) {
+            return '';
+        }
+
+        return $this->getValueAsString($value, $element);
     }
 
 

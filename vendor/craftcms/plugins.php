@@ -69,7 +69,7 @@ return array (
       '@verbb/formie' => $vendorDir . '/verbb/formie/src',
     ),
     'name' => 'Formie',
-    'version' => '3.0.31',
+    'version' => '3.0.32',
     'description' => 'The most user-friendly forms plugin for Craft.',
     'developer' => 'Verbb',
     'developerUrl' => 'https://verbb.io',

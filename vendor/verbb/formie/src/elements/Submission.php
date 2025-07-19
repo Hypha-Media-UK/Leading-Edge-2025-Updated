@@ -3,6 +3,7 @@ namespace verbb\formie\elements;
 
 use verbb\formie\Formie;
 use verbb\formie\base\Captcha;
+use verbb\formie\base\CosmeticField;
 use verbb\formie\base\Field;
 use verbb\formie\base\FieldInterface;
 use verbb\formie\base\FieldTrait;
@@ -244,9 +245,30 @@ class Submission extends CustomElement
         return $attributes;
     }
 
-    protected static function defineSearchableAttributes(): array
+    protected static function defineSearchableElementAttributes(): array
     {
         return ['title'];
+    }
+
+    protected static function defineSearchableAttributes(): array
+    {
+        $cosmeticFieldTypes = Formie::$plugin->getFields()->getFieldsByType(CosmeticField::class);
+
+        $fieldIds = (new Query())
+            ->select(['id'])
+            ->from(TABLE::FORMIE_FIELDS)
+            ->where(['not in', 'type', $cosmeticFieldTypes])
+            ->column();
+
+        $fieldHandles = [];
+
+        foreach ($fieldIds as $fieldId) {
+            $fieldHandles[] = "field:$fieldId";
+        }
+
+        // Due to this being a static function, we don't have access to just _this_ submission's fields
+        // So collect them all system-wide here, and we filter later in `searchKeywords()`.
+        return array_merge(static::defineSearchableElementAttributes(), $fieldHandles);
     }
 
     protected static function defineSortOptions(): array
@@ -559,7 +581,7 @@ class Submission extends CustomElement
 
     public function getCustomFields(): array
     {
-        // For compatibility with essential element services like search
+        // Backward compatibility
         return $this->getFields();
     }
 
@@ -1101,6 +1123,15 @@ class Submission extends CustomElement
         return $this->_previousIsSpam !== $this->isSpam;
     }
 
+    public function hasSearchIndexAttribute(string $attribute): bool
+    {
+        if (in_array($attribute, static::defineSearchableElementAttributes(), true)) {
+            return true;
+        }
+
+        return (bool)$this->getFieldBySearchIndex($attribute);
+    }
+
     public function beforeSave(bool $isNew): bool
     {
         /* @var Settings $settings */
@@ -1386,6 +1417,21 @@ class Submission extends CustomElement
         }
 
         return UrlHelper::cpUrl($path, $params);
+    }
+
+    protected function searchKeywords(string $attribute): string
+    {
+        if (in_array($attribute, static::defineSearchableElementAttributes(), true)) {
+            return parent::searchKeywords($attribute);
+        }
+
+        if ($field = $this->getFieldBySearchIndex($attribute)) {
+            $fieldValue = $this->getFieldValue($field->handle);
+
+            return $field->getSearchKeywords($fieldValue, $this);
+        }
+
+        return '';
     }
 
 

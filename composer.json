@@ -3,10 +3,10 @@
   "prefer-stable": true,
   "require": {
     "craftcms/ckeditor": "^4.9.0",
-    "craftcms/cms": "5.8.6",
+    "craftcms/cms": "5.8.8",
     "jsmrtn/craftagram": "^4.1.0",
     "verbb/field-manager": "^4.0.3",
-    "verbb/formie": "^3.0.31",
+    "verbb/formie": "3.0.32",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {

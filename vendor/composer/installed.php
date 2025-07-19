@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => '__root__',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '6f5dab4cdef12864aa5f3a3b371d4f5a24076f35',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '6f5dab4cdef12864aa5f3a3b371d4f5a24076f35',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -107,9 +107,9 @@
             'dev_requirement' => false,
         ),
         'craftcms/cms' => array(
-            'pretty_version' => '5.8.6',
-            'version' => '5.8.6.0',
-            'reference' => '4e864823c108b2bc989fee6b3249aa76380ff6ae',
+            'pretty_version' => '5.8.8',
+            'version' => '5.8.8.0',
+            'reference' => '93d85ce6dae3b8da62a3e1fc3191f495d53db2c8',
             'type' => 'library',
             'install_path' => __DIR__ . '/../craftcms/cms',
             'aliases' => array(),
@@ -853,8 +853,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '3.0.0',
+                0 => '3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -1305,9 +1305,9 @@
             'dev_requirement' => false,
         ),
         'verbb/auth' => array(
-            'pretty_version' => '2.0.24',
-            'version' => '2.0.24.0',
-            'reference' => '60dceeaffcffeff9a8100c02cf7f03d0b4451fa2',
+            'pretty_version' => '2.0.25',
+            'version' => '2.0.25.0',
+            'reference' => 'c672384257f753638d4b789c8c81bcbfc64346f3',
             'type' => 'library',
             'install_path' => __DIR__ . '/../verbb/auth',
             'aliases' => array(),
@@ -1332,9 +1332,9 @@
             'dev_requirement' => false,
         ),
         'verbb/formie' => array(
-            'pretty_version' => '3.0.31',
-            'version' => '3.0.31.0',
-            'reference' => 'f0707496adf55ebe2e352feaaddfdc1c5babca73',
+            'pretty_version' => '3.0.32',
+            'version' => '3.0.32.0',
+            'reference' => '8bf9ad97c0e3441ba423026cc0e4c51e13a7656a',
             'type' => 'craft-plugin',
             'install_path' => __DIR__ . '/../verbb/formie',
             'aliases' => array(),

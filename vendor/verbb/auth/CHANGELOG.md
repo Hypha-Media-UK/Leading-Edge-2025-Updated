@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.0.25 - 2025-07-18
+
+### Added
+- Add SuiteCRM provider.
+- Add Procurios provider.
+- Add Marketo provider.
+- Add LiveChat provider.
+- Add Intercom provider.
+- Add HelpScout provider.
+- Add Front provider.
+- Add CleverReach provider.
+- Add the ability for providers to modify the options for a request.
+
 ## 2.0.24 - 2025-06-17
 
 ### Fixed
@@ -151,6 +164,11 @@
 - Fix namespace for IdentityServer4 provider.
 - Fix an error with URL generation for authenticated requests.
 - Fix error handling for IdentityServer4 provider.
+
+## 1.0.40 - 2025-07-16
+
+### Added
+- Unlock `league/oauth2-client` from `2.7.0`.
 
 ## 1.0.39 - 2025-05-15
 
@@ -370,7 +388,7 @@
 ## 1.0.1 - 2023-04-05
 
 ### Fixed
-- Fix some providers’ base URI not normalizing correctly (Facebook). 
+- Fix some providers’ base URI not normalizing correctly (Facebook).
 
 ## 1.0.0 - 2023-02-01
 

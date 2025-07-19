@@ -86,6 +86,17 @@ class CustomElement extends Element
         return ArrayHelper::firstWhere($this->getFields(), 'id', $id);
     }
 
+    public function getFieldBySearchIndex(string $attribute): ?FieldInterface
+    {
+        foreach ($this->getFields() as $field) {
+            if ("field:$field->id" === $attribute) {
+                return $field;
+            }
+        }
+
+        return null;
+    }
+
     public function setFieldContent(null|string|array $content): void
     {
         if (is_string($content)) {

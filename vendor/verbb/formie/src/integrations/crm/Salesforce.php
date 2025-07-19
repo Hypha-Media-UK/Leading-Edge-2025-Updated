@@ -251,7 +251,7 @@ class Salesforce extends Crm implements OAuthProviderInterface
                 $settings['case'] = $this->_getCustomFields($fields, ['IsClosedOnCreate']);
             }
 
-            // Get Campaign Memeber fields
+            // Get Campaign Member fields
             if ($this->mapToCampaignMember) {
                 $response = $this->request('GET', 'sobjects/CampaignMember/describe');
                 $fields = $response['fields'] ?? [];
@@ -454,7 +454,9 @@ class Salesforce extends Crm implements OAuthProviderInterface
 
                                 $taskPayload = [
                                     'Subject' => $this->duplicateLeadTaskSubject,
-                                    'WhoId' => $contactId,
+
+                                    // Try and use the lead, or use the contact
+                                    'WhoId' => $response[0]['duplicateResult']['matchResults'][0]['matchRecords'][0]['record']['Id'] ?? $contactId,
                                     'Description' => '',
                                 ];
 

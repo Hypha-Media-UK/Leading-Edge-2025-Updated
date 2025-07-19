@@ -1,6 +1,9 @@
 <?php
 namespace verbb\formie\models;
 
+use verbb\formie\base\EncodableInterface;
+use verbb\formie\helpers\StringHelper;
+
 use Craft;
 use craft\base\Model;
 
@@ -9,7 +12,7 @@ use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberUtil;
 use Throwable;
 
-class Phone extends Model
+class Phone extends Model implements EncodableInterface
 {
     // Static Methods
     // =========================================================================
@@ -114,6 +117,27 @@ class Phone extends Model
         }
 
         return '';
+    }
+
+    public function encode(): mixed
+    {
+        // Avoid modifying the original
+        $value = clone $this;
+        $value->number = StringHelper::encenc((string)$value->number);
+
+        return $value;
+    }
+
+    public function decode(): mixed
+    {
+        // Avoid modifying the original
+        $value = clone $this;
+        
+        if (str_contains($value->number, 'base64:')) {
+            $value->number = StringHelper::decdec($value->number);
+        } 
+        
+        return $value;
     }
 
     public function toArray(array $fields = [], array $expand = [], $recursive = true)

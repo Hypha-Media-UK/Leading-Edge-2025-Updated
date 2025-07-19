@@ -1,4 +1,4 @@
-dateModified: 1752597025
+dateModified: 1752915974
 elementSources:
   craft\elements\Entry:
     -
@@ -132,7 +132,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: BI7KJHTKYAEW7IOBX10NC14C
-    schemaVersion: 3.4.8
+    schemaVersion: 3.4.9
   freeform:
     edition: express
     enabled: true
