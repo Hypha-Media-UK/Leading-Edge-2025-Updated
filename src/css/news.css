@@ -24,7 +24,7 @@
 
   & .news-content {
     padding: 5rem 0;
-    background-color: var(--light-color);
+    background-color: var(--bg-light);
   }
 }
 
