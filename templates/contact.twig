@@ -2,14 +2,49 @@
 
 {% block title %}Contact Us - The Leading Edge{% endblock %}
 {% block description %}Book your appointment or get in touch with our team{% endblock %}
-{% block pageCss %}contact{% endblock %}
-{% block pageJs %}contact-js{% endblock %}
 {% block pageClass %}contact{% endblock %}
 
 {% block content %}
 <div class="contact-page">
     {% include '_components/sections/page-header.twig' %}
-    {% include '_components/sections/contact-info-section.twig' %}
+    
+    {# Location and Opening Hours - Using CMS Data #}
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-info-grid">
+                {% if entry.location %}
+                    <div class="location-info">
+                        {{ entry.location|raw }}
+                    </div>
+                {% endif %}
+                
+                {% if entry.openingHours %}
+                    <div class="opening-hours">
+                        {{ entry.openingHours|raw }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    
+    {# Connect Section - Using CMS Data #}
+    {% if entry.connect %}
+        <section class="connect-section">
+            <div class="container">
+                {{ entry.connect|raw }}
+            </div>
+        </section>
+    {% endif %}
+    
+    {# Contact Form - Using CMS Content Block Data #}
+    {% if entry.cb_contactForm %}
+        <section class="contact-form-section">
+            <div class="container">
+                {% if entry.cb_contactForm.blockTitle %}
+                    <h2>{{ entry.cb_contactForm.blockTitle }}</h2>
+                {% endif %}
+    {% endif %}
+    
     {% include '_components/sections/faq-section.twig' %}
 </div>
 {% endblock %}

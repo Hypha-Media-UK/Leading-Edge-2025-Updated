@@ -1,6 +1,5 @@
-    
-    
-    <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ entry.cb_homepageHero.heroImage.one().url() }}')">
+    {% set heroImage = entry.cb_homepageHero.heroImage.one() %}
+    <section class="hero" {% if heroImage %}style="--hero-bg: url('{{ heroImage.getUrl({ width: 1920, height: 1080, mode: 'crop', format: 'webp', quality: 85 }) }}')"{% endif %}>
         <div class="container">
             <div class="hero-content">
                 <div class="text-content">

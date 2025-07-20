@@ -2,33 +2,88 @@
 
 {% block title %}Join Our Team - The Leading Edge{% endblock %}
 {% block description %}Be part of The Leading Edge family and grow your career with us{% endblock %}
-{% block pageCss %}careers{% endblock %}
-{% block pageJs %}careers-js{% endblock %}
 {% block pageClass %}careers{% endblock %}
 
 {% block content %}
 <div class="careers-page">
     {% include '_components/sections/page-header.twig' %}
-    {% include '_components/sections/simple-cards.twig' with { 
-        backgroundVariant: 'white',
-        cardVariant: 'pale-blue'
+    
+    {# Cards Section - Using CMS Data #}
+    {% if entry.cardsSection %}
+        {% include '_components/sections/simple-cards.twig' with { 
+            backgroundVariant: 'white',
+            cardVariant: 'pale-blue'
         } %}
+    {% endif %}
 
-    {% include '_components/sections/jobs-grid.twig' %}
+    {# Current Opportunities - Using CMS Content Block Data #}
+    {% if entry.cb_currentOpportunities %}
+        <section class="current-opportunities">
+            <div class="container">
+                {% if entry.cb_currentOpportunities.sectionTitle %}
+                    <h2>{{ entry.cb_currentOpportunities.sectionTitle }}</h2>
+                {% endif %}
+                {% if entry.cb_currentOpportunities.sectionSubText %}
+                    <div class="section-intro">
+                        {{ entry.cb_currentOpportunities.sectionSubText|raw }}
+                    </div>
+                {% endif %}
+                
+            {% if entry.cb_currentOpportunities.jobDescriptions %}
+                <div class="positions-grid">
+                    {% for position in entry.cb_currentOpportunities.jobDescriptions %}
+                        <div class="position-card" data-modal-target="position-modal-{{ position.id }}">
+                            <h3>{{ position.title }}</h3>
+                            <div class="position-meta">
+                            {% if position.jobType %}
+                                <span class="type">Full Time</span>
+                            {% else %}
+                                <span class="type">Part Time</span>
+                            {% endif %}
+                            </div>
+                            {% set plainText = position.briefSummary|striptags %}
+                            {% if plainText|length > 110 %}
+                                {% set words = plainText|slice(0, 100)|split(' ') %}
+                               <p>{{ words|slice(0, -1)|join(' ') }} ...</p>
+                            {% else %}
+                                <p>{{ plainText }}</p>
+                                
+                            {% endif %}
+                            <a href="#" class="btn primary view-details-btn">View Details</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="no-positions">
+                    <p>{{ entry.noPositions }}</p>
+                </div>
+            {% endif %}
 
-    {% from '_components/forms/careers-application-form.twig' import careersApplicationForm %}
-    {{ careersApplicationForm(
-        'Apply Now',
-        'Interested in joining our team? Fill out the application form below and we\'ll be in touch.',
-        [
-            { id: 1, title: 'Senior Hair Stylist' },
-            { id: 2, title: 'Beauty Therapist' },
-            { id: 3, title: 'Salon Receptionist' }
-        ]
-    ) }}
-    {% include '_components/sections/about-story.twig' with {
-          backgroundVariant: 'pale-blue'
-    }%}
+            </div>
+        </section>
+
+        {# Dynamic Job Application Form - Using CMS Data #}
+        {% if entry.cb_currentOpportunities.jobDescriptions|length %}
+            {% from '_components/forms/careers-application-form.twig' import careersApplicationForm %}
+            {% set jobOptions = [] %}
+            {% for job in entry.cb_currentOpportunities.jobDescriptions %}
+                {% set jobOptions = jobOptions|merge([{ id: job.id, title: job.title }]) %}
+            {% endfor %}
+            
+            {{ careersApplicationForm(
+                'Apply Now',
+                'Interested in joining our team? Fill out the application form below and we\'ll be in touch.',
+                jobOptions
+            ) }}
+        {% endif %}
+    {% endif %}
+    
+    {# Intro Section - Using CMS Data #}
+    {% if entry.cb_introSection %}
+        {% include '_components/sections/about-story.twig' with {
+            backgroundVariant: 'pale-blue'
+        } %}
+    {% endif %}
 
 </div>
 {% endblock %}
