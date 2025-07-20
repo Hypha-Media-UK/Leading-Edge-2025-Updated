@@ -1,4 +1,4 @@
-dateModified: 1752917521
+dateModified: 1752918195
 elementSources:
   craft\elements\Entry:
     -
@@ -116,6 +116,7 @@ meta:
     eb143e66-f41e-413f-aaff-b1cc34d3e545: 'Simple Cards' # Simple Cards
     ef5e44d9-0d4b-4d70-9107-c660a781fc10: Careers # Careers
     f0eb6556-1429-4336-86ff-322eb5be4254: 'Intro Section' # Intro Section
+    f63cfe62-8af4-48a8-91a3-aab84680d3b6: 'Featured Article?' # Featured Article?
     f117f59d-5600-46e1-8a81-3dec61d0f0c9: 'Six Images' # Six Images
 plugins:
   ckeditor:

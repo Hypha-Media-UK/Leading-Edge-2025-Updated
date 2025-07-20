@@ -1,5 +1,4 @@
 {# News Grid Component Macro #}
-{% macro newsGrid(title, description, articles, categories, activeCategory, showFilters) %}
     <section class="news-section">
         <div class="container">
             <div class="section-header">
@@ -9,20 +8,6 @@
                 {% endif %}
             </div>
             
-            {% if showFilters|default(true) and categories %}
-                <div class="news-filters">
-                    <div class="category-filter">
-                        <span class="filter-item{% if activeCategory|default('all') == 'all' %} active{% endif %}" data-category="all">
-                            All
-                        </span>
-                        {% for category in categories %}
-                            <span class="filter-item{% if activeCategory == category.slug %} active{% endif %}" data-category="{{ category.slug }}">
-                                {{ category.name }}
-                            </span>
-                        {% endfor %}
-                    </div>
-                </div>
-            {% endif %}
             
             <div class="news-grid">
                 {% for article in articles %}
@@ -100,4 +85,3 @@
             </div>
         {% endfor %}
     </section>
-{% endmacro %}

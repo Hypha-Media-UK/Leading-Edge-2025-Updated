@@ -37,6 +37,57 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2025-07-19T09:40:56+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 04ddff7f-52ed-458a-bc0c-a3a9d4b76f4d # Single Image
+            handle: articleImage
+            includeInCards: false
+            instructions: null
+            label: 'Article Image'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e3000e7f-1bdf-48db-91cc-30b73a438004
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2025-07-19T09:40:56+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 9b42751e-b87f-4957-8c54-5a457d443a7f # Basic with H2
+            handle: articleText
+            includeInCards: false
+            instructions: null
+            label: 'Article Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 89d6e74c-311b-4e96-a7f3-56d502e0cc13
+            userCondition: null
+            warning: null
+            width: 75
+          -
+            dateAdded: '2025-07-19T09:43:15+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: f63cfe62-8af4-48a8-91a3-aab84680d3b6 # Featured Article?
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e7d8d3ad-81d4-4164-b482-db5f8b283dcb
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: a016602f-c543-408d-85ec-d39ca8dfd17a
         userCondition: null

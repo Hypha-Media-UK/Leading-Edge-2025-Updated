@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: featuredArticle
+instructions: null
+name: 'Featured Article?'
+searchable: false
+settings:
+  default: false
+  offLabel: 'Not Featured'
+  onLabel: Featured
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch
