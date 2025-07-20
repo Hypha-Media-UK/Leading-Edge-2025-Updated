@@ -105,61 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // GSAP animations for contact page
-    if (typeof gsap !== 'undefined') {
-        
-        // Animate contact cards
-        gsap.utils.toArray('.contact-card').forEach((card, index) => {
-            gsap.fromTo(card,
-                { opacity: 0, y: 30 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.6,
-                    delay: index * 0.2,
-                    scrollTrigger: {
-                        trigger: card,
-                        start: 'top 90%',
-                        toggleActions: 'play none none reverse'
-                    }
-                }
-            );
-        });
-
-        // Animate FAQ items
-        gsap.utils.toArray('.faq-item').forEach((item, index) => {
-            gsap.fromTo(item,
-                { opacity: 0, y: 30 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.6,
-                    delay: index * 0.1,
-                    scrollTrigger: {
-                        trigger: item,
-                        start: 'top 90%',
-                        toggleActions: 'play none none reverse'
-                    }
-                }
-            );
-        });
-
-        // Animate form container
-        const formContainer = document.querySelector('.contact-form-container');
-        if (formContainer) {
-            gsap.fromTo(formContainer,
-                { opacity: 0, x: -50 },
-                {
-                    opacity: 1,
-                    x: 0,
-                    duration: 1,
-                    scrollTrigger: {
-                        trigger: formContainer,
-                        start: 'top 85%',
-                        toggleActions: 'play none none reverse'
-                    }
-                }
-            );
-        }
-    }
+    // All animations removed for optimized static version
+    // Ready for future interaction layer implementation
 });
