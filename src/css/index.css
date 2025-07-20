@@ -1,9 +1,0 @@
-/* Index/Main CSS File */
-
-/* Import base styles (main.css already includes variables, utilities, buttons, header, footer, modal) */
-@import 'main.css';
-
-/* Index page specific styles will be added here as needed */
-.index-page {
-  /* Index page container styles */
-}

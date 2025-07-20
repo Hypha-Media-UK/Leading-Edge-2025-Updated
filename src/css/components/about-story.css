@@ -3,7 +3,11 @@
 /* About Story Component Styles (extracted from Vue AboutStory.vue) */
 .about-section {
   background-color: var(--about-bg-color, white);
-  padding-block: 5rem;
+  padding-block: var(--section-padding);
+
+  @media (max-width: 768px) {
+    padding-block: var(--section-padding-mobile);
+  }
 
   & .about-content {
     display: grid;
@@ -18,7 +22,7 @@
 
   & .about-image {
     height: 500px;
-    border-radius: 8px;
+    border-radius: var(--border-radius-standard);
     overflow: hidden;
     box-shadow: 0 10px 30px color-mix(in srgb, var(--primary-color) 10%, transparent);
     position: relative;

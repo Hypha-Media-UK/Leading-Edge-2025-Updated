@@ -247,6 +247,58 @@
   }
 }
 
+/* DRY Spacing Utilities */
+.section-padding-standard {
+  padding-block: var(--section-padding);
+}
+
+@media (max-width: 768px) {
+  .section-padding-standard {
+    padding-block: var(--section-padding-mobile);
+  }
+}
+
+.card-padding-lg {
+  padding: var(--card-padding-lg);
+}
+
+.card-padding-md {
+  padding: var(--card-padding-md);
+}
+
+.margin-bottom-standard {
+  margin-block-end: var(--standard-margin);
+}
+
+.margin-bottom-sm {
+  margin-block-end: var(--standard-margin-sm);
+}
+
+.border-radius-standard {
+  border-radius: var(--border-radius-standard);
+}
+
+/* Base Card Component */
+.card-base {
+  background-color: white;
+  border-radius: var(--border-radius-standard);
+  box-shadow: var(--shadow-md);
+}
+
+.card-base.card-hover:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Hover Effect Utilities */
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
 /* Margin utilities */
 .mb-1 { margin-bottom: 1rem; }
 .mb-2 { margin-bottom: 2rem; }

@@ -3,7 +3,11 @@
 /* Benefits Section Component Styles (extracted from Vue BenefitsSection.vue) */
 .why-join-section {
   background-color: white;
-  padding-block: 5rem;
+  padding-block: var(--section-padding);
+
+  @media (max-width: 768px) {
+    padding-block: var(--section-padding-mobile);
+  }
 
   & .section-header {
     text-align: center;
@@ -90,8 +94,8 @@
 
   & .benefit-item {
     background-color: var(--bg-light);
-    padding: 2.5rem 2rem;
-    border-radius: 8px;
+    padding: var(--card-padding-lg) 2rem;
+    border-radius: var(--border-radius-standard);
     text-align: center;
     box-shadow: 0 5px 20px color-mix(in srgb, var(--primary-color) 5%, transparent);
     transition: all 0.3s ease;

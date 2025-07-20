@@ -1,18 +1,49 @@
-/* Modern CSS with Layers */
+/* Single CSS Entry Point - Optimized Architecture */
 
-/* Define layer order */
-@layer base, components, utilities;
+/* Define layer order for better cascade control */
+@layer reset, base, components, utilities, overrides;
 
-/* Import variables and utilities */
+/* Import core styles */
 @import 'variables.css';
 @import 'utilities.css';
 
-/* Import components */
+/* Import base components that are used across all pages */
 @import 'components/buttons.css';
-@import 'components/social-icons.css';
 @import 'components/header.css';
 @import 'components/footer.css';
 @import 'components/modal.css';
+
+/* Import page components - loaded for all pages since most are shared */
+@import 'components/hero.css';
+@import 'components/page-header.css';
+@import 'components/testimonials.css';
+@import 'components/services-preview.css';
+@import 'components/products-showcase.css';
+@import 'components/instagram-feed.css';
+@import 'components/call-to-action.css';
+@import 'components/about-story.css';
+@import 'components/benefits-section.css';
+@import 'components/simple-cards.css';
+@import 'components/philosophy-grid.css';
+@import 'components/team-grid.css';
+@import 'components/contact-form.css';
+@import 'components/contact-card.css';
+@import 'components/contact-info-section.css';
+@import 'components/careers-application-form.css';
+@import 'components/jobs-grid.css';
+@import 'components/culture-section.css';
+@import 'components/news-grid.css';
+@import 'components/news-article-card.css';
+@import 'components/featured-news-item.css';
+@import 'components/service-tabs.css';
+@import 'components/service-content-section.css';
+@import 'components/service-gallery.css';
+@import 'components/sub-tabs-row.css';
+@import 'components/interior-gallery.css';
+@import 'components/promotions-grid.css';
+@import 'components/gift-voucher-section.css';
+@import 'components/faq-section.css';
+@import 'components/social-icons.css';
 
 @layer base {
 
@@ -96,7 +127,11 @@ img {
 
 /* Layout */
 .section {
-  padding: 5rem 0;
+  padding: var(--section-padding) 0;
+  
+  @media (max-width: 768px) {
+    padding: var(--section-padding-mobile) 0;
+  }
 }
 
 /* Global Section Header Separators */
@@ -107,7 +142,7 @@ img {
   width: 80px;
   height: 3px;
   background-color: var(--accent-color);
-  margin: 1rem auto 1.5rem;
+  margin: 1rem auto var(--standard-margin);
 }
 
 /* Media Queries */
@@ -168,3 +203,8 @@ img {
 }
 
 } /* End @layer base */
+
+/* Page-specific overrides can be added here if needed */
+@layer overrides {
+  /* Any page-specific customizations */
+}

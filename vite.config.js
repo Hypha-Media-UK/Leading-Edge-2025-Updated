@@ -15,30 +15,11 @@ export default defineConfig({
     emptyOutDir: false, // Don't clear the entire directory
     rollupOptions: {
       input: {
-        // CSS files
-        'css/main': resolve(__dirname, 'src/css/main.css'),
-        'css/home': resolve(__dirname, 'src/css/home.css'),
-        'css/careers': resolve(__dirname, 'src/css/careers.css'),
-        'css/contact': resolve(__dirname, 'src/css/contact.css'),
-        'css/index': resolve(__dirname, 'src/css/index.css'),
-        'css/news': resolve(__dirname, 'src/css/news.css'),
-        'css/offers': resolve(__dirname, 'src/css/offers.css'),
-        'css/salon': resolve(__dirname, 'src/css/salon.css'),
-        'css/services': resolve(__dirname, 'src/css/services.css'),
-        'css/team': resolve(__dirname, 'src/css/team.css'),
-        'css/utilities': resolve(__dirname, 'src/css/utilities.css'),
-        'css/variables': resolve(__dirname, 'src/css/variables.css'),
+        // Single CSS entry point
+        'css/styles': resolve(__dirname, 'src/css/styles.css'),
         
-        // JavaScript files
-        'js/main': resolve(__dirname, 'src/js/main.js'),
-        'js/home-js': resolve(__dirname, 'src/js/home.js'),
-        'js/careers-js': resolve(__dirname, 'src/js/careers.js'),
-        'js/contact-js': resolve(__dirname, 'src/js/contact.js'),
-        'js/news-js': resolve(__dirname, 'src/js/news.js'),
-        'js/offers-js': resolve(__dirname, 'src/js/offers.js'),
-        'js/salon-js': resolve(__dirname, 'src/js/salon.js'),
-        'js/services-js': resolve(__dirname, 'src/js/services.js'),
-        'js/team-js': resolve(__dirname, 'src/js/team.js')
+        // Single JavaScript entry point
+        'js/app': resolve(__dirname, 'src/js/app.js')
       },
       output: {
         entryFileNames: '[name].js',

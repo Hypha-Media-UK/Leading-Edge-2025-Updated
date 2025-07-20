@@ -69,6 +69,14 @@
   --spacing-24: 6rem;
   --spacing-32: 8rem;
 
+  /* DRY Spacing Standards */
+  --section-padding: 5rem;
+  --section-padding-mobile: 3.5rem;
+  --card-padding-lg: 2.5rem;
+  --card-padding-md: 1.5rem;
+  --standard-margin: 1.5rem;
+  --standard-margin-sm: 0.5rem;
+
   /* Breakpoints */
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
@@ -84,6 +92,7 @@
   --border-radius-xl: 0.75rem;
   --border-radius-2xl: 1rem;
   --border-radius-full: 9999px;
+  --border-radius-standard: 8px;
 
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
