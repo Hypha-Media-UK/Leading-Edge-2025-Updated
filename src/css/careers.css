@@ -1,56 +1,21 @@
 /* Careers Page Styles */
 
-/* Import base styles */
-@import 'variables.css';
-@import 'utilities.css';
+/* Import base styles (main.css already includes variables, utilities, buttons, header, footer, modal) */
 @import 'main.css';
 
-/* Import required components */
-@import 'components/buttons.css';
-@import 'components/header.css';
-@import 'components/footer.css';
-@import 'components/modal.css';
+/* Import page-specific components only */
 @import 'components/page-header.css';
 @import 'components/simple-cards.css';
 @import 'components/call-to-action.css';
 @import 'components/careers-application-form.css';
 @import 'components/jobs-grid.css';
-@import 'components/benefits-section.css';
 @import 'components/about-story.css';
 
 @layer components {
 
-/* Careers Page Styles (extracted from Vue Careers.vue) */
+/* Careers Page Styles */
 .careers-page {
-  /* Page-specific styles */
-
-  /* Page Header styles (from Vue component) */
-  & .page-header {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 5rem 0 3rem;
-
-    & h1 {
-      font-size: 3rem;
-      margin-block-end: 1rem;
-      color: white;
-    }
-
-    & .separator {
-      width: 80px;
-      height: 3px;
-      background-color: var(--accent-color);
-      margin: 0 auto 1.5rem;
-    }
-
-    & p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.9);
-    }
-  }
+  /* Page-specific styles only - page-header styles are in components/page-header.css */
 }
 
 } /* End @layer components */

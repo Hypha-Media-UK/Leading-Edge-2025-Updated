@@ -1,15 +1,9 @@
 /* Salon Page Styles */
 
-/* Import base styles */
-@import 'variables.css';
-@import 'utilities.css';
+/* Import base styles (main.css already includes variables, utilities, buttons, header, footer, modal) */
 @import 'main.css';
 
-/* Import required components */
-@import 'components/buttons.css';
-@import 'components/header.css';
-@import 'components/footer.css';
-@import 'components/modal.css';
+/* Import page-specific components only */
 @import 'components/page-header.css';
 @import 'components/interior-gallery.css';
 @import 'components/about-story.css';

@@ -1,36 +1,33 @@
-{# News Grid Component #}
+{# News Grid Component - Optimized with single query #}
 
-{# Get the featured article to exclude it from the grid #}
-{% set featuredArticles = craft.entries()
+{# Get all articles with eager loading for better performance #}
+{% set allArticles = craft.entries()
     .section('newsSection')
     .type('newsArticle')
-    .featuredArticle(true)
+    .with(['articleImage', 'author'])
     .orderBy('postDate desc')
-    .limit(1)
+    .limit(13)
     .all() %}
 
-{% if featuredArticles|length %}
-    {% set featuredArticle = featuredArticles|first %}
-    {% set excludeIds = [featuredArticle.id] %}
+{# Separate featured and regular articles #}
+{% set featuredArticle = null %}
+{% set articles = [] %}
+
+{% for article in allArticles %}
+    {% if article.featuredArticle and not featuredArticle %}
+        {% set featuredArticle = article %}
+    {% else %}
+        {% set articles = articles|merge([article]) %}
+    {% endif %}
+{% endfor %}
+
+{# If no featured article found, use the first article as featured #}
+{% if not featuredArticle and allArticles|length %}
+    {% set featuredArticle = allArticles|first %}
+    {% set articles = allArticles|slice(1, 12) %}
 {% else %}
-    {# If no featured articles, exclude the most recent one (which will be shown as featured) #}
-    {% set recentArticles = craft.entries()
-        .section('newsSection')
-        .type('newsArticle')
-        .orderBy('postDate desc')
-        .limit(1)
-        .all() %}
-    {% set excludeIds = recentArticles|length ? [recentArticles|first.id] : [] %}
+    {% set articles = articles|slice(0, 12) %}
 {% endif %}
-
-{# Get all other articles excluding the featured one #}
-{% set articles = craft.entries()
-    .section('newsSection')
-    .type('newsArticle')
-    .id('not ' ~ excludeIds|join(', not '))
-    .orderBy('postDate desc')
-    .limit(12)
-    .all() %}
 
 <section class="news-section">
     <div class="container">

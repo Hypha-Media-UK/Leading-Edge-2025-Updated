@@ -1,26 +1,18 @@
 /* Team Page Styles */
 
-/* Import base styles */
-@import 'variables.css';
-@import 'utilities.css';
+/* Import base styles (main.css already includes variables, utilities, buttons, header, footer, modal) */
 @import 'main.css';
 
-/* Import required components */
-@import 'components/buttons.css';
-@import 'components/header.css';
-@import 'components/footer.css';
-@import 'components/modal.css';
-@import 'components/page-header.css';
+/* Import page-specific components only */
 @import 'components/team-grid.css';
 @import 'components/simple-cards.css';
 @import 'components/call-to-action.css';
 
 @layer components {
 
-/* Team Page Styles (extracted from Vue MeetTheTeam.vue) */
+/* Team Page Styles */
 .team-page {
-  /* Styles specific to the team page wrapper */
-  /* Most styles are now in the individual components */
+  /* Page-specific styles only - component styles are in their respective files */
 }
 
 } /* End @layer components */

@@ -1,0 +1,179 @@
+@layer components {
+
+/* Hero Section Component Styles */
+.hero {
+  height: 70vh;
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: grid;
+  align-items: center;
+  color: white;
+  margin-block-start: -80px; /* Offset the header padding */
+  border-bottom: 2px solid white;
+  padding-block: 3rem;
+
+  @media (max-width: 768px) {
+    background-attachment: scroll; /* Fix for mobile devices where fixed can cause issues */
+  }
+
+  @media (max-width: 1200px) {
+    height: 65vh;
+    min-height: 550px;
+  }
+
+  @media (max-width: 991px) {
+    height: 60vh;
+    min-height: 500px;
+  }
+
+  @media (max-width: 768px) {
+    height: 50vh;
+    min-height: 450px;
+  }
+
+  @media (max-width: 576px) {
+    height: 45vh;
+    min-height: 400px;
+  }
+
+  & .hero-content {
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    margin-block-start: 100px;
+    z-index: 1;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+
+    @media (max-width: 991px) {
+      margin-block-start: 80px;
+    }
+
+    @media (max-width: 768px) {
+      margin-block-start: 70px;
+    }
+
+    @media (max-width: 576px) {
+      margin-block-start: 60px;
+    }
+
+    & .text-content {
+      max-width: 700px;
+      margin-block-end: 2rem;
+    }
+
+    & h1 {
+      font-size: 3.5rem;
+      margin-block-end: 1.5rem;
+      line-height: 1.2;
+      color: var(--accent-color);
+
+      & span {
+        color: white;
+      }
+
+      @media (max-width: 1200px) {
+        font-size: 3rem;
+        margin-block-end: 1.3rem;
+      }
+
+      @media (max-width: 991px) {
+        font-size: 2.7rem;
+        margin-block-end: 1.2rem;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+        margin-block-end: 1rem;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 2.2rem;
+        margin-block-end: 0.8rem;
+      }
+    }
+
+    & p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      line-height: 1.6;
+
+      @media (max-width: 1200px) {
+        font-size: 1.15rem;
+        max-width: 550px;
+      }
+
+      @media (max-width: 991px) {
+        font-size: 1.1rem;
+        max-width: 500px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+        max-width: 100%;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  & .hero-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    margin-block-start: 1.5rem;
+
+    @media (max-width: 1200px) {
+      gap: 0.8rem;
+      margin-block-start: 1.3rem;
+    }
+
+    @media (max-width: 991px) {
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-block-start: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.6rem;
+      margin-block-start: 1rem;
+
+      & .btn {
+        width: 100%;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      margin-block-start: 0.8rem;
+
+      & .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 500px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+
+      /* Third button (if present) will be full width */
+      & .btn:nth-child(3) {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+
+} /* End @layer components */
