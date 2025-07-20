@@ -101,10 +101,6 @@
   --z-index-popover: 1060;
   --z-index-tooltip: 1070;
 
-  /* Transitions */
-  --transition-base: all 0.3s ease;
-  --transition-fast: all 0.15s ease;
-  --transition-slow: all 0.5s ease;
 
   /* Modern color manipulation using color-mix() */
   --accent-color-dark: color-mix(in srgb, var(--accent-color) 90%, black);

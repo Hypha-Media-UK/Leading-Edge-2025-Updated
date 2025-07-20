@@ -6,11 +6,6 @@
 /* Import variables and utilities */
 @import 'variables.css';
 @import 'utilities.css';
-@import 'performance.css';
-
-/* Import external stylesheets */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
 /* Import components */
 @import 'components/buttons.css';
@@ -42,17 +37,7 @@ html {
   scroll-padding-top: 100px; /* Account for fixed header */
 }
 
-/* GPU acceleration for elements that transform frequently */
-.feature-card,
-.service-card,
-.testimonial-card,
-.btn,
-.card {
-  will-change: transform;
-  transform: translateZ(0);
-}
-
-/* Optimize animations for better performance */
+/* Reduced motion preference support */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

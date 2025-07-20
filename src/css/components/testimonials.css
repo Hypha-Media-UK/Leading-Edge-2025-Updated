@@ -70,7 +70,6 @@
     position: relative;
     height: 300px; /* Fixed height to prevent layout shifts */
     margin-block-end: 0;
-    will-change: opacity, transform; /* Performance optimization */
 
     @media (max-width: 768px) {
       height: 350px; /* Slightly taller on mobile */
@@ -198,7 +197,6 @@
         cursor: pointer;
         border: none;
         box-shadow: var(--shadow-md);
-        transition: var(--transition-base);
         font-size: 0.9rem;
 
         &:hover {

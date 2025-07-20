@@ -162,7 +162,6 @@
 .link-style {
   color: var(--accent-color);
   text-decoration: none;
-  transition: color 0.3s ease;
 
   &:hover {
     color: var(--accent-color-dark);
@@ -193,7 +192,6 @@
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: var(--shadow-md);
-  transition: all 0.3s ease;
 }
 
 .card-hover {
@@ -201,10 +199,8 @@
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: var(--shadow-md);
-  transition: all 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
   }
 }
@@ -230,7 +226,6 @@
     inset: 0;
     background-color: rgba(0, 0, 0, 0.4);
     opacity: 0;
-    transition: opacity 0.4s ease;
     z-index: 1;
   }
 
@@ -245,7 +240,6 @@
     transform: translate(-50%, -50%);
     z-index: 2;
     opacity: 0;
-    transition: opacity 0.4s ease, transform 0.4s ease;
   }
 
   &:hover .overlay-content {
