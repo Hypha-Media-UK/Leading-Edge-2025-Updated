@@ -3,7 +3,6 @@
 /* News Grid Component Styles (extracted from Vue NewsGrid.vue) */
 .news-section {
   padding-block: 5rem;
-  background-color: var(--bg-light);
 
   & .section-header {
     text-align: center;

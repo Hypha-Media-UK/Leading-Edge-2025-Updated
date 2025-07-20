@@ -2,7 +2,7 @@
 
 /* News Article Card Component Styles (extracted from Vue NewsArticleCard.vue) */
 .news-card {
-  background-color: white !important;
+  background-color: #fff !important;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 5px 20px color-mix(in srgb, var(--primary-color) 8%, transparent);
@@ -60,7 +60,7 @@
     }
   }
 
-  & .news-content {
+  & .news-card-content {
     padding: 1.5rem;
     flex: 1;
     display: flex;
