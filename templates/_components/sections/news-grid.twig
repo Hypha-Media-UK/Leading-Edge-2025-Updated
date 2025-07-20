@@ -1,87 +1,131 @@
-{# News Grid Component Macro #}
-    <section class="news-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>{{ title|default('Latest News') }}</h2>
-                {% if description %}
-                    <p>{{ description }}</p>
-                {% endif %}
-            </div>
-            
-            
+{# News Grid Component #}
+
+{# Get the featured article to exclude it from the grid #}
+{% set featuredArticles = craft.entries()
+    .section('newsSection')
+    .type('newsArticle')
+    .featuredArticle(true)
+    .orderBy('postDate desc')
+    .limit(1)
+    .all() %}
+
+{% if featuredArticles|length %}
+    {% set featuredArticle = featuredArticles|first %}
+    {% set excludeIds = [featuredArticle.id] %}
+{% else %}
+    {# If no featured articles, exclude the most recent one (which will be shown as featured) #}
+    {% set recentArticles = craft.entries()
+        .section('newsSection')
+        .type('newsArticle')
+        .orderBy('postDate desc')
+        .limit(1)
+        .all() %}
+    {% set excludeIds = recentArticles|length ? [recentArticles|first.id] : [] %}
+{% endif %}
+
+{# Get all other articles excluding the featured one #}
+{% set articles = craft.entries()
+    .section('newsSection')
+    .type('newsArticle')
+    .id('not ' ~ excludeIds|join(', not '))
+    .orderBy('postDate desc')
+    .limit(12)
+    .all() %}
+
+<section class="news-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Latest News</h2>
+            <p>Stay updated with our latest articles, salon news, and beauty trends</p>
+        </div>
+        
+        {% if articles|length %}
             <div class="news-grid">
                 {% for article in articles %}
+                    {# Generate excerpt from articleText #}
+                    {% set articleContent = article.articleText %}
+                    {% set excerpt = articleContent|striptags|slice(0, 120) ~ '...' %}
+                    
                     <div class="news-card" data-modal-target="news-modal-{{ article.id }}">
                         <div class="news-image">
-                            <img src="{{ article.image }}" alt="{{ article.title }}">
+                            {% if article.articleImage|length %}
+                                {% set image = article.articleImage.one() %}
+                                <img src="{{ image.getUrl() }}" alt="{{ article.title }}">
+                            {% else %}
+                                <img src="/images/new/news/default.webp" alt="{{ article.title }}">
+                            {% endif %}
                             <div class="news-date">
-                                <span class="day">{{ article.date|date('j') }}</span>
-                                <span class="month">{{ article.date|date('M') }}</span>
+                                <span class="day">{{ article.postDate|date('j') }}</span>
+                                <span class="month">{{ article.postDate|date('M') }}</span>
                             </div>
                         </div>
                         <div class="news-content">
                             <h3>{{ article.title }}</h3>
-                            <p class="news-excerpt">{{ article.excerpt }}</p>
+                            <p class="news-excerpt">{{ excerpt }}</p>
                             
                             <div class="news-meta">
                                 {% if article.author %}
                                     <span class="news-author">
-                                        <i class="far fa-user"></i> {{ article.author }}
-                                    </span>
-                                {% endif %}
-                                {% if article.category %}
-                                    <span class="news-category">
-                                        <i class="far fa-folder"></i> {{ article.category }}
+                                        <i class="far fa-user"></i> {{ article.author.fullName ?? article.author.username }}
                                     </span>
                                 {% endif %}
                             </div>
                             
                             <div class="news-actions">
-                                {% from '_components/ui/button.twig' import button as btn %}
-                                {{ btn('Read More', 'secondary', '#', '', 'button', 'read-more-btn', '', 'small') }}
+                                <a href="#" class="btn secondary" data-modal-target="news-modal-{{ article.id }}">
+                                    <i class="fas fa-arrow-right btn-icon"></i>
+                                    Read More
+                                </a>
                             </div>
                         </div>
                     </div>
                 {% endfor %}
             </div>
-        </div>
-        
-        {# Individual modals for each news article #}
-        {% for article in articles %}
-            <div id="news-modal-{{ article.id }}" class="modal-overlay" style="display: none;">
-                <div class="modal-content modal-large">
-                    <button class="modal-close" aria-label="Close modal">&times;</button>
-                    <div class="modal-body">
-                        <div class="news-article-header">
-                            <img src="{{ article.image }}" alt="{{ article.title }}" class="news-modal-image">
-                            <div class="article-meta">
-                                <h1 class="news-modal-title">{{ article.title }}</h1>
-                                <div class="article-info">
-                                    <span class="news-modal-date">{{ article.date|date('F j, Y') }}</span>
-                                    <span class="news-modal-author">{{ article.author }}</span>
-                                    <span class="news-modal-category">{{ article.category }}</span>
-                                </div>
+        {% else %}
+            <p>No news articles available at the moment.</p>
+        {% endif %}
+    </div>
+    
+    {# Individual modals for each news article #}
+    {% for article in articles %}
+        <div id="news-modal-{{ article.id }}" class="modal-overlay news-article-modal" style="display: none;">
+            <div class="modal-content modal-large">
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+                <div class="modal-body">
+                    <div class="news-article-header">
+                        {% if article.articleImage|length %}
+                            {% set image = article.articleImage.one() %}
+                            <img src="{{ image.getUrl() }}" alt="{{ article.title }}" class="news-modal-image">
+                        {% endif %}
+                        <div class="article-meta">
+                            <h1 class="news-modal-title">{{ article.title }}</h1>
+                            <div class="news-meta">
+                                <span class="news-modal-date">{{ article.postDate|date('F j, Y') }}</span>
+                                {% if article.author %}
+                                    <span class="news-modal-author">{{ article.author.fullName ?? article.author.username }}</span>
+                                {% endif %}
                             </div>
                         </div>
-                        <div class="news-modal-content">
-                            {{ article.content|raw }}
-                        </div>
-                        <div class="modal-actions">
-                            <div class="social-share">
-                                <span>Share this article:</span>
-                                <a href="#" class="share-btn facebook" title="Share on Facebook">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="share-btn twitter" title="Share on Twitter">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" class="share-btn linkedin" title="Share on LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </div>
+                    </div>
+                    <div class="news-modal-content">
+                        {{ article.articleText|raw }}
+                    </div>
+                    <div class="modal-actions">
+                        <div class="social-share">
+                            <span>Share this article:</span>
+                            <a href="#" class="share-btn facebook" title="Share on Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="share-btn twitter" title="Share on Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="share-btn linkedin" title="Share on LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        {% endfor %}
-    </section>
+        </div>
+    {% endfor %}
+</section>

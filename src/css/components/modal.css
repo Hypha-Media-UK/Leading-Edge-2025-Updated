@@ -83,6 +83,11 @@
   padding: 2.5rem;
 }
 
+/* Override default modal-body padding for news article modals */
+.news-article-modal .modal-content .modal-body {
+  padding: 2rem;
+}
+
 .modal-overlay.active .modal-content {
   transform: scale(1);
 }
@@ -321,8 +326,33 @@
 }
 
 /* News Article Modal Styles */
-#news-article-modal .modal-body {
+.news-article-modal .modal-body {
   padding: 2rem;
+}
+
+.news-article-modal .news-modal-title {
+  font-size: 1.8rem;
+}
+
+.news-article-modal .news-meta {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.news-article-modal .news-modal-date,
+.news-article-modal .news-modal-author {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.news-article-modal .news-modal-date i,
+.news-article-modal .news-modal-author i {
+  margin-right: 5px;
+  color: var(--accent-color);
 }
 
 #news-article-modal .news-detail-content .back-button {

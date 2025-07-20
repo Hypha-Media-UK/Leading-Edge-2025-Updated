@@ -1,21 +1,99 @@
-{# Featured News Item Component Macro #}
+{# Featured News Item Component #}
+
+{# First, try to get articles marked as featured #}
+{% set featuredArticles = craft.entries()
+    .section('newsSection')
+    .type('newsArticle')
+    .featuredArticle(true)
+    .orderBy('postDate desc')
+    .limit(1)
+    .all() %}
+
+{% if featuredArticles|length %}
+    {# Use the most recent featured article #}
+    {% set article = featuredArticles|first %}
+{% else %}
+    {# Fallback: get the most recent article regardless of featured status #}
+    {% set recentArticles = craft.entries()
+        .section('newsSection')
+        .type('newsArticle')
+        .orderBy('postDate desc')
+        .limit(1)
+        .all() %}
+    {% set article = recentArticles|first %}
+{% endif %}
+
+{% if article %}
+    {# Generate excerpt from articleText #}
+    {% set articleContent = article.articleText %}
+    {% set excerpt = articleContent|striptags|slice(0, 150) ~ '...' %}
+    
     <div class="featured-news" data-modal-target="news-modal-{{ article.id }}">
         <div class="featured-image">
-            <img src="{{ article.image }}" alt="{{ article.title }}">
+            {% if article.articleImage|length %}
+                {% set image = article.articleImage.one() %}
+                <img src="{{ image.getUrl() }}" alt="{{ article.title }}">
+            {% else %}
+                <img src="/images/new/news/default.webp" alt="{{ article.title }}">
+            {% endif %}
             <div class="featured-overlay">
                 <span class="featured-tag">Featured</span>
             </div>
         </div>
         <div class="featured-content">
             <div class="news-meta">
-                <span class="date"><i class="far fa-calendar-alt"></i> {{ article.date }}</span>
+                <span class="date"><i class="far fa-calendar-alt"></i> {{ article.postDate|date('F j, Y') }}</span>
                 {% if article.author %}
-                    <span class="author"><i class="far fa-user"></i> {{ article.author }}</span>
+                    <span class="author"><i class="far fa-user"></i> {{ article.author.fullName ?? article.author.username }}</span>
                 {% endif %}
             </div>
             <h2>{{ article.title }}</h2>
-            <p>{{ article.excerpt }}</p>
-            {% from '_components/ui/button.twig' import button as btn %}
-            {{ btn('Read More', 'text', '#', '', 'button', 'read-more-btn', 'fas fa-arrow-right') }}
+            <p>{{ excerpt }}</p>
+            <a href="#" class="btn primary" data-modal-target="news-modal-{{ article.id }}">
+                <i class="fas fa-arrow-right btn-icon"></i>
+                Read More
+            </a>
         </div>
     </div>
+
+    {# Modal for the featured article #}
+    <div id="news-modal-{{ article.id }}" class="modal-overlay news-article-modal" style="display: none;">
+        <div class="modal-content modal-large">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <div class="news-article-header">
+                    {% if article.articleImage|length %}
+                        {% set image = article.articleImage.one() %}
+                        <img src="{{ image.getUrl() }}" alt="{{ article.title }}" class="news-modal-image">
+                    {% endif %}
+                    <div class="article-meta">
+                        <h1 class="news-modal-title">{{ article.title }}</h1>
+                        <div class="news-meta">
+                            <span class="news-modal-date">{{ article.postDate|date('F j, Y') }}</span>
+                            {% if article.author %}
+                                <span class="news-modal-author">{{ article.author.fullName ?? article.author.username }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="news-modal-content">
+                    {{ article.articleText|raw }}
+                </div>
+                <div class="modal-actions">
+                    <div class="social-share">
+                        <span>Share this article:</span>
+                        <a href="#" class="share-btn facebook" title="Share on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="share-btn twitter" title="Share on Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="share-btn linkedin" title="Share on LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
