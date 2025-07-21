@@ -1,5 +1,7 @@
 // Single JavaScript Entry Point - Optimized Architecture
 import { FormValidation } from './utils/form-validation.js';
+import { scrollTriggerManager } from './animations/core/scroll-trigger.js';
+import { globalAnimations } from './animations/global-animations.js';
 
 // Component initialization system
 class ComponentManager {
@@ -252,8 +254,16 @@ componentManager.register('#header', (elements) => {
 // Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Initializing application components...');
+    
+    // Initialize ScrollTrigger
+    scrollTriggerManager.init();
+    
+    // Initialize global animations
+    globalAnimations.init();
+    
+    // Initialize components
     componentManager.init();
 });
 
 // Export for potential external use
-export { componentManager, FormValidation };
+export { componentManager, FormValidation, scrollTriggerManager, globalAnimations };

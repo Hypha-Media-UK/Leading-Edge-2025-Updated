@@ -27,9 +27,9 @@
                 <p>{{ entry.cardsSection.subTitle }}</p>
                 {% endif %}
             </div>
-            <div class="features-grid">
+            <div class="features-grid js-stagger-grid">
                 {% for virtue in entry.cardsSection.mx_simpleCards %}
-                    <div class="feature-card">
+                    <div class="feature-card js-stagger-item">
                         <div class="feature-icon">
                             <i class="fa-solid {{ virtue.virtueIcon }}"></i>
                         </div>
