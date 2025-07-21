@@ -3,7 +3,8 @@
         <div class="container">
             <div class="hero-content">
                 <div class="text-content">
-                    <h1>{{ entry.cb_homepageHero.heroTitle }}</h1>
+                    <h1>{{ entry.cb_homepageHero.heroTitle|striptags('<strong>')|raw }}</h1>
+
                     <p>{{ entry.cb_homepageHero.heroSubText }}</p>
                 </div>
                 
