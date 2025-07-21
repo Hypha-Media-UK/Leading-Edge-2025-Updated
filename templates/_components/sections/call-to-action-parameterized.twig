@@ -1,0 +1,18 @@
+{# Call to Action Section Component - Parameterized Include Version #}
+{# Expected variables: title, subtitle, buttonText, buttonLink, variant #}
+
+<section class="cta-section{% if variant == 'gradient' %} cta-section--gradient{% endif %}">
+    <div class="container">
+        <div class="cta-content">
+            <div class="section-header">
+                <h2>{{ title }}</h2>
+                {% if subtitle %}
+                    <p>{{ subtitle }}</p>
+                {% endif %}
+            </div>
+            {% if buttonText and buttonLink %}
+                <a href="{{ buttonLink }}" class="btn primary">{{ buttonText }}</a>
+            {% endif %}
+        </div>
+    </div>
+</section>

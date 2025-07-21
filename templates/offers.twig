@@ -7,23 +7,21 @@
 {% block content %}
 <div class="offers-page">
     {# Page Header with Gift Voucher CTA #}
-    {% from '_components/ui/page-header.twig' import pageHeader %}
-    {{ pageHeader(
-        'Offers & Gift Vouchers',
-        'Enjoy exclusive discounts and special promotions at The Leading Edge',
-        '<div class="gift-voucher-cta">
+    {% include '_components/ui/page-header.twig' with {
+        title: 'Offers & Gift Vouchers',
+        description: 'Enjoy exclusive discounts and special promotions at The Leading Edge',
+        extraContent: '<div class="gift-voucher-cta">
             <a href="https://leadingedgehairandbeauty.co.uk/gift-vouchers" target="_blank" class="btn primary-special">
                 <i class="fas fa-gift"></i> Gift Vouchers Available Here
             </a>
         </div>'
-    ) }}
+    } %}
 
     {# Promotions Grid #}
-    {% from '_components/sections/promotions-grid.twig' import promotionsGrid %}
-    {{ promotionsGrid(
-        '',
-        '',
-        [
+    {% include '_components/sections/promotions-grid.twig' with {
+        title: '',
+        description: '',
+        promotions: [
             {
                 id: 'friend',
                 title: 'Refer a Friend',
@@ -77,29 +75,27 @@
                 ]
             }
         ],
-        '550px'
-    ) }}
+        cardHeight: '550px'
+    } %}
 
     {# Gift Vouchers Section #}
-    {% from '_components/sections/gift-voucher-section.twig' import giftVoucherSection %}
-    {{ giftVoucherSection(
-        '',
-        '',
-        'Purchase Gift Vouchers',
-        'fas fa-gift',
-        'https://leadingedgehairandbeauty.co.uk/gift-vouchers',
-        true,
-        'The perfect gift for any occasion'
-    ) }}
+    {% include '_components/sections/gift-voucher-section.twig' with {
+        title: '',
+        description: '',
+        buttonText: 'Purchase Gift Vouchers',
+        icon: 'fas fa-gift',
+        link: 'https://leadingedgehairandbeauty.co.uk/gift-vouchers',
+        external: true,
+        subtext: 'The perfect gift for any occasion'
+    } %}
 
     {# Call to Action Section #}
-    {% from '_components/sections/call-to-action.twig' import callToAction %}
-    {{ callToAction(
-        'Ready to Experience The Leading Edge?',
-        'Book your appointment today and take advantage of our exclusive offers.',
-        'Book Now',
-        '/contact',
-        'gradient'
-    ) }}
+    {% include '_components/sections/call-to-action-parameterized.twig' with {
+        title: 'Ready to Experience The Leading Edge?',
+        subtitle: 'Book your appointment today and take advantage of our exclusive offers.',
+        buttonText: 'Book Now',
+        buttonLink: '/contact',
+        variant: 'gradient'
+    } %}
 </div>
 {% endblock %}

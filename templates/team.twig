@@ -12,6 +12,8 @@
         backgroundVariant: 'pale-blue',
         cardVariant: 'white'
     } %}
-    {% include '_components/sections/call-to-action.twig' %}
+    {% if entry.callToAction.sectionTitle %}
+        {% include '_components/sections/call-to-action.twig' %}
+    {% endif %}
 </div>
 {% endblock %}

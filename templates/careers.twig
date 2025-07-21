@@ -14,16 +14,15 @@
 
     {% include '_components/sections/jobs-grid.twig' %}
 
-    {% from '_components/forms/careers-application-form.twig' import careersApplicationForm %}
-    {{ careersApplicationForm(
-        'Apply Now',
-        'Interested in joining our team? Fill out the application form below and we\'ll be in touch.',
-        [
+    {% include '_components/forms/careers-application-form.twig' with {
+        title: 'Apply Now',
+        description: 'Interested in joining our team? Fill out the application form below and we\'ll be in touch.',
+        positions: [
             { id: 1, title: 'Senior Hair Stylist' },
             { id: 2, title: 'Beauty Therapist' },
             { id: 3, title: 'Salon Receptionist' }
         ]
-    ) }}
+    } %}
     {% include '_components/sections/text-image-section.twig' with {
           backgroundVariant: 'pale-blue'
     }%}
