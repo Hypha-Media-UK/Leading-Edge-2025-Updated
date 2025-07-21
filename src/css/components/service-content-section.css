@@ -1,22 +1,43 @@
 @layer components {
 
 /* Service Content Section Component Styles (extracted from Vue ServiceContentSection.vue) */
+.service-content-section {
+  padding-block: var(--spacing-8);
+}
+
 .services-content {
   & .services-intro {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto var(--spacing-8);
 
     & h2 {
       font-size: 2.2rem;
-      margin-block-end: 1.5rem;
+      margin-block-end: var(--spacing-6);
       color: var(--primary-color);
+
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+        margin-block-end: var(--spacing-4);
+      }
     }
 
-    & p {
+    & .service-description {
       color: var(--primary-color-light);
       line-height: 1.6;
-      margin-block-end: 1rem;
+      font-size: 1.1rem;
+
+      & p {
+        margin-block-end: var(--spacing-4);
+
+        &:last-child {
+          margin-block-end: 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
     }
   }
 
@@ -25,9 +46,52 @@
     margin: 0 auto 2rem;
   }
 
+  & .services-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-6);
+    margin-block: var(--spacing-8);
+    max-width: 900px;
+    margin-inline: auto;
+
+    & .gallery-item {
+      border-radius: var(--border-radius-standard);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      & img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-5);
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-4);
+      margin-block: var(--spacing-6);
+
+      & .gallery-item img {
+        height: 200px;
+      }
+    }
+  }
+
   & .services-list {
     max-width: 900px;
-    margin: 0 auto;
+    margin: var(--spacing-8) auto 0;
 
     & .service-item {
       display: flex;

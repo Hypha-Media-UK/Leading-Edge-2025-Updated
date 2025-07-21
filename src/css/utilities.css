@@ -299,6 +299,37 @@
   transform: scale(1.02);
 }
 
+/* Section spacing utilities */
+.section-spacing {
+  padding-block: var(--section-padding);
+}
+
+@media (max-width: 768px) {
+  .section-spacing {
+    padding-block: var(--section-padding-mobile);
+  }
+}
+
+.section-spacing-top {
+  padding-block-start: var(--section-padding);
+}
+
+@media (max-width: 768px) {
+  .section-spacing-top {
+    padding-block-start: var(--section-padding-mobile);
+  }
+}
+
+.section-spacing-bottom {
+  padding-block-end: var(--section-padding);
+}
+
+@media (max-width: 768px) {
+  .section-spacing-bottom {
+    padding-block-end: var(--section-padding-mobile);
+  }
+}
+
 /* Margin utilities */
 .mb-1 { margin-bottom: 1rem; }
 .mb-2 { margin-bottom: 2rem; }

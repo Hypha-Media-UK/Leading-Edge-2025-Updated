@@ -1,6 +1,10 @@
 @layer components {
 
 /* Sub Tabs Row Component Styles (extracted from Vue SubTabsRow.vue) */
+.sub-tabs-wrapper {
+  margin-block: var(--spacing-8);
+}
+
 .sub-tabs-container {
   display: flex;
   justify-content: center;
