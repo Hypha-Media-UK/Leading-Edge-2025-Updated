@@ -25,7 +25,10 @@
                 {# Main Tabs - Dynamic #}
                 <div class="tabs-container">
                     {% for mainService in entry.mx_allServices %}
-                        <div class="tab{% if loop.first %} active{% endif %}" data-tab="service-{{ mainService.id }}">
+                        <div class="tab{% if loop.first %} active{% endif %}" 
+                             data-tab="main-{{ loop.index }}" 
+                             data-service-id="{{ mainService.id }}"
+                             data-debug="main-tab-{{ loop.index }}">
                             {% if mainService.tabIcon %}
                                 <i class="fas {{ mainService.tabIcon }}"></i>
                             {% endif %}
@@ -38,10 +41,15 @@
                 {% for mainService in entry.mx_allServices %}
                     {# Sub Tabs for this main service #}
                     {% if mainService.mx_subServices|length %}
-                        <div class="sub-tabs-wrapper" data-main-tab="service-{{ mainService.id }}"{% if not loop.first %} style="display: none;"{% endif %}>
+                        <div class="sub-tabs-wrapper" 
+                             data-main-tab="main-{{ loop.index }}"
+                             data-debug="sub-tabs-wrapper-{{ loop.index }}">
                             <div class="sub-tabs-container">
                                 {% for subService in mainService.mx_subServices %}
-                                    <div class="sub-tab{% if loop.first %} active{% endif %}" data-tab="service-{{ mainService.id }}-{{ subService.id }}">
+                                    <div class="sub-tab{% if loop.first %} active{% endif %}" 
+                                         data-tab="content-{{ loop.parent.loop.index }}-{{ loop.index }}"
+                                         data-service-id="{{ subService.id }}"
+                                         data-debug="sub-tab-{{ loop.parent.loop.index }}-{{ loop.index }}">
                                         <span>{{ subService.subTabText }}</span>
                                     </div>
                                 {% endfor %}
@@ -53,7 +61,10 @@
                 {# Service Content Sections - Dynamic #}
                 {% for mainService in entry.mx_allServices %}
                     {% for subService in mainService.mx_subServices %}
-                        <div class="service-content-section" data-tab="service-{{ mainService.id }}-{{ subService.id }}"{% if not (loop.parent.loop.first and loop.first) %} style="display: none;"{% endif %}>
+                        <div class="service-content-section" 
+                             data-tab="content-{{ loop.parent.loop.index }}-{{ loop.index }}"
+                             data-service-id="{{ subService.id }}"
+                             data-debug="content-{{ loop.parent.loop.index }}-{{ loop.index }}">
                             <div class="services-content">
                                 <div class="services-intro">
                                     {% if subService.subTitle %}

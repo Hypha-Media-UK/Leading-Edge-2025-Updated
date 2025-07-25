@@ -3,6 +3,17 @@
 /* Service Content Section Component Styles (extracted from Vue ServiceContentSection.vue) */
 .service-content-section {
   padding-block: var(--spacing-8);
+  
+  /* Ensure content is visible by default - no opacity or transform animations */
+  /* This prevents any flashing during page load */
+  
+  &.hidden {
+    display: none !important;
+  }
+  
+  &.visible {
+    display: block !important;
+  }
 }
 
 .services-content {

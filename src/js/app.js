@@ -200,6 +200,131 @@ componentManager.register('.testimonials-slider', (elements) => {
 });
 
 // Header functionality
+// Services tabs functionality - Simplified and reliable
+componentManager.register('.services-tabs', (elements) => {
+    elements.forEach(servicesSection => {
+        const mainTabs = servicesSection.querySelectorAll('.tabs-container .tab');
+        const subTabsWrappers = servicesSection.querySelectorAll('.sub-tabs-wrapper');
+        const subTabs = servicesSection.querySelectorAll('.sub-tab');
+        const contentSections = servicesSection.querySelectorAll('.service-content-section');
+
+        // Initialize - show first main tab's content
+        function initializeTabs() {
+            // Hide all sub-tabs wrappers and content sections
+            subTabsWrappers.forEach(wrapper => {
+                wrapper.classList.add('hidden');
+                wrapper.classList.remove('visible');
+            });
+            
+            contentSections.forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('visible');
+            });
+
+            // Show first main tab's sub-tabs and first content
+            if (mainTabs.length > 0) {
+                const firstMainTab = mainTabs[0];
+                const firstMainTabId = firstMainTab.getAttribute('data-tab');
+                
+                // Show first sub-tabs wrapper
+                const firstSubTabsWrapper = servicesSection.querySelector(`[data-main-tab="${firstMainTabId}"]`);
+                if (firstSubTabsWrapper) {
+                    firstSubTabsWrapper.classList.remove('hidden');
+                    firstSubTabsWrapper.classList.add('visible');
+                    
+                    // Show first content section
+                    const firstSubTab = firstSubTabsWrapper.querySelector('.sub-tab');
+                    if (firstSubTab) {
+                        const firstContentId = firstSubTab.getAttribute('data-tab');
+                        const firstContent = servicesSection.querySelector(`[data-tab="${firstContentId}"].service-content-section`);
+                        if (firstContent) {
+                            firstContent.classList.remove('hidden');
+                            firstContent.classList.add('visible');
+                        }
+                    }
+                }
+            }
+        }
+
+        // Show content section
+        function showContentSection(targetTabId) {
+            contentSections.forEach(section => {
+                if (section.getAttribute('data-tab') === targetTabId) {
+                    section.classList.remove('hidden');
+                    section.classList.add('visible');
+                } else {
+                    section.classList.add('hidden');
+                    section.classList.remove('visible');
+                }
+            });
+        }
+
+        // Show sub-tabs wrapper
+        function showSubTabsWrapper(targetMainTabId) {
+            subTabsWrappers.forEach(wrapper => {
+                if (wrapper.getAttribute('data-main-tab') === targetMainTabId) {
+                    wrapper.classList.remove('hidden');
+                    wrapper.classList.add('visible');
+                } else {
+                    wrapper.classList.add('hidden');
+                    wrapper.classList.remove('visible');
+                }
+            });
+            
+            return servicesSection.querySelector(`[data-main-tab="${targetMainTabId}"]`);
+        }
+
+        // Main tab click handlers
+        mainTabs.forEach(mainTab => {
+            mainTab.addEventListener('click', function() {
+                const targetTabId = this.getAttribute('data-tab');
+                
+                // Update main tab active states
+                mainTabs.forEach(tab => tab.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Show corresponding sub-tabs wrapper
+                const targetSubTabsWrapper = showSubTabsWrapper(targetTabId);
+                if (targetSubTabsWrapper) {
+                    // Reset sub-tabs - activate first one
+                    const subTabsInWrapper = targetSubTabsWrapper.querySelectorAll('.sub-tab');
+                    subTabsInWrapper.forEach((subTab, index) => {
+                        if (index === 0) {
+                            subTab.classList.add('active');
+                            // Show first content section for this main tab
+                            const firstContentId = subTab.getAttribute('data-tab');
+                            showContentSection(firstContentId);
+                        } else {
+                            subTab.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        });
+
+        // Sub-tab click handlers
+        subTabs.forEach(subTab => {
+            subTab.addEventListener('click', function() {
+                const targetTabId = this.getAttribute('data-tab');
+                const parentWrapper = this.closest('.sub-tabs-wrapper');
+                
+                // Update sub-tab active states within this wrapper
+                if (parentWrapper) {
+                    const siblingSubTabs = parentWrapper.querySelectorAll('.sub-tab');
+                    siblingSubTabs.forEach(tab => tab.classList.remove('active'));
+                }
+                this.classList.add('active');
+                
+                // Show corresponding content section
+                showContentSection(targetTabId);
+            });
+        });
+
+        // Initialize the tabs
+        initializeTabs();
+    });
+});
+
 componentManager.register('#header', (elements) => {
     const header = elements[0];
     const menuToggle = document.getElementById('menu-toggle');
@@ -255,13 +380,19 @@ componentManager.register('#header', (elements) => {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Initializing application components...');
     
-    // Initialize ScrollTrigger
-    scrollTriggerManager.init();
+    // Check if we're on the services page
+    const isServicesPage = document.body.classList.contains('services-detail') || 
+                          document.querySelector('.services-detail-page') !== null;
     
-    // Initialize global animations
-    globalAnimations.init();
+    if (!isServicesPage) {
+        // Initialize ScrollTrigger and animations only if NOT on services page
+        scrollTriggerManager.init();
+        globalAnimations.init();
+    } else {
+        console.log('Services page detected - GSAP animations disabled to prevent conflicts');
+    }
     
-    // Initialize components
+    // Always initialize components
     componentManager.init();
 });
 
