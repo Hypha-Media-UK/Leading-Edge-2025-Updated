@@ -410,12 +410,12 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "5.8.8",
-            "version_normalized": "5.8.8.0",
+            "version": "5.8.10",
+            "version_normalized": "5.8.10.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/93d85ce6dae3b8da62a3e1fc3191f495d53db2c8",
-                "reference": "93d85ce6dae3b8da62a3e1fc3191f495d53db2c8",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/bf3e750eefff8067708492722629ab5f7bc62457",
+                "reference": "bf3e750eefff8067708492722629ab5f7bc62457",
                 "shasum": ""
             },
             "require": {
@@ -481,7 +481,7 @@
                 "ext-iconv": "Adds support for more character encodings than PHP’s built-in mb_convert_encoding() function, which Craft will take advantage of when converting strings to UTF-8.",
                 "ext-imagick": "Adds support for more image processing formats and options."
             },
-            "time": "2025-07-18T18:47:52+00:00",
+            "time": "2025-07-24T21:26:08+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -674,20 +674,20 @@
         },
         {
             "name": "craftcms/server-check",
-            "version": "5.0.3",
-            "version_normalized": "5.0.3.0",
+            "version": "5.0.4",
+            "version_normalized": "5.0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/server-check.git",
-                "reference": "08082638f8caff8ab86a223898e8ea167b3f5879"
+                "reference": "3b1f239c1cc781710978b0baa3e3bc99410d1973"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/server-check/zipball/08082638f8caff8ab86a223898e8ea167b3f5879",
-                "reference": "08082638f8caff8ab86a223898e8ea167b3f5879",
+                "url": "https://api.github.com/repos/craftcms/server-check/zipball/3b1f239c1cc781710978b0baa3e3bc99410d1973",
+                "reference": "3b1f239c1cc781710978b0baa3e3bc99410d1973",
                 "shasum": ""
             },
-            "time": "2025-02-11T20:26:29+00:00",
+            "time": "2025-07-23T14:22:43+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -8270,17 +8270,17 @@
         },
         {
             "name": "verbb/auth",
-            "version": "2.0.25",
-            "version_normalized": "2.0.25.0",
+            "version": "2.0.26",
+            "version_normalized": "2.0.26.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/auth.git",
-                "reference": "c672384257f753638d4b789c8c81bcbfc64346f3"
+                "reference": "93652d18a25f562b5f33a3a32a7da363bb75e268"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/auth/zipball/c672384257f753638d4b789c8c81bcbfc64346f3",
-                "reference": "c672384257f753638d4b789c8c81bcbfc64346f3",
+                "url": "https://api.github.com/repos/verbb/auth/zipball/93652d18a25f562b5f33a3a32a7da363bb75e268",
+                "reference": "93652d18a25f562b5f33a3a32a7da363bb75e268",
                 "shasum": ""
             },
             "require": {
@@ -8296,7 +8296,7 @@
                 "psr/http-message": "^1.0 || ^2.0",
                 "verbb/base": "^3.0.0"
             },
-            "time": "2025-07-18T14:03:36+00:00",
+            "time": "2025-07-21T22:14:04+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -8440,12 +8440,12 @@
         },
         {
             "name": "verbb/formie",
-            "version": "3.0.32",
-            "version_normalized": "3.0.32.0",
+            "version": "3.1.1",
+            "version_normalized": "3.1.1.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/formie/zipball/8bf9ad97c0e3441ba423026cc0e4c51e13a7656a",
-                "reference": "8bf9ad97c0e3441ba423026cc0e4c51e13a7656a",
+                "url": "https://api.github.com/repos/verbb/formie/zipball/589c9671fede0e211349eb552afd5602b7c62619",
+                "reference": "589c9671fede0e211349eb552afd5602b7c62619",
                 "shasum": ""
             },
             "require": {
@@ -8466,7 +8466,7 @@
                 "verbb/base": "^3.0.8",
                 "voku/anti-xss": "^4.1"
             },
-            "time": "2025-07-18T14:04:25+00:00",
+            "time": "2025-07-22T12:10:44+00:00",
             "type": "craft-plugin",
             "extra": {
                 "name": "Formie",

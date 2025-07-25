@@ -2809,6 +2809,11 @@ JS;
      */
     private function maybeSetDefaultAttributes(): void
     {
+        // if we're resaving, we shouldn't be setting the defaults
+        if ($this->resaving) {
+            return;
+        }
+
         if (
             (!isset($this->_authorIds) || empty($this->_authorIds)) &&
             !isset($this->fieldId) &&

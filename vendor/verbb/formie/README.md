@@ -127,29 +127,88 @@ Formie is a Craft CMS plugin for creating user-friendly forms that your content 
 ### Integrations
 Extend Formie's behaviour, and integrate with third-party providers. Easily create your own custom Integrations through the Integrations API.
 
-#### Captchas
-Protect your site against spam!
-
-- reCAPTCHA v2 (Checkbox and Invisible)
-- reCAPTCHA v3
-- reCAPTCHA v3 (Enterprise)
-- hCaptcha
-- [Snaptcha Plugin](https://plugins.craftcms.com/snaptcha)
-- Duplicate
-- Honeypot
-- Javascript
-
 #### Address Providers
 Provide autocomplete behaviour for your address fields. Drastically reduce user errors.
 
-- Google Places
-- Algolia Places
 - Address Finder (AU/NZ)
+- Google Places
 - Loqate
+- PlaceKit
+
+#### Automations
+Trigger powerful workflows and integrations when a form is submitted — set it and forget it.
+
+- IFTTT
+- Make
+- n8n
+- Web Request
+- Zapier
+
+#### Captchas
+Protect your site against spam!
+
+- Akismet
+- Captcha.eu
+- CleanTalk
+- Cloudflare Turnstile
+- Duplicate
+- Friendly Captcha
+- hCaptcha
+- Honeypot
+- Javascript
+- OOPSpam
+- Question
+- reCAPTCHA v2 (Checkbox and Invisible)
+- reCAPTCHA v3
+- reCAPTCHA v3 (Enterprise)
+- [Snaptcha Plugin](https://plugins.craftcms.com/snaptcha)
+
+#### CRM
+Build your customer relationship data with ease, mapping form fields to contacts, leads and more.
+
+- 1CRM
+- ActiveCampaign
+- Agile CRM
+- Attio
+- Avochato
+- Capsule CRM
+- CiviCRM
+- Copper CRM
+- Dotdigital
+- Flowlu
+- Freshsales
+- HubSpot
+- Infusionsoft
+- Insightly
+- Iterable
+- Klaviyo
+- Marketo
+- Maximizer
+- Mercury
+- Microsoft Dynamics 365
+- NoCRM
+- Outseta
+- Pardot
+- Pipedrive
+- Pipeliner
+- Procurios
+- Salesflare
+- Salesforce
+- Salesmate
+- Scoro
+- SharpSpring
+- SuiteCRM
+- SugarCRM
+- vCita
+- Xero
+- Zoho
 
 #### Elements
 Create elements from form submission data.
 
+- Commerce Products
+- [Events Plugin](https://plugins.craftcms.com/events)
+- [Solspace Calendar Events](https://plugins.craftcms.com/calendar)
 - Entries
 - Users
 
@@ -158,74 +217,78 @@ Add users who fill out your forms directly to your mailing lists.
 
 - ActiveCampaign
 - Adestra
-- Autopilot
 - AWeber
+- Beehiiv
 - Benchmark
+- Brevo (Sendinblue)
 - [Campaign Plugin](https://plugins.craftcms.com/campaign)
 - Campaign Monitor
+- CleverReach
 - Constant Contact
 - ConvertKit
+- Customer.io
 - Drip
+- Ecomail
 - EmailOctopus
 - GetResponse
 - iContact
+- Iterable
 - Klaviyo
 - Mailchimp
+- Mailcoach
+- Mailjet
 - MailerLite
 - Moosend
 - Omnisend
 - Ontraport
+- Ortto (Autopilot)
 - Sender
-- Sendinblue
+- Vero
 
-#### CRM
-Build your customer relationship data with ease, mapping form fields to contacts, leads and more.
+#### Help Desk
+Turn form submissions into support tickets and streamline your customer service.
 
-- ActiveCampaign
-- Agile CRM
-- Avochato
-- Capsule CRM
-- Copper CRM
 - Freshdesk
-- Freshsales
-- HubSpot
-- Infusionsoft
-- Insightly
-- Klaviyo
-- Maximizer
-- Mercury
-- Microsoft Dynamics 365
-- Pardot
-- Pipedrive
-- Pipeliner
-- Salesflare
-- Salesforce
-- Scoro
-- SharpSpring
-- SugarCRM
-- vCita
-- Zoho
+- Front Help
+- Gorgias
+- Help Scout
+- Intercom
+- LiveChat
+- Zendesk
 
-#### Payments
-Use your form as a paywall to collect payment from your users.
+#### Messaging
+Send messages via SMS, chat apps, and more — keep users in the loop wherever they are.
 
-- Stripe (single and subscription)
-- PayPal (single)
-
-#### Webhooks
-Send form data to URLs or Webhook providers for processing on their end.
-
-- Generic Webhook
-- Zapier
+- Discord
+- Plivo
+- Slack
+- Telegram
+- Twilio
 
 #### Miscellaneous
 For any other categories that just don't fit into the above!
 
+- ClickUp
 - Google Sheets
 - Monday
 - Recruitee
-- Slack
 - Trello
+
+#### Payments
+Use your form as a paywall to collect payment from your users.
+
+- BPOINT
+- Eway
+- GoCardless
+- Mollie
+- Moneris
+- Opayo
+- Paddle
+- PayPal
+- PayWay
+- Square
+- Stripe
+
  
 ## Documentation
 Visit the [Formie Plugin page](https://verbb.io/craft-plugins/formie) for all documentation, guides, pricing and developer resources.

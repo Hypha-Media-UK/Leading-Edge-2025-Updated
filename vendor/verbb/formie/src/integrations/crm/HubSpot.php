@@ -50,10 +50,12 @@ class HubSpot extends Crm
     public bool $mapToContact = false;
     public bool $mapToDeal = false;
     public bool $mapToCompany = false;
+    public bool $mapToTicket = false;
     public bool $mapToForm = false;
     public ?array $contactFieldMapping = null;
     public ?array $dealFieldMapping = null;
     public ?array $companyFieldMapping = null;
+    public ?array $ticketFieldMapping = null;
     public ?array $formFieldMapping = null;
     public ?string $formId = null;
 
@@ -167,6 +169,58 @@ class HubSpot extends Crm
                     ], $this->_getCustomFields($fields, ['name']));
                 }
 
+                // Get Tickets fields
+                if ($this->mapToTicket) {
+                    $response = $this->request('GET', 'crm/v3/properties/tickets');
+                    $fields = $response['results'] ?? [];
+
+                    $ticketPipelineOptions = [];
+                    $ticketStageOptions = [];
+
+                    $response = $this->request('GET', 'crm/v3/pipelines/tickets');
+                    $pipelines = $response['results'] ?? [];
+
+                    foreach ($pipelines as $pipeline) {
+                        $ticketPipelineOptions[] = [
+                            'label' => $pipeline['label'],
+                            'value' => $pipeline['id'],
+                        ];
+
+                        foreach ($pipeline['stages'] ?? [] as $stage) {
+                            $ticketStageOptions[] = [
+                                'label' => $pipeline['label'] . ': ' . $stage['label'],
+                                'value' => $stage['id'],
+                            ];
+                        }
+                    }
+
+                    $settings['ticket'] = array_merge([
+                        new IntegrationField([
+                            'handle' => 'subject',
+                            'name' => Craft::t('formie', 'Ticket Subject'),
+                            'required' => true,
+                        ]),
+                        new IntegrationField([
+                            'handle' => 'hs_pipeline',
+                            'name' => Craft::t('formie', 'Pipeline'),
+                            'required' => true,
+                            'options' => [
+                                'label' => Craft::t('formie', 'Pipelines'),
+                                'options' => $ticketPipelineOptions,
+                            ],
+                        ]),
+                        new IntegrationField([
+                            'handle' => 'hs_pipeline_stage',
+                            'name' => Craft::t('formie', 'Pipeline Stage'),
+                            'required' => true,
+                            'options' => [
+                                'label' => Craft::t('formie', 'Stages'),
+                                'options' => $ticketStageOptions,
+                            ],
+                        ]),
+                    ], $this->_getCustomFields($fields, ['subject', 'hs_pipeline', 'hs_pipeline_stage']));
+                }
+
                 // Get Deals fields
                 if ($this->mapToDeal) {
                     $dealPipelinesOptions = [];
@@ -244,6 +298,7 @@ class HubSpot extends Crm
             $contactValues = $this->getFieldMappingValues($submission, $this->contactFieldMapping, 'contact');
             $dealValues = $this->getFieldMappingValues($submission, $this->dealFieldMapping, 'deal');
             $companyValues = $this->getFieldMappingValues($submission, $this->companyFieldMapping, 'company');
+            $ticketValues = $this->getFieldMappingValues($submission, $this->ticketFieldMapping, 'ticket');
             $formValues = $this->getFieldMappingValues($submission, $this->formFieldMapping, 'forms');
 
             $contactId = null;
@@ -372,6 +427,62 @@ class HubSpot extends Crm
                 }
             }
 
+            if ($this->mapToTicket) {
+                $ticketPayload = [
+                    'properties' => $ticketValues,
+                ];
+
+                $ticketSubject = $ticketValues['subject'] ?? null;
+
+                // Ticket Name is required to match against
+                if (!$ticketSubject) {
+                    Integration::error($this, Craft::t('formie', 'Invalid subject'), true);
+
+                    return false;
+                }
+
+                // Find existing ticket
+                $response = $this->request('POST', 'crm/v3/objects/tickets/search', [
+                    'json' => [
+                        'filterGroups' => [
+                            [
+                                'filters' => [
+                                    [
+                                        'operator' => 'EQ',
+                                        'propertyName' => 'subject',
+                                        'value' => $ticketSubject,
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ]);
+
+                $existingTicketId = $response['results'][0]['id'] ?? '';
+
+                // Update or create
+                if ($existingTicketId) {
+                    $response = $this->deliverPayload($submission, "crm/v3/objects/tickets/{$existingTicketId}", $ticketPayload, 'PATCH');
+                } else {
+                    $response = $this->deliverPayload($submission, 'crm/v3/objects/tickets', $ticketPayload);
+                }
+
+                if ($response === false) {
+                    return true;
+                }
+
+                $ticketId = $response['id'] ?? '';
+
+                if (!$ticketId) {
+                    Integration::error($this, Craft::t('formie', 'Missing return “ticketId” {response}. Sent payload {payload}', [
+                        'response' => Json::encode($response),
+                        'payload' => Json::encode($ticketPayload),
+                    ]), true);
+
+                    return false;
+                }
+            }
+
             if ($this->mapToForm) {
                 // Prepare the payload for HubSpot, required for v1 API
                 $formPayload = [];
@@ -484,23 +595,6 @@ class HubSpot extends Crm
         return true;
     }
 
-    public function getClient(): Client
-    {
-        if ($this->_client) {
-            return $this->_client;
-        }
-
-        $accessToken = App::parseEnv($this->accessToken);
-
-        return $this->_client = Craft::createGuzzleClient([
-            'base_uri' => 'https://api.hubapi.com/',
-            'headers' => [
-                'Authorization' => 'Bearer ' . $accessToken,
-                'Content-Type' => 'application/json',
-            ],
-        ]);
-    }
-
     public function getFormsClient(): Client
     {
         if ($this->_formsClient) {
@@ -564,6 +658,19 @@ class HubSpot extends Crm
         ];
 
         return $rules;
+    }
+
+    protected function defineClient(): Client
+    {
+        $accessToken = App::parseEnv($this->accessToken);
+
+        return Craft::createGuzzleClient([
+            'base_uri' => 'https://api.hubapi.com/',
+            'headers' => [
+                'Authorization' => 'Bearer ' . $accessToken,
+                'Content-Type' => 'application/json',
+            ],
+        ]);
     }
 
 
@@ -686,6 +793,17 @@ class HubSpot extends Crm
 
             foreach ($formFields as $formField) {
                 $fields[] = $formField;
+
+                // Check for "dependentField" (conditional fields) to include
+                $dependentFieldFilters = $formField['dependentFieldFilters'] ?? [];
+
+                foreach ($dependentFieldFilters as $dependentFieldFilter) {
+                    $dependentFormField = $dependentFieldFilter['dependentFormField'] ?? null;
+
+                    if ($dependentFormField) {
+                        $fields[] = $dependentFormField;
+                    }
+                }
             }
         }
 

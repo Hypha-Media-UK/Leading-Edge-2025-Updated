@@ -49,13 +49,6 @@ class Hcaptcha extends Captcha
         return Craft::$app->getView()->renderTemplate('formie/integrations/captchas/hcaptcha/_plugin-settings', $variables);
     }
 
-    public function getFormSettingsHtml(Form|Stencil $form): string
-    {
-        $variables = $this->getFormSettingsHtmlVariables($form);
-        
-        return Craft::$app->getView()->renderTemplate('formie/integrations/captchas/hcaptcha/_form-settings', $variables);
-    }
-
     public function getFrontEndHtml(Form $form, FieldLayoutPage $page = null): string
     {
         return Html::tag('div', null, [
@@ -97,31 +90,28 @@ class Hcaptcha extends Captcha
 
     public function validateSubmission(Submission $submission): bool
     {
-        $response = $this->getCaptchaValue($submission, 'h-captcha-response');
+        $responseToken = $this->getCaptchaValue($submission, 'h-captcha-response');
 
-        if (!$response) {
+        if (!$responseToken) {
             return false;
         }
 
-        $client = Craft::createGuzzleClient();
-
-        $response = $client->post('https://hcaptcha.com/siteverify', [
+        $response = $this->request('POST', 'https://hcaptcha.com/siteverify', [
             'form_params' => [
                 'secret' => App::parseEnv($this->secretKey),
-                'response' => $response,
+                'response' => $responseToken,
                 'remoteip' => Craft::$app->getRequest()->getRemoteIP(),
             ],
         ]);
 
-        $result = Json::decode((string)$response->getBody(), true);
-        $success = $result['success'] ?? false;
+        $success = $response['success'] ?? false;
 
         if (!$success) {
-            $this->spamReason = Json::encode($result);
+            $this->spamReason = Json::encode($response);
         }
 
-        if (isset($result['score'])) {
-            return ($result['score'] < $this->minScore);
+        if (isset($response['score'])) {
+            return ($response['score'] < $this->minScore);
         }
 
         return $success;

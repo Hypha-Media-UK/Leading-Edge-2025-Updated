@@ -79,28 +79,55 @@ abstract class ElementField extends Field implements ElementFieldInterface
 
     public static function queryCondition(array $instances, mixed $value, array &$params): array|string|ExpressionInterface|false|null
     {
+        // Get the base JSON SQL column expression for the field
+        $valueSql = static::valueSql($instances);
+
+        if ($valueSql === null) {
+            return false;
+        }
+
+        // Determine if we're using PostgreSQL
+        $isPgsql = Craft::$app->getDb()->getIsPgsql();
+
+        // Handle :empty: and :notempty:
+        if (in_array($value, [':empty:', 'not :notempty:'], true)) {
+            if ($isPgsql) {
+                // Check if array is empty or field is null in Postgres
+                return new Expression("jsonb_array_length($valueSql) = 0 OR $valueSql IS NULL");
+            }
+
+            // MySQL / MariaDB
+            return new Expression("JSON_LENGTH($valueSql) = 0 OR $valueSql IS NULL");
+        }
+
+        if (in_array($value, [':notempty:', 'not :empty:'], true)) {
+            if ($isPgsql) {
+                // Check if array is non-empty in Postgres
+                return new Expression("jsonb_array_length($valueSql) > 0");
+            }
+
+            // MySQL / MariaDB
+            return new Expression("JSON_LENGTH($valueSql) > 0");
+        }
+
+        // Handle regular element ID matching
         $values = [];
 
         if (is_array($value)) {
             foreach ($value as $element) {
                 if ($element instanceof ElementInterface) {
                     $values[] = $element->id;
-                }
-
-                if (is_int($element)) {
+                } elseif (is_int($element)) {
                     $values[] = $element;
                 }
             }
-        }
-
-        if ($value instanceof ElementInterface) {
+        } elseif ($value instanceof ElementInterface) {
             $values[] = $value->id;
-        }
-
-        if (is_int($value)) {
+        } elseif (is_int($value)) {
             $values[] = $value;
         }
 
+        // Pass to parent implementation for actual matching
         return parent::queryCondition($instances, Json::encode($values), $params);
     }
 
@@ -124,6 +151,9 @@ abstract class ElementField extends Field implements ElementFieldInterface
     public string $labelSource = 'title';
     public string $orderBy = 'title ASC';
     public bool $multi = false;
+    public ?string $layout = 'vertical';
+    public string $sourceType = 'groups';
+    public array $sourceElements = [];
 
     protected ?ElementQuery $elementsQuery = null;
     protected ?string $cpInputJsClass = null;
@@ -155,6 +185,9 @@ abstract class ElementField extends Field implements ElementFieldInterface
         $attributes[] = 'labelSource';
         $attributes[] = 'orderBy';
         $attributes[] = 'multi';
+        $attributes[] = 'layout';
+        $attributes[] = 'sourceType';
+        $attributes[] = 'sourceElements';
 
         return $attributes;
     }
@@ -234,43 +267,47 @@ abstract class ElementField extends Field implements ElementFieldInterface
             $query->siteId(Craft::$app->getSites()->getCurrentSite()->id);
         }
 
-        $criteria = [];
+        if ($this->sourceType === 'groups') {
+            $criteria = [];
 
-        $sources = $this->getInputSources();
+            $sources = $this->getInputSources();
 
-        if (is_array($sources)) {
-            foreach ($sources as $sourceKey) {
-                $elementSource = ArrayHelper::firstWhere($this->availableSources(), 'key', $sourceKey);
+            if (is_array($sources)) {
+                foreach ($sources as $sourceKey) {
+                    $elementSource = ArrayHelper::firstWhere($this->availableSources(), 'key', $sourceKey);
 
-                // Check for custom sources, which use conditions directly on the query
-                if ($elementSource && $elementSource['type'] === ElementSources::TYPE_CUSTOM) {
-                    // Handle conditions by parsing the rules and applying to query
-                    $sourceCondition = $conditionsService->createCondition($elementSource['condition']);
-                    $sourceCondition->modifyQuery($query);
-                } else if (str_contains($sourceKey, 'type:')) {
-                    // Special-case for entries, maybe redactor?
-                    $entryTypeUid = str_replace('type:', '', $sourceKey);
-                    $entryType = EntryTypeRecord::find()->where(['uid' => $entryTypeUid])->one();
+                    // Check for custom sources, which use conditions directly on the query
+                    if ($elementSource && $elementSource['type'] === ElementSources::TYPE_CUSTOM) {
+                        // Handle conditions by parsing the rules and applying to query
+                        $sourceCondition = $conditionsService->createCondition($elementSource['condition']);
+                        $sourceCondition->modifyQuery($query);
+                    } else if (str_contains($sourceKey, 'type:')) {
+                        // Special-case for entries, maybe redactor?
+                        $entryTypeUid = str_replace('type:', '', $sourceKey);
+                        $entryType = EntryTypeRecord::find()->where(['uid' => $entryTypeUid])->one();
 
-                    if ($entryType) {
-                        $criteria[] = ['typeId' => $entryType->id];
+                        if ($entryType) {
+                            $criteria[] = ['typeId' => $entryType->id];
+                        }
+                    } else {
+                        $sourceCriteria = $elementSource['criteria'] ?? [];
+
+                        // Remove anything we don't need/want
+                        unset($sourceCriteria['editable']);
+
+                        $criteria[] = $sourceCriteria;
                     }
-                } else {
-                    $sourceCriteria = $elementSource['criteria'] ?? [];
-
-                    // Remove anything we don't need/want
-                    unset($sourceCriteria['editable']);
-
-                    $criteria[] = $sourceCriteria;
                 }
             }
+
+            // Merge here for performance
+            $criteria = array_merge_recursive(...$criteria);
+
+            // Apply the criteria on our query
+            Craft::configure($query, $criteria);
+        } else if ($this->sourceType === 'elements') {
+            $query->id(ArrayHelper::getColumn($this->sourceElements, 'id'));
         }
-
-        // Merge here for performance
-        $criteria = array_merge_recursive(...$criteria);
-
-        // Apply the criteria on our query
-        Craft::configure($query, $criteria);
 
         // Check if a default value has been set AND we're limiting. We need to resolve the value before limiting
         if ($this->defaultValue && $this->limitOptions) {
@@ -377,6 +414,19 @@ abstract class ElementField extends Field implements ElementFieldInterface
             // Render the HTML needed for the element select field (for default value). jQuery needs DOM manipulation
             // so while gross, we have to supply the raw HTML, as opposed to models in the Vue-way.
             $settings['defaultValueHtml'] = Craft::$app->getView()->renderTemplate('formie/_includes/element-select-input-elements', ['elements' => $elements]);
+        }
+
+        if ($ids = ArrayHelper::getColumn($this->sourceElements, 'id')) {
+            $elements = static::elementType()::find()->id($ids)->all();
+
+            // Maintain an options array, so we can keep track of the label in Vue, not just the saved value
+            $settings['sourceElementsOptions'] = array_map(function($input) {
+                return ['label' => $this->_getElementLabel($input), 'value' => $input->id];
+            }, $elements);
+
+            // Render the HTML needed for the element select field (for default value). jQuery needs DOM manipulation
+            // so while gross, we have to supply the raw HTML, as opposed to models in the Vue-way.
+            $settings['sourceElementsHtml'] = Craft::$app->getView()->renderTemplate('formie/_includes/element-select-input-elements', ['elements' => $elements]);
         }
 
         // For certain display types, pre-fetch elements for use in the preview in the CP for the field. Saves an initial Ajax request
@@ -645,6 +695,10 @@ abstract class ElementField extends Field implements ElementFieldInterface
                 'name' => 'multi',
                 'type' => Type::boolean(),
             ],
+            'layout' => [
+                'name' => 'layout',
+                'type' => Type::string(),
+            ],
             'defaultValue' => [
                 'name' => 'defaultValue',
                 'type' => Type::string(),
@@ -675,7 +729,10 @@ abstract class ElementField extends Field implements ElementFieldInterface
         if (in_array($this->displayType, ['checkboxes', 'radio'])) {
             if ($key === 'fieldContainer') {
                 return new HtmlTag('fieldset', [
-                    'class' => 'fui-fieldset',
+                    'class' => [
+                        'fui-fieldset',
+                        'fui-layout-' . $this->layout ?? 'vertical',
+                    ],
                     'aria-describedby' => $this->instructions ? "{$id}-instructions" : null,
                 ]);
             }

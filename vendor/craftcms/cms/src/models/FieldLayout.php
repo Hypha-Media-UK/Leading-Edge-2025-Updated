@@ -1099,10 +1099,17 @@ class FieldLayout extends Model
             }
         }
 
-        $elements = array_merge($layoutElements, $attributes);
-
-        // get card view IDs stored in the field layout config
+        // get the card view config - array of all the attributes, fields and generated fields that should be shown in the card
         $cardViewValues = $this->getCardView();
+
+        // filter out any generated fields that shouldn't show in the card
+        $layoutElements = array_filter(
+            $layoutElements,
+            fn($key) => !str_starts_with($key, 'generatedField:') || in_array($key, $cardViewValues),
+            ARRAY_FILTER_USE_KEY
+        );
+
+        $elements = array_merge($layoutElements, $attributes);
 
         // make sure we don't have any cardViewValues that are no longer allowed to show in cards
         $cardViewValues = array_filter($cardViewValues, fn($value) => isset($elements[$value]));

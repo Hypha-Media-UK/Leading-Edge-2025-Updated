@@ -831,7 +831,7 @@ class Assets extends BaseRelationField
      */
     protected function showSearchInput(?ElementInterface $element): bool
     {
-        if (!$this->showSearchInput) {
+        if (!$this->showSearchInput || $this->sources === '*') {
             return false;
         }
 
