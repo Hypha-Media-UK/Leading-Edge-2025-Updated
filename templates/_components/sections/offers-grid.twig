@@ -1,11 +1,18 @@
 {# Promotions Grid Component - Include Version #}
 {# Expected variables: title, description, promotions, cardHeight #}
 
-{# Create offer type mapping for CSS classes #}
+{# Create offer type mapping for CSS classes and default colors #}
 {% set offerTypeMap = {
     'Refer a Friend': 'friend-offer',
     'NHS Discount': 'nhs-offer',
     'Student Discount': 'student-offer'
+} %}
+
+{# Default colors for each offer type #}
+{% set defaultColors = {
+    'friend-offer': '#C8A882',
+    'nhs-offer': '#404E5C',
+    'student-offer': '#D0D171'
 } %}
 
 <section class="promotions-section">
@@ -13,12 +20,14 @@
         <div class="promotions-grid">
             {% for offer in entry.offerCards %}
                 {% set offerClass = offerTypeMap[offer.offerType] ?? 'friend-offer' %}
+                {# Get custom color or use default #}
+                {% set customColor = offer.highlightColour ? offer.highlightColour : defaultColors[offerClass] %}
                 <div class="promotion-item" data-promotion-id="{{ offer.id }}">
                     <div class="flip-card" style="height: {{ cardHeight|default('550px') }};">
                         <div class="flip-card-inner">
                             {# Front Side #}
                             <div class="flip-card-front">
-                                <div class="promotion-card {{ offerClass }}">
+                                <div class="promotion-card {{ offerClass }}" style="--custom-highlight-color: {{ customColor }};">
                                     {% if offer.offerIcon %}
                                         <div class="card-icon">
                                             <i class="fas {{ offer.offerIcon }}"></i>
@@ -42,7 +51,7 @@
                             
                             {# Back Side #}
                             <div class="flip-card-back">
-                                <div class="promotion-card {{ offerClass }}">
+                                <div class="promotion-card {{ offerClass }}" style="--custom-highlight-color: {{ customColor }};">
                                     <h3>Terms & Conditions</h3>
                                     <ul class="terms-content">
                                         {% for term in offer.offerTCs %}

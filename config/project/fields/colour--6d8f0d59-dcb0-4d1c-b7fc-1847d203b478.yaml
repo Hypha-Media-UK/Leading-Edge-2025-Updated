@@ -1,0 +1,10 @@
+columnSuffix: null
+handle: colour
+instructions: null
+name: Colour
+searchable: false
+settings:
+  allowCustomColors: true
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Color
