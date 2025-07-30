@@ -199,6 +199,86 @@ componentManager.register('.testimonials-slider', (elements) => {
     });
 });
 
+// Team member modal functionality
+componentManager.register('.team-member', (elements) => {
+    elements.forEach(member => {
+        const modalTarget = member.getAttribute('data-modal-target');
+        
+        member.addEventListener('click', function() {
+            const modal = document.getElementById(modalTarget);
+            if (modal) {
+                openModal(modal);
+            }
+        });
+    });
+});
+
+// Modal management functionality
+componentManager.register('.modal-overlay', (elements) => {
+    elements.forEach(modal => {
+        // Close button functionality
+        const closeButton = modal.querySelector('.modal-close');
+        if (closeButton) {
+            closeButton.addEventListener('click', function() {
+                closeModal(modal);
+            });
+        }
+        
+        // Overlay click to close (but not when clicking modal content)
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal(modal);
+            }
+        });
+    });
+});
+
+// Modal utility functions
+function openModal(modal) {
+    modal.style.display = 'flex';
+    document.body.classList.add('modal-open');
+    
+    // Trigger reflow to ensure display change is applied
+    modal.offsetHeight;
+    
+    // Add active class for animation
+    modal.classList.add('active');
+    
+    // Focus management for accessibility
+    const firstFocusable = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (firstFocusable) {
+        firstFocusable.focus();
+    }
+    
+    // Store the previously focused element (store the actual element, not as a selector)
+    modal.previousFocusElement = document.activeElement;
+}
+
+function closeModal(modal) {
+    modal.classList.remove('active');
+    document.body.classList.remove('modal-open');
+    
+    // Wait for animation to complete before hiding
+    setTimeout(() => {
+        modal.style.display = 'none';
+        
+        // Restore focus to previously focused element
+        if (modal.previousFocusElement && modal.previousFocusElement.focus) {
+            modal.previousFocusElement.focus();
+        }
+    }, 300);
+}
+
+// Global ESC key handler for modals
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' || e.keyCode === 27) {
+        const activeModal = document.querySelector('.modal-overlay.active');
+        if (activeModal) {
+            closeModal(activeModal);
+        }
+    }
+});
+
 // Header functionality
 // Services tabs functionality - Simplified and reliable
 componentManager.register('.services-tabs', (elements) => {
