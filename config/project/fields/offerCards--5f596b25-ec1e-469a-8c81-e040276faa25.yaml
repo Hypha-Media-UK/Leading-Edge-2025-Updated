@@ -1,0 +1,26 @@
+columnSuffix: null
+handle: offerCards
+instructions: null
+name: 'Offer Cards'
+searchable: false
+settings:
+  createButtonLabel: 'Add a Card'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - c56a99f0-e8f2-4e89-916d-b5c034c8bed1 # Offer Cards
+  includeTableView: false
+  maxEntries: 4
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: true
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

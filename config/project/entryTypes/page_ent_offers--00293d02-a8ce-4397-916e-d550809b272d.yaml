@@ -1,0 +1,74 @@
+color: null
+description: null
+fieldLayouts:
+  723eb4b0-ff1d-477c-bbf2-e6586483c314:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-30T09:09:44+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 75d5ff91-e0e7-479a-b047-041d2c3e1649 # Page Header
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5b835718-9d6b-4c51-893f-161126d9a6ea
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-30T09:24:57+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 5f596b25-ec1e-469a-8c81-e040276faa25 # Offer Cards
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3de49ed2-27fb-480f-b008-2064c6d71e51
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-30T09:18:16+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 71202746-fb78-4408-b9b3-1c3d1e39ffb8 # Call to Action
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 646ab71d-5150-4f8a-9eb8-e32e17562be6
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: f9039ad7-f6c8-41bd-8b82-84ab40140fb8
+        userCondition: null
+handle: page_ent_offers
+hasTitleField: false
+icon: null
+name: Offers
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: Offers
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

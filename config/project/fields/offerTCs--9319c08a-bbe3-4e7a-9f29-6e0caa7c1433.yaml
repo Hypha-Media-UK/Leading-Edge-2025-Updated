@@ -1,0 +1,37 @@
+columnSuffix: null
+handle: offerTCs
+instructions: null
+name: 'Offer T&Cs'
+searchable: false
+settings:
+  addRowLabel: 'Add a T&C'
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Term
+            -
+              - handle
+              - term
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+  maxRows: null
+  minRows: null
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

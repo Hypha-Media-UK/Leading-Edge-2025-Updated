@@ -3,57 +3,44 @@
 
 <section class="promotions-section">
     <div class="container">
-        {% if title or description %}
-            <div class="section-header">
-                {% if title %}
-                    <h2>{{ title }}</h2>
-                {% endif %}
-                {% if description %}
-                    <p>{{ description }}</p>
-                {% endif %}
-            </div>
-        {% endif %}
-        
         <div class="promotions-grid">
-            {% for promotion in promotions %}
-                <div class="promotion-item" data-promotion-id="{{ promotion.id }}">
+            {% for offer in entry.offerCards %}
+                <div class="promotion-item" data-promotion-id="{{ offer.id }}">
                     <div class="flip-card" style="height: {{ cardHeight|default('550px') }};">
                         <div class="flip-card-inner">
                             {# Front Side #}
                             <div class="flip-card-front">
-                                <div class="promotion-card {{ promotion.cardClass }}">
-                                    {% if promotion.icon %}
+                                <div class="promotion-card">
+                                    {% if offer.offerIcon %}
                                         <div class="card-icon">
-                                            <i class="{{ promotion.icon }}"></i>
+                                            <i class="fas {{ offer.offerIcon }}"></i>
                                         </div>
                                     {% endif %}
-                                    <h2>{{ promotion.title }}</h2>
-                                    {% if promotion.highlight %}
+                                    <h2>{{ offer.title }}</h2>
+                                    {% if offer.offerType %}
                                         <div class="offer-highlight">
-                                            <span>{{ promotion.highlight }}</span>
+                                            <span>{{ offer.offerType }}</span>
                                         </div>
                                     {% endif %}
-                                    <p class="promotion-description">{{ promotion.description }}</p>
+                                    <p class="promotion-description">{{ offer.offerText }}</p>
                                     <button class="terms-toggle" data-flip-card>
                                         Terms & Conditions <i class="fas fa-sync"></i>
                                     </button>
                                     <div class="promotion-actions">
-                                        <a href="{{ promotion.buttonLink|default('#') }}" class="btn {{ promotion.buttonVariant|default('primary') }} {{ promotion.buttonSize|default('small') }}">
-                                            {{ promotion.buttonText|default('Book Now') }}
-                                        </a>
+                                        <a href="{{ offer.cardLink.label }}" class="btn primary">{{ offer.cardLink.label }}</a>
                                     </div>
                                 </div>
                             </div>
                             
                             {# Back Side #}
                             <div class="flip-card-back">
-                                <div class="promotion-card {{ promotion.cardClass }}">
+                                <div class="promotion-card">
                                     <h3>Terms & Conditions</h3>
-                                    <div class="terms-content">
-                                        {% for term in promotion.terms %}
-                                            <p>• {{ term }}</p>
+                                    <ul class="terms-content">
+                                        {% for term in offer.offerTCs %}
+                                            <li>{{ term.term }}</li>
                                         {% endfor %}
-                                    </div>
+                                    </ul>
                                     <button class="flip-back-btn" data-flip-card>
                                         <i class="fas fa-arrow-left"></i> Back to Offer
                                     </button>

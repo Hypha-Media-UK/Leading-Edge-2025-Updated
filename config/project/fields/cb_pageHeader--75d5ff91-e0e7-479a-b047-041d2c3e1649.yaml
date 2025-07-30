@@ -88,6 +88,38 @@ settings:
                             14:
                               - fieldUid
                               - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - promoLink
+                            2:
+                              - label
+                              - 'Promo Link'
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-07-30T09:08:07+00:00'
+                            11:
+                              - uid
+                              - cd2fa102-6ed6-4015-b18e-cf2f19a28db9
+                            14:
+                              - fieldUid
+                              - 54b32803-64e0-46aa-bacf-ecddf2f5db7a # Section Link
             3:
               - cardThumbAlignment
               - end

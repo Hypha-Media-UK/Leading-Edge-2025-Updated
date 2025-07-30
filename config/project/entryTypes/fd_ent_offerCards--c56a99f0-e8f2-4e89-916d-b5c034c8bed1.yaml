@@ -1,0 +1,138 @@
+color: null
+description: null
+fieldLayouts:
+  07098a6e-79f0-44f1-a4a6-5066611e4288:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-07-08T07:38:47+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: 'Card Title'
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 3709f52b-0297-4623-9021-d07797b659d2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-30T09:23:55+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: offerType
+            includeInCards: false
+            instructions: null
+            label: 'Offer Type'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: edda794c-54b0-43e1-bda3-68d1ab9ed24e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-08T07:42:23+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: offerText
+            includeInCards: true
+            instructions: null
+            label: 'Offer Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1f52db3b-eca9-455b-a347-b1dfbb4f39b2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-08T08:24:26+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: offerIcon
+            includeInCards: false
+            instructions: 'Visit https://fontawesome.com/icons/ and use the text for the icon e.g. fa-leaf'
+            label: Icon
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 166be7af-c3d7-4698-98dc-c0ec244817d5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-30T09:24:20+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 30d70629-c8e5-40db-9f27-dd7dd53d0afb # Card Link
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4dbee015-4a96-44f9-a861-2b431030dcec
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-30T09:27:14+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 9319c08a-bbe3-4e7a-9f29-6e0caa7c1433 # Offer T&Cs
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 79dba285-0839-4239-8ac1-b88d16856d51
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 1fae32be-ac90-4c3b-b7dd-53f96c78afad
+        userCondition: null
+handle: fd_ent_offerCards
+hasTitleField: true
+icon: null
+name: 'Offer Cards'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
