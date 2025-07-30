@@ -1,16 +1,24 @@
 {# Promotions Grid Component - Include Version #}
 {# Expected variables: title, description, promotions, cardHeight #}
 
+{# Create offer type mapping for CSS classes #}
+{% set offerTypeMap = {
+    'Refer a Friend': 'friend-offer',
+    'NHS Discount': 'nhs-offer',
+    'Student Discount': 'student-offer'
+} %}
+
 <section class="promotions-section">
     <div class="container">
         <div class="promotions-grid">
             {% for offer in entry.offerCards %}
+                {% set offerClass = offerTypeMap[offer.offerType] ?? 'friend-offer' %}
                 <div class="promotion-item" data-promotion-id="{{ offer.id }}">
                     <div class="flip-card" style="height: {{ cardHeight|default('550px') }};">
                         <div class="flip-card-inner">
                             {# Front Side #}
                             <div class="flip-card-front">
-                                <div class="promotion-card">
+                                <div class="promotion-card {{ offerClass }}">
                                     {% if offer.offerIcon %}
                                         <div class="card-icon">
                                             <i class="fas {{ offer.offerIcon }}"></i>
@@ -27,14 +35,14 @@
                                         Terms & Conditions <i class="fas fa-sync"></i>
                                     </button>
                                     <div class="promotion-actions">
-                                        <a href="{{ offer.cardLink.label }}" class="btn primary">{{ offer.cardLink.label }}</a>
+                                        <a href="{{ offer.cardLink.url }}" class="btn primary">{{ offer.cardLink.label }}</a>
                                     </div>
                                 </div>
                             </div>
                             
                             {# Back Side #}
                             <div class="flip-card-back">
-                                <div class="promotion-card">
+                                <div class="promotion-card {{ offerClass }}">
                                     <h3>Terms & Conditions</h3>
                                     <ul class="terms-content">
                                         {% for term in offer.offerTCs %}
@@ -53,3 +61,36 @@
         </div>
     </div>
 </section>
+
+<script>
+// Flip card functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Use event delegation for flip card buttons
+    document.addEventListener('click', function(e) {
+        // Check if clicked element is a flip card button or contains one
+        let button = null;
+        if (e.target.classList.contains('terms-toggle') || e.target.classList.contains('flip-back-btn')) {
+            button = e.target;
+        } else if (e.target.closest('.terms-toggle')) {
+            button = e.target.closest('.terms-toggle');
+        } else if (e.target.closest('.flip-back-btn')) {
+            button = e.target.closest('.flip-back-btn');
+        }
+        
+        if (button) {
+            e.preventDefault();
+            
+            // Find the flip card container
+            const flipCard = button.closest('.flip-card');
+            
+            if (flipCard) {
+                const flipCardInner = flipCard.querySelector('.flip-card-inner');
+                
+                if (flipCardInner) {
+                    flipCardInner.classList.toggle('flipped');
+                }
+            }
+        }
+    });
+});
+</script>

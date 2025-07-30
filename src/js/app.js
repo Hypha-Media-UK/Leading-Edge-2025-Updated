@@ -269,6 +269,9 @@ function closeModal(modal) {
     }, 300);
 }
 
+// Note: Flip card functionality is now handled inline in the offers-grid.twig template
+// to ensure compatibility and avoid module loading issues
+
 // Global ESC key handler for modals
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' || e.keyCode === 27) {
