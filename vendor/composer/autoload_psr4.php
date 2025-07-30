@@ -36,7 +36,6 @@ return array(
     'nystudio107\\codeeditor\\' => array($vendorDir . '/nystudio107/craft-code-editor/src'),
     'mikehaertl\\shellcommand\\' => array($vendorDir . '/mikehaertl/php-shellcommand/src'),
     'libphonenumber\\' => array($vendorDir . '/giggsey/libphonenumber-for-php/src'),
-    'jsmrtn\\craftagram\\' => array($vendorDir . '/jsmrtn/craftagram/src'),
     'enshrined\\svgSanitize\\' => array($vendorDir . '/enshrined/svg-sanitize/src'),
     'creocoder\\nestedsets\\' => array($vendorDir . '/creocoder/yii2-nested-sets/src'),
     'craft\\htmlfield\\' => array($vendorDir . '/craftcms/html-field/src'),

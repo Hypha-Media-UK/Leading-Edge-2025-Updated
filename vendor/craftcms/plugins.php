@@ -21,26 +21,6 @@ return array (
     'developerEmail' => 'support@craftcms.com',
     'documentationUrl' => 'https://github.com/craftcms/ckeditor/blob/master/README.md',
   ),
-  'jsmrtn/craftagram' => 
-  array (
-    'class' => 'jsmrtn\\craftagram\\Craftagram',
-    'basePath' => $vendorDir . '/jsmrtn/craftagram/src',
-    'handle' => 'craftagram',
-    'aliases' => 
-    array (
-      '@jsmrtn/craftagram' => $vendorDir . '/jsmrtn/craftagram/src',
-    ),
-    'name' => 'Craftagram',
-    'version' => '4.1.0',
-    'description' => 'Grab Instagram content through the Instagram API',
-    'developer' => 'Joshua Martin',
-    'documentationUrl' => 'https://github.com/jsmrtn/craftagram/blob/master/README.md',
-    'changelogUrl' => 'https://raw.githubusercontent.com/jsmrtn/craftagram/master/CHANGELOG.md',
-    'components' => 
-    array (
-      'craftagramService' => 'jsmrtn\\craftagram\\services\\CraftagramService',
-    ),
-  ),
   'verbb/field-manager' => 
   array (
     'class' => 'verbb\\fieldmanager\\FieldManager',

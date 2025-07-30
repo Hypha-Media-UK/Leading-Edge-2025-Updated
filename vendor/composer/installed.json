@@ -410,12 +410,12 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "5.8.10",
-            "version_normalized": "5.8.10.0",
+            "version": "5.8.12",
+            "version_normalized": "5.8.12.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/bf3e750eefff8067708492722629ab5f7bc62457",
-                "reference": "bf3e750eefff8067708492722629ab5f7bc62457",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/43bd41904ddf2902006a96e68e324af3b520ac9b",
+                "reference": "43bd41904ddf2902006a96e68e324af3b520ac9b",
                 "shasum": ""
             },
             "require": {
@@ -481,7 +481,7 @@
                 "ext-iconv": "Adds support for more character encodings than PHP’s built-in mb_convert_encoding() function, which Craft will take advantage of when converting strings to UTF-8.",
                 "ext-imagick": "Adds support for more image processing formats and options."
             },
-            "time": "2025-07-24T21:26:08+00:00",
+            "time": "2025-07-30T00:05:47+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -2284,65 +2284,6 @@
             "install-path": "../jakeasmith/http_build_url"
         },
         {
-            "name": "jsmrtn/craftagram",
-            "version": "4.1.0",
-            "version_normalized": "4.1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jsmrtn/craftagram.git",
-                "reference": "871fe4dae145354244baa57d465d52b49fd94f06"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jsmrtn/craftagram/zipball/871fe4dae145354244baa57d465d52b49fd94f06",
-                "reference": "871fe4dae145354244baa57d465d52b49fd94f06",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^4.0.0|^5.0.0"
-            },
-            "time": "2024-11-29T18:08:31+00:00",
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Craftagram",
-                "class": "jsmrtn\\craftagram\\Craftagram",
-                "handle": "craftagram",
-                "components": {
-                    "craftagramService": "jsmrtn\\craftagram\\services\\CraftagramService"
-                },
-                "changelogUrl": "https://raw.githubusercontent.com/jsmrtn/craftagram/master/CHANGELOG.md"
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "jsmrtn\\craftagram\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Joshua Martin"
-                }
-            ],
-            "description": "Grab Instagram content through the Instagram API",
-            "keywords": [
-                "Craft",
-                "cms",
-                "craft-plugin",
-                "craftagram",
-                "craftcms"
-            ],
-            "support": {
-                "docs": "https://github.com/jsmrtn/craftagram/blob/master/README.md",
-                "issues": "https://github.com/jsmrtn/craftagram/issues",
-                "source": "https://github.com/jsmrtn/craftagram/tree/4.1.0"
-            },
-            "install-path": "../jsmrtn/craftagram"
-        },
-        {
             "name": "lcobucci/clock",
             "version": "3.3.1",
             "version_normalized": "3.3.1.0",
@@ -2755,19 +2696,27 @@
         },
         {
             "name": "masterminds/html5",
-            "version": "2.9.0",
-            "version_normalized": "2.9.0.0",
+            "version": "2.10.0",
+            "version_normalized": "2.10.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Masterminds/html5-php.git",
+                "reference": "fcf91eb64359852f00d921887b219479b4f21251"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Masterminds/html5-php/zipball/f5ac2c0b0a2eefca70b2ce32a5809992227e75a6",
-                "reference": "f5ac2c0b0a2eefca70b2ce32a5809992227e75a6",
+                "url": "https://api.github.com/repos/Masterminds/html5-php/zipball/fcf91eb64359852f00d921887b219479b4f21251",
+                "reference": "fcf91eb64359852f00d921887b219479b4f21251",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "php": ">=5.3.0"
             },
-            "time": "2024-03-31T07:05:07+00:00",
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7.21 || ^6 || ^7 || ^8 || ^9"
+            },
+            "time": "2025-07-25T09:04:22+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2780,6 +2729,7 @@
                     "Masterminds\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2808,6 +2758,10 @@
                 "serializer",
                 "xml"
             ],
+            "support": {
+                "issues": "https://github.com/Masterminds/html5-php/issues",
+                "source": "https://github.com/Masterminds/html5-php/tree/2.10.0"
+            },
             "install-path": "../masterminds/html5"
         },
         {

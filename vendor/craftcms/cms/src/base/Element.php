@@ -28,6 +28,7 @@ use craft\elements\actions\SetStatus;
 use craft\elements\actions\View as ViewAction;
 use craft\elements\conditions\ElementCondition;
 use craft\elements\conditions\ElementConditionInterface;
+use craft\elements\ContentBlock;
 use craft\elements\db\EagerLoadPlan;
 use craft\elements\db\ElementQuery;
 use craft\elements\db\ElementQueryInterface;
@@ -5237,7 +5238,7 @@ JS, [
     private function clonedFieldValue(string $fieldHandle): mixed
     {
         $value = $this->getFieldValue($fieldHandle);
-        if (is_object($value) && !$value instanceof UnitEnum) {
+        if (is_object($value) && !$value instanceof UnitEnum && !$value instanceof ContentBlock) {
             return clone $value;
         }
         return $value;

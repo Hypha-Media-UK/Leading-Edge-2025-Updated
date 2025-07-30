@@ -88,6 +88,7 @@
     {% for source in sources %}
         {% if (source.type ?? null) == 'heading' %}
             {% set key = source.key ?? (source.heading | kebab) %}
+            {% set sourceId = 'sources-list-' ~ random() %}
             {% if nestedUnderHeading %}
                     </ul>
                 </li>
@@ -99,8 +100,8 @@
                     {% if source.heading | length %}
                         {% embed '_includes/disclosure-toggle' with {
                             persist: true,
-                            storageKey: 'sources-list:'~ key,
-                            controls: key,
+                            storageKey: 'sources-list:' ~ key,
+                            controls: sourceId,
                             attributes: {
                                 class: 'source-item__toggle'
                             }
@@ -116,7 +117,7 @@
                         {% endembed %}
                     {% endif %}
                 </div>
-                <ul id="{{ key }}" class="sources-list">
+                <ul id="{{ sourceId }}" class="sources-list">
             {% set nestedUnderHeading = true %}
         {% elseif (source.sites ?? null) is not same as([]) %}
             {% set key = source.keyPath ?? (keyPrefix ~ source.key) %}

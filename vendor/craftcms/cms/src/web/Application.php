@@ -106,6 +106,10 @@ class Application extends \yii\web\Application
         }
 
         $this->_postInit();
+
+        // Process resource requests before we do anything to establish the user session
+        $this->_processResourceRequest();
+
         $this->authenticate();
         $this->debugBootstrap();
     }
@@ -157,9 +161,6 @@ class Application extends \yii\web\Application
     public function handleRequest($request, bool $skipSpecialHandling = false): BaseResponse
     {
         if (!$skipSpecialHandling) {
-            // Process resource requests before anything else
-            $this->_processResourceRequest($request);
-
             // Disable read/write splitting for most POST requests
             if (
                 $request->getIsPost() &&
@@ -516,13 +517,13 @@ class Application extends \yii\web\Application
     /**
      * Processes resource requests.
      *
-     * @param Request $request
      * @throws BadRequestHttpException
      * @throws NotFoundHttpException
      */
-    private function _processResourceRequest(Request $request): void
+    private function _processResourceRequest(): void
     {
         $generalConfig = $this->getConfig()->getGeneral();
+        $request = $this->getRequest();
 
         // Does this look like a resource request?
         $resourceBaseUri = parse_url(Craft::getAlias($generalConfig->resourceBaseUrl), PHP_URL_PATH);

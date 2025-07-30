@@ -1,4 +1,4 @@
-dateModified: 1752918195
+dateModified: 1753866059
 elementSources:
   craft\elements\Entry:
     -
@@ -123,11 +123,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 3.0.0.0
-  craftagram:
-    edition: standard
-    enabled: true
-    licenseKey: ZS0B937I20MS4FWRH0VQJ6F2
-    schemaVersion: 3.0.0
   field-manager:
     edition: standard
     enabled: true

@@ -534,12 +534,16 @@ class ElementsController extends Controller
 
         $this->element = $element;
 
+        // Screen prep
+        $redirectUrl = $this->request->getValidatedQueryParam('returnUrl') ?? ElementHelper::postEditUrl($element);
+
         $this->getView()->registerJsWithVars(fn(
             $elementType,
             $elementId,
             $draftId,
             $revisionId,
             $siteId,
+            $redirectUrl,
         ) => <<<JS
 (() => {
   const preview = new Craft.Preview({
@@ -549,6 +553,7 @@ class ElementsController extends Controller
     revisionId: $revisionId,
     siteId: $siteId,
     standaloneMode: true,
+    redirectUrl: $redirectUrl,
   });
   preview.open();
 })();
@@ -558,6 +563,7 @@ JS, [
             !$element->isProvisionalDraft ? $element->draftId : null,
             $element->revisionId,
             $element->siteId,
+            $redirectUrl,
         ], View::POS_END);
 
         [$docTitle, $title] = $this->_editElementTitles($element);

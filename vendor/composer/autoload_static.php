@@ -89,10 +89,6 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
         array (
             'libphonenumber\\' => 15,
         ),
-        'j' => 
-        array (
-            'jsmrtn\\craftagram\\' => 18,
-        ),
         'e' => 
         array (
             'enshrined\\svgSanitize\\' => 22,
@@ -383,10 +379,6 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
         'libphonenumber\\' => 
         array (
             0 => __DIR__ . '/..' . '/giggsey/libphonenumber-for-php/src',
-        ),
-        'jsmrtn\\craftagram\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/jsmrtn/craftagram/src',
         ),
         'enshrined\\svgSanitize\\' => 
         array (
@@ -7694,20 +7686,6 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
         'enshrined\\svgSanitize\\data\\AttributeInterface' => __DIR__ . '/..' . '/enshrined/svg-sanitize/src/data/AttributeInterface.php',
         'enshrined\\svgSanitize\\data\\TagInterface' => __DIR__ . '/..' . '/enshrined/svg-sanitize/src/data/TagInterface.php',
         'enshrined\\svgSanitize\\data\\XPath' => __DIR__ . '/..' . '/enshrined/svg-sanitize/src/data/XPath.php',
-        'jsmrtn\\craftagram\\Craftagram' => __DIR__ . '/..' . '/jsmrtn/craftagram/src/Craftagram.php',
-        'jsmrtn\\craftagram\\console\\controllers\\TokenController' => __DIR__ . '/..' . '/jsmrtn/craftagram/src/console/controllers/TokenController.php',
-        'jsmrtn\\craftagram\\controllers\\DefaultController' => __DIR__ . '/..' . '/jsmrtn/craftagram/src/controllers/DefaultController.php',
-        'jsmrtn\\craftagram\\controllers\\SettingsController' => __DIR__ . '/..' . '/jsmrtn/craftagram/src/controllers/SettingsController.php',
-        'jsmrtn\\craftagram\\migrations\\Install' => __DIR__ . '/..' . '/jsmrtn/craftagram/src/migrations/Install.php',
-        'jsmrtn\\craftagram\\migrations\\m200716_152157_settings' => __DIR__ . '/..' . '/jsmrtn/craftagram/src/migrations/m200716_152157_settings.php',
-        'jsmrtn\\craftagram\\migrations\\m200930_110509_accessTokenLength' => __DIR__ . '/..' . '/jsmrtn/craftagram/src/migrations/m200930_110509_accessTokenLength.php',
-        'jsmrtn\\craftagram\\migrations\\m201127_131603_multisite' => __DIR__ . '/..' . '/jsmrtn/craftagram/src/migrations/m201127_131603_multisite.php',
-        'jsmrtn\\craftagram\\migrations\\m210121_165738_secureapi' => __DIR__ . '/..' . '/jsmrtn/craftagram/src/migrations/m210121_165738_secureapi.php',
-        'jsmrtn\\craftagram\\migrations\\m241022_094125_embedUrl' => __DIR__ . '/..' . '/jsmrtn/craftagram/src/migrations/m241022_094125_embedUrl.php',
-        'jsmrtn\\craftagram\\models\\Settings' => __DIR__ . '/..' . '/jsmrtn/craftagram/src/models/Settings.php',
-        'jsmrtn\\craftagram\\records\\SettingsRecord' => __DIR__ . '/..' . '/jsmrtn/craftagram/src/records/SettingsRecord.php',
-        'jsmrtn\\craftagram\\services\\CraftagramService' => __DIR__ . '/..' . '/jsmrtn/craftagram/src/services/CraftagramService.php',
-        'jsmrtn\\craftagram\\variables\\CraftagramVariable' => __DIR__ . '/..' . '/jsmrtn/craftagram/src/variables/CraftagramVariable.php',
         'libphonenumber\\AlternateFormatsCountryCodeSet' => __DIR__ . '/..' . '/giggsey/libphonenumber-for-php/src/AlternateFormatsCountryCodeSet.php',
         'libphonenumber\\AsYouTypeFormatter' => __DIR__ . '/..' . '/giggsey/libphonenumber-for-php/src/AsYouTypeFormatter.php',
         'libphonenumber\\CountryCodeSource' => __DIR__ . '/..' . '/giggsey/libphonenumber-for-php/src/CountryCodeSource.php',
