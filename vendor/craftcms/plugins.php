@@ -57,4 +57,21 @@ return array (
     'documentationUrl' => 'https://github.com/verbb/formie',
     'changelogUrl' => 'https://raw.githubusercontent.com/verbb/formie/craft-5/CHANGELOG.md',
   ),
+  'craftcms/feed-me' => 
+  array (
+    'class' => 'craft\\feedme\\Plugin',
+    'basePath' => $vendorDir . '/craftcms/feed-me/src',
+    'handle' => 'feed-me',
+    'aliases' => 
+    array (
+      '@craft/feedme' => $vendorDir . '/craftcms/feed-me/src',
+    ),
+    'name' => 'Feed Me',
+    'version' => '6.8.0',
+    'description' => 'Import content from XML, RSS, CSV or JSON feeds into entries, categories, Craft Commerce products, and more.',
+    'developer' => 'Pixel & Tonic',
+    'developerUrl' => 'https://pixelandtonic.com/',
+    'developerEmail' => 'support@craftcms.com',
+    'documentationUrl' => 'https://docs.craftcms.com/feed-me/v4/',
+  ),
 );

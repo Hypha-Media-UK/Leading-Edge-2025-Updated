@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: mx_subServices2
+instructions: null
+name: Services
+searchable: false
+settings:
+  createButtonLabel: 'New Service'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 03bf5298-bb72-48f2-8fca-8d37faf4a83f # Sub Services
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: true
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

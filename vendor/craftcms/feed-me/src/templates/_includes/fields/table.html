@@ -1,0 +1,80 @@
+{# ------------------------ #}
+{# Available Variables #}
+{# ------------------------ #}
+{# Attributes: #}
+{# type, name, handle, instructions, attribute, default, feed, feedData #}
+{# ------------------------ #}
+{# Fields: #}
+{# name, handle, instructions, feed, feedData, field, fieldClass #}
+{# ------------------------ #}
+
+{% import 'feed-me/_macros' as feedMeMacro %}
+{% import '_includes/forms' as forms %}
+
+{# Special case when inside another complex field (Matrix) #}
+{% if parentPath is defined %}
+    {% set prefixPath = parentPath %}
+{% else %}
+    {% set prefixPath = [handle] %}
+{% endif %}
+
+{% set classes = ['complex-field'] %}
+
+<tr class="complex-field complex-field-header">
+    <td class="col-field" colspan="3">
+        <div class="field">
+            <div class="heading">
+                <label class="">{{ name }}</label>
+            </div>
+
+            <div class="additional-mapping-fields">
+                {% namespace 'fieldMapping[' ~ prefixPath|join('][') ~ ']' %}
+                    <input type="text" name="field" value="{{ className(field) }}">
+                {% endnamespace %}
+            </div>
+        </div>
+    </td>
+</tr>
+
+{% set colTypeMappings = {
+    'checkbox': 'checkbox',
+    'color': 'text',
+    'date': 'date',
+    'select': 'select',
+    'email': 'text',
+    'lightswitch': 'lightswitch',
+    'multiline': 'text',
+    'number': 'text',
+    'singleline': 'text',
+    'time': 'time',
+    'url': 'text',
+} %}
+
+{% for index, col in field.settings.columns %}
+    {% set nameLabel = col.heading %}
+    {% set instructionsHandle = handle ~ '[' ~ col.handle ~ ']' %}
+
+    {% set path = prefixPath|merge ([ 'fields', index ]) %}
+
+    {% if colTypeMappings[col.type] is defined %}
+        {% set default = {
+            type: colTypeMappings[col.type],
+        } %}
+        {% if colTypeMappings[col.type] == 'select' %}
+            {% set default = default|merge({options: col.options}) %}
+        {% endif %}
+    {% endif %}
+
+    {% embed 'feed-me/_includes/fields/_base' %}
+        {% block additionalFieldSettings %}
+            {% namespace 'fieldMapping[' ~ path|join('][') ~ ']' %}
+                <input type="text" name="handle" value="{{ col.handle }}">
+                <input type="text" name="type" value="{{ col.type }}">
+            {% endnamespace %}
+        {% endblock %}
+
+        {% block fieldSettings %}
+
+        {% endblock %}
+    {% endembed %}
+{% endfor %}

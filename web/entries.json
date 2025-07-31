@@ -1,0 +1,2493 @@
+[
+    {
+        "sectionId": 3,
+        "postDate": "2016-12-15T11:05:00+00:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 1,
+        "id": 6,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "66d3f507-bde1-4fa2-9fd6-2c972d44678d",
+        "siteSettingsId": 6,
+        "fieldLayoutId": null,
+        "structureId": 3,
+        "contentId": 6,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Hyde Salon",
+        "slug": "hyde-salon",
+        "uri": "hyde-salon",
+        "dateCreated": "2016-12-15T11:05:24+00:00",
+        "dateUpdated": "2025-03-01T11:04:39+00:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 4,
+        "lft": 2,
+        "rgt": 275,
+        "level": 1,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": null,
+        "canonicalId": 6,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "salons/hyde-salon",
+        "status": "live",
+        "url": "https://leadingedgehairandbeauty.co.uk/hyde-salon",
+        "authorId": 1,
+        "typeId": 3,
+        "pageIntroduction": "<p>Light, airy, relaxing and with a great atmosphere, our Hyde Salon was the first hair salon for The Leading Edge and created the formula we now follow for our successful business model. We have a large comfortable lounge where you can relax, enjoy a coffee or catch up with your e-mails on the free Wi-Fi <em><u><a href=\"http://www.get-digital-faster.info/project/leading-edge-hair-beauty/\" target=\"_blank\" rel=\"noreferrer noopener\">Infinity Fibre Broadband</a></u></em> provided. Convenient onsite parking where you can even have your car washed and valeted during your visit at a discounted rate. </p>\n<p>Nail technicians are on hand to offer you manicures, pedicures and acrylic nails without the need to travel elsewhere. A full range of beauty treatments are available with our beautician and aesthetician in their treatment rooms. We also provide a little retail therapy, offering handbags, jewellery and hair accessories.</p>\n<p>The men have not been forgotten as a number of our stylists can provide you with the latest cuts and styles. </p>\n<p>No need to worry about waiting times as you can <a href=\"https://s-iq.co/BookingPortal/dist/?salonid=80f580b6-8b67-4255-84ba-009ea9a49600&amp;tab=book&amp;showSalons=1\" target=\"_blank\" rel=\"noreferrer noopener\">book online</a>. </p>\n<p>All this is supported by a dynamic, <a href=\"http://www.leadingedgehairandbeauty.co.uk/hyde-salon/meet-the-team\">creative and professional Leading Edge team</a>; all head hunted for their skills and knowledge to deliver The Leading Edge experience and philosophy. </p>",
+        "homeWomensHaircareIntroSection": {
+            "2472": {
+                "type": 36,
+                "fields": {
+                    "sectionTitle": "Hair Styling & Haircare for Women",
+                    "serviceSummary": "<p>The Leading Edge brings you the latest hair trends, perming, colouring advice, hairstyles, products, inspiration and tips from the catwalk, celebrities and the high street to ensure you leave looking and feeling fantastic.</p>",
+                    "serviceImages": [
+                        333,
+                        334,
+                        2794,
+                        556,
+                        302
+                    ]
+                }
+            }
+        },
+        "homeBeautyAndNailsIntroSection": {
+            "2473": {
+                "type": 37,
+                "fields": {
+                    "sectionTitle": "Nail & Beauty Services",
+                    "serviceSummary": "<p>Our belief is to create unique, tailor-made beauty therapies provided by our 3 fully trained technicians. The beauty services we provide are more than just another treatment, it is a journey a pampering session. Feel indulged, relax away and let our highly professional staff take care of your every need and then leave with a smile on your face.</p>",
+                    "serviceImages": [
+                        305,
+                        5633,
+                        5634,
+                        5653,
+                        5675
+                    ]
+                }
+            }
+        },
+        "homeMensHaircareIntroSection": {
+            "2474": {
+                "type": 38,
+                "fields": {
+                    "sectionTitle": "Hair Styling, Barbers & Grooming for Men",
+                    "serviceSummary": "<p>In Hyde our men’s services are provided by our fully qualified stylists who can create bespoke mens cuts by using both clippers and scissor over comb for that special look. </p>",
+                    "serviceImages": [
+                        291,
+                        5678,
+                        303,
+                        5679,
+                        5680
+                    ]
+                }
+            }
+        },
+        "mapInformation": {
+            "2475": {
+                "type": 35,
+                "fields": {
+                    "nameOfMarker": "Hyde Salon",
+                    "longitude": "53.44424405195151",
+                    "latitude": "-2.073549487566085",
+                    "markerInfoTitle": "This is Hyde Salon",
+                    "markerInfoText": "This will be where the address goes"
+                }
+            }
+        },
+        "openingHours": {
+            "2483": {
+                "type": 8,
+                "fields": {
+                    "day": "Monday",
+                    "open": "Closed",
+                    "closed": "Closed"
+                }
+            },
+            "2484": {
+                "type": 8,
+                "fields": {
+                    "day": "Tuesday",
+                    "open": "09:00",
+                    "closed": "18:00"
+                }
+            },
+            "2485": {
+                "type": 8,
+                "fields": {
+                    "day": "Wednesday",
+                    "open": "09:00",
+                    "closed": "18:00"
+                }
+            },
+            "2486": {
+                "type": 8,
+                "fields": {
+                    "day": "Thursday",
+                    "open": "09:00",
+                    "closed": "20:00"
+                }
+            },
+            "2487": {
+                "type": 8,
+                "fields": {
+                    "day": "Friday",
+                    "open": "09:00",
+                    "closed": "19:00"
+                }
+            },
+            "2488": {
+                "type": 8,
+                "fields": {
+                    "day": "Saturday",
+                    "open": "09:00",
+                    "closed": "17:00"
+                }
+            },
+            "2489": {
+                "type": 8,
+                "fields": {
+                    "day": "Sunday",
+                    "open": "Closed",
+                    "closed": null
+                }
+            }
+        },
+        "salonContactDetails": {
+            "2476": {
+                "type": 2,
+                "fields": {
+                    "addressLineOne": "61 Dowson Road",
+                    "addressLineTwo": null,
+                    "locality": null,
+                    "townCity": "Hyde",
+                    "county": "Cheshire",
+                    "postcode": "SK14 1QS",
+                    "telephone": "0161 368 9999",
+                    "emailAddress": "hyde@leadingedge.co.uk"
+                }
+            }
+        },
+        "legals": "The Leading Edge Hair & Beauty Ltd. is a company registered in England and Wales number 7172013.",
+        "socialMediaLinks": {
+            "2490": {
+                "type": 6,
+                "fields": {
+                    "socialPlatform": "facebook",
+                    "socialLink": "https://www.facebook.com/leadingedgehairandbeauty/",
+                    "socialTitleText": "Facebook"
+                }
+            },
+            "2491": {
+                "type": 6,
+                "fields": {
+                    "socialPlatform": "twitter",
+                    "socialLink": "https://twitter.com/LeadingEdgeHair",
+                    "socialTitleText": "Twitter"
+                }
+            },
+            "2492": {
+                "type": 6,
+                "fields": {
+                    "socialPlatform": "instagram",
+                    "socialLink": "https://www.instagram.com/leadingedgehairandbeauty/",
+                    "socialTitleText": "Instagram"
+                }
+            },
+            "2493": {
+                "type": 6,
+                "fields": {
+                    "socialPlatform": "pinterest",
+                    "socialLink": "https://www.pinterest.com/tlehab/",
+                    "socialTitleText": "Pinterest"
+                }
+            }
+        },
+        "colourClass": "001",
+        "seoInformation": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2025-03-01T11:02:33+00:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "",
+                "ogType": "",
+                "ogTitle": "",
+                "ogSiteNamePosition": "",
+                "ogDescription": "",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "",
+                "twitterCreator": "",
+                "twitterTitle": "",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoDescription": true,
+                    "seoImage": true
+                },
+                "overrides": []
+            },
+            "metaSiteVars": {
+                "siteName": "The Leading Edge",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": null,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "",
+                "sitemapPriority": "",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": [],
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "",
+                "twitterTitleField": "",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "",
+                "twitterDescriptionField": "",
+                "twitterImageIds": [],
+                "twitterImageSource": "",
+                "twitterImageField": "",
+                "twitterImageTransform": true,
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "",
+                "ogTitleField": "",
+                "ogSiteNamePositionSource": "",
+                "ogDescriptionSource": "",
+                "ogDescriptionField": "",
+                "ogImageIds": [],
+                "ogImageSource": "",
+                "ogImageField": "",
+                "ogImageTransform": true,
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    },
+    {
+        "sectionId": 3,
+        "postDate": "2016-12-20T12:27:00+00:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 1,
+        "id": 99,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "6f7d48fa-3d90-4678-bd00-b6bf813b29eb",
+        "siteSettingsId": 99,
+        "fieldLayoutId": null,
+        "structureId": 3,
+        "contentId": 69,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Salon Services",
+        "slug": "services",
+        "uri": "hyde-salon/services",
+        "dateCreated": "2016-12-20T12:27:01+00:00",
+        "dateUpdated": "2025-07-29T17:44:06+01:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 4,
+        "lft": 3,
+        "rgt": 4,
+        "level": 2,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": 6,
+        "canonicalId": 99,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "salons/services",
+        "status": "live",
+        "url": "https://leadingedgehairandbeauty.co.uk/hyde-salon/services",
+        "authorId": 1,
+        "typeId": 23,
+        "generalServicesIntroduction": "<p>Our <em>award winning</em> Hyde salon is operated by a dynamic, <a href=\"http://www.leadingedgehairandbeauty.co.uk/meet-the-management-team\">creative and professional team</a> all head hunted for their skills and knowledge to deliver The Leading Edge philosophy and experience. Don’t take our word for it have a look at over <em>1800 independent reviews</em> carried out by visitors into our salon where we continually score 4.91 out of 5.</p>\n<p>All our stylists are all supported with training through the “Wella Academy” where they learn new skills and techniques to keep up to date with all the latest colours and trends. Rest assured our team will give you valuable tips and advice on how to keep your style and hair in tip top condition.</p>",
+        "seoInformation": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2025-01-24T15:32:18+00:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "Services and Price List",
+                "siteNamePosition": "",
+                "seoDescription": "",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "",
+                "ogType": "",
+                "ogTitle": "",
+                "ogSiteNamePosition": "",
+                "ogDescription": "",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "",
+                "twitterCreator": "",
+                "twitterTitle": "",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoDescription": true,
+                    "seoImage": true
+                },
+                "overrides": {
+                    "seoTitle": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "The Leading Edge",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": null,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "",
+                "sitemapPriority": "",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": [],
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "womensServicePanelImages",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "",
+                "twitterTitleField": "",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "",
+                "twitterDescriptionField": "",
+                "twitterImageIds": [],
+                "twitterImageSource": "",
+                "twitterImageField": "",
+                "twitterImageTransform": true,
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "",
+                "ogTitleField": "",
+                "ogSiteNamePositionSource": "",
+                "ogDescriptionSource": "",
+                "ogDescriptionField": "",
+                "ogImageIds": [],
+                "ogImageSource": "",
+                "ogImageField": "",
+                "ogImageTransform": true,
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        },
+        "womensHaircarePanelTitle": "Hair Styling & Haircare for Women",
+        "womensServicePanelImages": [
+            606,
+            610,
+            368,
+            609
+        ],
+        "womensHaircareIntroduction": "<p>We currently have a team of 8 fully qualified hairdressers who are all highly experienced and are available to cater for all your needs including colouring, cutting and perms. Supported by the Wella educational team they are well trained and fully up to date with all the latest cuts, colours and trends. </p>\n<p>The Wella name is synonymous with innovative hair care and they are consistently the first to market with new technologies developed to meet the ever-changing needs of the consumer. The Wella brand is one of the most recognisable in the industry and is a guarantee of performance and quality all in keeping with our brand and ethos. We also have an extensive range of styling and haircare products for sale from Wella, Mood, Nioxin, and American Crew.</p>",
+        "WomensServicesAndPrices": {
+            "2282": {
+                "type": 39,
+                "fields": {
+                    "serviceAreaTitle": "Hair Services",
+                    "serviceSmallIntro": "<p>Our professional, <a href=\"http://www.leadingedgehairandbeauty.co.uk/meet-the-management-team\">creative team</a> are head hunted for their skills and knowledge in everything hair care. Each stylist is supported with continual training through the “Wella Academy” learning new skills and up to date techniques, trends and colours. Our team are always happy to advise on how you can retain your style and colour after leaving the salon.</p>",
+                    "prices": [
+                        {
+                            "col1": "Shampoo Cut & Blow Dry",
+                            "col2": "£33.00"
+                        },
+                        {
+                            "col1": "Re-Style Cut & Finish",
+                            "col2": "£40.00"
+                        },
+                        {
+                            "col1": "Long Hair Cut & Blow Dry",
+                            "col2": "40.00"
+                        },
+                        {
+                            "col1": "Shampoo & Blow Dry",
+                            "col2": "£23.00"
+                        },
+                        {
+                            "col1": "Long Hair Blow Dry",
+                            "col2": "£28.00"
+                        },
+                        {
+                            "col1": "Fringe trim",
+                            "col2": "£5.00"
+                        }
+                    ]
+                }
+            },
+            "2283": {
+                "type": 39,
+                "fields": {
+                    "serviceAreaTitle": "Treatments",
+                    "serviceSmallIntro": "<p>We provide both Kerastraight <a href=\"https://www.fabriqhair.com/\">(now Fabriq)</a> and Olaplex treatments as well as a full range of quality products to enhance and maintain the natural beauty of your hair from Wella and Mood.</p>\n<p>Kerastraight <a href=\"https://www.fabriqhair.com/\">(now Fabriq)</a></p>\n<p>Today there is a real demand for shiny, healthy and easy to manage hair this gave the inspiration behind Fabriq's award-winning range of treatments all available in our salon. As well as leaving the hair feeling healthy, straighter, stronger and possessing a massively enhanced shine Fabriq will also repair and straighten the hair simultaneously. We now also offer the ground-breaking Fabriq Ultimate treatment which combines the ease, speed and simplicity of the earliest Brazilian Keratin treatments but with the strengthening and repairing benefits of Fabriq’s award winning protein treatments.</p>\n<p><a href=\"https://uk.olaplex.com/pages/our-story\" target=\"_blank\" rel=\"noreferrer noopener\">Olaplex</a> is known as “The One Ingredient Changes Everything”</p>\n<p>It was designed by scientists in Materials and Chemistry who both came the world of cosmetics and science. <a href=\"https://uk.olaplex.com/\">Olaplex</a> has a single active ingredient which is designed to reconnect the disulphide bonds broken by the process of permanent hair colouring and lightening.</p>\n<p>Here at The Leading Edge we can say hand on heart that once you have tried the <a href=\"https://uk.olaplex.com/pages/our-story\">Olaplex</a> treatment you will wonder why you have been without it before.</p>",
+                    "prices": [
+                        {
+                            "col1": "Milk_Shake Integrity",
+                            "col2": "£15.00"
+                        },
+                        {
+                            "col1": "Milk_Shake Papaya",
+                            "col2": "£9.50"
+                        },
+                        {
+                            "col1": "Milk_Shake Cocoa",
+                            "col2": "£9.50"
+                        },
+                        {
+                            "col1": "Wella Invigo Mask",
+                            "col2": "£10.00"
+                        },
+                        {
+                            "col1": "Olaplex from",
+                            "col2": "£12.00"
+                        },
+                        {
+                            "col1": "Fabriq inc Shamp / Cond",
+                            "col2": "£169.00"
+                        }
+                    ]
+                }
+            },
+            "2284": {
+                "type": 39,
+                "fields": {
+                    "serviceAreaTitle": "Highlights",
+                    "serviceSmallIntro": "<p>We provide an extensive range of colouring techniques, to bring you the latest looks and the fashion styles you see in the magazines. By adding tone to your hair we will create movement and change the style and appearance of your hair style. We can to do this by using different techniques, from highlights and lowlights, to ombre or slices, using balayage or foil techniques.</p>\n<p>If you have not had a colour service with ourselves in the last 6 months please note that a skin test is required at least 48 hours before your appointment. It only takes 5 minuets so just pop into the salon.</p>",
+                    "prices": [
+                        {
+                            "col1": "Foils Full Head",
+                            "col2": "£75.00"
+                        },
+                        {
+                            "col1": "Foils Half Head",
+                            "col2": "£60.00"
+                        },
+                        {
+                            "col1": "Spatula",
+                            "col2": "£45.00"
+                        },
+                        {
+                            "col1": "T-Section",
+                            "col2": "£48.00"
+                        },
+                        {
+                            "col1": "Wella Perfecton",
+                            "col2": "£10.00"
+                        }
+                    ]
+                }
+            },
+            "2285": {
+                "type": 39,
+                "fields": {
+                    "serviceAreaTitle": "Tints",
+                    "serviceSmallIntro": "<p>We provide the full range of colours from the much acclaimed <a href=\"https://www.wella.com/professional/en-UK/hair-color/permanent-hair-color\">Wella</a> pallet. They are all permanent hair colours that won’t wash out and are mainly used to cover up grey 100%. We also use these to attain a lighter shade or even if you just want to have a new colour that will last.</p>\n<p>If you have not had a colour service with ourselves in the last 6 months please note that a skin test is required at least 48 hours before your appointment. It only takes 5 minuets so just pop into the salon. </p>",
+                    "prices": [
+                        {
+                            "col1": "Full Head Permanent",
+                            "col2": "£52.00"
+                        },
+                        {
+                            "col1": "Full Head Long Hair Permanent (From)",
+                            "col2": "£62.00"
+                        },
+                        {
+                            "col1": "Root Re-Touch",
+                            "col2": "£37.00"
+                        },
+                        {
+                            "col1": "Partial Roots (10g)",
+                            "col2": "£20.00"
+                        },
+                        {
+                            "col1": "Balayage from",
+                            "col2": "£80.00"
+                        },
+                        {
+                            "col1": "Full Head Illumina Innosence",
+                            "col2": "£63.00"
+                        },
+                        {
+                            "col1": "Full Head Long Hair Illumina Innosence (from)",
+                            "col2": "£72.00"
+                        },
+                        {
+                            "col1": "Root Re-Touch Illumina Innosence",
+                            "col2": "£50.00"
+                        },
+                        {
+                            "col1": "Bleach Re-Touch inc toner (up to 6 weeks growth)",
+                            "col2": "£60.00"
+                        },
+                        {
+                            "col1": "Perfecton",
+                            "col2": "£10.00"
+                        },
+                        {
+                            "col1": "Toner from",
+                            "col2": "£18.00"
+                        },
+                        {
+                            "col1": "Double Toner from",
+                            "col2": "£25.00"
+                        }
+                    ]
+                }
+            },
+            "2286": {
+                "type": 39,
+                "fields": {
+                    "serviceAreaTitle": "Movement / Perming",
+                    "serviceSmallIntro": "<p>Our team are fully trained to deliver all types of perming from short hair, top perm, spiral perms and long hair perms for both ladies and gents.</p>",
+                    "prices": [
+                        {
+                            "col1": "Short Hair Perm From",
+                            "col2": "£55.00"
+                        },
+                        {
+                            "col1": "Long Hair Perm From",
+                            "col2": "£75.00"
+                        },
+                        {
+                            "col1": "Spiral Perm From",
+                            "col2": "£95.00"
+                        }
+                    ]
+                }
+            },
+            "2287": {
+                "type": 39,
+                "fields": {
+                    "serviceAreaTitle": "Child /u12/",
+                    "serviceSmallIntro": "<p>Here at The Leading Edge we cater for all age groups and understand how difficult it is to find somewhere that really does welcome and carter for children. We do. We know how important it is to find the right atmosphere and stylist for your precious one so come and give us a try. We provide certificates free of charge for first haircuts.</p>",
+                    "prices": [
+                        {
+                            "col1": "Shampoo Cut & Blow Dry",
+                            "col2": "£25.00"
+                        },
+                        {
+                            "col1": "Long Hair Shampoo Cut & Blow Dry",
+                            "col2": "£32.00"
+                        },
+                        {
+                            "col1": "Re-Style",
+                            "col2": "£28.00"
+                        },
+                        {
+                            "col1": "Dry Cut",
+                            "col2": "£15.00"
+                        },
+                        {
+                            "col1": "Under 4 Dry Cut",
+                            "col2": "£7.00"
+                        }
+                    ]
+                }
+            },
+            "2288": {
+                "type": 39,
+                "fields": {
+                    "serviceAreaTitle": "Occasions",
+                    "serviceSmallIntro": "<h3>Wedding Hairstyles</h3>\n<p>It’s your special day and we know fully that no bride or wedding is the same as another. We understand how important this is for both you and your family, that’s why it is imperative to have a trial so you can be completely confident with your look, style and of course your stylist.</p>\n<p>On the trial day you will have plenty of time to try a range of looks and styles, whether it be a natural or a glamorous look you go for to compliment your dress. It’s good to know that our stylists are all professionally trained and some have worked in film, television, fashion and bridal for a number of years so you can be sure you are in safe hands. Our wedding team are available at your disposal, both on site within the salon or at a venue or location of your choice.</p>\n<h3>Proms</h3>\n<p>Our experienced and professional team will ensure that we create the look you are looking for to compliment your dress making you feel beautiful and confident. We have been catering for teenagers on prom nights for over 7 years and we work with professional MAC make-up artists who are able to deliver your desired look.</p>\n<p>As with weddings you will be advised to have a trial day where you will have plenty of time to try a range of looks and styles, whether it be a natural or a glamorous look you go for to compliment your dress. Some of our stylists and make-up artists have worked in film, television, fashion and bridal for a number of years so you can be sure you are in safe hands.</p>",
+                    "prices": [
+                        {
+                            "col1": "Plaits from",
+                            "col2": "£12.00"
+                        },
+                        {
+                            "col1": "Trial Hair-Up from",
+                            "col2": "£18.00"
+                        },
+                        {
+                            "col1": "Hair-Up from",
+                            "col2": "£28.00"
+                        },
+                        {
+                            "col1": "Curls with straighteners",
+                            "col2": "£20.00"
+                        },
+                        {
+                            "col1": "Blow Bar",
+                            "col2": "£30.00"
+                        },
+                        {
+                            "col1": "Clip-in Extensions Styling / Fitting (from)",
+                            "col2": "£30.00"
+                        },
+                        {
+                            "col1": "Micro-Ring Extensions from",
+                            "col2": "£50.00"
+                        },
+                        {
+                            "col1": "Bridal Hair Services on consultation",
+                            "col2": ""
+                        }
+                    ]
+                }
+            },
+            "2289": {
+                "type": 39,
+                "fields": {
+                    "serviceAreaTitle": "Pamper Parties",
+                    "serviceSmallIntro": "<p>If you’re planning a hen party, organising a kids pamper party or simply want to treat your family and or friends we can provide you with the ultimate girlie pamper party. Our experienced and talented team will make sure that they deliver a memorable and relaxing experience making that special day even more special. Our stylists and beauticians can provide a range of services to suit your needs and budget. Call the salon for prices and availability.</p>",
+                    "prices": [
+                        {
+                            "col1": "Ladies Pamper Parties",
+                            "col2": "catered for call the salon for further details"
+                        },
+                        {
+                            "col1": "Children's Parties",
+                            "col2": "catered for call the salon for further details"
+                        }
+                    ]
+                }
+            }
+        },
+        "mensServicePanelTitle": "Hair Styling, Barbers & Grooming for Men",
+        "mensServicePanelImages": [
+            584
+        ],
+        "mensServicesIntroduction": "<p>We provide a full range of men’s grooming services including, colouring and cutting. You will receive a full consultation to help you find the perfect hairstyle for you.</p><p>Our stylists / barbers are experts in fades and undercuts which have been on trend since 2015. An undercut is where the hair is cut short or shaved at the sides and left long on the top creating a disconnected look or when the sides and back of the hair are either completely shaved or clippered to the same length all the way round.</p><p>A fade is where the hair gradually fades from longer to shorter. It can then be worn in a quiff, slicked straight back, to one side or left long and floppy. What ever your style we can create it for you with our fully trained and experienced team.</p>",
+        "MensServicesAndPrices": {
+            "2317": {
+                "type": 40,
+                "fields": {
+                    "serviceAreaTitle": "Adults",
+                    "serviceSmallIntro": null,
+                    "prices": [
+                        {
+                            "col1": "Gents Shampoo Cut & Finish",
+                            "col2": "£20.00"
+                        },
+                        {
+                            "col1": "Gents Dry Cut",
+                            "col2": "£16.00"
+                        },
+                        {
+                            "col1": "Clipper Cut",
+                            "col2": "£8.50"
+                        },
+                        {
+                            "col1": "Re-Style",
+                            "col2": "£24.00"
+                        },
+                        {
+                            "col1": "O.A.Ps\t(Tue & Wed)",
+                            "col2": "£8.50"
+                        },
+                        {
+                            "col1": "Top Perm (from)",
+                            "col2": "£50.00"
+                        },
+                        {
+                            "col1": "Highlights (from)",
+                            "col2": "£45.00"
+                        },
+                        {
+                            "col1": "Colour from",
+                            "col2": "£20.00"
+                        },
+                        {
+                            "col1": "Students save 20% Tue / Wed",
+                            "col2": ""
+                        }
+                    ]
+                }
+            },
+            "2319": {
+                "type": 40,
+                "fields": {
+                    "serviceAreaTitle": "Child /u12/",
+                    "serviceSmallIntro": "<p>Here at The Leading Edge we cater for all age groups and understand how difficult it is to find somewhere that really does welcome and carter for children, we do. We know how important it is to find the right atmosphere and stylist for your precious one so come and give us a try. We provide certificates free of charge for first haircuts.</p>",
+                    "prices": [
+                        {
+                            "col1": "Boys Cut 6-9yrs",
+                            "col2": "£15.00"
+                        },
+                        {
+                            "col1": "Re Style",
+                            "col2": "£15.50"
+                        },
+                        {
+                            "col1": "Boys Cut (under 5)",
+                            "col2": "£10.00"
+                        }
+                    ]
+                }
+            },
+            "2320": {
+                "type": 40,
+                "fields": {
+                    "serviceAreaTitle": "Sunbed",
+                    "serviceSmallIntro": "<p>New fast tanning lay down sunbed with Collagen face booster and body and leg booster tubes. The bed is fitted with Collagen face booster tubes which stimulate and increase collagen production to regenerate the skin and reduce fine lines, wrinkles and scars.</p>",
+                    "prices": [
+                        {
+                            "col1": "3 Minute Session",
+                            "col2": "£1.50"
+                        },
+                        {
+                            "col1": "30 Minutes Package (Save £3)",
+                            "col2": "£12.00"
+                        },
+                        {
+                            "col1": "Spray Tan",
+                            "col2": "£18.00"
+                        }
+                    ]
+                }
+            }
+        },
+        "beautyAndNailsPanelTitle": "Beauty & Nail Services",
+        "beautyAndNailsPanelImages": [
+            612,
+            611,
+            615,
+            613
+        ],
+        "beautyAndNailsIntroduction": "<p>It's not all about the hair! We know to really look good you need the complete package, that's why all our salons provide you with those finishing touches all under one roof. Our qualified staff insist on using only the finest brands so you can rest assured you're only getting the best. Why not try our <a href=\"https://leadingedge.mylocalsalon.com/onlinebooking/v7410/Steps/SiteSelection.aspx\" target=\"_blank\" rel=\"noreferrer noopener\">online booking system</a> to reserve your place with one of the following services, Massage, Facial, Manicure, Pedicure, Gel nails, Eyebrow wax, Leg wax, intimate waxing, Eyebrow tints, Extensions and Spray Tans. You can also call the salon to reserve a free Microblading consultation.</p>\n<p>Most services are provided for both male and female clients.</p>",
+        "BeautyServicesAndPrices": {
+            "2334": {
+                "type": 41,
+                "fields": {
+                    "serviceAreaTitle": "Body Waxing",
+                    "serviceSmallIntro": "<p>Our professional beauty team provide a full range of body waxing services including intimate waxing.</p>",
+                    "prices": [
+                        {
+                            "col1": "Under Arm",
+                            "col2": "£8.00"
+                        },
+                        {
+                            "col1": "Half Arms",
+                            "col2": "£10.00"
+                        },
+                        {
+                            "col1": "Full Arms",
+                            "col2": "£15.00"
+                        },
+                        {
+                            "col1": "Abdominal",
+                            "col2": "£5.00"
+                        },
+                        {
+                            "col1": "Bikini Line",
+                            "col2": "£14.00"
+                        },
+                        {
+                            "col1": "Brazilian",
+                            "col2": "£23.00"
+                        },
+                        {
+                            "col1": "Hollywood Wax",
+                            "col2": "£28.00"
+                        },
+                        {
+                            "col1": "Full Leg",
+                            "col2": "£15.00"
+                        },
+                        {
+                            "col1": "Half Leg",
+                            "col2": "£10.00"
+                        },
+                        {
+                            "col1": "Full Back",
+                            "col2": "£20.00"
+                        },
+                        {
+                            "col1": "Half Back",
+                            "col2": "£10.00"
+                        },
+                        {
+                            "col1": "Full Leg, Arm, Underarm, & Intimate waxing of your choice",
+                            "col2": "£65.00"
+                        }
+                    ]
+                }
+            },
+            "2335": {
+                "type": 41,
+                "fields": {
+                    "serviceAreaTitle": "Facial Wax & Threading",
+                    "serviceSmallIntro": "<p>Our professional beauty team provide a full range of Facial waxing and threading services for both male and female clients.</p>",
+                    "prices": [
+                        {
+                            "col1": "Eyebrow Threading",
+                            "col2": "£8.00"
+                        },
+                        {
+                            "col1": "Eyebrow Waxing",
+                            "col2": "£3.00"
+                        },
+                        {
+                            "col1": "Chin Threading",
+                            "col2": "£4.00"
+                        },
+                        {
+                            "col1": "Chin Waxing",
+                            "col2": "£4.00"
+                        },
+                        {
+                            "col1": "Forehead Threading",
+                            "col2": "£6.00"
+                        },
+                        {
+                            "col1": "Forehead Waxing",
+                            "col2": "£4.00"
+                        },
+                        {
+                            "col1": "Full Face inc Eyebrows Threading",
+                            "col2": "£28.00"
+                        },
+                        {
+                            "col1": "Full Face inc Eyebrows Waxing",
+                            "col2": "£29.00"
+                        },
+                        {
+                            "col1": "Full Face excluding Eyebrows Threading",
+                            "col2": "£24.00"
+                        },
+                        {
+                            "col1": "Full Face excluding Eyebrows Waxing",
+                            "col2": "£25.00"
+                        },
+                        {
+                            "col1": "Lower Lip Threading",
+                            "col2": "£4.00"
+                        },
+                        {
+                            "col1": "Lower Lip Waxing",
+                            "col2": "£3.00"
+                        },
+                        {
+                            "col1": "Neck Threading",
+                            "col2": "£6.00"
+                        },
+                        {
+                            "col1": "Neck Waxing",
+                            "col2": "£4.00"
+                        },
+                        {
+                            "col1": "Side of Face Threading",
+                            "col2": "£9.00"
+                        },
+                        {
+                            "col1": "Side of Face Waxing",
+                            "col2": "£8.00"
+                        },
+                        {
+                            "col1": "Upper Lip Threading",
+                            "col2": "£4.00"
+                        },
+                        {
+                            "col1": "Upper Lip Waxing",
+                            "col2": "£3.00"
+                        }
+                    ]
+                }
+            },
+            "2336": {
+                "type": 41,
+                "fields": {
+                    "serviceAreaTitle": "Eyes",
+                    "serviceSmallIntro": "<p>Our beauty experts are fully trained in the provision of single semi-permanent lashes, party cluster lashes as well as eye brow / lash tints.</p>",
+                    "prices": [
+                        {
+                            "col1": "Eyebrow Tint. (patch test for new clients 48 hours before service)",
+                            "col2": "£6.00"
+                        },
+                        {
+                            "col1": "Eye Lash Tint. (patch test for new clients 48 hours before service)",
+                            "col2": "£6.00"
+                        },
+                        {
+                            "col1": "Natural Look Eyelash Extensions (patch test for new clients 48 hours before service)",
+                            "col2": "£45.00"
+                        },
+                        {
+                            "col1": "Full Look Eyelash Extensions  (patch test for new clients 48 hours before service)",
+                            "col2": "£60.00"
+                        },
+                        {
+                            "col1": "Lash Lift (patch test for new clients 48 hours before service)",
+                            "col2": "£33.00"
+                        },
+                        {
+                            "col1": "Lash Removal",
+                            "col2": "£10.00"
+                        }
+                    ]
+                }
+            },
+            "2337": {
+                "type": 41,
+                "fields": {
+                    "serviceAreaTitle": "Nails",
+                    "serviceSmallIntro": "<p>We have 3 nail stations where our fully trained technicians carry out a full range of nail services using the best Gel products in the market place all complemented by stunning nail art decorations.</p>",
+                    "prices": [
+                        {
+                            "col1": "File & Polish Hands",
+                            "col2": "£10.00"
+                        },
+                        {
+                            "col1": "Manicure (file, cuticle work & polish)",
+                            "col2": "£15.00"
+                        },
+                        {
+                            "col1": "File & Polish Toes",
+                            "col2": "£13.00"
+                        },
+                        {
+                            "col1": "Pedicure (file, cuticle work & polish)",
+                            "col2": "£18.00"
+                        },
+                        {
+                            "col1": "Gel Polish Hands",
+                            "col2": "£20.00"
+                        },
+                        {
+                            "col1": "Manicure with Gel Polish (file, cuticle work & gel polish)",
+                            "col2": "£25.00"
+                        },
+                        {
+                            "col1": "Gel Polish Toes",
+                            "col2": "£20.00"
+                        },
+                        {
+                            "col1": "Pedicure with Gel Polish (file, cuticle work & gel polish)",
+                            "col2": "£25.00"
+                        },
+                        {
+                            "col1": "Gel Polish Removal and Re-Apply",
+                            "col2": "£25.00"
+                        },
+                        {
+                            "col1": "Gel Polish Removal",
+                            "col2": "£10.00"
+                        },
+                        {
+                            "col1": "Nail Art from",
+                            "col2": "£1.00"
+                        },
+                        {
+                            "col1": "Nail Art with glitters, powders, gems and Swarovski crystals from",
+                            "col2": "£0.50"
+                        }
+                    ]
+                }
+            },
+            "2338": {
+                "type": 41,
+                "fields": {
+                    "serviceAreaTitle": "Massage / Facials",
+                    "serviceSmallIntro": "<p>We have 2 treatment rooms where you can relax and unwind knowing that our friendly beauticians will make you feel welcome and comfortable before carrying out our 30 minute express facial or treat yourself to the full deep cleansing facial for 60 minutes.</p>",
+                    "prices": [
+                        {
+                            "col1": "Body Wrap 50 mins",
+                            "col2": "£45.00"
+                        },
+                        {
+                            "col1": "Ultimate Luxurious Facial 45 mins",
+                            "col2": "£35.00"
+                        },
+                        {
+                            "col1": "Suction Facial 30 mins",
+                            "col2": "£25.00"
+                        },
+                        {
+                            "col1": "Express Facial 20 mins",
+                            "col2": "£15.00"
+                        },
+                        {
+                            "col1": "Back Neck & Shoulders 30 mins",
+                            "col2": "£20.00"
+                        },
+                        {
+                            "col1": "Back Neck & Shoulders 60 mins",
+                            "col2": "£30.00"
+                        }
+                    ]
+                }
+            },
+            "2339": {
+                "type": 41,
+                "fields": {
+                    "serviceAreaTitle": "Microblading (Fully Accredited By Tameside Council)",
+                    "serviceSmallIntro": "<p>A form of tattooing, Microblading is unlike a regular tattoo, it's a form of tattoo artistry where pigment is implanted under your skin with a manual handheld tool instead of a machine to create and draw hair-like strokes that look like and mimic natural hairs in your brows.</p>",
+                    "prices": [
+                        {
+                            "col1": "Microblading One Session",
+                            "col2": "£150.00"
+                        },
+                        {
+                            "col1": "Microblading Second Session",
+                            "col2": "£80.00"
+                        }
+                    ]
+                }
+            },
+            "2340": {
+                "type": 41,
+                "fields": {
+                    "serviceAreaTitle": "Fast Tanning (Collagen Face Booster) Sunbeds Lie Down & Stand Up",
+                    "serviceSmallIntro": "<p>New fast tanning lay down sunbed with Collagen face booster and body and leg booster tubes. The bed is fitted with Collagen face booster tubes which stimulate and increase collagen production to regenerate the skin and reduce fine lines, wrinkles and scars.</p>",
+                    "prices": [
+                        {
+                            "col1": "Six Minutes",
+                            "col2": "£2.00"
+                        },
+                        {
+                            "col1": "Spray Tan",
+                            "col2": "£18.00"
+                        }
+                    ]
+                }
+            },
+            "2341": {
+                "type": 41,
+                "fields": {
+                    "serviceAreaTitle": "Wedding Beauty Services",
+                    "serviceSmallIntro": null,
+                    "prices": [
+                        {
+                            "col1": "Bridal Make-Up from",
+                            "col2": "£40.00"
+                        },
+                        {
+                            "col1": "Make-Up without lashes",
+                            "col2": "£30.00"
+                        },
+                        {
+                            "col1": "Make-Up with lashes",
+                            "col2": "£35.00"
+                        },
+                        {
+                            "col1": "Mobile Service Available prices on application",
+                            "col2": "Call"
+                        },
+                        {
+                            "col1": "Bespoke Packages available for all your beauty needs",
+                            "col2": "Call"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "sectionId": 3,
+        "postDate": "2016-12-19T15:53:00+00:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 1,
+        "id": 95,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "60a36e5a-a699-4149-a9c9-20f2687281f5",
+        "siteSettingsId": 95,
+        "fieldLayoutId": null,
+        "structureId": 3,
+        "contentId": 65,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Meet the Team",
+        "slug": "meet-the-team",
+        "uri": "hyde-salon/meet-the-team",
+        "dateCreated": "2016-12-19T15:53:48+00:00",
+        "dateUpdated": "2025-06-14T09:55:32+01:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 4,
+        "lft": 5,
+        "rgt": 6,
+        "level": 2,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": 6,
+        "canonicalId": 95,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "salons/meet-the-team",
+        "status": "live",
+        "url": "https://leadingedgehairandbeauty.co.uk/hyde-salon/meet-the-team",
+        "authorId": 1,
+        "typeId": 18,
+        "meetTheTeamIntroText": "<p>All our team members are fully trained and insured and regularly attend seminars and training sessions to keep abreast with the latest trends, techniques and new products being brought to market. You have the peace of mind of knowing that our Hyde salon is only 1 of 3 in the UK (July 2017) that carries the accreditation of the coveted Trading Standards awarding body.\n </p>",
+        "meetTheTeamTitle": "Meet the Team",
+        "teamMembers": {
+            "2454": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Lauren",
+                    "staffPhoto": [
+                        1335
+                    ],
+                    "jobTitle": "Stylist",
+                    "shortBio": "<p>Hi, my name is Lauren,</p>\n<p>I have been hairdressing now for 12 years with the past 10 years at The Leading Edge. I spent 3 years training and since then I have attended a number of courses covering colouring and cutting. Most recently I spent the day with Darren Ambrose looking at new techniques and cuts for me to apply to long and mid length hair.</p>\n<p>My real passion lies within my colouring work from either drastic fashion colours through to discreet natural sunkissed colours. I also love working with highlights and have developed my free hand skills to produce beautiful balayage results as subtle or bold as you require. </p>\n<p>If your looking for a change and want to update your look I Iove creating new styles and working with my clients to provide them with the change they are looking for.</p>\n<p>I love meeting new people which is just one of the many things I love about hairdressing and I would welcome the chance to meet you into the salon to provide you with the colour and look of your dreams.</p>"
+                }
+            },
+            "2455": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Gary",
+                    "staffPhoto": [
+                        5477
+                    ],
+                    "jobTitle": "Stylist / Barber",
+                    "shortBio": "<p>It’s our great pleasure to welcome Gary to our team in Hyde. He has been given the name of \"The Hair Wizzard\" by a number of his clients. Gary joins us with a wealth of experience in both Men’s and Ladies colouring and cutting techniques. The first thing you will witness is his attention to detail and shear enthusiasm for his trade which is infectious. He works wonders with curly blowdrys and enjoys using his colouring skills to deliver the results you require. Gary also keeps well up to date with all the latest trends / cuts for the guys too. So why not book in and give him a try.</p>"
+                }
+            },
+            "2456": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Abigail",
+                    "staffPhoto": [
+                        1336
+                    ],
+                    "jobTitle": "Stylist",
+                    "shortBio": "<p>Hi everyone, Abigail here.</p>\n<p>I have been in the hairdressing industry for over 9 years now. Starting at just 14, I took a 2 day release from school to go to college and learn the trade as a GCSE. I then went on to complete my apprenticeship with The Leading Edge and qualified at 18.</p>\n<p>I am constantly looking for new challenges and wanting to learn new techniques. I will continue training on different courses to develop my skills further. This way I can keep up with new techniques and keep you lovely ladies up to date with the new trends.</p>\n<p>Hairdressing is my passion, I will help you achieve your hair goals and give you the best advice possible on keeping your hair healthy. I look forward to meeting you in the salon soon.</p>"
+                }
+            },
+            "2458": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Natasha",
+                    "staffPhoto": [
+                        5494
+                    ],
+                    "jobTitle": "Gel Nail Technician",
+                    "shortBio": "<p>Hi I am Natasha,</p>\n<p>I am a fully qualified Gel Nail Technician and I am very passionate about producing the best work I can. I enjoy the challenge of customers bringing images in which they want me to replicate.</p>\n<p>A big part of my enjoyment in the job is building relationships and bonding with my clients during their visit whilst I create the desired look.</p>\n<p>I look forward to meeting you and adding you to my growing client base.</p>\n<p>Tasha x</p>"
+                }
+            },
+            "2461": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Jayne",
+                    "staffPhoto": [
+                        1359
+                    ],
+                    "jobTitle": "Stylist",
+                    "shortBio": "<p>Jayne has been working in the Hairdressing industry for 30 years gaining a wealth of knowledge and experience. Jayne has owned her own 2 floor salon in Hazel Grove and has also attended Lancaster University gaining a Degree in Education which then led onto the delivery of level 1,2,3 hairdressing skills to students with both Skills Solutions and then onto The Manchester College where she managed the Hair &amp; Beauty Department.</p>\n<p>Jayne has worked for many years in the Hazel Grove area with A Cut Above and Chris Baker where she helped to open their training school before going on to open her own salon “The Hair Company” of Hazel Grove. Jayne had over 6 stylists operating over 2 floors trading successfully for over 8 years before moving into the field of training.</p>\n<p>Having worked in the development of new stylists Jayne has always had to keep up to date with all the latest trends in both cutting and colouring and we are so pleased to be able to offer her unique skills and experience to our clients.</p>"
+                }
+            },
+            "4174": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Emily",
+                    "staffPhoto": [
+                        4183
+                    ],
+                    "jobTitle": "Stylist",
+                    "shortBio": "<p>Hi there! My name is Emily. I am 21 years old and I am fairly new to the hair industry, but never low on passion.</p>\n<p>I am a very bubbly character, and a perfectionist when it comes to my work; whether it be a shaggy-layered 80s styled cut, a fresh new colour, or simply a beautiful bouncy blow - I'm your girl.</p>\n<p>I currently work with women and children of all hair types including Afro / Caribbean.</p>\n<p>I'm offering colour, cut and styling services and soon I will be available for bleach work and highlights too! </p>\n<p>I am also wanting to work with Gents later on in my career. My aim is to be a colour specialist and promote alternative styles. I always aim for the highest quality, and use products which i believe will give you the most benefit, leaving your hair silky soft and manageable. I assure you'll leave my chair feeling fresh and new!</p>\n<p>I look forward to welcoming you in the salon soon.</p>"
+                }
+            },
+            "5591": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Hayley",
+                    "staffPhoto": [
+                        5564
+                    ],
+                    "jobTitle": "Stylist",
+                    "shortBio": "<p>Hi, I am Hayley and I am looking forward to meeting you in The Leading Edge after previuosly working at Paul Anthony's and Harvey Taylor both in Denton. </p>\n<p>I have been in the hairdressing industry for over 40 years completing my level 3 at the outset. In 2011 I was awarded the prestigious Master Craftsman (for services to the hairdressing industry) by The Hairdressing Journal, to which I am very proud of.</p>\n<p>I love all aspects of hairdressing including Perming, colouring and cutting and have a real paasion for Hair-Up. I cant wait to be of service to you the next time your looking for an appointment in the salon</p>"
+                }
+            },
+            "5859": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Chloe",
+                    "staffPhoto": [
+                        5864
+                    ],
+                    "jobTitle": "Apprentice Hairdresser",
+                    "shortBio": "<p>Hi I'm Chloe. I'm 18 years old and I have been completing my apprenticeship for the last 18 months. At the moment i'm available for blowdrys and some root tints and toners. I am completing my course at Tameside college and The Leading Edge.</p><p>I am a friendly, motivated and passionate individual and welcome anyone into the salon and put 100% into all of my work. If anyone is willing to be a model for me in the future don't hesitate to give us a ring, I would really appreciate it and i'll look forward to meeting you in the salon soon.</p>"
+                }
+            },
+            "4282": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Nina",
+                    "staffPhoto": [
+                        5794
+                    ],
+                    "jobTitle": "Nail Technician",
+                    "shortBio": "<p>Hi I'm Nina<br />I have worked in the beauty industry for 2 years and there's nothing I love more than making my clients feel amazing after a service!<br />Building relationships with my clients is really what makes me love my job. So i look forward to meeting you and making you feel beautiful! x</p><p>I look forward to meeting you in the salon soon.</p>"
+                }
+            },
+            "5825": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Marissa (Trainee)",
+                    "staffPhoto": [
+                        5819
+                    ],
+                    "jobTitle": "Trainee Nail Technician",
+                    "shortBio": "<p>Hi , I’m Marissa </p><p>I’m so excited to be joining the team as a newly qualified biab nail technician. I have a real passion for helping people feel confident and beautiful after their appointment. </p><p>I beleive its more than just providing a service, I genuinely look forward to building lasting relationships with my clients, getting to know you, having great chats, and creating a space where you feel relaxed, valued, and completely yourself. I can’t wait to meet you and share this journey together! </p>"
+                }
+            },
+            "5427": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Amanda",
+                    "staffPhoto": [
+                        5415
+                    ],
+                    "jobTitle": "Registered nurse with 8 years full time aesthetics experience.",
+                    "shortBio": "<p>Hello, Im excited to introduce myself as a new member of the Leading Edge family &#x1faf6;</p>\n<p>I am Amanda, a registered nurse with 8 years full time aesthetics experience. </p>\n<p>I am an advanced practitioner in Dermal filler, Anti wrinkle treatments, medical grade skin treatments, skin boosters and injectable vitamins &#x1f469;‍⚕️</p>\n<p>I am an accredited trainer for both foundation and advanced aesthetics and have earned over 100 ⭐️⭐️⭐️⭐️⭐️ reviews . </p>\n<p>My goal is to enhance, lift and rejuvenate by softening unwanted lines and wrinkles. </p>\n<p>I use advanced techniques to create natural results and boost your confidence. </p>\n<p>Every treatment comes with a full consultation where we will discuss the results that YOU want to achieve. <br /></p>\n\n<p>I can’t wait to see old and new clients very soon ❤️ </p>\n<p><a href=\"https://www.facebook.com/premieraesthetic.clinic\">https://www.facebook.com/premi...</a></p>"
+                }
+            },
+            "5453": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Annie",
+                    "staffPhoto": [
+                        5443
+                    ],
+                    "jobTitle": "Beautician",
+                    "shortBio": "<p>Hi everyone, I am Annie- (Annie’s Beauty) I am really excited to be joining the team here at The Leading Edge. </p>\n<p>I have been in the Beauty &amp; Holistic Industry for over 20years, I started my career working in hotels such as the Malmasion, The Village Hotels and then went onto completing a Certificate in Education and did a spell of working in Colleges teaching Beauty. </p>\n<p>I set up Annie’s Beauty in 2016 and offer all aspects of Beauty &amp; Holistic Treatments. I love what I do and everyone that comes through my door leaves as a friend. </p>\n<p>I’m blessed to have amazing loyal clients and new ones are more than welcome too.</p>\n<p>Looking forward to pampering you soon.</p>\n<p><a href=\"https://www.facebook.com/anniesbeauty.atlotsmorestyle\">https://www.facebook.com/anniesbeauty.atlotsmorestyle</a></p>\n<p><a href=\"https://www.instagram.com/annies.beauty_/profilecard/?igsh=MjA0eWhwaTZzcDJp\">https://www.instagram.com/annies.beauty_/profilecard/?igsh=MjA0eWhwaTZzcDJp</a></p>"
+                }
+            }
+        },
+        "seoInformation": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2025-01-09T10:38:17+00:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "Meet our salon experts",
+                "siteNamePosition": "",
+                "seoDescription": "",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "",
+                "ogType": "",
+                "ogTitle": "",
+                "ogSiteNamePosition": "",
+                "ogDescription": "",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "",
+                "twitterCreator": "",
+                "twitterTitle": "",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoDescription": true,
+                    "seoImage": true
+                },
+                "overrides": {
+                    "seoTitle": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "The Leading Edge",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": null,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "",
+                "sitemapPriority": "",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": [],
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "",
+                "twitterTitleField": "",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "",
+                "twitterDescriptionField": "",
+                "twitterImageIds": [],
+                "twitterImageSource": "",
+                "twitterImageField": "",
+                "twitterImageTransform": true,
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "",
+                "ogTitleField": "",
+                "ogSiteNamePositionSource": "",
+                "ogDescriptionSource": "",
+                "ogDescriptionField": "",
+                "ogImageIds": [],
+                "ogImageSource": "",
+                "ogImageField": "",
+                "ogImageTransform": true,
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    },
+    {
+        "sectionId": 3,
+        "postDate": "2016-12-20T09:12:00+00:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 1,
+        "id": 97,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "2bb718da-bc1c-48c0-b332-852f7b2b7db9",
+        "siteSettingsId": 97,
+        "fieldLayoutId": null,
+        "structureId": 3,
+        "contentId": 67,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Salon Gallery",
+        "slug": "salon-gallery",
+        "uri": "hyde-salon/salon-gallery",
+        "dateCreated": "2016-12-20T09:12:00+00:00",
+        "dateUpdated": "2020-11-26T15:00:43+00:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 4,
+        "lft": 7,
+        "rgt": 8,
+        "level": 2,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": 6,
+        "canonicalId": 97,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "salons/salon-gallery",
+        "status": "live",
+        "url": "https://leadingedgehairandbeauty.co.uk/hyde-salon/salon-gallery",
+        "authorId": 1,
+        "typeId": 22,
+        "galleryPanelTitle": "Our Hyde Gallery (see Facebook for more pictures)",
+        "groupGalleryImages": [
+            1384,
+            1388,
+            1383,
+            1382,
+            1385,
+            1381,
+            1380,
+            1387,
+            645,
+            56,
+            638,
+            644,
+            376,
+            61,
+            1386,
+            373,
+            379,
+            635,
+            374,
+            380,
+            632,
+            378,
+            636,
+            62,
+            640,
+            57,
+            60,
+            643,
+            63
+        ],
+        "seoInformation": {
+            "bundleVersion": "1.0.22",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2020-11-26T15:00:34+00:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "Gallery - Take a look at our featured work",
+                "siteNamePosition": "",
+                "seoDescription": "",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "",
+                "ogType": "",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "{{ seomatic.meta.seoImageDescription }}",
+                "twitterCard": "",
+                "twitterCreator": "",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "{{ seomatic.meta.seoImageDescription }}",
+                "inherited": [],
+                "overrides": []
+            },
+            "metaSiteVars": {
+                "siteName": "The Leading Edge",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": true,
+                "sitemapAssets": true,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": true,
+                "sitemapAltLinks": true,
+                "sitemapChangeFreq": "weekly",
+                "sitemapPriority": 0.5,
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": [],
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "sameAsGlobal",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "groupGalleryImages",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSite",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "",
+                "twitterSiteNamePositionSource": "sameAsGlobal",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "",
+                "twitterImageIds": [],
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "",
+                "twitterImageTransform": true,
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "sameAsSeo",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "",
+                "ogSiteNamePositionSource": "sameAsGlobal",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "",
+                "ogImageIds": [],
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "",
+                "ogImageTransform": true,
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "sameAsSeo",
+                "ogImageDescriptionField": ""
+            }
+        }
+    },
+    {
+        "sectionId": 3,
+        "postDate": "2018-10-01T00:00:00+01:00",
+        "expiryDate": "2027-12-31T00:00:00+00:00",
+        "deletedWithEntryType": false,
+        "_authorId": 1,
+        "id": 98,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "6505fb44-e35a-4d1d-94c5-d342b1045b20",
+        "siteSettingsId": 98,
+        "fieldLayoutId": null,
+        "structureId": 3,
+        "contentId": 68,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Salon Offers",
+        "slug": "salon-offers",
+        "uri": "hyde-salon/salon-offers",
+        "dateCreated": "2016-12-20T09:12:17+00:00",
+        "dateUpdated": "2022-04-02T16:36:55+01:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 4,
+        "lft": 9,
+        "rgt": 10,
+        "level": 2,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": 6,
+        "canonicalId": 98,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "salons/salon-offers",
+        "status": "live",
+        "url": "https://leadingedgehairandbeauty.co.uk/hyde-salon/salon-offers",
+        "authorId": 1,
+        "typeId": 20,
+        "salonOffers": {
+            "3553": {
+                "type": 46,
+                "fields": {
+                    "offerTitle": "Black Friday Offer",
+                    "offerSupportImage": [
+                        4360
+                    ],
+                    "offerDetails": "Save £10 when buying a £50 voucher\nVisit our online shop to make your purchase.\nhttps://shop.leadingedgehairandbeauty.co.uk/collections/gift-vouchers",
+                    "offerCode": null,
+                    "offerExpiryDate": "2020-11-28 00:00:00"
+                }
+            },
+            "3556": {
+                "type": 46,
+                "fields": {
+                    "offerTitle": null,
+                    "offerSupportImage": [
+                        1473
+                    ],
+                    "offerDetails": null,
+                    "offerCode": null,
+                    "offerExpiryDate": "2020-11-26 00:00:00"
+                }
+            },
+            "3557": {
+                "type": 46,
+                "fields": {
+                    "offerTitle": null,
+                    "offerSupportImage": [
+                        1392
+                    ],
+                    "offerDetails": null,
+                    "offerCode": null,
+                    "offerExpiryDate": "2020-11-26 00:00:00"
+                }
+            },
+            "3558": {
+                "type": 46,
+                "fields": {
+                    "offerTitle": null,
+                    "offerSupportImage": [
+                        1249
+                    ],
+                    "offerDetails": null,
+                    "offerCode": null,
+                    "offerExpiryDate": "2020-11-26 00:00:00"
+                }
+            },
+            "3559": {
+                "type": 46,
+                "fields": {
+                    "offerTitle": null,
+                    "offerSupportImage": [
+                        1471
+                    ],
+                    "offerDetails": null,
+                    "offerCode": null,
+                    "offerExpiryDate": "2020-11-26 00:00:00"
+                }
+            },
+            "3560": {
+                "type": 46,
+                "fields": {
+                    "offerTitle": null,
+                    "offerSupportImage": [
+                        553
+                    ],
+                    "offerDetails": null,
+                    "offerCode": null,
+                    "offerExpiryDate": "2020-11-26 00:00:00"
+                }
+            },
+            "3561": {
+                "type": 46,
+                "fields": {
+                    "offerTitle": null,
+                    "offerSupportImage": [
+                        1006
+                    ],
+                    "offerDetails": null,
+                    "offerCode": null,
+                    "offerExpiryDate": "2020-11-26 00:00:00"
+                }
+            },
+            "3562": {
+                "type": 46,
+                "fields": {
+                    "offerTitle": null,
+                    "offerSupportImage": [
+                        1109
+                    ],
+                    "offerDetails": null,
+                    "offerCode": null,
+                    "offerExpiryDate": "2020-11-26 00:00:00"
+                }
+            },
+            "3563": {
+                "type": 46,
+                "fields": {
+                    "offerTitle": null,
+                    "offerSupportImage": [
+                        1246
+                    ],
+                    "offerDetails": null,
+                    "offerCode": null,
+                    "offerExpiryDate": "2020-11-26 00:00:00"
+                }
+            }
+        },
+        "seoInformation": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2025-07-31T10:50:50+01:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "",
+                "ogType": "",
+                "ogTitle": "",
+                "ogSiteNamePosition": "",
+                "ogDescription": "",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "",
+                "twitterCreator": "",
+                "twitterTitle": "",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": [],
+                "overrides": []
+            },
+            "metaSiteVars": {
+                "siteName": "The Leading Edge",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": null,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "",
+                "sitemapPriority": "",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": [],
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": [],
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": true,
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "",
+                "twitterTitleField": "",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "",
+                "twitterDescriptionField": "",
+                "twitterImageIds": [],
+                "twitterImageSource": "",
+                "twitterImageField": "",
+                "twitterImageTransform": false,
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "",
+                "ogTitleField": "",
+                "ogSiteNamePositionSource": "",
+                "ogDescriptionSource": "",
+                "ogDescriptionField": "",
+                "ogImageIds": [],
+                "ogImageSource": "",
+                "ogImageField": "",
+                "ogImageTransform": false,
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    }
+]

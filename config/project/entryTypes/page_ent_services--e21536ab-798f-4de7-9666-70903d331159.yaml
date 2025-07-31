@@ -42,23 +42,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2025-07-14T09:11:54+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: bd8fab1a-d105-471a-a842-1dc57f562d2e # All Services
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 3d80548a-15d0-4423-876d-740b137cc96f
-            userCondition: null
-            warning: null
-            width: 100
-          -
             dateAdded: '2025-07-14T08:28:32+00:00'
             editCondition: null
             elementCondition: null
@@ -75,8 +58,281 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: Content
+        name: 'Services Page'
         uid: 3b94ee76-bd25-4801-86b5-f7a403c12626
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-31T10:22:35+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: serviceType1
+            includeInCards: false
+            instructions: null
+            label: 'Service Type'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e13a925a-96bc-40a3-ae28-be515ed7a512
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-31T10:24:59+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: serviceTabText1
+            includeInCards: false
+            instructions: null
+            label: 'Service Tab Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 78199dfc-5789-445c-b667-a2d7a11243ed
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2025-07-31T10:22:35+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: serviceIcon1
+            includeInCards: false
+            instructions: null
+            label: 'Service Icon'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 647940f5-e946-4c3f-8994-93ca93dca5c7
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2025-07-31T10:30:14+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 91bf7b22-c506-4a80-8c0d-506bf77a3dfc # Services
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d08886cf-da20-4f7f-a274-f1cd755416e1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-14T09:11:54+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: bd8fab1a-d105-471a-a842-1dc57f562d2e
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3d80548a-15d0-4423-876d-740b137cc96f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Haircare
+        uid: 24882df0-5b86-4c02-a100-25d3e9e5f3c0
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-31T10:22:35+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: serviceType2
+            includeInCards: false
+            instructions: null
+            label: 'Service Type'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 38a90aef-bdeb-4a42-8f1f-bc2f32a7573d
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-31T10:24:59+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: serviceTabText2
+            includeInCards: false
+            instructions: null
+            label: 'Service Tab Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6e9a3664-92a9-41fd-80b8-ac7fb378443c
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2025-07-31T10:22:35+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: serviceIcon2
+            includeInCards: false
+            instructions: null
+            label: 'Service Icon'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 561468b2-60fe-469a-9553-5bb26c3633c5
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2025-07-31T10:40:00+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 3b3650a6-7e79-4860-9537-41787a90b09b # Services
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d5200268-8169-46ce-a491-1340a80f3c85
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-31T10:01:54+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 357f9164-8489-4611-9576-cdc99300d44e
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5505bb81-6cb7-4748-a4de-837094c3c039
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Beauty and Nails'
+        uid: 8ee1a68a-88a2-4da6-82cc-e985059613ff
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-31T10:22:35+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: serviceType3
+            includeInCards: false
+            instructions: null
+            label: 'Service Type'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 61b867bb-b3b8-4527-9283-0ec51bcedaec
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-31T10:24:59+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: serviceTabText3
+            includeInCards: false
+            instructions: null
+            label: 'Service Tab Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6aeea5fc-6119-48e1-8b8f-8114e512a7c7
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2025-07-31T10:22:35+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: serviceIcon3
+            includeInCards: false
+            instructions: null
+            label: 'Service Icon'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 485392f5-6007-44f0-b262-b25e7bafb37a
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2025-07-31T10:40:00+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: e7d1aee4-6d2a-4c14-b96d-33b111833a0b # Services
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1fb33f84-319d-4727-aaa1-08b481183faf
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-31T10:01:54+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 1695451e-7370-4b89-928e-32da8e7984e0
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e39d9cac-e20c-41d3-9255-48937797ce85
+            userCondition: null
+            warning: null
+            width: 100
+        name: Aesthetics
+        uid: d58004be-932c-4d93-b72e-88ffbf2eb920
         userCondition: null
 handle: page_ent_services
 hasTitleField: false

@@ -1,0 +1,91 @@
+color: amber
+description: null
+fieldLayouts:
+  d58846aa-8689-4f70-aa37-961ef5a4b778:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-14T09:28:34+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: subTitle
+            includeInCards: false
+            instructions: null
+            label: Title
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c10b1940-af7e-475f-a667-72d8ea3ab65a
+            userCondition: null
+            warning: null
+            width: 75
+          -
+            dateAdded: '2025-07-14T09:28:34+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: subTabText
+            includeInCards: true
+            instructions: null
+            label: 'Tab Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b0fa5b74-1a32-4cae-9333-57ea8defa019
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2025-07-14T09:38:13+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: b42073cc-57b6-4636-b08c-5b9bb29facb4 # Sub Service Intro
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8c071663-4734-41d7-a55d-a6acfb803a2f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-14T10:00:42+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: d2c3b28c-ed81-4d1d-a2c8-8a4cfff51ecd # Price List
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5d3c67d4-4269-4d9a-b06e-a5a1fb86b7ed
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 148f291e-c6ac-4a7c-8574-97c2c04fc856
+        userCondition: null
+handle: subServices2
+hasTitleField: false
+icon: null
+name: 'Sub Services'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

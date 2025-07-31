@@ -21,31 +21,64 @@
     {# Services Tabs - Dynamic Content from CraftCMS #}
     <section class="services-tabs section-spacing">
         <div class="container">
-            {% if entry.mx_allServices|length %}
+            {# Create services array from the new separate fields #}
+            {% set services = [] %}
+            
+            {# Service 1 - Haircare #}
+            {% if entry.serviceType1 or entry.mx_subServices1|length %}
+                {% set services = services|merge([{
+                    'type': entry.serviceType1 ?: 'Haircare',
+                    'tabText': entry.serviceTabText1 ?: 'Haircare',
+                    'icon': entry.serviceIcon1,
+                    'subServices': entry.mx_subServices1
+                }]) %}
+            {% endif %}
+            
+            {# Service 2 - Beauty and Nails #}
+            {% if entry.serviceType2 or entry.mx_subServices2|length %}
+                {% set services = services|merge([{
+                    'type': entry.serviceType2 ?: 'Beauty and Nails',
+                    'tabText': entry.serviceTabText2 ?: 'Beauty and Nails',
+                    'icon': entry.serviceIcon2,
+                    'subServices': entry.mx_subServices2
+                }]) %}
+            {% endif %}
+            
+            {# Service 3 - Aesthetics #}
+            {% if entry.serviceType3 or entry.mx_subServices3|length %}
+                {% set services = services|merge([{
+                    'type': entry.serviceType3 ?: 'Aesthetics',
+                    'tabText': entry.serviceTabText3 ?: 'Aesthetics',
+                    'icon': entry.serviceIcon3,
+                    'subServices': entry.mx_subServices3
+                }]) %}
+            {% endif %}
+            
+            {% if services|length %}
                 {# Main Tabs - Dynamic #}
                 <div class="tabs-container">
-                    {% for mainService in entry.mx_allServices %}
+                    {% for service in services %}
                         <div class="tab{% if loop.first %} active{% endif %}" 
                              data-tab="main-{{ loop.index }}" 
-                             data-service-id="{{ mainService.id }}"
+                             data-service-id="service-{{ loop.index }}"
                              data-debug="main-tab-{{ loop.index }}">
-                            {% if mainService.tabIcon %}
-                                <i class="fas {{ mainService.tabIcon }}"></i>
+                            {% if service.icon %}
+                                <i class="fas {{ service.icon }}"></i>
                             {% endif %}
-                            <span>{{ mainService.mainTabText }}</span>
+                            <span>{{ service.tabText }}</span>
                         </div>
                     {% endfor %}
                 </div>
                 
                 {# Sub Tabs and Content - Dynamic #}
-                {% for mainService in entry.mx_allServices %}
+                {% for service in services %}
                     {# Sub Tabs for this main service #}
-                    {% if mainService.mx_subServices|length %}
+                    {% if service.subServices|length %}
                         <div class="sub-tabs-wrapper" 
                              data-main-tab="main-{{ loop.index }}"
                              data-debug="sub-tabs-wrapper-{{ loop.index }}">
                             <div class="sub-tabs-container">
-                                {% for subService in mainService.mx_subServices %}
+                                {% for subService in service.subServices %}
                                     <div class="sub-tab{% if loop.first %} active{% endif %}" 
                                          data-tab="content-{{ loop.parent.loop.index }}-{{ loop.index }}"
                                          data-service-id="{{ subService.id }}"
@@ -59,8 +92,8 @@
                 {% endfor %}
                 
                 {# Service Content Sections - Dynamic #}
-                {% for mainService in entry.mx_allServices %}
-                    {% for subService in mainService.mx_subServices %}
+                {% for service in services %}
+                    {% for subService in service.subServices %}
                         <div class="service-content-section" 
                              data-tab="content-{{ loop.parent.loop.index }}-{{ loop.index }}"
                              data-service-id="{{ subService.id }}"

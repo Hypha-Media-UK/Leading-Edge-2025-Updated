@@ -1,0 +1,91 @@
+color: null
+description: null
+fieldLayouts:
+  76cc1e12-6977-4404-851c-7661cc13b1a7:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-14T09:16:11+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: mainServiceTitle
+            includeInCards: false
+            instructions: null
+            label: 'Main Service Title'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e3b65560-9d23-423c-b48c-6366729f4abd
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-14T09:17:27+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: mainTabText
+            includeInCards: false
+            instructions: null
+            label: 'Main Tab Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 45a5d3db-1f95-4d78-9815-4dc1c12db96c
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2025-07-14T10:46:15+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: tabIcon
+            includeInCards: false
+            instructions: null
+            label: Icon
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 11dcfcd3-c232-44d6-bf3f-679fd6a219fb
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2025-07-14T09:19:56+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 91bf7b22-c506-4a80-8c0d-506bf77a3dfc # Services
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f2afd64a-45ad-4d62-a14a-9bb8572caf2e
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 6588181d-6c26-46f7-885b-7f16ea7ee674
+        userCondition: null
+handle: allServices2sBnqt
+hasTitleField: false
+icon: null
+name: 'All Services ttwzoc'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

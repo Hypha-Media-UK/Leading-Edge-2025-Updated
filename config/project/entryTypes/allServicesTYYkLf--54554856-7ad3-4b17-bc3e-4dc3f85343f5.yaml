@@ -1,0 +1,91 @@
+color: null
+description: null
+fieldLayouts:
+  24a29471-ee36-43e2-a28e-d286cf1d1306:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-14T09:16:11+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: mainServiceTitle
+            includeInCards: false
+            instructions: null
+            label: 'Main Service Title'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 03fada27-7e27-4acc-9ae9-061b2d71526d
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-07-14T09:17:27+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: mainTabText
+            includeInCards: false
+            instructions: null
+            label: 'Main Tab Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4732c08d-a6cb-4ed1-a84f-1f6db2ef0d1c
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2025-07-14T10:46:15+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
+            handle: tabIcon
+            includeInCards: false
+            instructions: null
+            label: Icon
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4e8de330-7bf8-4214-9731-0ef3c2d020a1
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2025-07-14T09:19:56+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 91bf7b22-c506-4a80-8c0d-506bf77a3dfc # Services
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 300b8ad2-960e-4dca-8276-6d1bb56f7c1a
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 8a2c34a1-5157-499b-ab11-d5f79ca8aba3
+        userCondition: null
+handle: allServicesTYYkLf
+hasTitleField: false
+icon: null
+name: 'All Services huskgg'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
