@@ -211,6 +211,63 @@ componentManager.register('.team-member', (elements) => {
     });
 });
 
+// Job position modal functionality (careers page)
+componentManager.register('.position-card', (elements) => {
+    elements.forEach(card => {
+        const modalTarget = card.getAttribute('data-modal-target');
+        
+        card.addEventListener('click', function(e) {
+            // Prevent the "View Details" button from triggering twice
+            if (e.target.classList.contains('view-details-btn')) {
+                e.preventDefault();
+            }
+            
+            const modal = document.getElementById(modalTarget);
+            if (modal) {
+                openModal(modal);
+            }
+        });
+    });
+});
+
+// News article modal functionality (news page)
+componentManager.register('.news-card', (elements) => {
+    elements.forEach(card => {
+        const modalTarget = card.getAttribute('data-modal-target');
+        
+        card.addEventListener('click', function(e) {
+            // Prevent the "Read More" button from triggering twice
+            if (e.target.classList.contains('btn')) {
+                e.preventDefault();
+            }
+            
+            const modal = document.getElementById(modalTarget);
+            if (modal) {
+                openModal(modal);
+            }
+        });
+    });
+});
+
+// Featured news article modal functionality (news page)
+componentManager.register('.featured-news', (elements) => {
+    elements.forEach(featuredItem => {
+        const modalTarget = featuredItem.getAttribute('data-modal-target');
+        
+        featuredItem.addEventListener('click', function(e) {
+            // Prevent the "Read More" button from triggering twice
+            if (e.target.classList.contains('btn')) {
+                e.preventDefault();
+            }
+            
+            const modal = document.getElementById(modalTarget);
+            if (modal) {
+                openModal(modal);
+            }
+        });
+    });
+});
+
 // Modal management functionality
 componentManager.register('.modal-overlay', (elements) => {
     elements.forEach(modal => {

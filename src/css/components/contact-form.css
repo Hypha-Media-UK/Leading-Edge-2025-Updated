@@ -139,34 +139,13 @@
     text-align: center;
   }
 
-  /* Formie submit button styling - override Formie defaults */
-  & .btn.primary,
-  & button.btn.primary,
-  & [type="submit"].btn.primary {
-    background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color) 85%, black)) !important;
-    color: white !important;
-    border: none !important;
-    padding: 1.2rem 3rem !important;
-    border-radius: 8px !important;
-    font-weight: 600 !important;
-    font-size: 1.1rem !important;
-    text-decoration: none !important;
-    text-align: center !important;
-    transition: all 0.3s ease !important;
-    cursor: pointer !important;
-    display: inline-block !important;
-    box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color) 30%, transparent) !important;
-    margin-top: 1rem !important;
-
-    &:hover {
-      background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color) 90%, black), color-mix(in srgb, var(--accent-color) 75%, black)) !important;
-      transform: translateY(-3px) !important;
-      box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color) 40%, transparent) !important;
-    }
-
-    &:active {
-      transform: translateY(-1px) !important;
-    }
+  /* Formie submit button styling - use centralized gradient button */
+  & .btn.gradient,
+  & button.btn.gradient,
+  & [type="submit"].btn.gradient {
+    padding: 1.2rem 3rem;
+    border-radius: 8px;
+    margin-top: 1rem;
   }
 }
 

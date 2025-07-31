@@ -203,27 +203,8 @@
 }
 
 .team-member-modal .member-content .booking-cta .btn {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  border-radius: 4px;
-  font-weight: 600;
   font-size: 1.1rem;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.team-member-modal .member-content .booking-cta .btn.primary {
-  background-color: var(--accent-color);
-  color: white;
-  border: 2px solid var(--accent-color);
-}
-
-.team-member-modal .member-content .booking-cta .btn.primary:hover {
-  background-color: var(--accent-color-dark);
-  border-color: var(--accent-color-dark);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2.5rem;
 }
 
 /* Job Position Modal Styles */
@@ -302,27 +283,8 @@
 }
 
 .job-position-modal .modal-actions .btn {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  border-radius: 4px;
-  font-weight: 600;
   font-size: 1.1rem;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.job-position-modal .modal-actions .btn.primary {
-  background-color: var(--accent-color);
-  color: white;
-  border: 2px solid var(--accent-color);
-}
-
-.job-position-modal .modal-actions .btn.primary:hover {
-  background-color: var(--accent-color-dark);
-  border-color: var(--accent-color-dark);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2.5rem;
 }
 
 /* News Article Modal Styles */
@@ -359,24 +321,6 @@
   margin-bottom: 2rem;
 }
 
-#news-article-modal .news-detail-content .back-button .modal-back-btn {
-  background: none;
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#news-article-modal .news-detail-content .back-button .modal-back-btn:hover {
-  background-color: var(--primary-color);
-  color: white;
-}
-
-#news-article-modal .news-detail-content .back-button .modal-back-btn i {
-  margin-right: 0.5rem;
-}
 
 #news-article-modal .news-detail-content h2 {
   font-size: 2.2rem;

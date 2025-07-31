@@ -28,16 +28,6 @@
       }
     }
 
-    & .btn.primary {
-      background-color: var(--accent-color);
-      color: white;
-      border-color: var(--accent-color);
-
-      &:hover {
-        background-color: transparent;
-        color: var(--accent-color);
-      }
-    }
   }
 }
 

@@ -77,19 +77,8 @@ nav ul li a.router-link-active::after {
   width: 100%;
 }
 
-nav ul li .btn-book-now {
-  background-color: var(--accent-color);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-}
-
 nav ul li .btn-book-now::after {
   display: none;
-}
-
-nav ul li .btn-book-now:hover {
-  background-color: var(--accent-color-dark);
 }
 
 .menu-toggle {

@@ -88,31 +88,6 @@
     }
   }
 
-  /* Button Styles for the form */
-  & .btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    border-radius: 4px;
-    font-weight: 600;
-    text-decoration: none;
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    cursor: pointer;
-
-    &.primary {
-      background-color: var(--accent-color);
-      color: white;
-      border-color: var(--accent-color);
-
-      &:hover {
-        background-color: color-mix(in srgb, var(--accent-color) 90%, black);
-        border-color: color-mix(in srgb, var(--accent-color) 90%, black);
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px color-mix(in srgb, black 10%, transparent);
-      }
-    }
-  }
 }
 
 } /* End @layer components */
