@@ -2,14 +2,17 @@
 
 /* Features Section Component Styles */
 .features {
-  padding-block: 5rem;
+  padding-block: var(--section-padding);
   background-color: var(--features-bg-color, var(--light-color));
 
+  @media (max-width: 768px) {
+    padding-block: var(--section-padding-mobile);
+  }
 
   & .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: var(--grid-columns-cards);
+    gap: var(--grid-gap-standard);
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
@@ -97,11 +100,11 @@
   & .feature-card {
     background-color: var(--card-bg-color, white);
     color: var(--card-text-color, var(--primary-color));
-    padding: 2.5rem 2rem;
-    border-radius: 8px;
+    padding: var(--card-padding-lg) 2rem;
+    border-radius: var(--border-radius-standard);
     text-align: center;
-    box-shadow: 0 5px 20px color-mix(in srgb, var(--primary-color) 5%, transparent);
-    transition: all 0.3s ease;
+    box-shadow: var(--card-shadow-light);
+    transition: var(--transition-standard);
 
     & .feature-icon {
       font-size: 2.5rem;

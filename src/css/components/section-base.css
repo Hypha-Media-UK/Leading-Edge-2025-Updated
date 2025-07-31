@@ -1,0 +1,53 @@
+@layer components {
+
+/* Section Base Component - DRY Implementation for Common Section Patterns */
+.section-base {
+  padding-block: var(--section-padding);
+  
+  @media (max-width: 768px) {
+    padding-block: var(--section-padding-mobile);
+  }
+}
+
+/* Section background variants */
+.section-base--white {
+  background-color: white;
+}
+
+.section-base--light {
+  background-color: var(--bg-light);
+}
+
+.section-base--primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.section-base--secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.section-base--accent {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Section spacing variants */
+.section-base--compact {
+  padding-block: calc(var(--section-padding) * 0.6);
+  
+  @media (max-width: 768px) {
+    padding-block: calc(var(--section-padding-mobile) * 0.6);
+  }
+}
+
+.section-base--spacious {
+  padding-block: calc(var(--section-padding) * 1.4);
+  
+  @media (max-width: 768px) {
+    padding-block: calc(var(--section-padding-mobile) * 1.4);
+  }
+}
+
+} /* End @layer components */

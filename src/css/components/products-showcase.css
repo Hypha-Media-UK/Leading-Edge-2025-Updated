@@ -2,10 +2,13 @@
 
 /* Products Showcase Section Component Styles */
 .products-showcase {
-  padding-block: 5rem;
+  padding-block: var(--section-padding);
   background-color: white;
   color: var(--primary-color);
 
+  @media (max-width: 768px) {
+    padding-block: var(--section-padding-mobile);
+  }
 
   & .products-grid {
     display: grid;
@@ -28,10 +31,10 @@
 
     & .product-item {
       position: relative;
-      border-radius: 8px;
+      border-radius: var(--border-radius-standard);
       overflow: hidden;
       box-shadow: 0 5px 15px color-mix(in srgb, var(--primary-color) 10%, transparent);
-      transition: all 0.3s ease;
+      transition: var(--transition-standard);
       background-color: white;
       display: flex;
       align-items: center;

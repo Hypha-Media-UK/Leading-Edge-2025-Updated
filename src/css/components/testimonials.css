@@ -4,8 +4,11 @@
 .testimonials {
   background-color: var(--secondary-color);
   color: white;
-  padding-block: 5rem;
+  padding-block: var(--section-padding);
 
+  @media (max-width: 768px) {
+    padding-block: var(--section-padding-mobile);
+  }
 
   & .testimonials-slider {
     max-width: 800px;
@@ -47,7 +50,7 @@
     padding: 3rem;
     background-color: white;
     color: var(--primary-color);
-    border-radius: 8px;
+    border-radius: var(--border-radius-standard);
     box-shadow: var(--shadow-xl);
     min-height: 280px; /* Ensure consistent height */
 

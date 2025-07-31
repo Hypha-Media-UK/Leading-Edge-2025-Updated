@@ -110,6 +110,28 @@
   --z-index-popover: 1060;
   --z-index-tooltip: 1070;
 
+  /* DRY Animation & Transition Standards */
+  --transition-standard: all 0.3s ease;
+  --transition-fast: all 0.2s ease;
+  --transition-slow: all 0.5s ease;
+  --transition-transform: transform 0.3s ease;
+  --transition-opacity: opacity 0.3s ease;
+
+  /* DRY Box Shadow Standards */
+  --card-shadow-light: 0 5px 20px color-mix(in srgb, var(--primary-color) 5%, transparent);
+  --card-shadow-medium: 0 5px 20px color-mix(in srgb, var(--primary-color) 8%, transparent);
+  --card-shadow-strong: 0 5px 20px color-mix(in srgb, var(--primary-color) 10%, transparent);
+  --card-shadow-hover-light: 0 15px 30px color-mix(in srgb, var(--primary-color) 10%, transparent);
+  --card-shadow-hover-medium: 0 15px 30px color-mix(in srgb, var(--primary-color) 15%, transparent);
+
+  /* DRY Grid Layout Standards */
+  --grid-gap-standard: 2rem;
+  --grid-gap-small: 1rem;
+  --grid-gap-large: 3rem;
+  --grid-columns-cards: repeat(auto-fit, minmax(300px, 1fr));
+  --grid-columns-small-cards: repeat(auto-fit, minmax(250px, 1fr));
+  --grid-columns-large-cards: repeat(auto-fit, minmax(320px, 1fr));
+  --grid-columns-gallery: repeat(auto-fit, minmax(160px, 1fr));
 
   /* Modern color manipulation using color-mix() */
   --accent-color-dark: color-mix(in srgb, var(--accent-color) 90%, black);

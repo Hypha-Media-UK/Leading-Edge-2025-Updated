@@ -1,0 +1,101 @@
+@layer components {
+
+/* Card Base Component - DRY Implementation for Common Card Patterns */
+.card-base {
+  background-color: white;
+  border-radius: var(--border-radius-standard);
+  box-shadow: var(--card-shadow-light);
+  transition: var(--transition-standard);
+  overflow: hidden;
+}
+
+/* Card shadow variants */
+.card-base--shadow-medium {
+  box-shadow: var(--card-shadow-medium);
+}
+
+.card-base--shadow-strong {
+  box-shadow: var(--card-shadow-strong);
+}
+
+/* Card padding variants */
+.card-base--padding-sm {
+  padding: var(--card-padding-md);
+}
+
+.card-base--padding-lg {
+  padding: var(--card-padding-lg);
+}
+
+.card-base--padding-content {
+  & .card-content {
+    padding: var(--card-padding-md);
+  }
+}
+
+.card-base--padding-content-lg {
+  & .card-content {
+    padding: var(--card-padding-lg);
+  }
+}
+
+/* Card hover effects */
+.card-base--hover-lift {
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--card-shadow-hover-light);
+  }
+}
+
+.card-base--hover-lift-strong {
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--card-shadow-hover-medium);
+  }
+}
+
+.card-base--hover-scale {
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.card-base--hover-scale-lg {
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Card layout variants */
+.card-base--centered {
+  text-align: center;
+}
+
+.card-base--flex {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Card background variants */
+.card-base--light {
+  background-color: var(--bg-light);
+}
+
+.card-base--primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.card-base--accent {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.card-base--transparent {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+} /* End @layer components */

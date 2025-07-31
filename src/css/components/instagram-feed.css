@@ -2,14 +2,17 @@
 
 /* Instagram Feed Section Component Styles */
 .instagram-feed {
-  padding-block: 5rem;
+  padding-block: var(--section-padding);
   background-color: var(--bg-light);
 
+  @media (max-width: 768px) {
+    padding-block: var(--section-padding-mobile);
+  }
 
   & .instagram-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1rem;
+    grid-template-columns: var(--grid-columns-gallery);
+    gap: var(--grid-gap-small);
     margin-block-end: 3rem;
 
     @media (max-width: 768px) {
@@ -24,7 +27,7 @@
       position: relative;
       aspect-ratio: 1;
       overflow: hidden;
-      border-radius: 8px;
+      border-radius: var(--border-radius-standard);
 
       & a {
         display: block;

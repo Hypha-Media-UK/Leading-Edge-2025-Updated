@@ -2,14 +2,21 @@
 
 /* News Content Section - Page Layout */
 .news-content {
-  padding-block: 5rem;
+  padding-block: var(--section-padding);
   background-color: white;
+
+  @media (max-width: 768px) {
+    padding-block: var(--section-padding-mobile);
+  }
 }
 
 /* News Grid Component Styles (extracted from Vue NewsGrid.vue) */
 .news-section {
-  padding-block: 5rem;
+  padding-block: var(--section-padding);
 
+  @media (max-width: 768px) {
+    padding-block: var(--section-padding-mobile);
+  }
 
   & .news-filters {
     margin-block-end: 2rem;
@@ -25,7 +32,7 @@
         background-color: white;
         border-radius: 30px;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: var(--transition-standard);
         color: var(--primary-color);
 
         &:hover {

@@ -3,13 +3,16 @@
 /* Services Preview Section Component Styles */
 .services-preview {
   background-color: white;
-  padding-block: 5rem;
+  padding-block: var(--section-padding);
 
+  @media (max-width: 768px) {
+    padding-block: var(--section-padding-mobile);
+  }
 
   & .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: var(--grid-columns-large-cards);
+    gap: var(--grid-gap-standard);
     margin-block-end: 3rem;
 
     @media (max-width: 768px) {
@@ -20,9 +23,9 @@
 
   & .service-card {
     background-color: white;
-    border-radius: 8px;
+    border-radius: var(--border-radius-standard);
     overflow: hidden;
-    box-shadow: 0 5px 20px color-mix(in srgb, var(--primary-color) 10%, transparent);
+    box-shadow: var(--card-shadow-strong);
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
                 box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 
