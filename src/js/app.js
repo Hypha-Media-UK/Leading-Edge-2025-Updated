@@ -1,7 +1,5 @@
 // Single JavaScript Entry Point - Optimized Architecture
 import { FormValidation } from './utils/form-validation.js';
-import { scrollTriggerManager } from './animations/core/scroll-trigger.js';
-import { globalAnimations } from './animations/global-animations.js';
 
 // Component initialization system
 class ComponentManager {
@@ -463,21 +461,9 @@ componentManager.register('#header', (elements) => {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Initializing application components...');
     
-    // Check if we're on the services page
-    const isServicesPage = document.body.classList.contains('services-detail') || 
-                          document.querySelector('.services-detail-page') !== null;
-    
-    if (!isServicesPage) {
-        // Initialize ScrollTrigger and animations only if NOT on services page
-        scrollTriggerManager.init();
-        globalAnimations.init();
-    } else {
-        console.log('Services page detected - GSAP animations disabled to prevent conflicts');
-    }
-    
-    // Always initialize components
+    // Initialize components
     componentManager.init();
 });
 
 // Export for potential external use
-export { componentManager, FormValidation, scrollTriggerManager, globalAnimations };
+export { componentManager, FormValidation };

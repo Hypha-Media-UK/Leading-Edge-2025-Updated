@@ -25,7 +25,5 @@
     "postcss-nesting": "^13.0.2",
     "vite": "^7.0.3"
   },
-  "dependencies": {
-    "gsap": "^3.13.0"
-  }
+  "dependencies": {}
 }
