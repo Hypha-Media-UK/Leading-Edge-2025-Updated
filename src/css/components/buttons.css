@@ -223,4 +223,153 @@
   }
 }
 
+/* Global Formie Button Overrides - High Specificity */
+/* These selectors override Formie's default button styling across all forms */
+
+.fui-btn.btn.primary,
+button.fui-btn.btn.primary,
+[type="submit"].fui-btn.btn.primary,
+.fui-submit.btn.primary {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+  border: 2px solid var(--accent-color) !important;
+  border-radius: 4px !important;
+  padding: 1rem 2rem !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-sizing: border-box !important;
+  display: inline-block !important;
+
+  &:hover {
+    background-color: var(--accent-color-dark) !important;
+    border-color: var(--accent-color-dark) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: var(--shadow-lg) !important;
+  }
+
+  &:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 30%, transparent) !important;
+  }
+
+  &:active {
+    transform: translateY(-1px) !important;
+  }
+}
+
+.fui-btn.btn.secondary,
+button.fui-btn.btn.secondary,
+[type="submit"].fui-btn.btn.secondary,
+.fui-submit.btn.secondary {
+  background-color: transparent !important;
+  color: white !important;
+  border: 2px solid white !important;
+  border-radius: 4px !important;
+  padding: 1rem 2rem !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-sizing: border-box !important;
+  display: inline-block !important;
+
+  &:hover {
+    background-color: white !important;
+    color: var(--primary-color) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: var(--shadow-lg) !important;
+  }
+
+  &:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 30%, transparent) !important;
+  }
+}
+
+.fui-btn.btn.gradient,
+button.fui-btn.btn.gradient,
+[type="submit"].fui-btn.btn.gradient,
+.fui-submit.btn.gradient {
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color) 85%, black)) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 1rem 2rem !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-sizing: border-box !important;
+  display: inline-block !important;
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color) 30%, transparent) !important;
+
+  &:hover {
+    background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color) 90%, black), color-mix(in srgb, var(--accent-color) 75%, black)) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color) 40%, transparent) !important;
+  }
+
+  &:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 30%, transparent) !important;
+  }
+
+  &:active {
+    transform: translateY(-1px) !important;
+  }
+}
+
+/* Fallback for any Formie button with just .btn class */
+.fui-btn.btn,
+button.fui-btn.btn,
+[type="submit"].fui-btn.btn {
+  /* Apply primary styling as default */
+  background-color: var(--accent-color) !important;
+  color: white !important;
+  border: 2px solid var(--accent-color) !important;
+  border-radius: 4px !important;
+  padding: 1rem 2rem !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-sizing: border-box !important;
+  display: inline-block !important;
+
+  &:hover {
+    background-color: var(--accent-color-dark) !important;
+    border-color: var(--accent-color-dark) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: var(--shadow-lg) !important;
+  }
+
+  &:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 30%, transparent) !important;
+  }
+}
+
+/* Override any Formie-specific disabled states */
+.fui-btn.btn:disabled,
+button.fui-btn.btn:disabled,
+[type="submit"].fui-btn.btn:disabled,
+.fui-btn.btn.disabled,
+button.fui-btn.btn.disabled,
+[type="submit"].fui-btn.btn.disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
 } /* End @layer components */
