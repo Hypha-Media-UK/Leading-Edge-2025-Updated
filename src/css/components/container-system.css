@@ -1,0 +1,127 @@
+@layer tokens {
+
+/* Container Query System - Modern Responsive Design */
+
+/* Container Types */
+.component-container {
+  container-type: inline-size;
+  container-name: component;
+}
+
+.section-container {
+  container-type: inline-size;
+  container-name: section;
+}
+
+.card-container {
+  container-type: inline-size;
+  container-name: card;
+}
+
+.grid-container {
+  container-type: inline-size;
+  container-name: grid;
+}
+
+/* Container Query Mixins */
+@container component (max-width: 768px) {
+  .responsive-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .responsive-text {
+    font-size: var(--text-sm);
+  }
+  
+  .responsive-spacing {
+    padding: var(--space-lg);
+  }
+}
+
+@container component (min-width: 769px) and (max-width: 1024px) {
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .responsive-text {
+    font-size: var(--text-base);
+  }
+  
+  .responsive-spacing {
+    padding: var(--space-xl);
+  }
+}
+
+@container component (min-width: 1025px) {
+  .responsive-grid {
+    grid-template-columns: var(--grid-columns-cards);
+    gap: var(--grid-gap-standard);
+  }
+  
+  .responsive-text {
+    font-size: var(--text-lg);
+  }
+  
+  .responsive-spacing {
+    padding: var(--space-2xl);
+  }
+}
+
+/* Card Container Queries */
+@container card (max-width: 300px) {
+  .card-content {
+    padding: var(--space-md);
+    font-size: var(--text-sm);
+  }
+  
+  .card-title {
+    font-size: var(--text-lg);
+  }
+}
+
+@container card (min-width: 301px) {
+  .card-content {
+    padding: var(--space-lg);
+    font-size: var(--text-base);
+  }
+  
+  .card-title {
+    font-size: var(--text-xl);
+  }
+}
+
+/* Grid Container Queries */
+@container grid (max-width: 600px) {
+  .adaptive-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@container grid (min-width: 601px) and (max-width: 900px) {
+  .adaptive-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@container grid (min-width: 901px) {
+  .adaptive-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+/* Utility Classes for Container Queries */
+.container-responsive {
+  container-type: inline-size;
+}
+
+.container-responsive-block {
+  container-type: block-size;
+}
+
+.container-responsive-both {
+  container-type: size;
+}
+
+} /* End @layer tokens */

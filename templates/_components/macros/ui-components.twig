@@ -1,0 +1,196 @@
+{#
+  UI Component Macros
+  Reusable Twig macros for common UI patterns with CraftCMS 5+ optimization
+#}
+
+{# Card Component Macro #}
+{% macro card(options = {}) %}
+  {# Default options #}
+  {% set defaults = {
+    title: '',
+    content: '',
+    image: null,
+    link: null,
+    variant: 'default',
+    size: 'medium',
+    shadow: 'light',
+    hover: 'lift',
+    containerType: 'card'
+  } %}
+  {% set config = defaults|merge(options) %}
+  
+  {# Build CSS classes #}
+  {% set cardClasses = [
+    'card-base',
+    config.containerType ~ '-container',
+    'card-base--shadow-' ~ config.shadow,
+    'card-base--hover-' ~ config.hover,
+    'card-base--' ~ config.variant
+  ] %}
+  
+  {% set cardTag = config.link ? 'a' : 'div' %}
+  
+  <{{ cardTag }}
+    class="{{ cardClasses|join(' ') }}"
+    {% if config.link %}href="{{ config.link }}"{% endif %}
+  >
+    {% if config.image %}
+      <div class="card-image">
+        <img 
+          src="{{ config.image.url }}" 
+          alt="{{ config.image.alt ?? config.title }}"
+          loading="lazy"
+          decoding="async"
+        >
+      </div>
+    {% endif %}
+    
+    <div class="card-content responsive-spacing">
+      {% if config.title %}
+        <h3 class="card-title responsive-text">{{ config.title }}</h3>
+      {% endif %}
+      {% if config.content %}
+        <div class="card-text">{{ config.content }}</div>
+      {% endif %}
+    </div>
+  </{{ cardTag }}>
+{% endmacro %}
+
+{# Grid Component Macro #}
+{% macro grid(items, options = {}) %}
+  {% set defaults = {
+    columns: 'auto',
+    gap: 'standard',
+    containerType: 'grid',
+    itemTemplate: 'card',
+    variant: 'default'
+  } %}
+  {% set config = defaults|merge(options) %}
+  
+  {% set gridClasses = [
+    'component-grid',
+    config.containerType ~ '-container',
+    'adaptive-grid',
+    'responsive-grid'
+  ] %}
+  
+  <div class="{{ gridClasses|join(' ') }}">
+    {% for item in items %}
+      {% if config.itemTemplate == 'card' %}
+        {{ _self.card({
+          title: item.title,
+          content: item.content ?? item.cardText,
+          image: item.image ?? item.cardImage.one(),
+          link: item.link ?? item.cardLink,
+          variant: config.variant
+        }) }}
+      {% else %}
+        {# Custom item template #}
+        {% include config.itemTemplate with { item: item } %}
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endmacro %}
+
+{# Button Component Macro #}
+{% macro button(text, options = {}) %}
+  {% set defaults = {
+    url: '#',
+    variant: 'primary',
+    size: 'medium',
+    icon: null,
+    attributes: {}
+  } %}
+  {% set config = defaults|merge(options) %}
+  
+  {% set buttonClasses = [
+    'btn',
+    config.variant,
+    'btn--' ~ config.size
+  ] %}
+  
+  <a 
+    href="{{ config.url }}" 
+    class="{{ buttonClasses|join(' ') }}"
+    {% for attr, value in config.attributes %}{{ attr }}="{{ value }}"{% endfor %}
+  >
+    {% if config.icon %}
+      <i class="{{ config.icon }}"></i>
+    {% endif %}
+    {{ text }}
+  </a>
+{% endmacro %}
+
+{# Section Header Macro #}
+{% macro sectionHeader(title, subtitle = '', options = {}) %}
+  {% set defaults = {
+    level: 2,
+    align: 'center',
+    separator: true,
+    variant: 'default'
+  } %}
+  {% set config = defaults|merge(options) %}
+  
+  {% set headerClasses = [
+    'section-header',
+    'section-header--' ~ config.align,
+    'section-header--' ~ config.variant
+  ] %}
+  
+  <div class="{{ headerClasses|join(' ') }}">
+    <h{{ config.level }}>{{ title }}</h{{ config.level }}>
+    {% if subtitle %}
+      <p>{{ subtitle }}</p>
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{# Image Component Macro with Modern Loading #}
+{% macro image(asset, options = {}) %}
+  {% set defaults = {
+    transform: null,
+    sizes: '(max-width: 768px) 100vw, 50vw',
+    loading: 'lazy',
+    decoding: 'async',
+    class: '',
+    alt: asset.alt ?? asset.title ?? ''
+  } %}
+  {% set config = defaults|merge(options) %}
+  
+  {% if config.transform %}
+    {% set transformedAsset = asset.getUrl(config.transform) %}
+  {% else %}
+    {% set transformedAsset = asset.url %}
+  {% endif %}
+  
+  <img 
+    src="{{ transformedAsset }}"
+    alt="{{ config.alt }}"
+    {% if config.class %}class="{{ config.class }}"{% endif %}
+    loading="{{ config.loading }}"
+    decoding="{{ config.decoding }}"
+    {% if config.sizes %}sizes="{{ config.sizes }}"{% endif %}
+  >
+{% endmacro %}
+
+{# Responsive Embed Macro #}
+{% macro embed(url, options = {}) %}
+  {% set defaults = {
+    aspectRatio: '16/9',
+    title: 'Embedded content',
+    loading: 'lazy'
+  } %}
+  {% set config = defaults|merge(options) %}
+  
+  <div 
+    class="responsive-embed" 
+    style="aspect-ratio: {{ config.aspectRatio }}"
+  >
+    <iframe 
+      src="{{ url }}"
+      title="{{ config.title }}"
+      loading="{{ config.loading }}"
+      allowfullscreen
+    ></iframe>
+  </div>
+{% endmacro %}

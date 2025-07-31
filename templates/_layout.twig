@@ -6,24 +6,58 @@
     <title>{% block title %}The Leading Edge{% endblock %}</title>
     <meta name="description" content="{% block description %}Premium hair and beauty services at The Leading Edge salon in Hyde, Cheshire.{% endblock %}">
     
+    <!-- Modern Meta Tags -->
+    <meta name="theme-color" content="#c58f31">
+    <meta name="color-scheme" content="light">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
-    <!-- Preconnect for performance -->
+    <!-- Performance Optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
     
-    <!-- Optimized font loading - reduced to essential fonts -->
+    <!-- Critical CSS Inline -->
+    {% block criticalCss %}
+    <style>
+      /* Critical above-the-fold styles */
+      :root { 
+        --primary-color: #404e5c; 
+        --accent-color: #c58f31; 
+        --transition-standard: all 0.3s ease;
+      }
+      body { 
+        font-family: system-ui, -apple-system, sans-serif; 
+        margin: 0; 
+        line-height: 1.5; 
+      }
+      .container { 
+        max-width: 1200px; 
+        margin: 0 auto; 
+        padding: 0 1rem; 
+      }
+    </style>
+    {% endblock %}
+    
+    <!-- Optimized font loading with font-display -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font Awesome with resource hints -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     
-    <!-- CSS - Single optimized bundle -->
-    <link rel="stylesheet" href="/_dist/css/styles.css">
+    <!-- CSS - Single optimized bundle with preload -->
+    <link rel="preload" href="/_dist/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/_dist/css/styles.css"></noscript>
+    
+    <!-- View Transitions API -->
+    <meta name="view-transition" content="same-origin">
+    
+    {% block headExtras %}{% endblock %}
 </head>
-<body class="{% block pageClass %}home{% endblock %}-page">
+<body class="{% block pageClass %}home{% endblock %}-page" data-page="{{ craft.app.request.segments|join('-') }}">
 
 <!-- Header -->
 {% include '_components/header.twig' %}

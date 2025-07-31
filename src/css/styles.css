@@ -1,11 +1,15 @@
 /* Single CSS Entry Point - Optimized Architecture */
 
-/* Define layer order for better cascade control */
-@layer reset, base, components, utilities, overrides;
+/* Define enhanced layer order for better cascade control */
+@layer reset, base, tokens, components, patterns, utilities, overrides;
 
-/* Import core styles */
+/* Import core styles - must come first */
 @import 'variables.css';
 @import 'utilities.css';
+@import 'utilities-modern.css';
+
+/* Import modern systems */
+@import 'components/container-system.css';
 
 /* Import base components that are used across all pages */
 @import 'components/buttons.css';
@@ -46,6 +50,18 @@
 @import 'components/gift-voucher-section.css';
 @import 'components/faq-section.css';
 @import 'components/social-icons.css';
+
+/* Modern CSS Features Support - After imports */
+@supports (container-type: inline-size) {
+  .component-container {
+    container-type: inline-size;
+  }
+}
+
+/* View Transitions API Support */
+@view-transition {
+  navigation: auto;
+}
 
 @layer base {
 

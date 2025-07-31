@@ -1,112 +1,99 @@
 @layer components {
 
-/* Services Preview Section Component Styles */
+/* Services Preview Section Component Styles - Modern Container Query Version */
 .services-preview {
-  background-color: white;
-  padding-block: var(--section-padding);
-
-  @media (max-width: 768px) {
-    padding-block: var(--section-padding-mobile);
-  }
-
+  /* Component-specific overrides for base section */
+  --section-bg-color: var(--color-surface-primary);
+  
   & .services-grid {
     display: grid;
-    grid-template-columns: var(--grid-columns-large-cards);
     gap: var(--grid-gap-standard);
-    margin-block-end: 3rem;
-
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
+    margin-block-end: var(--space-3xl);
+    
+    /* Default grid - will be overridden by container queries */
+    grid-template-columns: var(--grid-columns-large-cards);
   }
 
   & .service-card {
-    background-color: white;
-    border-radius: var(--border-radius-standard);
-    overflow: hidden;
-    box-shadow: var(--card-shadow-strong);
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-
-    &:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px color-mix(in srgb, var(--primary-color) 15%, transparent);
-
-      & .service-image img {
-        transform: scale(1.05);
-      }
-    }
-
+    /* Enhanced card styling with modern features */
+    view-transition-name: service-card;
+    
     & .service-image {
       height: 250px;
       overflow: hidden;
       position: relative;
-
-      & img {
+      
+      & .service-image-img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
-        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition: var(--transition-transform);
         will-change: transform;
       }
     }
+    
+    &:hover .service-image-img {
+      transform: scale(1.05);
+    }
 
     & .service-content {
-      padding: 1.5rem;
-
-      & h3 {
-        margin-block-end: 0.8rem;
-        font-size: 1.4rem;
-        color: var(--primary-color);
+      & .service-title {
+        margin-block-end: var(--space-sm);
+        font-size: var(--text-xl);
+        color: var(--color-text-primary);
       }
 
-      & p {
-        color: var(--primary-color-light);
-        margin-block-end: 1rem;
-        line-height: 1.6;
+      & .service-description {
+        color: var(--color-text-secondary);
+        margin-block-end: var(--space-md);
+        line-height: var(--line-height-relaxed);
       }
 
       & .service-link {
         color: var(--accent-color);
         text-decoration: none;
         font-weight: 600;
-        position: relative;
-        background: none;
-        border: none;
-        padding: 0.5rem 0.8rem;
-        margin-inline-start: -0.8rem;
         display: inline-flex;
         align-items: center;
-        border-radius: 4px;
-        transition: all 0.3s ease;
-
-        &::after {
-          content: '\f054'; /* Font Awesome arrow-right icon */
-          font-family: 'Font Awesome 5 Free';
-          font-weight: 900;
-          margin-inline-start: 0.4rem;
-          font-size: 0.8rem;
-          opacity: 0;
-          transform: translateX(-5px);
-          transition: all 0.3s ease;
-        }
+        gap: var(--space-xs);
+        padding: var(--space-xs) var(--space-sm);
+        margin-inline-start: calc(var(--space-sm) * -1);
+        border-radius: var(--border-radius);
+        transition: var(--transition-standard);
 
         &:hover {
           background-color: color-mix(in srgb, var(--accent-color) 8%, transparent);
-
-          &::after {
-            opacity: 1;
-            transform: translateX(0);
-          }
+          transform: translateX(var(--space-2xs));
         }
       }
     }
   }
+}
 
-  & .section-cta {
-    text-align: center;
+/* Container Query Responsive Behavior */
+@container component (max-width: 768px) {
+  .services-preview .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .services-preview .service-card .service-image {
+    height: 200px;
+  }
+}
+
+@container component (min-width: 769px) and (max-width: 1024px) {
+  .services-preview .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+}
+
+@container component (min-width: 1025px) {
+  .services-preview .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--grid-gap-standard);
   }
 }
 

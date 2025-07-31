@@ -1,0 +1,92 @@
+{#
+  Base Section Component Template
+  Modern CraftCMS 5+ Component with Container Queries and Performance Optimization
+  
+  Parameters:
+  - entry: CraftCMS entry object
+  - sectionData: Object containing section configuration
+  - variant: String for section variant (default, primary, accent, etc.)
+  - layout: String for layout type (grid, flex, stack)
+  - containerType: String for container query type (component, section, grid)
+  - cacheKey: String for fragment caching
+  - eager: Array of relations to eager load
+#}
+
+{# Set default values with modern CraftCMS null coalescing #}
+{% set sectionData = sectionData ?? {} %}
+{% set variant = variant ?? 'default' %}
+{% set layout = layout ?? 'grid' %}
+{% set containerType = containerType ?? 'component' %}
+{% set customClass = customClass ?? '' %}
+{% set cacheKey = cacheKey ?? ((entry.id ?? 'default') ~ '-' ~ (sectionData.handle ?? 'section')) %}
+
+{# Eager load related entries for performance #}
+{% if eager is defined and eager|length and entry is defined %}
+  {% do craft.app.elements.eagerLoadElements(entry.class, [entry], eager) %}
+{% endif %}
+
+{# Build semantic CSS classes #}
+{% set sectionClasses = [
+  'section-base',
+  containerType ~ '-container',
+  'section-base--' ~ variant,
+  'section-base--layout-' ~ layout
+] %}
+
+{% if customClass %}
+  {% set sectionClasses = sectionClasses|merge([customClass]) %}
+{% endif %}
+
+{# Dynamic CSS custom properties from CMS data #}
+{% set dynamicStyles = [] %}
+{% if sectionData.backgroundColor is defined and sectionData.backgroundColor %}
+  {% set dynamicStyles = dynamicStyles|merge(['--section-bg-color: ' ~ sectionData.backgroundColor]) %}
+{% endif %}
+{% if sectionData.textColor is defined and sectionData.textColor %}
+  {% set dynamicStyles = dynamicStyles|merge(['--section-text-color: ' ~ sectionData.textColor]) %}
+{% endif %}
+
+{# Fragment caching for performance #}
+{% cache using key cacheKey for 1 hour %}
+<section 
+  class="{{ sectionClasses|join(' ') }}"
+  {% if dynamicStyles|length %}style="{{ dynamicStyles|join('; ') }}"{% endif %}
+  {% if sectionData.id is defined and sectionData.id %}data-section-id="{{ sectionData.id }}"{% endif %}
+>
+  <div class="container">
+    
+    {# Section Header Block #}
+    {% block sectionHeader %}
+      {% if sectionData.title or sectionData.subtitle %}
+        <div class="section-header">
+          {% if sectionData.title %}
+            <h2>{{ sectionData.title }}</h2>
+          {% endif %}
+          {% if sectionData.subtitle %}
+            <p>{{ sectionData.subtitle }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endblock %}
+    
+    {# Main Content Block #}
+    {% block sectionContent %}
+      <div class="section-content responsive-grid adaptive-grid">
+        {# Content will be provided by extending templates #}
+      </div>
+    {% endblock %}
+    
+    {# Call to Action Block #}
+    {% block sectionCta %}
+      {% if sectionData.ctaText and sectionData.ctaLink %}
+        <div class="section-cta">
+          <a href="{{ sectionData.ctaLink }}" class="btn primary">
+            {{ sectionData.ctaText }}
+          </a>
+        </div>
+      {% endif %}
+    {% endblock %}
+    
+  </div>
+</section>
+{% endcache %}

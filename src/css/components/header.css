@@ -59,7 +59,7 @@ nav ul li a {
   text-decoration: none;
   position: relative;
   padding-bottom: 5px;
-}
+}`
 
 nav ul li a::after {
   content: '';
