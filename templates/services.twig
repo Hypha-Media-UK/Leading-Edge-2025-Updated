@@ -114,9 +114,9 @@
                                 
                                 {# Intro Images #}
                                 {% if subService.subServiceIntro.introImages|length %}
-                                    <div class="services-gallery js-stagger-grid">
+                                    <div class="services-gallery">
                                         {% for image in subService.subServiceIntro.introImages %}
-                                            <div class="gallery-item js-stagger-item">
+                                            <div class="gallery-item">
                                                 <img src="{{ image.url }}" alt="{{ image.alt ?: image.title }}" />
                                             </div>
                                         {% endfor %}
@@ -125,9 +125,9 @@
                                 
                                 {# Price List #}
                                 {% if subService.priceList|length %}
-                                    <div class="services-list js-stagger-grid">
+                                    <div class="services-list">
                                         {% for priceItem in subService.priceList %}
-                                            <div class="service-item js-stagger-item">
+                                            <div class="service-item">
                                                 <div class="service-info">
                                                     <h3>{{ priceItem.title }}</h3>
                                                     {% if priceItem.summary %}

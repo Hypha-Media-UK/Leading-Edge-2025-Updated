@@ -60,14 +60,6 @@
     box-shadow: 0 5px 15px color-mix(in srgb, var(--primary-color) 10%, transparent);
     transition: all 0.3s ease;
 
-    &:hover {
-      transform: scale(1.03);
-      box-shadow: 0 10px 25px color-mix(in srgb, var(--primary-color) 15%, transparent);
-
-      & img {
-        transform: scale(1.1);
-      }
-    }
 
     & img {
       width: 100%;

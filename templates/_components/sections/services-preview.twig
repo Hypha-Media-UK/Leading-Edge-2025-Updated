@@ -5,9 +5,9 @@
                 <h2>{{ entry.homepageServiceSection.sectionTitle }}</h2>
                 <p>{{ entry.homepageServiceSection.sectionSubText }}</p>
             </div>
-            <div class="services-grid js-stagger-grid">
+            <div class="services-grid ">
                 {% for service in entry.homepageServiceSection.mx_servicesCards %}
-                    <div class="service-card js-stagger-item">
+                    <div class="service-card">
                         <div class="service-image">
                             <img src="{{ service.cardImage.one().url() }}" alt="{{ service.title }}">
                         </div>

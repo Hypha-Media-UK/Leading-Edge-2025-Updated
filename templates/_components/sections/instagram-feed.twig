@@ -4,9 +4,9 @@
                 <h2>{{ entry.socialSection.sectionTitle }}</h2>
                 <p>{{ entry.socialSection.sectionSubText }}</p>
             </div>
-            <div class="instagram-grid js-stagger-grid">
+            <div class="instagram-grid ">
                 {% for image in entry.socialSection.socialImages %}
-                    <div class="instagram-item js-stagger-item">
+                    <div class="instagram-item">
                         <a href="" target="_blank" rel="noopener noreferrer">
                             <img src="{{ image.url }}" alt="image.title">
                             <div class="instagram-overlay">

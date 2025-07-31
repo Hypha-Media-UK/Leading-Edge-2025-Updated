@@ -4,9 +4,9 @@
                 <h2>{{ entry.summarySection.sectionTitle }}</h2>
                 <p>{{ entry.summarySection.sectionSubTitle }}</p>
             </div>
-            <div class="gallery js-stagger-grid">
+            <div class="gallery ">
                 {% for image in entry.summarySection.sectionImages %}
-                    <div class="gallery-item item-{{ loop.index }} js-stagger-item">
+                    <div class="gallery-item item-{{ loop.index }}">
                         <img src="{{ image.url() }}" alt="{{ image.title }}">
                     </div>
                 {% endfor %}

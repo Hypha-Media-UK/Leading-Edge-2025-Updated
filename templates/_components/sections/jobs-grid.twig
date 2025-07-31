@@ -7,9 +7,9 @@
                 </div>
             
             {% if entry.cb_currentOpportunities.jobDescriptions %}
-                <div class="positions-grid js-stagger-grid">
+                <div class="positions-grid ">
                     {% for position in entry.cb_currentOpportunities.jobDescriptions %}
-                        <div class="position-card js-stagger-item" data-modal-target="position-modal-{{ position.id }}">
+                        <div class="position-card" data-modal-target="position-modal-{{ position.id }}">
                             <h3>{{ position.title }}</h3>
                             <div class="position-meta">
                             {% if position.jobType %}

@@ -12,11 +12,6 @@
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px color-mix(in srgb, var(--primary-color) 15%, transparent);
-  }
-
   @media (max-width: 768px) {
     padding: 2rem;
   }

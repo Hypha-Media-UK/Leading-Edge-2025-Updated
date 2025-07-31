@@ -4,9 +4,9 @@
                 <h2>{{ entry.homepageProductsSection.sectionTitle }}</h2>
                 <p>{{ entry.homepageProductsSection.sectionSubText }}</p>
             </div>
-            <div class="products-grid js-stagger-grid">
+            <div class="products-grid ">
                 {% for product in entry.homepageProductsSection.productImages %}
-                    <div class="product-item js-stagger-item">
+                    <div class="product-item">
                         <img src="{{ product.url }}" alt="{{ product.title }}">
                     </div>
                 {% endfor %}
