@@ -33,24 +33,26 @@
   }
 
   & p {
-    font-size: var(--section-header-p-size, 1.1rem);
-    color: var(--section-header-p-color, var(--text-secondary));
-    line-height: var(--section-header-p-line-height, 1.6);
+    font-size: var(--section-header-p-size, 1.2rem);
+    color: var(--section-header-p-color, color-mix(in srgb, var(--text-secondary) 85%, transparent));
+    line-height: var(--section-header-p-line-height, 1.7);
     max-width: var(--section-header-p-max-width, none);
     margin: var(--section-header-p-margin, 0 auto);
+    font-weight: 400;
+    opacity: 0.9;
 
     /* Responsive typography for paragraphs */
     @media (max-width: 992px) {
-      font-size: var(--section-header-p-size-md, 1.05rem);
+      font-size: var(--section-header-p-size-md, 1.15rem);
     }
 
     @media (max-width: 768px) {
-      font-size: var(--section-header-p-size-sm, 1rem);
+      font-size: var(--section-header-p-size-sm, 1.1rem);
     }
 
     @media (max-width: 576px) {
-      font-size: var(--section-header-p-size-xs, 0.9rem);
-      line-height: var(--section-header-p-line-height-xs, 1.5);
+      font-size: var(--section-header-p-size-xs, 1rem);
+      line-height: var(--section-header-p-line-height-xs, 1.6);
     }
   }
 }
@@ -145,6 +147,33 @@
   }
 
   @media (max-width: 576px) {
+    --section-header-p-max-width: 100%;
+  }
+}
+
+/* Services Detail Page specific styling */
+.services-detail-page .section-header {
+  --section-header-margin-top: 3rem;
+  margin-block-start: var(--section-header-margin-top);
+  --section-header-p-color: var(--primary-color-light);
+  --section-header-p-max-width: 700px;
+  
+  @media (max-width: 1200px) {
+    --section-header-margin-top: 2.5rem;
+  }
+
+  @media (max-width: 992px) {
+    --section-header-margin-top: 2rem;
+    --section-header-p-max-width: 650px;
+  }
+
+  @media (max-width: 768px) {
+    --section-header-margin-top: 1.5rem;
+    --section-header-p-max-width: 600px;
+  }
+
+  @media (max-width: 576px) {
+    --section-header-margin-top: 1rem;
     --section-header-p-max-width: 100%;
   }
 }
