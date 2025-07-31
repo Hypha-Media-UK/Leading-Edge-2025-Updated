@@ -10,6 +10,7 @@
 /* Import base components that are used across all pages */
 @import 'components/buttons.css';
 @import 'components/forms.css';
+@import 'components/section-header.css';
 @import 'components/header.css';
 @import 'components/footer.css';
 @import 'components/modal.css';

@@ -1,0 +1,152 @@
+@layer components {
+
+/* Section Header Base Component - DRY Implementation */
+.section-header {
+  text-align: var(--section-header-align, center);
+  margin-block-end: var(--section-header-margin, 3rem);
+
+  & h2 {
+    font-size: var(--section-header-h2-size, 2.5rem);
+    margin-block-end: var(--section-header-h2-margin, 1rem);
+    color: var(--section-header-h2-color, var(--primary-color));
+
+    /* Responsive typography */
+    @media (max-width: 1200px) {
+      font-size: var(--section-header-h2-size-lg, 2.2rem);
+      margin-block-end: var(--section-header-h2-margin-lg, 0.9rem);
+    }
+
+    @media (max-width: 992px) {
+      font-size: var(--section-header-h2-size-md, 2rem);
+      margin-block-end: var(--section-header-h2-margin-md, 0.8rem);
+    }
+
+    @media (max-width: 768px) {
+      font-size: var(--section-header-h2-size-sm, 1.8rem);
+      margin-block-end: var(--section-header-h2-margin-sm, 0.7rem);
+    }
+
+    @media (max-width: 576px) {
+      font-size: var(--section-header-h2-size-xs, 1.6rem);
+      margin-block-end: var(--section-header-h2-margin-xs, 0.6rem);
+    }
+  }
+
+  & p {
+    font-size: var(--section-header-p-size, 1.1rem);
+    color: var(--section-header-p-color, var(--text-secondary));
+    line-height: var(--section-header-p-line-height, 1.6);
+    max-width: var(--section-header-p-max-width, none);
+    margin: var(--section-header-p-margin, 0 auto);
+
+    /* Responsive typography for paragraphs */
+    @media (max-width: 992px) {
+      font-size: var(--section-header-p-size-md, 1.05rem);
+    }
+
+    @media (max-width: 768px) {
+      font-size: var(--section-header-p-size-sm, 1rem);
+    }
+
+    @media (max-width: 576px) {
+      font-size: var(--section-header-p-size-xs, 0.9rem);
+      line-height: var(--section-header-p-line-height-xs, 1.5);
+    }
+  }
+}
+
+/* Component-specific variations using CSS custom properties */
+
+/* Services Preview specific styling */
+.services-preview .section-header {
+  --section-header-p-color: var(--primary-color-light);
+  --section-header-p-max-width: 700px;
+  
+  @media (max-width: 992px) {
+    --section-header-p-max-width: 650px;
+  }
+
+  @media (max-width: 768px) {
+    --section-header-p-max-width: 600px;
+  }
+
+  @media (max-width: 576px) {
+    --section-header-p-max-width: 100%;
+  }
+}
+
+/* Call to Action specific styling */
+.cta-section .section-header {
+  --section-header-margin: 2rem;
+  --section-header-p-color: var(--primary-color-light);
+}
+
+/* Instagram Feed specific styling */
+.instagram-feed .section-header {
+  --section-header-p-color: var(--text-secondary);
+}
+
+/* Features/Simple Cards with background variants */
+.features.features--alt-bg .section-header,
+.features.features--dark-bg .section-header,
+.features.features--accent-bg .section-header {
+  --section-header-h2-color: white;
+  --section-header-p-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Testimonials specific styling */
+.testimonials .section-header {
+  --section-header-h2-color: white;
+  --section-header-p-color: rgba(255, 255, 255, 0.8);
+  --section-header-p-max-width: 700px;
+  
+  @media (max-width: 992px) {
+    --section-header-p-max-width: 650px;
+  }
+
+  @media (max-width: 768px) {
+    --section-header-p-max-width: 600px;
+  }
+
+  @media (max-width: 576px) {
+    --section-header-p-max-width: 100%;
+  }
+}
+
+/* Benefits Section specific styling */
+.why-join-section .section-header {
+  --section-header-p-color: var(--primary-color-light);
+  --section-header-p-max-width: 700px;
+  
+  @media (max-width: 992px) {
+    --section-header-p-max-width: 650px;
+  }
+
+  @media (max-width: 768px) {
+    --section-header-p-max-width: 600px;
+  }
+
+  @media (max-width: 576px) {
+    --section-header-p-max-width: 100%;
+  }
+}
+
+/* News Section specific styling */
+.news-section .section-header {
+  --section-header-p-color: var(--primary-color-light);
+  --section-header-p-max-width: 700px;
+  
+  @media (max-width: 992px) {
+    --section-header-p-max-width: 650px;
+  }
+
+  @media (max-width: 768px) {
+    --section-header-p-max-width: 600px;
+  }
+
+  @media (max-width: 576px) {
+    --section-header-p-max-width: 100%;
+  }
+}
+
+} /* End @layer components */

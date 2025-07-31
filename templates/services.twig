@@ -10,16 +10,14 @@
 
 
     {# Services Intro #}
-    <section class="services-intro section-spacing">
+    <section class="section-header">
         <div class="container">
-            <div class="intro-content">
                 {{ entry.introText }}
-            </div>
         </div>
     </section>
 
     {# Services Tabs - Dynamic Content from CraftCMS #}
-    <section class="services-tabs section-spacing">
+    <section class="services-tabs">
         <div class="container">
             {# Create services array from the new separate fields #}
             {% set services = [] %}
