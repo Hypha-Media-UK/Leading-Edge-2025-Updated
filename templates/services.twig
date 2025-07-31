@@ -24,31 +24,31 @@
             {# Create services array from the new separate fields #}
             {% set services = [] %}
             
-            {# Service 1 - Haircare #}
-            {% if entry.serviceType1 or entry.mx_subServices1|length %}
+            {# Service 1 - Only show if serviceTabText1 has content #}
+            {% if entry.serviceTabText1 and (entry.serviceType1 or entry.mx_subServices1|length) %}
                 {% set services = services|merge([{
-                    'type': entry.serviceType1 ?: 'Haircare',
-                    'tabText': entry.serviceTabText1 ?: 'Haircare',
+                    'type': entry.serviceType1,
+                    'tabText': entry.serviceTabText1,
                     'icon': entry.serviceIcon1,
                     'subServices': entry.mx_subServices1
                 }]) %}
             {% endif %}
             
-            {# Service 2 - Beauty and Nails #}
-            {% if entry.serviceType2 or entry.mx_subServices2|length %}
+            {# Service 2 - Only show if serviceTabText2 has content #}
+            {% if entry.serviceTabText2 and (entry.serviceType2 or entry.mx_subServices2|length) %}
                 {% set services = services|merge([{
-                    'type': entry.serviceType2 ?: 'Beauty and Nails',
-                    'tabText': entry.serviceTabText2 ?: 'Beauty and Nails',
+                    'type': entry.serviceType2,
+                    'tabText': entry.serviceTabText2,
                     'icon': entry.serviceIcon2,
                     'subServices': entry.mx_subServices2
                 }]) %}
             {% endif %}
             
-            {# Service 3 - Aesthetics #}
-            {% if entry.serviceType3 or entry.mx_subServices3|length %}
+            {# Service 3 - Only show if serviceTabText3 has content #}
+            {% if entry.serviceTabText3 and (entry.serviceType3 or entry.mx_subServices3|length) %}
                 {% set services = services|merge([{
-                    'type': entry.serviceType3 ?: 'Aesthetics',
-                    'tabText': entry.serviceTabText3 ?: 'Aesthetics',
+                    'type': entry.serviceType3,
+                    'tabText': entry.serviceTabText3,
                     'icon': entry.serviceIcon3,
                     'subServices': entry.mx_subServices3
                 }]) %}
