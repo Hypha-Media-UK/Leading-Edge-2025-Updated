@@ -1,54 +1,22 @@
-/* Critical CSS - Inline styles to prevent FOUC */
-/* This file contains essential above-the-fold styles */
+/* MINIMAL Critical CSS - Only layout essentials to prevent FOUC */
+/* This file mirrors the inline critical CSS in _layout.twig */
 
-/* CSS Variables - Essential tokens */
 :root {
-  /* Core Colors */
   --primary-color: #404e5c;
   --secondary-color: #B9AA9D;
   --accent-color: #c58f31;
   --light-color: #d9e2eb;
-  --dark-color: #495159;
-  
-  /* Text Colors */
-  --text-primary: #2d3748;
-  --text-secondary: #4a5568;
-  --text-light: #a0aec0;
-  
-  /* Background Colors */
-  --bg-light: #dfe9f0;
-  --bg-dark: #2d3748;
-  --bg-alternate: #edf2f7;
-  
-  /* Border Colors */
-  --border-color: #e2e8f0;
-  --border-dark: #cbd5e0;
-  
-  /* Typography */
-  --font-family-base: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --font-family-primary: 'Playfair Display', serif;
   --font-family-secondary: 'Montserrat', sans-serif;
-  
-  /* Spacing */
   --section-padding: 5rem;
   --section-padding-mobile: 3.5rem;
-  
-  /* Z-index */
   --z-index-fixed: 1030;
-  
-  /* Transitions */
   --transition-standard: all 0.3s ease;
-  
-  /* Border Radius */
   --border-radius-standard: 8px;
 }
 
-/* CSS Reset - Critical elements only */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/* Essential layout only - no colors that override components */
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
@@ -59,15 +27,14 @@ body {
   font-family: var(--font-family-secondary);
   font-size: 16px;
   line-height: 1.5;
-  color: var(--primary-color);
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  /* Prevent layout shift during font loading */
   font-display: swap;
+  /* Default text color - components can override */
+  color: var(--primary-color);
 }
 
-/* Container - Critical layout */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -75,7 +42,7 @@ body {
   padding: 0 1rem;
 }
 
-/* Header - Critical above-the-fold component */
+/* Header - Critical for layout stability */
 header {
   position: fixed;
   top: 0;
@@ -100,139 +67,14 @@ header {
   padding: 0 1rem;
 }
 
-.logo h1 {
-  font-size: 1.8rem;
-  margin: 0;
-  color: var(--primary-color);
-  font-weight: 700;
-  font-family: var(--font-family-primary);
-  transition: var(--transition-standard);
-}
-
-/* Navigation - Critical layout */
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  margin-left: 2rem;
-}
-
-nav ul li a {
-  color: var(--primary-color);
-  text-decoration: none;
-  position: relative;
-  padding-bottom: 5px;
-  transition: var(--transition-standard);
-}
-
-/* Mobile menu toggle */
-.menu-toggle {
-  display: none;
-  cursor: pointer;
-  z-index: 101;
-}
-
-.hamburger {
-  width: 30px;
-  height: 22px;
-  position: relative;
-}
-
-.hamburger span {
-  display: block;
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  background: var(--primary-color);
-  border-radius: 3px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: 0.25s ease-in-out;
-}
-
-.hamburger span:nth-child(1) { top: 0px; }
-.hamburger span:nth-child(2) { top: 9px; }
-.hamburger span:nth-child(3) { top: 18px; }
-
-/* Main content spacing to account for fixed header */
+/* Main content offset - prevent layout shift */
 main {
   padding-top: 120px;
 }
 
-/* Typography - Critical elements */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-primary);
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--primary-color);
-}
-
-h1 { font-size: 3rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 1.8rem; }
-
-p {
-  margin-bottom: 1rem;
-}
-
-a {
-  text-decoration: none;
-  color: var(--accent-color);
-  transition: var(--transition-standard);
-}
-
-/* Images - Prevent layout shift */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Grid system - Critical layout */
-.grid {
-  display: grid;
-}
-
-.flex {
-  display: flex;
-}
-
-/* Section base - Critical layout */
-.section-base {
-  padding-block: var(--section-padding);
-}
-
-/* Button base - Critical interactive elements */
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: var(--border-radius-standard);
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  transition: var(--transition-standard);
-  font-family: inherit;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.btn.primary {
-  background-color: var(--accent-color);
-  color: white;
-}
-
-/* Mobile responsive - Critical breakpoints */
+/* Basic responsive structure */
 @media (max-width: 1200px) {
-  .menu-toggle {
-    display: block;
-  }
-  
+  .menu-toggle { display: block; }
   nav {
     position: fixed;
     top: 0;
@@ -244,33 +86,10 @@ img {
     transition: right 0.3s ease;
     z-index: 100;
   }
-  
-  nav ul {
-    flex-direction: column;
-    padding: 100px 2rem 2rem;
-  }
-  
-  nav ul li {
-    margin: 0 0 1.5rem 0;
-  }
 }
 
 @media (max-width: 768px) {
-  .logo h1 {
-    font-size: 1.5rem;
-  }
-  
-  .section-base {
-    padding-block: var(--section-padding-mobile);
-  }
-  
-  main {
-    padding-top: 100px;
-  }
-  
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.8rem; }
-  h3 { font-size: 1.5rem; }
+  main { padding-top: 100px; }
 }
 
 @media (max-width: 576px) {
@@ -280,44 +99,9 @@ img {
   }
 }
 
-/* Prevent flash during font loading */
-@font-face {
-  font-family: 'Montserrat';
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Playfair Display';
-  font-display: swap;
-}
-
-/* Loading state to prevent layout shift */
-.loading {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.loaded {
-  opacity: 1;
-}
-
-/* Skeleton loading for dynamic content */
-.skeleton {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: loading 1.5s infinite;
-}
-
-@keyframes loading {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

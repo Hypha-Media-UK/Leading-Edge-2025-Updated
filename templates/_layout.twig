@@ -19,19 +19,15 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     
-    <!-- Critical CSS Inline - Comprehensive FOUC Prevention -->
+    <!-- Critical CSS Inline - Minimal FOUC Prevention Strategy -->
     {% block criticalCss %}
     <style>
-      /* Critical CSS - Inline styles to prevent FOUC */
+      /* MINIMAL Critical CSS - Only layout essentials to prevent FOUC */
       :root {
         --primary-color: #404e5c;
         --secondary-color: #B9AA9D;
         --accent-color: #c58f31;
         --light-color: #d9e2eb;
-        --text-primary: #2d3748;
-        --text-secondary: #4a5568;
-        --bg-light: #dfe9f0;
-        --border-color: #e2e8f0;
         --font-family-primary: 'Playfair Display', serif;
         --font-family-secondary: 'Montserrat', sans-serif;
         --section-padding: 5rem;
@@ -41,6 +37,7 @@
         --border-radius-standard: 8px;
       }
       
+      /* Essential layout only - no colors that override components */
       *, *::before, *::after { box-sizing: border-box; }
       
       html {
@@ -52,11 +49,12 @@
         font-family: var(--font-family-secondary);
         font-size: 16px;
         line-height: 1.5;
-        color: var(--primary-color);
         margin: 0;
         padding: 0;
         overflow-x: hidden;
         font-display: swap;
+        /* Default text color - components can override */
+        color: var(--primary-color);
       }
       
       .container {
@@ -66,6 +64,7 @@
         padding: 0 1rem;
       }
       
+      /* Header - Critical for layout stability */
       header {
         position: fixed;
         top: 0;
@@ -90,115 +89,12 @@
         padding: 0 1rem;
       }
       
-      .logo h1 {
-        font-size: 1.8rem;
-        margin: 0;
-        color: var(--primary-color);
-        font-weight: 700;
-        font-family: var(--font-family-primary);
-        transition: var(--transition-standard);
-      }
-      
-      nav ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      
-      nav ul li {
-        margin-left: 2rem;
-      }
-      
-      nav ul li a {
-        color: var(--primary-color);
-        text-decoration: none;
-        position: relative;
-        padding-bottom: 5px;
-        transition: var(--transition-standard);
-      }
-      
-      .menu-toggle {
-        display: none;
-        cursor: pointer;
-        z-index: 101;
-      }
-      
-      .hamburger {
-        width: 30px;
-        height: 22px;
-        position: relative;
-      }
-      
-      .hamburger span {
-        display: block;
-        position: absolute;
-        height: 3px;
-        width: 100%;
-        background: var(--primary-color);
-        border-radius: 3px;
-        opacity: 1;
-        left: 0;
-        transform: rotate(0deg);
-        transition: 0.25s ease-in-out;
-      }
-      
-      .hamburger span:nth-child(1) { top: 0px; }
-      .hamburger span:nth-child(2) { top: 9px; }
-      .hamburger span:nth-child(3) { top: 18px; }
-      
+      /* Main content offset - prevent layout shift */
       main {
         padding-top: 120px;
       }
       
-      h1, h2, h3, h4, h5, h6 {
-        font-family: var(--font-family-primary);
-        font-weight: 600;
-        margin-bottom: 1rem;
-        color: var(--primary-color);
-      }
-      
-      h1 { font-size: 3rem; }
-      h2 { font-size: 2.5rem; }
-      h3 { font-size: 1.8rem; }
-      
-      p { margin-bottom: 1rem; }
-      
-      a {
-        text-decoration: none;
-        color: var(--accent-color);
-        transition: var(--transition-standard);
-      }
-      
-      img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-      }
-      
-      .section-base {
-        padding-block: var(--section-padding);
-      }
-      
-      .btn {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        border: none;
-        border-radius: var(--border-radius-standard);
-        text-decoration: none;
-        text-align: center;
-        cursor: pointer;
-        transition: var(--transition-standard);
-        font-family: inherit;
-        font-size: 1rem;
-        line-height: 1.5;
-      }
-      
-      .btn.primary {
-        background-color: var(--accent-color);
-        color: white;
-      }
-      
+      /* Basic responsive structure */
       @media (max-width: 1200px) {
         .menu-toggle { display: block; }
         nav {
@@ -212,22 +108,10 @@
           transition: right 0.3s ease;
           z-index: 100;
         }
-        nav ul {
-          flex-direction: column;
-          padding: 100px 2rem 2rem;
-        }
-        nav ul li {
-          margin: 0 0 1.5rem 0;
-        }
       }
       
       @media (max-width: 768px) {
-        .logo h1 { font-size: 1.5rem; }
-        .section-base { padding-block: var(--section-padding-mobile); }
         main { padding-top: 100px; }
-        h1 { font-size: 2rem; }
-        h2 { font-size: 1.8rem; }
-        h3 { font-size: 1.5rem; }
       }
       
       @media (max-width: 576px) {
@@ -237,6 +121,7 @@
         }
       }
       
+      /* Reduced motion support */
       @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after {
           animation-duration: 0.01ms !important;

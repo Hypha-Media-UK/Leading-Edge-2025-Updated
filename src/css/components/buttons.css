@@ -186,6 +186,7 @@
   &:hover {
     background-color: var(--accent-color-dark);
     border-color: var(--accent-color-dark);
+    color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px color-mix(in srgb, var(--accent-color) 40%, transparent);
   }
