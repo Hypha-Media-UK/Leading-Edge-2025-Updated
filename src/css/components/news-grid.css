@@ -1,5 +1,11 @@
 @layer components {
 
+/* News Content Section - Page Layout */
+.news-content {
+  padding-block: 5rem;
+  background-color: white;
+}
+
 /* News Grid Component Styles (extracted from Vue NewsGrid.vue) */
 .news-section {
   padding-block: 5rem;
