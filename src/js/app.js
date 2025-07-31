@@ -288,6 +288,21 @@ componentManager.register('.modal-overlay', (elements) => {
     });
 });
 
+// Apply button functionality - close modal when applying for position
+componentManager.register('.apply-btn', (elements) => {
+    elements.forEach(applyBtn => {
+        applyBtn.addEventListener('click', function(e) {
+            // Find the parent modal and close it
+            const modal = this.closest('.modal-overlay');
+            if (modal) {
+                closeModal(modal);
+            }
+            // Allow the anchor link to work (navigate to #application-form)
+            // The default behavior will handle the navigation
+        });
+    });
+});
+
 // Modal utility functions
 function openModal(modal) {
     modal.style.display = 'flex';
