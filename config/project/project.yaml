@@ -1,4 +1,4 @@
-dateModified: 1753882309
+dateModified: 1753952091
 elementSources:
   craft\elements\Entry:
     -
@@ -55,6 +55,7 @@ meta:
     5de5baa5-50e4-4208-a69b-3036b56bfa6e: Careers # Careers
     5edfc78e-63a4-4023-8fba-f4818a8e32a0: news-article # news-article
     5f596b25-ec1e-469a-8c81-e040276faa25: 'Offer Cards' # Offer Cards
+    6b2d5a14-d767-4360-88fa-ca10896170a4: 'Promo Links' # Promo Links
     6d8f0d59-dcb0-4d1c-b7fc-1847d203b478: Colour # Colour
     8dc06e17-b136-4714-997a-6b1f293e9c41: 'Bold, Italic and Link' # Bold, Italic and Link
     8eed41b9-47a1-4b42-8361-6e2f9dd27c9f: 'Social Links' # Social Links

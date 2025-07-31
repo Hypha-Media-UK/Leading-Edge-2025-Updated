@@ -1,13 +1,13 @@
 columnSuffix: null
-handle: cb_pageHeader
+handle: promoLinks
 instructions: null
-name: 'Page Header'
+name: 'Promo Links'
 searchable: false
 settings:
   fieldLayouts:
     __assoc__:
       -
-        - 5d3bc16a-0a1c-4c37-8e73-4de24707cd95
+        - 018e0ea9-ef88-4902-b057-b929ac5fb61f
         -
           __assoc__:
             0:
@@ -20,7 +20,7 @@ settings:
                       - Content
                     1:
                       - uid
-                      - 45a11df1-738c-405d-b6a6-9fa1ef311120
+                      - 4862564c-e8f5-4d59-b9a6-7b94f3afaf37
                     4:
                       - elements
                       -
@@ -29,12 +29,6 @@ settings:
                             0:
                               - type
                               - craft\fieldlayoutelements\CustomField
-                            1:
-                              - handle
-                              - pageTitle
-                            2:
-                              - label
-                              - 'Page Title'
                             6:
                               - required
                               - false
@@ -49,74 +43,10 @@ settings:
                               - 100
                             10:
                               - dateAdded
-                              - '2025-07-09T09:08:26+00:00'
+                              - '2025-07-31T08:53:11+00:00'
                             11:
                               - uid
-                              - 5794b33a-9aeb-415a-86ac-186366dc9e2a
-                            14:
-                              - fieldUid
-                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
-                        -
-                          __assoc__:
-                            0:
-                              - type
-                              - craft\fieldlayoutelements\CustomField
-                            1:
-                              - handle
-                              - subHeading
-                            2:
-                              - label
-                              - 'Sub Heading'
-                            6:
-                              - required
-                              - false
-                            7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
-                              - width
-                              - 100
-                            10:
-                              - dateAdded
-                              - '2025-07-09T09:08:26+00:00'
-                            11:
-                              - uid
-                              - da309fa1-70bd-497e-b18e-08c2f5fcf4ff
-                            14:
-                              - fieldUid
-                              - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
-                        -
-                          __assoc__:
-                            0:
-                              - type
-                              - craft\fieldlayoutelements\CustomField
-                            1:
-                              - handle
-                              - promoLink
-                            2:
-                              - label
-                              - 'Promo Link'
-                            6:
-                              - required
-                              - false
-                            7:
-                              - providesThumbs
-                              - false
-                            8:
-                              - includeInCards
-                              - false
-                            9:
-                              - width
-                              - 100
-                            10:
-                              - dateAdded
-                              - '2025-07-30T09:08:07+00:00'
-                            11:
-                              - uid
-                              - cd2fa102-6ed6-4015-b18e-cf2f19a28db9
+                              - 2ef27473-865f-4fcf-826f-e7dee11375c2
                             14:
                               - fieldUid
                               - 54b32803-64e0-46aa-bacf-ecddf2f5db7a # Section Link
@@ -145,10 +75,10 @@ settings:
                               - 50
                             10:
                               - dateAdded
-                              - '2025-07-31T08:47:38+00:00'
+                              - '2025-07-31T08:53:11+00:00'
                             11:
                               - uid
-                              - 844828e3-2790-46dc-ae12-1d8d18f4f6b9
+                              - 9ffa66ae-d7e5-4739-9b98-eb5f4e596b47
                             14:
                               - fieldUid
                               - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text
@@ -177,10 +107,10 @@ settings:
                               - 50
                             10:
                               - dateAdded
-                              - '2025-07-31T08:49:43+00:00'
+                              - '2025-07-31T08:53:11+00:00'
                             11:
                               - uid
-                              - 83060951-7a84-4ae6-a476-b8cc49962190
+                              - 31ba3265-9529-413f-bf7e-47c54aa3b9ec
                             14:
                               - fieldUid
                               - 54ad6db4-d4f1-442d-b6c6-c1b6ac754cf9 # Straight Text

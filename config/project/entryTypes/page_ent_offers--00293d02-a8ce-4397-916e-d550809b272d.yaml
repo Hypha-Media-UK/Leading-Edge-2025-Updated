@@ -42,6 +42,23 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2025-07-31T08:53:16+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 6b2d5a14-d767-4360-88fa-ca10896170a4 # Promo Links
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 83829829-11c1-4325-a453-3c8ee9de7960
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2025-07-30T09:18:16+00:00'
             editCondition: null
             elementCondition: null

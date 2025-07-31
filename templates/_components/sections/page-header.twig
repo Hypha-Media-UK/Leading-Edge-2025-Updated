@@ -5,5 +5,10 @@
             {% if entry.cb_pageHeader.subHeading %}
                 <p>{{ entry.cb_pageHeader.subHeading }}</p>
             {% endif %}
+            {% if entry.cb_pageHeader.promoLink %}
+            <div class="{{ entry.cb_pageHeader.buttonClass }}">
+                <a href="{{ entry.cb_pageHeader.promoLink.url }}" class="btn primary-special"><i class="fas {{ entry.cb_pageHeader.buttonIcon }}"></i>{{ entry.cb_pageHeader.promoLink.label }}</a>
+            </div>
+            {% endif %}
         </div>
     </section>
