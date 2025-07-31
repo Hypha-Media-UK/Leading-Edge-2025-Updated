@@ -48,13 +48,11 @@
     color: var(--primary-color-light);
     line-height: 1.7;
     margin-block-end: 0;
-    white-space: pre-line;
   }
 
   /* Additional specific address styling to ensure proper formatting */
   & .address-text {
     display: block;
-    white-space: pre-line;
     font-size: 1rem;
     line-height: 1.6;
   }

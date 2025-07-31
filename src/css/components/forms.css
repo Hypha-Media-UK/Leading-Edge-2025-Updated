@@ -1,0 +1,224 @@
+@layer components {
+
+/* Shared Form Component Styles - Used across all forms */
+.form-header {
+  text-align: center;
+  margin-block-end: 3rem;
+
+  & h2 {
+    font-size: 2.2rem;
+    margin-block-end: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color) 80%, black));
+      margin: 1rem auto 0;
+      border-radius: 2px;
+    }
+  }
+
+  & p {
+    color: var(--primary-color-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+.form-success {
+  text-align: center;
+  padding: 2rem;
+
+  & .success-icon {
+    font-size: 4rem;
+    color: #4CAF50;
+    margin-block-end: 1rem;
+  }
+
+  & h3 {
+    font-size: 1.8rem;
+    margin-block-end: 1rem;
+    color: var(--primary-color);
+  }
+
+  & p {
+    margin-block-end: 2rem;
+    color: var(--primary-color-light);
+  }
+}
+
+/* Shared form field styling */
+.form-field,
+.form-group {
+  margin-block-end: 2rem;
+  position: relative;
+
+  & label {
+    display: block;
+    margin-block-end: 0.8rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  & input,
+  & select,
+  & textarea {
+    width: 100%;
+    padding: 1.5rem 1.5rem;
+    border: 2px solid color-mix(in srgb, var(--primary-color) 15%, transparent);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      background-color: white;
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 10%, transparent);
+      transform: translateY(-1px);
+    }
+
+    &::placeholder {
+      color: color-mix(in srgb, var(--primary-color) 50%, white);
+    }
+  }
+
+  & textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+  }
+
+  & .error-message {
+    color: #C62828;
+    font-size: 0.875rem;
+    margin-block-start: 0.5rem;
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  /* File upload specific styling */
+  & .file-upload {
+    & input[type="file"] {
+      border: 2px dashed color-mix(in srgb, var(--primary-color) 25%, transparent);
+      padding: 1rem;
+      text-align: center;
+      cursor: pointer;
+      background-color: #fafafa;
+
+      &:hover {
+        border-color: var(--accent-color);
+        background-color: white;
+      }
+
+      &:focus {
+        border-color: var(--accent-color);
+        background-color: white;
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 10%, transparent);
+      }
+    }
+
+    & .file-info {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-block-start: 0.5rem;
+    }
+  }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.form-alert {
+  background-color: #FFEBEE;
+  color: #C62828;
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin-block-end: 2rem;
+  border-left: 4px solid #C62828;
+
+  & p {
+    margin: 0;
+  }
+}
+
+/* Submit button container for better spacing */
+.form-submit {
+  margin-block-start: 2rem;
+  text-align: center;
+}
+
+/* Form container styling */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  padding: 3rem;
+  box-shadow: 0 5px 20px color-mix(in srgb, var(--primary-color) 8%, transparent);
+
+  @media (max-width: 576px) {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Global Formie Form Field Overrides */
+/* Ensure all Formie-generated form fields have consistent padding */
+.fui-input,
+.fui-textarea,
+.fui-select,
+input.fui-input,
+textarea.fui-textarea,
+select.fui-select {
+  padding: 1rem 1.1rem !important;
+  border: 2px solid color-mix(in srgb, var(--primary-color) 15%, transparent) !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  transition: all 0.3s ease !important;
+  background-color: #fafafa !important;
+  box-sizing: border-box !important;
+
+  &:focus {
+    outline: none !important;
+    border-color: var(--accent-color) !important;
+    background-color: white !important;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 10%, transparent) !important;
+    transform: translateY(-1px) !important;
+  }
+
+  &::placeholder {
+    color: color-mix(in srgb, var(--primary-color) 50%, white) !important;
+  }
+}
+
+/* Specific override for Formie textareas */
+textarea.fui-textarea {
+  resize: vertical !important;
+  min-height: 120px !important;
+  line-height: 1.6 !important;
+}
+
+
+} /* End @layer components */
