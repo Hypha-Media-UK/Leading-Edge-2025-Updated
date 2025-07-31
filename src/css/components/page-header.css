@@ -5,18 +5,18 @@
   background-color: var(--primary-color);
   color: white;
   text-align: center;
-  padding: 8rem 0 3rem; /* Increased top padding to accommodate fixed header */
+  padding: 11rem 0 5rem; /* Increased top padding to accommodate fixed header */
 
   @media (max-width: 992px) {
-    padding: 7rem 0 2.5rem; /* Adjusted for smaller screens */
+    padding: 9rem 0 3.5rem; /* Adjusted for smaller screens */
   }
 
   @media (max-width: 768px) {
-    padding: 6rem 0 2rem; /* Adjusted for mobile */
+    padding: 8rem 0 3rem; /* Adjusted for mobile */
   }
 
   @media (max-width: 576px) {
-    padding: 5.5rem 0 1.5rem; /* Adjusted for small mobile */
+    padding: 7.5rem 0 2.5rem; /* Adjusted for small mobile */
   }
 
   & h1 {
