@@ -5,6 +5,7 @@
     "craftcms/ckeditor": "^4.9.0",
     "craftcms/cms": "5.8.12",
     "craftcms/feed-me": "^6.8.0",
+    "venveo/craft-bulkedit": "^5.0.0-beta.1",
     "verbb/field-manager": "^4.0.3",
     "verbb/formie": "3.1.1",
     "vlucas/phpdotenv": "^5.4.0"
@@ -12,6 +13,11 @@
   "require-dev": {
     "craftcms/generator": "^2.0.0",
     "yiisoft/yii2-shell": "^2.0.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "modules\\": "modules/"
+    }
   },
   "config": {
     "allow-plugins": {

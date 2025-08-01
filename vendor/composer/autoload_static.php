@@ -72,6 +72,7 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
             'verbb\\fieldmanager\\' => 19,
             'verbb\\base\\' => 11,
             'verbb\\auth\\' => 11,
+            'venveo\\bulkedit\\' => 16,
         ),
         's' => 
         array (
@@ -89,6 +90,7 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
         ),
         'm' => 
         array (
+            'modules\\' => 8,
             'mikehaertl\\shellcommand\\' => 24,
         ),
         'l' => 
@@ -368,6 +370,10 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
         array (
             0 => __DIR__ . '/..' . '/verbb/auth/src',
         ),
+        'venveo\\bulkedit\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/venveo/craft-bulkedit/src',
+        ),
         'samdark\\log\\tests\\' => 
         array (
             0 => __DIR__ . '/..' . '/samdark/yii2-psr-log-target/tests',
@@ -389,6 +395,10 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
         'nystudio107\\codeeditor\\' => 
         array (
             0 => __DIR__ . '/..' . '/nystudio107/craft-code-editor/src',
+        ),
+        'modules\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/modules',
         ),
         'mikehaertl\\shellcommand\\' => 
         array (
@@ -8255,6 +8265,8 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
         'libphonenumber\\prefixmapper\\PrefixFileReader' => __DIR__ . '/..' . '/giggsey/libphonenumber-for-php/src/prefixmapper/PrefixFileReader.php',
         'libphonenumber\\prefixmapper\\PrefixTimeZonesMap' => __DIR__ . '/..' . '/giggsey/libphonenumber-for-php/src/prefixmapper/PrefixTimeZonesMap.php',
         'mikehaertl\\shellcommand\\Command' => __DIR__ . '/..' . '/mikehaertl/php-shellcommand/src/Command.php',
+        'modules\\newsorganizer\\Module' => __DIR__ . '/../..' . '/modules/newsorganizer/Module.php',
+        'modules\\newsorganizer\\console\\controllers\\ReorganizeController' => __DIR__ . '/../..' . '/modules/newsorganizer/console/controllers/ReorganizeController.php',
         'nystudio107\\codeeditor\\CodeEditor' => __DIR__ . '/..' . '/nystudio107/craft-code-editor/src/CodeEditor.php',
         'nystudio107\\codeeditor\\assetbundles\\codeeditor\\CodeEditorAsset' => __DIR__ . '/..' . '/nystudio107/craft-code-editor/src/assetbundles/codeeditor/CodeEditorAsset.php',
         'nystudio107\\codeeditor\\autocompletes\\CraftApiAutocomplete' => __DIR__ . '/..' . '/nystudio107/craft-code-editor/src/autocompletes/CraftApiAutocomplete.php',
@@ -8425,6 +8437,41 @@ class ComposerStaticInit0bf13ad21b51e65cbc0d53dd656465a8
         'samdark\\log\\tests\\PsrArrayLoggerFactory' => __DIR__ . '/..' . '/samdark/yii2-psr-log-target/tests/PsrArrayLoggerFactory.php',
         'samdark\\log\\tests\\PsrTargetLevelsTest' => __DIR__ . '/..' . '/samdark/yii2-psr-log-target/tests/PsrTargetLevelsTest.php',
         'samdark\\log\\tests\\PsrTargetTest' => __DIR__ . '/..' . '/samdark/yii2-psr-log-target/tests/PsrTargetTest.php',
+        'venveo\\bulkedit\\Plugin' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/Plugin.php',
+        'venveo\\bulkedit\\assetbundles\\bulkeditelementaction\\BulkEditElementActionAsset' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/assetbundles/bulkeditelementaction/BulkEditElementActionAsset.php',
+        'venveo\\bulkedit\\base\\AbstractElementTypeProcessor' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/base/AbstractElementTypeProcessor.php',
+        'venveo\\bulkedit\\base\\AbstractFieldProcessor' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/base/AbstractFieldProcessor.php',
+        'venveo\\bulkedit\\base\\ElementTypeProcessorInterface' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/base/ElementTypeProcessorInterface.php',
+        'venveo\\bulkedit\\base\\FieldProcessorInterface' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/base/FieldProcessorInterface.php',
+        'venveo\\bulkedit\\base\\FieldStrategyInterface' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/base/FieldStrategyInterface.php',
+        'venveo\\bulkedit\\controllers\\BulkEditController' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/controllers/BulkEditController.php',
+        'venveo\\bulkedit\\elements\\actions\\BulkEditElementAction' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/elements/actions/BulkEditElementAction.php',
+        'venveo\\bulkedit\\elements\\processors\\AssetProcessor' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/elements/processors/AssetProcessor.php',
+        'venveo\\bulkedit\\elements\\processors\\CategoryProcessor' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/elements/processors/CategoryProcessor.php',
+        'venveo\\bulkedit\\elements\\processors\\EntryProcessor' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/elements/processors/EntryProcessor.php',
+        'venveo\\bulkedit\\elements\\processors\\ProductProcessor' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/elements/processors/ProductProcessor.php',
+        'venveo\\bulkedit\\elements\\processors\\UserProcessor' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/elements/processors/UserProcessor.php',
+        'venveo\\bulkedit\\enums\\FieldType' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/enums/FieldType.php',
+        'venveo\\bulkedit\\fields\\processors\\NumberFieldProcessor' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/fields/processors/NumberFieldProcessor.php',
+        'venveo\\bulkedit\\fields\\processors\\PlainTextProcessor' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/fields/processors/PlainTextProcessor.php',
+        'venveo\\bulkedit\\fields\\processors\\RelationFieldProcessor' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/fields/processors/RelationFieldProcessor.php',
+        'venveo\\bulkedit\\fields\\strategies\\Add' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/fields/strategies/Add.php',
+        'venveo\\bulkedit\\fields\\strategies\\Divide' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/fields/strategies/Divide.php',
+        'venveo\\bulkedit\\fields\\strategies\\Merge' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/fields/strategies/Merge.php',
+        'venveo\\bulkedit\\fields\\strategies\\Multiply' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/fields/strategies/Multiply.php',
+        'venveo\\bulkedit\\fields\\strategies\\Replace' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/fields/strategies/Replace.php',
+        'venveo\\bulkedit\\fields\\strategies\\Subtract' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/fields/strategies/Subtract.php',
+        'venveo\\bulkedit\\migrations\\Install' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/migrations/Install.php',
+        'venveo\\bulkedit\\migrations\\m181117_192854_increase_data_column_size' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/migrations/m181117_192854_increase_data_column_size.php',
+        'venveo\\bulkedit\\migrations\\m181213_193509_move_strategy_field' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/migrations/m181213_193509_move_strategy_field.php',
+        'venveo\\bulkedit\\migrations\\m190721_201115_add_element_type' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/migrations/m190721_201115_add_element_type.php',
+        'venveo\\bulkedit\\migrations\\m220620_172745_refactor_context_storage' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/migrations/m220620_172745_refactor_context_storage.php',
+        'venveo\\bulkedit\\models\\AttributeWrapper' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/models/AttributeWrapper.php',
+        'venveo\\bulkedit\\models\\EditContext' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/models/EditContext.php',
+        'venveo\\bulkedit\\models\\FieldConfig' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/models/FieldConfig.php',
+        'venveo\\bulkedit\\models\\FieldWrapper' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/models/FieldWrapper.php',
+        'venveo\\bulkedit\\queue\\jobs\\SaveBulkEditJob' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/queue/jobs/SaveBulkEditJob.php',
+        'venveo\\bulkedit\\services\\BulkEdit' => __DIR__ . '/..' . '/venveo/craft-bulkedit/src/services/BulkEdit.php',
         'verbb\\auth\\Auth' => __DIR__ . '/..' . '/verbb/auth/src/Auth.php',
         'verbb\\auth\\base\\CredentialsProvider' => __DIR__ . '/..' . '/verbb/auth/src/base/CredentialsProvider.php',
         'verbb\\auth\\base\\CredentialsProviderInterface' => __DIR__ . '/..' . '/verbb/auth/src/base/CredentialsProviderInterface.php',

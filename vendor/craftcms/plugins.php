@@ -74,4 +74,21 @@ return array (
     'developerEmail' => 'support@craftcms.com',
     'documentationUrl' => 'https://docs.craftcms.com/feed-me/v4/',
   ),
+  'venveo/craft-bulkedit' => 
+  array (
+    'class' => 'venveo\\bulkedit\\Plugin',
+    'basePath' => $vendorDir . '/venveo/craft-bulkedit/src',
+    'handle' => 'venveo-bulk-edit',
+    'aliases' => 
+    array (
+      '@venveo/bulkedit' => $vendorDir . '/venveo/craft-bulkedit/src',
+    ),
+    'name' => 'Bulk Edit',
+    'version' => '5.0.0-beta.1',
+    'description' => 'Bulk edit Craft CMS element fields',
+    'developer' => 'Venveo',
+    'developerUrl' => 'https://venveo.com',
+    'documentationUrl' => 'https://github.com/venveo/craft-bulkedit/blob/main/README.md',
+    'changelogUrl' => 'https://raw.githubusercontent.com/venveo/craft-bulkedit/main/CHANGELOG.md',
+  ),
 );

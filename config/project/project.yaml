@@ -1,4 +1,4 @@
-dateModified: 1754035149
+dateModified: 1754041996
 elementSources:
   craft\elements\Entry:
     -
@@ -12,14 +12,21 @@ elementSources:
       key: 'heading:5ed19833-d0be-413d-b83f-739235094aeb'
       type: heading
     -
+      heading: ''
+      key: 'heading:68f69a1b-4ffc-4cac-a09b-cc971735e8eb'
+      type: heading
+    -
       defaultSort:
         - structure
         - asc
       defaultViewMode: ''
       disabled: false
-      key: 'section:d60136f4-9baf-4f3c-9a20-bbd1bf47b28a' # Services
+      key: 'section:e5168587-7fe8-40c8-86c9-f416b40ac41e' # News
       tableAttributes:
         - status
+        - postDate
+        - expiryDate
+        - link
       type: native
 email:
   fromEmail: access@hypha.media
@@ -152,6 +159,10 @@ plugins:
     edition: express
     enabled: true
     schemaVersion: 5.6.2
+  venveo-bulk-edit:
+    edition: standard
+    enabled: true
+    schemaVersion: 4.0.0
 system:
   edition: solo
   live: true
