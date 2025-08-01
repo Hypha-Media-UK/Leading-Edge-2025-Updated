@@ -1,4 +1,4 @@
-defaultPlacement: end
+defaultPlacement: beginning
 enableVersioning: true
 entryTypes:
   -
