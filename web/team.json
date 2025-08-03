@@ -1,0 +1,420 @@
+[
+    {
+        "sectionId": 3,
+        "postDate": "2016-12-19T15:53:00+00:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 1,
+        "id": 95,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "60a36e5a-a699-4149-a9c9-20f2687281f5",
+        "siteSettingsId": 95,
+        "fieldLayoutId": null,
+        "structureId": 3,
+        "contentId": 65,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Meet the Team",
+        "slug": "meet-the-team",
+        "uri": "hyde-salon/meet-the-team",
+        "dateCreated": "2016-12-19T15:53:48+00:00",
+        "dateUpdated": "2025-08-01T11:37:30+01:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 4,
+        "lft": 5,
+        "rgt": 6,
+        "level": 2,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": 6,
+        "canonicalId": 95,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "salons/meet-the-team",
+        "status": "live",
+        "url": "https://leadingedgehairandbeauty.co.uk/hyde-salon/meet-the-team",
+        "authorId": 1,
+        "typeId": 18,
+        "meetTheTeamIntroText": "<p>All our team members are fully trained and insured and regularly attend seminars and training sessions to keep abreast with the latest trends, techniques and new products being brought to market. You have the peace of mind of knowing that our Hyde salon is only 1 of 3 in the UK (July 2017) that carries the accreditation of the coveted Trading Standards awarding body.\n </p>",
+        "meetTheTeamTitle": "Meet the Team",
+        "teamMembers": {
+            "2454": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Lauren",
+                    "staffPhoto": [
+                        1335
+                    ],
+                    "jobTitle": "Stylist",
+                    "shortBio": "<p>Hi, my name is Lauren,</p>\n<p>I have been hairdressing now for 12 years with the past 10 years at The Leading Edge. I spent 3 years training and since then I have attended a number of courses covering colouring and cutting. Most recently I spent the day with Darren Ambrose looking at new techniques and cuts for me to apply to long and mid length hair.</p>\n<p>My real passion lies within my colouring work from either drastic fashion colours through to discreet natural sunkissed colours. I also love working with highlights and have developed my free hand skills to produce beautiful balayage results as subtle or bold as you require. </p>\n<p>If your looking for a change and want to update your look I Iove creating new styles and working with my clients to provide them with the change they are looking for.</p>\n<p>I love meeting new people which is just one of the many things I love about hairdressing and I would welcome the chance to meet you into the salon to provide you with the colour and look of your dreams.</p>"
+                }
+            },
+            "2455": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Gary",
+                    "staffPhoto": [
+                        5477
+                    ],
+                    "jobTitle": "Stylist / Barber",
+                    "shortBio": "<p>It’s our great pleasure to welcome Gary to our team in Hyde. He has been given the name of \"The Hair Wizzard\" by a number of his clients. Gary joins us with a wealth of experience in both Men’s and Ladies colouring and cutting techniques. The first thing you will witness is his attention to detail and shear enthusiasm for his trade which is infectious. He works wonders with curly blowdrys and enjoys using his colouring skills to deliver the results you require. Gary also keeps well up to date with all the latest trends / cuts for the guys too. So why not book in and give him a try.</p>"
+                }
+            },
+            "2456": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Abigail",
+                    "staffPhoto": [
+                        1336
+                    ],
+                    "jobTitle": "Stylist",
+                    "shortBio": "<p>Hi everyone, Abigail here.</p>\n<p>I have been in the hairdressing industry for over 9 years now. Starting at just 14, I took a 2 day release from school to go to college and learn the trade as a GCSE. I then went on to complete my apprenticeship with The Leading Edge and qualified at 18.</p>\n<p>I am constantly looking for new challenges and wanting to learn new techniques. I will continue training on different courses to develop my skills further. This way I can keep up with new techniques and keep you lovely ladies up to date with the new trends.</p>\n<p>Hairdressing is my passion, I will help you achieve your hair goals and give you the best advice possible on keeping your hair healthy. I look forward to meeting you in the salon soon.</p>"
+                }
+            },
+            "2458": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Natasha",
+                    "staffPhoto": [
+                        5494
+                    ],
+                    "jobTitle": "Gel Nail Technician",
+                    "shortBio": "<p>Hi I am Natasha,</p>\n<p>I am a fully qualified Gel Nail Technician and I am very passionate about producing the best work I can. I enjoy the challenge of customers bringing images in which they want me to replicate.</p>\n<p>A big part of my enjoyment in the job is building relationships and bonding with my clients during their visit whilst I create the desired look.</p>\n<p>I look forward to meeting you and adding you to my growing client base.</p>\n<p>Tasha x</p>"
+                }
+            },
+            "2461": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Jayne",
+                    "staffPhoto": [
+                        1359
+                    ],
+                    "jobTitle": "Stylist",
+                    "shortBio": "<p>Jayne has been working in the Hairdressing industry for 30 years gaining a wealth of knowledge and experience. Jayne has owned her own 2 floor salon in Hazel Grove and has also attended Lancaster University gaining a Degree in Education which then led onto the delivery of level 1,2,3 hairdressing skills to students with both Skills Solutions and then onto The Manchester College where she managed the Hair &amp; Beauty Department.</p>\n<p>Jayne has worked for many years in the Hazel Grove area with A Cut Above and Chris Baker where she helped to open their training school before going on to open her own salon “The Hair Company” of Hazel Grove. Jayne had over 6 stylists operating over 2 floors trading successfully for over 8 years before moving into the field of training.</p>\n<p>Having worked in the development of new stylists Jayne has always had to keep up to date with all the latest trends in both cutting and colouring and we are so pleased to be able to offer her unique skills and experience to our clients.</p>"
+                }
+            },
+            "4174": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Emily",
+                    "staffPhoto": [
+                        4183
+                    ],
+                    "jobTitle": "Stylist",
+                    "shortBio": "<p>Hi there! My name is Emily. I am 21 years old and I am fairly new to the hair industry, but never low on passion.</p>\n<p>I am a very bubbly character, and a perfectionist when it comes to my work; whether it be a shaggy-layered 80s styled cut, a fresh new colour, or simply a beautiful bouncy blow - I'm your girl.</p>\n<p>I currently work with women and children of all hair types including Afro / Caribbean.</p>\n<p>I'm offering colour, cut and styling services and soon I will be available for bleach work and highlights too! </p>\n<p>I am also wanting to work with Gents later on in my career. My aim is to be a colour specialist and promote alternative styles. I always aim for the highest quality, and use products which i believe will give you the most benefit, leaving your hair silky soft and manageable. I assure you'll leave my chair feeling fresh and new!</p>\n<p>I look forward to welcoming you in the salon soon.</p>"
+                }
+            },
+            "5591": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Hayley",
+                    "staffPhoto": [
+                        5564
+                    ],
+                    "jobTitle": "Stylist",
+                    "shortBio": "<p>Hi, I am Hayley and I am looking forward to meeting you in The Leading Edge after previuosly working at Paul Anthony's and Harvey Taylor both in Denton. </p>\n<p>I have been in the hairdressing industry for over 40 years completing my level 3 at the outset. In 2011 I was awarded the prestigious Master Craftsman (for services to the hairdressing industry) by The Hairdressing Journal, to which I am very proud of.</p>\n<p>I love all aspects of hairdressing including Perming, colouring and cutting and have a real paasion for Hair-Up. I cant wait to be of service to you the next time your looking for an appointment in the salon</p>"
+                }
+            },
+            "5946": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Kellie",
+                    "staffPhoto": [
+                        5937
+                    ],
+                    "jobTitle": "Stylist",
+                    "shortBio": "<p>Hi All, I'm looking forward to working with all the lovely ladies and staff at The Leading Edge Hair  Beauty.<br />I have over 30 years experience in the hairdressing industry mainly based in and around the Tameside area. I love making ladies feel fabulous and well looked after offering cuts and colours tailored to your specific requirements. I cant wait to welcome you into the salon and be of service to you. Best wishes Kellie.</p>"
+                }
+            },
+            "5859": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Chloe",
+                    "staffPhoto": [
+                        5864
+                    ],
+                    "jobTitle": "Apprentice Hairdresser",
+                    "shortBio": "<p>Hi I'm Chloe. I'm 18 years old and I have been completing my apprenticeship for the last 18 months. At the moment i'm available for blowdrys and some root tints and toners. I am completing my course at Tameside college and The Leading Edge.</p><p>I am a friendly, motivated and passionate individual and welcome anyone into the salon and put 100% into all of my work. If anyone is willing to be a model for me in the future don't hesitate to give us a ring, I would really appreciate it and i'll look forward to meeting you in the salon soon.</p>"
+                }
+            },
+            "4282": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Nina",
+                    "staffPhoto": [
+                        5794
+                    ],
+                    "jobTitle": "Nail Technician",
+                    "shortBio": "<p>Hi I'm Nina<br />I have worked in the beauty industry for 2 years and there's nothing I love more than making my clients feel amazing after a service!<br />Building relationships with my clients is really what makes me love my job. So i look forward to meeting you and making you feel beautiful! x</p><p>I look forward to meeting you in the salon soon.</p>"
+                }
+            },
+            "5825": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Marissa (Trainee)",
+                    "staffPhoto": [
+                        5819
+                    ],
+                    "jobTitle": "Trainee Nail Technician",
+                    "shortBio": "<p>Hi , I’m Marissa </p><p>I’m so excited to be joining the team as a newly qualified biab nail technician. I have a real passion for helping people feel confident and beautiful after their appointment. </p><p>I beleive its more than just providing a service, I genuinely look forward to building lasting relationships with my clients, getting to know you, having great chats, and creating a space where you feel relaxed, valued, and completely yourself. I can’t wait to meet you and share this journey together! </p>"
+                }
+            },
+            "5427": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Amanda",
+                    "staffPhoto": [
+                        5415
+                    ],
+                    "jobTitle": "Registered nurse with 8 years full time aesthetics experience.",
+                    "shortBio": "<p>Hello, Im excited to introduce myself as a new member of the Leading Edge family &#x1faf6;</p>\n<p>I am Amanda, a registered nurse with 8 years full time aesthetics experience. </p>\n<p>I am an advanced practitioner in Dermal filler, Anti wrinkle treatments, medical grade skin treatments, skin boosters and injectable vitamins &#x1f469;‍⚕️</p>\n<p>I am an accredited trainer for both foundation and advanced aesthetics and have earned over 100 ⭐️⭐️⭐️⭐️⭐️ reviews . </p>\n<p>My goal is to enhance, lift and rejuvenate by softening unwanted lines and wrinkles. </p>\n<p>I use advanced techniques to create natural results and boost your confidence. </p>\n<p>Every treatment comes with a full consultation where we will discuss the results that YOU want to achieve. <br /></p>\n\n<p>I can’t wait to see old and new clients very soon ❤️ </p>\n<p><a href=\"https://www.facebook.com/premieraesthetic.clinic\">https://www.facebook.com/premi...</a></p>"
+                }
+            },
+            "5453": {
+                "type": 1,
+                "fields": {
+                    "nameOfTeamPerson": "Annie",
+                    "staffPhoto": [
+                        5443
+                    ],
+                    "jobTitle": "Beautician",
+                    "shortBio": "<p>Hi everyone, I am Annie- (Annie’s Beauty) I am really excited to be joining the team here at The Leading Edge. </p>\n<p>I have been in the Beauty &amp; Holistic Industry for over 20years, I started my career working in hotels such as the Malmasion, The Village Hotels and then went onto completing a Certificate in Education and did a spell of working in Colleges teaching Beauty. </p>\n<p>I set up Annie’s Beauty in 2016 and offer all aspects of Beauty &amp; Holistic Treatments. I love what I do and everyone that comes through my door leaves as a friend. </p>\n<p>I’m blessed to have amazing loyal clients and new ones are more than welcome too.</p>\n<p>Looking forward to pampering you soon.</p>\n<p><a href=\"https://www.facebook.com/anniesbeauty.atlotsmorestyle\">https://www.facebook.com/anniesbeauty.atlotsmorestyle</a></p>\n<p><a href=\"https://www.instagram.com/annies.beauty_/profilecard/?igsh=MjA0eWhwaTZzcDJp\">https://www.instagram.com/annies.beauty_/profilecard/?igsh=MjA0eWhwaTZzcDJp</a></p>"
+                }
+            }
+        },
+        "seoInformation": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2025-01-09T10:38:17+00:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "Meet our salon experts",
+                "siteNamePosition": "",
+                "seoDescription": "",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "",
+                "ogType": "",
+                "ogTitle": "",
+                "ogSiteNamePosition": "",
+                "ogDescription": "",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "",
+                "twitterCreator": "",
+                "twitterTitle": "",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoDescription": true,
+                    "seoImage": true
+                },
+                "overrides": {
+                    "seoTitle": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "The Leading Edge",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": null,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "",
+                "sitemapPriority": "",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": [],
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "",
+                "twitterTitleField": "",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "",
+                "twitterDescriptionField": "",
+                "twitterImageIds": [],
+                "twitterImageSource": "",
+                "twitterImageField": "",
+                "twitterImageTransform": true,
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "",
+                "ogTitleField": "",
+                "ogSiteNamePositionSource": "",
+                "ogDescriptionSource": "",
+                "ogDescriptionField": "",
+                "ogImageIds": [],
+                "ogImageSource": "",
+                "ogImageField": "",
+                "ogImageTransform": true,
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    }
+]
