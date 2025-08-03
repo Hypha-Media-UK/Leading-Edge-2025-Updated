@@ -1,35 +1,35 @@
-{# News Grid Component - Optimized with single query #}
+{# News Grid Component - With Pagination Support #}
 
-{# Get all articles with eager loading for better performance #}
-{% set allArticles = craft.entries()
+{# Get the featured article (always consistent across pages) #}
+{% set featuredArticle = craft.entries()
     .section('newsSection')
     .type('newsArticle')
-    .with(['articleImage', 'author'])
+    .featuredArticle(true)
     .orderBy('postDate desc')
-    .limit(13)
-    .all() %}
+    .one() %}
 
-{# Separate featured and regular articles #}
-{% set featuredArticle = null %}
-{% set articles = [] %}
-
-{% for article in allArticles %}
-    {% if article.featuredArticle and not featuredArticle %}
-        {% set featuredArticle = article %}
-    {% else %}
-        {% set articles = articles|merge([article]) %}
-    {% endif %}
-{% endfor %}
-
-{# If no featured article found, use the first article as featured #}
-{% if not featuredArticle and allArticles|length %}
-    {% set featuredArticle = allArticles|first %}
-    {% set articles = allArticles|slice(1, 12) %}
-{% else %}
-    {% set articles = articles|slice(0, 12) %}
+{# If no featured article found, use the most recent article #}
+{% if not featuredArticle %}
+    {% set featuredArticle = craft.entries()
+        .section('newsSection')
+        .type('newsArticle')
+        .orderBy('postDate desc')
+        .one() %}
 {% endif %}
 
-<section class="news-section">
+{# Prepare the query for pagination (don't execute it) #}
+{% set newsQuery = craft.entries()
+    .section('newsSection')
+    .type('newsArticle')
+    .id(['not', featuredArticle ? featuredArticle.id : 0])
+    .with(['articleImage', 'author'])
+    .orderBy('postDate desc')
+    .limit(10) %}
+
+{# Use CraftCMS native pagination #}
+{% paginate newsQuery as pageInfo, articles %}
+
+<section class="news-section" id="news-grid">
     <div class="container">
         <div class="section-header">
             <h2>Latest News</h2>
@@ -81,6 +81,9 @@
         {% else %}
             <p>No news articles available at the moment.</p>
         {% endif %}
+        
+        {# Include pagination if there are multiple pages #}
+        {% include '_components/ui/pagination.twig' with { pageInfo: pageInfo } %}
     </div>
     
     {# Individual modals for each news article #}

@@ -1,0 +1,36 @@
+/**
+ * News Pagination Scroll Enhancement Styles
+ * Provides visual feedback when scrolling to news grid after pagination
+ */
+
+
+/* Smooth scroll behavior for browsers that don't support it natively */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced focus states for pagination links for better accessibility */
+.pagination-link:focus {
+    outline: 2px solid var(--primary-color, #c69b49);
+    outline-offset: 2px;
+}
+
+/* Loading state for pagination (optional enhancement) */
+.pagination-loading .pagination-link {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Responsive adjustments for scroll offset */
+@media (max-width: 768px) {
+    /* Adjust scroll offset for mobile if header height is different */
+    .pagination-scroll-target {
+        scroll-margin-top: 80px;
+    }
+}
+
+@media (min-width: 769px) {
+    .pagination-scroll-target {
+        scroll-margin-top: 100px;
+    }
+}

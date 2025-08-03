@@ -1,5 +1,6 @@
 // Single JavaScript Entry Point - Optimized Architecture
 import './fouc-prevention.js';
+import './news-pagination.js';
 import { FormValidation } from './utils/form-validation.js';
 
 // Component initialization system

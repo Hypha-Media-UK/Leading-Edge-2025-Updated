@@ -1,0 +1,81 @@
+{# Pagination Component for CraftCMS v5.8x #}
+{# Usage: {% include '_components/ui/pagination.twig' with { pageInfo: paginatedEntries } %} #}
+
+{% if pageInfo.totalPages > 1 %}
+    <nav class="pagination" aria-label="News pagination">
+        <ul class="pagination-list">
+            {# Previous Page Link #}
+            {% if pageInfo.getPrevUrl() %}
+                <li class="pagination-item">
+                    <a href="{{ pageInfo.getPrevUrl() }}" class="pagination-link pagination-prev" aria-label="Previous page">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>Previous</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="pagination-item">
+                    <span class="pagination-link pagination-prev disabled" aria-label="Previous page (disabled)">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>Previous</span>
+                    </span>
+                </li>
+            {% endif %}
+
+            {# Page Numbers #}
+            {% set startPage = max(1, pageInfo.currentPage - 2) %}
+            {% set endPage = min(pageInfo.totalPages, pageInfo.currentPage + 2) %}
+
+            {# Show first page if we're not starting from 1 #}
+            {% if startPage > 1 %}
+                <li class="pagination-item">
+                    <a href="{{ pageInfo.getPageUrl(1) }}" class="pagination-link">1</a>
+                </li>
+                {% if startPage > 2 %}
+                    <li class="pagination-item">
+                        <span class="pagination-ellipsis">...</span>
+                    </li>
+                {% endif %}
+            {% endif %}
+
+            {# Page number links #}
+            {% for page in startPage..endPage %}
+                <li class="pagination-item">
+                    {% if page == pageInfo.currentPage %}
+                        <span class="pagination-link current" aria-current="page">{{ page }}</span>
+                    {% else %}
+                        <a href="{{ pageInfo.getPageUrl(page) }}" class="pagination-link">{{ page }}</a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+
+            {# Show last page if we're not ending at the last page #}
+            {% if endPage < pageInfo.totalPages %}
+                {% if endPage < pageInfo.totalPages - 1 %}
+                    <li class="pagination-item">
+                        <span class="pagination-ellipsis">...</span>
+                    </li>
+                {% endif %}
+                <li class="pagination-item">
+                    <a href="{{ pageInfo.getPageUrl(pageInfo.totalPages) }}" class="pagination-link">{{ pageInfo.totalPages }}</a>
+                </li>
+            {% endif %}
+
+            {# Next Page Link #}
+            {% if pageInfo.getNextUrl() %}
+                <li class="pagination-item">
+                    <a href="{{ pageInfo.getNextUrl() }}" class="pagination-link pagination-next" aria-label="Next page">
+                        <span>Next</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </li>
+            {% else %}
+                <li class="pagination-item">
+                    <span class="pagination-link pagination-next disabled" aria-label="Next page (disabled)">
+                        <span>Next</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </span>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endif %}

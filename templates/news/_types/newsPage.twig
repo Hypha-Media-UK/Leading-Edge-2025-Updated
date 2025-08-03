@@ -8,8 +8,21 @@
 
 {% block content %}
 <div class="news-page">
-    {# Page Header #}
-    {% include '_components/sections/page-header.twig' %}
+    {# Page Header - Create a mock entry for paginated pages #}
+    {% if entry is defined and entry %}
+        {% include '_components/sections/page-header.twig' %}
+    {% else %}
+        {% set mockEntry = {
+            cb_pageHeader: {
+                pageTitle: 'Latest News',
+                subHeading: 'Stay updated with the latest happenings at The Leading Edge',
+                promoLink: null,
+                buttonClass: null,
+                buttonIcon: null
+            }
+        } %}
+        {% include '_components/sections/page-header.twig' with { entry: mockEntry } %}
+    {% endif %}
 
     <section class="news-content">
         <div class="container">

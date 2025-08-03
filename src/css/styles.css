@@ -41,6 +41,8 @@
 @import 'components/news-grid.css';
 @import 'components/news-article-card.css';
 @import 'components/featured-news-item.css';
+@import 'components/pagination.css';
+@import 'components/news-pagination-scroll.css';
 @import 'components/service-tabs.css';
 @import 'components/service-content-section.css';
 @import 'components/service-gallery.css';
