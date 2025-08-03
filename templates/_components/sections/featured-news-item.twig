@@ -57,40 +57,75 @@
     </div>
 
     {# Modal for the featured article #}
-    <div id="news-modal-{{ article.id }}" class="modal-overlay news-article-modal" style="display: none;">
+    <div id="news-modal-{{ article.id }}" class="modal-overlay news-article-modal" style="display: none;" data-article-id="{{ article.id }}">
         <div class="modal-content modal-large">
             <button class="modal-close" aria-label="Close modal">&times;</button>
             <div class="modal-body">
                 <div class="news-article-header">
                     {% if article.articleImage|length %}
                         {% set image = article.articleImage.one() %}
-                        <img src="{{ image.getUrl() }}" alt="{{ article.title }}" class="news-modal-image">
+                        <img src="{{ image.getUrl() }}" alt="{{ article.title }}" class="news-modal-image" data-image-url="{{ image.getUrl() }}">
                     {% endif %}
                     <div class="article-meta">
                         <h1 class="news-modal-title">{{ article.title }}</h1>
                         <div class="news-meta">
-                            <span class="news-modal-date">{{ article.postDate|date('F j, Y') }}</span>
+                            <span class="news-modal-date">
+                                <i class="far fa-calendar"></i>
+                                {{ article.postDate|date('F j, Y') }}
+                            </span>
                             {% if article.author %}
-                                <span class="news-modal-author">{{ article.author.fullName ?? article.author.username }}</span>
+                                <span class="news-modal-author">
+                                    <i class="far fa-user"></i>
+                                    {{ article.author.fullName ?? article.author.username }}
+                                </span>
                             {% endif %}
                         </div>
                     </div>
                 </div>
-                <div class="news-modal-content">
-                    {{ article.articleText|raw }}
-                </div>
-                <div class="modal-actions">
-                    <div class="social-share">
-                        <span>Share this article:</span>
-                        <a href="#" class="share-btn facebook" title="Share on Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="share-btn twitter" title="Share on Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="share-btn linkedin" title="Share on LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
+                <div class="news-content-wrapper">
+                    <div class="news-content-header">
+                        <h1 class="news-modal-title">{{ article.title }}</h1>
+                        <div class="news-meta">
+                            <span class="news-modal-date">
+                                <i class="far fa-calendar"></i>
+                                {{ article.postDate|date('F j, Y') }}
+                            </span>
+                            {% if article.author %}
+                                <span class="news-modal-author">
+                                    <i class="far fa-user"></i>
+                                    {{ article.author.fullName ?? article.author.username }}
+                                </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="news-modal-content">
+                        {{ article.articleText|raw }}
+                    </div>
+                    <div class="modal-actions">
+                        <div class="social-share">
+                            <span>Share this article:</span>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ craft.app.request.absoluteUrl|url_encode }}" 
+                               class="share-btn facebook" 
+                               title="Share on Facebook"
+                               target="_blank"
+                               rel="noopener">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://twitter.com/intent/tweet?url={{ craft.app.request.absoluteUrl|url_encode }}&text={{ article.title|url_encode }}" 
+                               class="share-btn twitter" 
+                               title="Share on Twitter"
+                               target="_blank"
+                               rel="noopener">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ craft.app.request.absoluteUrl|url_encode }}" 
+                               class="share-btn linkedin" 
+                               title="Share on LinkedIn"
+                               target="_blank"
+                               rel="noopener">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

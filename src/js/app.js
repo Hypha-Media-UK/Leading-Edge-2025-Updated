@@ -245,6 +245,8 @@ componentManager.register('.news-card', (elements) => {
             
             const modal = document.getElementById(modalTarget);
             if (modal) {
+                // Check image aspect ratio before opening modal
+                checkImageAspectRatio(modal);
                 openModal(modal);
             }
         });
@@ -264,11 +266,50 @@ componentManager.register('.featured-news', (elements) => {
             
             const modal = document.getElementById(modalTarget);
             if (modal) {
+                // Check image aspect ratio before opening modal
+                checkImageAspectRatio(modal);
                 openModal(modal);
             }
         });
     });
 });
+
+// Image aspect ratio detection function
+function checkImageAspectRatio(modal) {
+    const image = modal.querySelector('.news-modal-image');
+    if (!image) return;
+    
+    // Remove any existing portrait-image class
+    modal.classList.remove('portrait-image');
+    
+    // Function to check aspect ratio once image is loaded
+    function checkRatio() {
+        const aspectRatio = image.naturalWidth / image.naturalHeight;
+        
+        // If aspect ratio is less than 0.7 (very tall/portrait), apply special layout
+        if (aspectRatio < 0.7) {
+            modal.classList.add('portrait-image');
+            console.log('Portrait image detected, applying vertical layout');
+        } else {
+            console.log('Landscape image detected, using side-by-side layout');
+        }
+    }
+    
+    // Check if image is already loaded
+    if (image.complete && image.naturalHeight !== 0) {
+        checkRatio();
+    } else {
+        // Wait for image to load
+        image.addEventListener('load', checkRatio);
+        
+        // Fallback timeout in case image fails to load
+        setTimeout(() => {
+            if (image.naturalHeight === 0) {
+                console.log('Image failed to load, using default layout');
+            }
+        }, 3000);
+    }
+}
 
 // Modal management functionality
 componentManager.register('.modal-overlay', (elements) => {
