@@ -1,7 +1,7 @@
 {# Contact Form Component - Now using Formie #}
 <div class="form-header">
-    <h2>{{ title|default('Book an Appointment') }}</h2>
-    <p>{{ subtitle|default('Fill out the form below and we\'ll get back to you within 24 hours to confirm your booking.') }}</p>
+    <h2>{{ entry.cb_contactForm.blockTitle }}</h2>
+    <p>{{ entry.cb_contactForm.formIntro }}</p>
 </div>
 
 {{ craft.formie.renderForm('generalContact', {

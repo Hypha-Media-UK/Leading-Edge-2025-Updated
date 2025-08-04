@@ -1,4 +1,4 @@
-dateModified: 1754041996
+dateModified: 1754296933
 elementSources:
   craft\elements\Entry:
     -
@@ -74,6 +74,7 @@ meta:
     9b42751e-b87f-4957-8c54-5a457d443a7f: 'Basic with H2' # Basic with H2
     10dcb136-b8a7-4325-90fe-c0cda2e1ebd1: 'Simple Text' # Simple Text
     21f4ef74-64dc-48e3-bb94-93d62c25ef08: TLE-2025 # TLE-2025
+    24b60046-c604-467a-9159-5c28626085cb: FAQs # FAQs
     30d70629-c8e5-40db-9f27-dd7dd53d0afb: 'Card Link' # Card Link
     35f4bfc2-4432-43df-bd81-7ccfd0e7a7f1: Team # Team
     43d74a4b-22f2-481f-9e51-582bfd8ccd86: Times # Times
@@ -86,6 +87,7 @@ meta:
     70cbf51f-c6a4-4501-ab10-6544b0adb9fd: Simple # Simple
     75d5ff91-e0e7-479a-b047-041d2c3e1649: 'Page Header' # Page Header
     91bf7b22-c506-4a80-8c0d-506bf77a3dfc: Services # Services
+    172c19a6-5e5c-49fc-b221-96f628e74fbe: 'Frequently Asked Questions' # Frequently Asked Questions
     223fbc1e-4eb0-4383-82ba-1041ce5b1e00: Homepage # Homepage
     00293d02-a8ce-4397-916e-d550809b272d: Offers # Offers
     392d336a-d1e6-4233-89d7-cf232f91adb8: 'Bold and Italic' # Bold and Italic
