@@ -1,180 +1,122 @@
 @layer components {
 
-/* Section Header Base Component - DRY Implementation */
+/* Section Header Component - Token-Based & Simplified */
 .section-header {
-  text-align: var(--section-header-align, center);
-  margin-block-end: var(--section-header-margin, 3rem);
+  text-align: center;
+  margin-block-end: var(--space-12);
 
   & h2 {
-    font-size: var(--section-header-h2-size, 2.5rem);
-    margin-block-end: var(--section-header-h2-margin, 1rem);
-    color: var(--section-header-h2-color, var(--primary-color));
-
-    /* Responsive typography */
-    @media (max-width: 1200px) {
-      font-size: var(--section-header-h2-size-lg, 2.2rem);
-      margin-block-end: var(--section-header-h2-margin-lg, 0.9rem);
-    }
-
-    @media (max-width: 992px) {
-      font-size: var(--section-header-h2-size-md, 2rem);
-      margin-block-end: var(--section-header-h2-margin-md, 0.8rem);
-    }
-
-    @media (max-width: 768px) {
-      font-size: var(--section-header-h2-size-sm, 1.8rem);
-      margin-block-end: var(--section-header-h2-margin-sm, 0.7rem);
-    }
-
-    @media (max-width: 576px) {
-      font-size: var(--section-header-h2-size-xs, 1.6rem);
-      margin-block-end: var(--section-header-h2-margin-xs, 0.6rem);
-    }
+    font-size: var(--text-section-title);
+    margin-block-end: var(--space-4);
+    color: var(--primary-color);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
   }
 
   & p {
-    font-size: var(--section-header-p-size, 1.2rem);
-    color: var(--section-header-p-color, color-mix(in srgb, var(--text-secondary) 85%, transparent));
-    line-height: var(--section-header-p-line-height, 1.7);
-    max-width: var(--section-header-p-max-width, none);
-    margin: var(--section-header-p-margin, 0 auto);
-    font-weight: 400;
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    line-height: var(--line-height-relaxed);
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: var(--font-weight-normal);
     opacity: 0.9;
-
-    /* Responsive typography for paragraphs */
-    @media (max-width: 992px) {
-      font-size: var(--section-header-p-size-md, 1.15rem);
-    }
-
-    @media (max-width: 768px) {
-      font-size: var(--section-header-p-size-sm, 1.1rem);
-    }
-
-    @media (max-width: 576px) {
-      font-size: var(--section-header-p-size-xs, 1rem);
-      line-height: var(--section-header-p-line-height-xs, 1.6);
-    }
   }
 }
 
-/* Component-specific variations using CSS custom properties */
+/* Component-specific variations using utility classes and simple overrides */
 
-/* Services Preview specific styling */
+/* Services Preview */
 .services-preview .section-header {
-  --section-header-p-color: var(--primary-color-light);
-  --section-header-p-max-width: 700px;
-  
-  @media (max-width: 992px) {
-    --section-header-p-max-width: 650px;
-  }
-
-  @media (max-width: 768px) {
-    --section-header-p-max-width: 600px;
-  }
-
-  @media (max-width: 576px) {
-    --section-header-p-max-width: 100%;
+  & p {
+    color: var(--primary-color-light);
   }
 }
 
-/* Call to Action specific styling */
+/* Call to Action */
 .cta-section .section-header {
-  --section-header-margin: 2rem;
-  --section-header-p-color: var(--primary-color-light);
+  margin-block-end: var(--space-8);
+  
+  & p {
+    color: var(--primary-color-light);
+  }
 }
 
-/* Instagram Feed specific styling */
+/* Instagram Feed */
 .instagram-feed .section-header {
-  --section-header-p-color: var(--text-secondary);
+  & p {
+    color: var(--text-secondary);
+  }
 }
 
-/* Features/Simple Cards with background variants */
-.features.features--alt-bg .section-header,
-.features.features--dark-bg .section-header,
-.features.features--accent-bg .section-header {
-  --section-header-h2-color: white;
-  --section-header-p-color: rgba(255, 255, 255, 0.9);
-}
-
-/* Testimonials specific styling */
+/* Dark background variants */
+.features--alt-bg .section-header,
+.features--dark-bg .section-header,
+.features--accent-bg .section-header,
 .testimonials .section-header {
-  --section-header-h2-color: white;
-  --section-header-p-color: rgba(255, 255, 255, 0.8);
-  --section-header-p-max-width: 700px;
+  & h2 {
+    color: white;
+  }
   
-  @media (max-width: 992px) {
-    --section-header-p-max-width: 650px;
-  }
-
-  @media (max-width: 768px) {
-    --section-header-p-max-width: 600px;
-  }
-
-  @media (max-width: 576px) {
-    --section-header-p-max-width: 100%;
+  & p {
+    color: rgba(255, 255, 255, 0.9);
   }
 }
 
-/* Benefits Section specific styling */
-.why-join-section .section-header {
-  --section-header-p-color: var(--primary-color-light);
-  --section-header-p-max-width: 700px;
-  
-  @media (max-width: 992px) {
-    --section-header-p-max-width: 650px;
-  }
-
-  @media (max-width: 768px) {
-    --section-header-p-max-width: 600px;
-  }
-
-  @media (max-width: 576px) {
-    --section-header-p-max-width: 100%;
-  }
-}
-
-/* News Section specific styling */
+/* Benefits Section */
+.why-join-section .section-header,
 .news-section .section-header {
-  --section-header-p-color: var(--primary-color-light);
-  --section-header-p-max-width: 700px;
-  
-  @media (max-width: 992px) {
-    --section-header-p-max-width: 650px;
-  }
-
-  @media (max-width: 768px) {
-    --section-header-p-max-width: 600px;
-  }
-
-  @media (max-width: 576px) {
-    --section-header-p-max-width: 100%;
+  & p {
+    color: var(--primary-color-light);
   }
 }
 
-/* Services Detail Page specific styling */
+/* Services Detail Page */
 .services-detail-page .section-header {
-  --section-header-margin-top: 3rem;
-  margin-block-start: var(--section-header-margin-top);
-  --section-header-p-color: var(--primary-color-light);
-  --section-header-p-max-width: 700px;
+  margin-block-start: var(--space-12);
   
-  @media (max-width: 1200px) {
-    --section-header-margin-top: 2.5rem;
+  & p {
+    color: var(--primary-color-light);
   }
+}
 
-  @media (max-width: 992px) {
-    --section-header-margin-top: 2rem;
-    --section-header-p-max-width: 650px;
+/* Responsive adjustments using standardized breakpoints */
+@media (max-width: 768px) {
+  .section-header {
+    margin-block-end: var(--space-10);
+    
+    & h2 {
+      font-size: var(--text-section-title);
+      margin-block-end: var(--space-3);
+    }
+    
+    & p {
+      font-size: var(--text-base);
+      max-width: 100%;
+    }
   }
-
-  @media (max-width: 768px) {
-    --section-header-margin-top: 1.5rem;
-    --section-header-p-max-width: 600px;
+  
+  .services-detail-page .section-header {
+    margin-block-start: var(--space-8);
   }
+}
 
-  @media (max-width: 576px) {
-    --section-header-margin-top: 1rem;
-    --section-header-p-max-width: 100%;
+@media (max-width: 480px) {
+  .section-header {
+    margin-block-end: var(--space-8);
+    
+    & h2 {
+      font-size: var(--text-section-title);
+    }
+    
+    & p {
+      font-size: var(--text-base);
+      line-height: var(--line-height-normal);
+    }
+  }
+  
+  .services-detail-page .section-header {
+    margin-block-start: var(--space-6);
   }
 }
 

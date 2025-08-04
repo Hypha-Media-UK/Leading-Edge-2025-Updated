@@ -1,0 +1,152 @@
+@layer components {
+
+/* Base Modal System - Core Functionality */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: var(--z-index-modal-backdrop);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-standard);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  border-radius: var(--border-radius-standard);
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+  transform: scale(0.95);
+  transition: var(--transition-standard);
+}
+
+.modal-overlay.active .modal-content {
+  transform: scale(1);
+}
+
+/* Modal size variants */
+.modal-content.modal-small {
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal-content.modal-medium {
+  max-width: 800px;
+  width: 90%;
+}
+
+.modal-content.modal-large {
+  max-width: 900px;
+  width: 90%;
+}
+
+/* Modal close button */
+.modal-close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  background: none;
+  border: none;
+  font-size: var(--text-2xl);
+  color: var(--primary-color);
+  cursor: pointer;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-full);
+  transition: var(--transition-standard);
+
+  &:hover {
+    color: var(--accent-color);
+    background-color: var(--bg-light);
+  }
+
+  &:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+  }
+}
+
+/* Modal body */
+.modal-body {
+  padding: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    max-height: 90vh;
+  }
+  
+  .modal-content.modal-large,
+  .modal-content.modal-medium {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-overlay {
+    align-items: flex-start;
+    padding: var(--space-4) 0;
+  }
+  
+  .modal-content {
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    border-radius: 0;
+    margin: 0;
+  }
+  
+  .modal-close {
+    top: var(--space-6);
+    right: var(--space-6);
+    font-size: var(--text-3xl);
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 20;
+  }
+}
+
+/* Accessibility improvements */
+.modal-overlay:focus-within {
+  outline: none;
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .modal-overlay,
+  .modal-content {
+    transition: none;
+  }
+  
+  .modal-content {
+    transform: none;
+  }
+  
+  .modal-overlay.active .modal-content {
+    transform: none;
+  }
+}
+
+} /* End @layer components */
