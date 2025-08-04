@@ -1,0 +1,113 @@
+@layer tokens {
+
+/* Standardized Spacing System */
+:root {
+  /* Base spacing unit */
+  --space-unit: 1rem;
+  
+  /* Spacing scale - consistent increments */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+  
+  /* Semantic spacing tokens */
+  --space-section: var(--space-20);
+  --space-section-sm: var(--space-16);
+  --space-component: var(--space-12);
+  --space-component-sm: var(--space-8);
+  --space-element: var(--space-6);
+  --space-element-sm: var(--space-4);
+  
+  /* Responsive spacing - simplified from clamp() overuse */
+  --section-padding: var(--space-20);
+  --section-padding-mobile: var(--space-16);
+  --card-padding: var(--space-8);
+  --card-padding-sm: var(--space-6);
+  --card-padding-lg: var(--space-10);
+  
+  /* Grid gaps */
+  --gap-xs: var(--space-2);
+  --gap-sm: var(--space-4);
+  --gap-md: var(--space-6);
+  --gap-lg: var(--space-8);
+  --gap-xl: var(--space-12);
+}
+
+/* Responsive spacing adjustments */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: var(--space-16);
+    --section-padding-mobile: var(--space-12);
+    --card-padding: var(--space-6);
+    --card-padding-lg: var(--space-8);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding: var(--space-12);
+    --section-padding-mobile: var(--space-10);
+    --card-padding: var(--space-4);
+    --card-padding-lg: var(--space-6);
+  }
+}
+
+/* Spacing utility classes */
+.p-0 { padding: var(--space-0); }
+.p-1 { padding: var(--space-1); }
+.p-2 { padding: var(--space-2); }
+.p-3 { padding: var(--space-3); }
+.p-4 { padding: var(--space-4); }
+.p-5 { padding: var(--space-5); }
+.p-6 { padding: var(--space-6); }
+.p-8 { padding: var(--space-8); }
+.p-10 { padding: var(--space-10); }
+.p-12 { padding: var(--space-12); }
+
+.m-0 { margin: var(--space-0); }
+.m-1 { margin: var(--space-1); }
+.m-2 { margin: var(--space-2); }
+.m-3 { margin: var(--space-3); }
+.m-4 { margin: var(--space-4); }
+.m-5 { margin: var(--space-5); }
+.m-6 { margin: var(--space-6); }
+.m-8 { margin: var(--space-8); }
+.m-10 { margin: var(--space-10); }
+.m-12 { margin: var(--space-12); }
+
+/* Directional spacing */
+.pt-4 { padding-top: var(--space-4); }
+.pb-4 { padding-bottom: var(--space-4); }
+.pl-4 { padding-left: var(--space-4); }
+.pr-4 { padding-right: var(--space-4); }
+
+.mt-4 { margin-top: var(--space-4); }
+.mb-4 { margin-bottom: var(--space-4); }
+.ml-4 { margin-left: var(--space-4); }
+.mr-4 { margin-right: var(--space-4); }
+
+/* Logical properties */
+.p-inline-4 { padding-inline: var(--space-4); }
+.p-block-4 { padding-block: var(--space-4); }
+.m-inline-4 { margin-inline: var(--space-4); }
+.m-block-4 { margin-block: var(--space-4); }
+
+/* Gap utilities */
+.gap-xs { gap: var(--gap-xs); }
+.gap-sm { gap: var(--gap-sm); }
+.gap-md { gap: var(--gap-md); }
+.gap-lg { gap: var(--gap-lg); }
+.gap-xl { gap: var(--gap-xl); }
+
+} /* End @layer tokens */
