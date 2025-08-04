@@ -3,7 +3,7 @@
 /* Services Preview Section Component Styles - Modern Container Query Version */
 .services-preview {
   /* Component-specific overrides for base section */
-  --section-bg-color: var(--color-surface-primary);
+  --section-bg-color: var(--bg-light);
   
   & .services-grid {
     display: grid;
@@ -39,14 +39,14 @@
 
     & .service-content {
       & .service-title {
-        margin-block-end: var(--space-sm);
+        margin-block-end: var(--space-4);
         font-size: var(--text-xl);
-        color: var(--color-text-primary);
+        color: var(--primary-color);
       }
 
       & .service-description {
-        color: var(--color-text-secondary);
-        margin-block-end: var(--space-md);
+        color: var(--text-secondary);
+        margin-block-end: var(--space-6);
         line-height: var(--line-height-relaxed);
       }
 
@@ -56,15 +56,15 @@
         font-weight: 600;
         display: inline-flex;
         align-items: center;
-        gap: var(--space-xs);
-        padding: var(--space-xs) var(--space-sm);
-        margin-inline-start: calc(var(--space-sm) * -1);
-        border-radius: var(--border-radius);
+        gap: var(--space-2);
+        padding: var(--space-2) var(--space-4);
+        margin-inline-start: calc(var(--space-4) * -1);
+        border-radius: var(--border-radius-standard);
         transition: var(--transition-standard);
 
         &:hover {
           background-color: color-mix(in srgb, var(--accent-color) 8%, transparent);
-          transform: translateX(var(--space-2xs));
+          transform: translateX(var(--space-1));
         }
       }
     }
@@ -75,7 +75,7 @@
 @container component (max-width: 768px) {
   .services-preview .services-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-lg);
+    gap: var(--space-8);
   }
   
   .services-preview .service-card .service-image {
@@ -86,7 +86,7 @@
 @container component (min-width: 769px) and (max-width: 1024px) {
   .services-preview .services-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xl);
+    gap: var(--space-12);
   }
 }
 

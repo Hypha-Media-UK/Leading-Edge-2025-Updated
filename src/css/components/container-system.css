@@ -27,7 +27,7 @@
 @container component (max-width: 768px) {
   .responsive-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-lg);
+    gap: var(--space-8);
   }
   
   .responsive-text {
@@ -35,14 +35,14 @@
   }
   
   .responsive-spacing {
-    padding: var(--space-lg);
+    padding: var(--space-8);
   }
 }
 
 @container component (min-width: 769px) and (max-width: 1024px) {
   .responsive-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xl);
+    gap: var(--space-12);
   }
   
   .responsive-text {
@@ -50,7 +50,7 @@
   }
   
   .responsive-spacing {
-    padding: var(--space-xl);
+    padding: var(--space-12);
   }
 }
 
@@ -65,14 +65,14 @@
   }
   
   .responsive-spacing {
-    padding: var(--space-2xl);
+    padding: var(--space-16);
   }
 }
 
 /* Card Container Queries */
 @container card (max-width: 300px) {
   .card-content {
-    padding: var(--space-md);
+    padding: var(--space-6);
     font-size: var(--text-sm);
   }
   
@@ -83,7 +83,7 @@
 
 @container card (min-width: 301px) {
   .card-content {
-    padding: var(--space-lg);
+    padding: var(--space-8);
     font-size: var(--text-base);
   }
   
