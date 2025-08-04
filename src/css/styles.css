@@ -1,20 +1,15 @@
-/* Single CSS Entry Point - Optimized Architecture */
+/* Optimized CSS Entry Point - Clean Architecture */
 
 /* Define enhanced layer order for better cascade control */
 @layer reset, base, tokens, components, patterns, utilities, overrides;
 
-/* Import design tokens - foundation of the system */
-@import 'tokens/breakpoints.css';
-@import 'tokens/spacing.css';
-@import 'tokens/typography.css';
+/* Import single source of truth for design tokens */
+@import 'tokens/design-tokens.css';
 
-/* Import legacy variables for compatibility */
-@import 'variables.css';
+/* Import clean utilities system */
+@import 'utilities.css';
 
-/* Import consolidated utilities */
-@import 'utilities-consolidated.css';
-
-/* Import modern systems */
+/* Import modern container system */
 @import 'components/container-system.css';
 
 /* Import base components that are used across all pages */
@@ -62,7 +57,7 @@
 @import 'components/faq-section.css';
 @import 'components/social-icons.css';
 
-/* Modern CSS Features Support - After imports */
+/* Modern CSS Features Support */
 @supports (container-type: inline-size) {
   .component-container {
     container-type: inline-size;
@@ -76,7 +71,7 @@
 
 @layer base {
 
-/* Global Styles */
+/* Global Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -86,7 +81,7 @@
 html, body {
   font-family: var(--font-family-secondary);
   font-size: 16px;
-  line-height: 1.5;
+  line-height: var(--line-height-normal);
   color: var(--primary-color);
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -109,6 +104,7 @@ html {
   }
 }
 
+/* Typography Base Styles */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-primary);
   font-weight: var(--font-weight-semibold);
@@ -117,29 +113,12 @@ h1, h2, h3, h4, h5, h6 {
   line-height: var(--line-height-tight);
 }
 
-h1 {
-  font-size: var(--heading-h1);
-}
-
-h2 {
-  font-size: var(--heading-h2);
-}
-
-h3 {
-  font-size: var(--heading-h3);
-}
-
-h4 {
-  font-size: var(--heading-h4);
-}
-
-h5 {
-  font-size: var(--heading-h5);
-}
-
-h6 {
-  font-size: var(--heading-h6);
-}
+h1 { font-size: var(--heading-h1); }
+h2 { font-size: var(--heading-h2); }
+h3 { font-size: var(--heading-h3); }
+h4 { font-size: var(--heading-h4); }
+h5 { font-size: var(--heading-h5); }
+h6 { font-size: var(--heading-h6); }
 
 p {
   margin-bottom: var(--space-4);
@@ -161,6 +140,7 @@ img {
   height: auto;
 }
 
+/* Layout Base Styles */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -168,13 +148,10 @@ img {
   padding: 0 var(--space-4);
 }
 
-/* Layout */
 main {
-  /* Dynamic padding based on header height with small buffer */
   padding-top: calc(var(--header-height) + 0);
   
   @media (max-width: 768px) {
-    /* Slightly less padding on mobile */
     padding-top: calc(var(--header-height) + 0);
   }
 }
@@ -200,7 +177,6 @@ main {
   margin: var(--space-4) auto var(--space-6);
 }
 
-/* Media Queries */
 /* Responsive adjustments using standardized breakpoints */
 @media (max-width: 1024px) {
   .container {
@@ -214,18 +190,6 @@ main {
     width: 50px;
     height: 2px;
     margin-bottom: var(--space-4);
-  }
-  
-  h1 {
-    font-size: var(--heading-h1);
-  }
-  
-  h2 {
-    font-size: var(--heading-h2);
-  }
-  
-  h3 {
-    font-size: var(--heading-h3);
   }
 }
 

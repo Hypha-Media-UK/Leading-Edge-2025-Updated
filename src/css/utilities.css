@@ -1,9 +1,9 @@
 @layer utilities {
 
-/* Consolidated Utility System - Token-Based & DRY */
+/* Clean Utility System - No Token Definitions */
 
 /* === SPACING UTILITIES === */
-/* Padding utilities using design tokens */
+/* Padding utilities */
 .p-0 { padding: var(--space-0); }
 .p-1 { padding: var(--space-1); }
 .p-2 { padding: var(--space-2); }
@@ -17,7 +17,7 @@
 .p-16 { padding: var(--space-16); }
 .p-20 { padding: var(--space-20); }
 
-/* Margin utilities using design tokens */
+/* Margin utilities */
 .m-0 { margin: var(--space-0); }
 .m-1 { margin: var(--space-1); }
 .m-2 { margin: var(--space-2); }
@@ -31,7 +31,7 @@
 .m-16 { margin: var(--space-16); }
 .m-20 { margin: var(--space-20); }
 
-/* Directional spacing - logical properties */
+/* Directional spacing - modern logical properties */
 .pt-4 { padding-block-start: var(--space-4); }
 .pb-4 { padding-block-end: var(--space-4); }
 .pl-4 { padding-inline-start: var(--space-4); }
@@ -46,7 +46,7 @@
 .mx-4 { margin-inline: var(--space-4); }
 .my-4 { margin-block: var(--space-4); }
 
-/* Gap utilities for flexbox/grid */
+/* Gap utilities */
 .gap-xs { gap: var(--gap-xs); }
 .gap-sm { gap: var(--gap-sm); }
 .gap-md { gap: var(--gap-md); }
@@ -54,7 +54,7 @@
 .gap-xl { gap: var(--gap-xl); }
 
 /* === TYPOGRAPHY UTILITIES === */
-/* Font size utilities using design tokens */
+/* Font size utilities */
 .text-xs { font-size: var(--text-xs); }
 .text-sm { font-size: var(--text-sm); }
 .text-base { font-size: var(--text-base); }
