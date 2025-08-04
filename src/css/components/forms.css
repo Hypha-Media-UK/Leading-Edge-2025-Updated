@@ -3,11 +3,11 @@
 /* Shared Form Component Styles - Used across all forms */
 .form-header {
   text-align: center;
-  margin-block-end: 3rem;
+  margin-block-end: clamp(2rem, 4vw, 3rem);
 
   & h2 {
-    font-size: 2.2rem;
-    margin-block-end: 1.5rem;
+    font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+    margin-block-end: clamp(1rem, 2vw, 1.5rem);
     color: var(--primary-color);
     font-weight: 600;
     position: relative;
@@ -15,71 +15,93 @@
     &::after {
       content: '';
       display: block;
-      width: 60px;
+      width: clamp(50px, 8vw, 60px);
       height: 3px;
       background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color) 80%, black));
-      margin: 1rem auto 0;
+      margin: clamp(0.8rem, 1.5vw, 1rem) auto 0;
       border-radius: 2px;
     }
   }
 
   & p {
     color: var(--primary-color-light);
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     line-height: 1.6;
-    max-width: 500px;
+    max-width: min(500px, 90vw);
     margin: 0 auto;
+    padding-inline: 1rem;
+
+    @media (max-width: 576px) {
+      padding-inline: 0.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-block-end: 2rem;
+  }
+
+  @media (max-width: 576px) {
+    margin-block-end: 1.5rem;
   }
 }
 
 .form-success {
   text-align: center;
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
 
   & .success-icon {
-    font-size: 4rem;
+    font-size: clamp(3rem, 6vw, 4rem);
     color: #4CAF50;
-    margin-block-end: 1rem;
+    margin-block-end: clamp(0.8rem, 1.5vw, 1rem);
   }
 
   & h3 {
-    font-size: 1.8rem;
-    margin-block-end: 1rem;
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
+    margin-block-end: clamp(0.8rem, 1.5vw, 1rem);
     color: var(--primary-color);
   }
 
   & p {
-    margin-block-end: 2rem;
+    margin-block-end: clamp(1.5rem, 3vw, 2rem);
     color: var(--primary-color-light);
+    font-size: clamp(0.95rem, 1.8vw, 1rem);
+    max-width: min(600px, 90vw);
+    margin-inline: auto;
+  }
+
+  @media (max-width: 576px) {
+    padding: 1.5rem 1rem;
   }
 }
 
 /* Shared form field styling */
 .form-field,
 .form-group {
-  margin-block-end: 2rem;
+  margin-block-end: clamp(1.2rem, 2vw, 1.5rem);
   position: relative;
 
   & label {
     display: block;
-    margin-block-end: 0.8rem;
+    margin-block-end: clamp(0.5rem, 1vw, 0.6rem);
     color: var(--primary-color);
     font-weight: 500;
-    font-size: 1rem;
+    font-size: clamp(0.95rem, 1.8vw, 1rem);
+    line-height: 1.4;
   }
 
   & input,
   & select,
   & textarea {
     width: 100%;
-    padding: 1.5rem 1.5rem;
+    padding: clamp(0.8rem, 1.5vw, 1rem);
     border: 2px solid color-mix(in srgb, var(--primary-color) 15%, transparent);
-    border-radius: 8px;
-    font-size: 1rem;
+    border-radius: clamp(6px, 1vw, 8px);
+    font-size: clamp(0.95rem, 1.8vw, 1rem);
     font-family: inherit;
     transition: all 0.3s ease;
     background-color: #fafafa;
     box-sizing: border-box;
+    min-height: 44px; /* Minimum touch target size */
 
     &:focus {
       outline: none;
@@ -91,23 +113,63 @@
 
     &::placeholder {
       color: color-mix(in srgb, var(--primary-color) 50%, white);
+      font-size: clamp(0.9rem, 1.6vw, 0.95rem);
+    }
+
+    @media (max-width: 768px) {
+      padding: 0.9rem 0.8rem;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 576px) {
+      padding: 0.8rem 0.7rem;
+      font-size: 16px; /* Prevents zoom on iOS */
+    }
+  }
+
+  & select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    padding-right: 3rem;
+
+    @media (max-width: 576px) {
+      background-position: right 0.8rem center;
+      padding-right: 2.5rem;
     }
   }
 
   & textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: clamp(100px, 15vw, 120px);
     line-height: 1.6;
+    font-family: inherit;
+
+    @media (max-width: 768px) {
+      min-height: 100px;
+    }
+
+    @media (max-width: 576px) {
+      min-height: 80px;
+    }
   }
 
   & .error-message {
     color: #C62828;
-    font-size: 0.875rem;
+    font-size: clamp(0.8rem, 1.5vw, 0.875rem);
     margin-block-start: 0.5rem;
     display: none;
+    line-height: 1.4;
 
     &.show {
       display: block;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 0.8rem;
     }
   }
 
@@ -115,10 +177,11 @@
   & .file-upload {
     & input[type="file"] {
       border: 2px dashed color-mix(in srgb, var(--primary-color) 25%, transparent);
-      padding: 1rem;
+      padding: clamp(1rem, 2vw, 1.5rem);
       text-align: center;
       cursor: pointer;
       background-color: #fafafa;
+      min-height: 60px;
 
       &:hover {
         border-color: var(--accent-color);
@@ -130,75 +193,209 @@
         background-color: white;
         box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 10%, transparent);
       }
+
+      @media (max-width: 576px) {
+        padding: 1rem 0.5rem;
+        min-height: 50px;
+      }
     }
 
     & .file-info {
-      font-size: 0.85rem;
+      font-size: clamp(0.8rem, 1.4vw, 0.85rem);
       color: var(--text-light);
       margin-block-start: 0.5rem;
+      line-height: 1.4;
+
+      @media (max-width: 576px) {
+        font-size: 0.8rem;
+      }
     }
+  }
+
+  @media (max-width: 768px) {
+    margin-block-end: 1.5rem;
+  }
+
+  @media (max-width: 576px) {
+    margin-block-end: 1.2rem;
   }
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+
+  /* Three column layout for larger screens */
+  &.form-row-3 {
+    grid-template-columns: repeat(3, 1fr);
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Four column layout for very large screens */
+  &.form-row-4 {
+    grid-template-columns: repeat(4, 1fr);
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Responsive breakpoints for standard 2-column layout */
+  @media (max-width: 768px) {
+    gap: 1.2rem;
+  }
 
   @media (max-width: 576px) {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  /* Auto-fit layout for flexible column count */
+  &.form-row-auto {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
   }
 }
 
 .form-alert {
   background-color: #FFEBEE;
   color: #C62828;
-  padding: 1.2rem;
-  border-radius: 8px;
-  margin-block-end: 2rem;
+  padding: clamp(1rem, 2vw, 1.2rem);
+  border-radius: clamp(6px, 1vw, 8px);
+  margin-block-end: clamp(1.5rem, 3vw, 2rem);
   border-left: 4px solid #C62828;
+  font-size: clamp(0.9rem, 1.6vw, 1rem);
+  line-height: 1.5;
 
   & p {
     margin: 0;
+  }
+
+  /* Success variant */
+  &.form-alert-success {
+    background-color: #E8F5E8;
+    color: #2E7D32;
+    border-left-color: #4CAF50;
+  }
+
+  /* Warning variant */
+  &.form-alert-warning {
+    background-color: #FFF3E0;
+    color: #E65100;
+    border-left-color: #FF9800;
+  }
+
+  /* Info variant */
+  &.form-alert-info {
+    background-color: #E3F2FD;
+    color: #1565C0;
+    border-left-color: #2196F3;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    margin-block-end: 1.5rem;
+  }
+
+  @media (max-width: 576px) {
+    padding: 0.8rem;
+    margin-block-end: 1.2rem;
+    font-size: 0.9rem;
   }
 }
 
 /* Submit button container for better spacing */
 .form-submit {
-  margin-block-start: 2rem;
+  margin-block-start: clamp(1.5rem, 3vw, 2rem);
   text-align: center;
+
+  @media (max-width: 768px) {
+    margin-block-start: 1.5rem;
+  }
+
+  @media (max-width: 576px) {
+    margin-block-start: 1.2rem;
+  }
 }
 
 /* Form container styling */
 .form-container {
-  max-width: 800px;
+  max-width: min(800px, 95vw);
   margin: 0 auto;
   background-color: white;
-  border-radius: 8px;
-  padding: 3rem;
+  border-radius: clamp(6px, 1.2vw, 8px);
+  padding: clamp(2rem, 4vw, 3rem);
   box-shadow: 0 5px 20px color-mix(in srgb, var(--primary-color) 8%, transparent);
 
-  @media (max-width: 576px) {
+  /* Compact variant for smaller forms */
+  &.form-container-compact {
+    max-width: min(600px, 95vw);
+    padding: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  /* Wide variant for complex forms */
+  &.form-container-wide {
+    max-width: min(1000px, 95vw);
+  }
+
+  @media (max-width: 992px) {
+    max-width: 95vw;
+    padding: 2.5rem 2rem;
+  }
+
+  @media (max-width: 768px) {
     padding: 2rem 1.5rem;
+    border-radius: 6px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 1.5rem 1rem;
+    margin-inline: 1rem;
+    max-width: calc(100vw - 2rem);
+  }
+
+  @media (max-width: 400px) {
+    margin-inline: 0.5rem;
+    max-width: calc(100vw - 1rem);
+    padding: 1.2rem 0.8rem;
   }
 }
 
 /* Global Formie Form Field Overrides */
-/* Ensure all Formie-generated form fields have consistent padding */
+/* Ensure all Formie-generated form fields have consistent responsive styling */
 .fui-input,
 .fui-textarea,
 .fui-select,
 input.fui-input,
 textarea.fui-textarea,
 select.fui-select {
-  padding: 1rem 1.1rem !important;
+  padding: clamp(0.8rem, 1.5vw, 1rem) !important;
   border: 2px solid color-mix(in srgb, var(--primary-color) 15%, transparent) !important;
-  border-radius: 8px !important;
-  font-size: 1rem !important;
+  border-radius: clamp(6px, 1vw, 8px) !important;
+  font-size: clamp(0.95rem, 1.8vw, 1rem) !important;
   transition: all 0.3s ease !important;
   background-color: #fafafa !important;
   box-sizing: border-box !important;
+  min-height: 44px !important; /* Minimum touch target size */
 
   &:focus {
     outline: none !important;
@@ -210,14 +407,86 @@ select.fui-select {
 
   &::placeholder {
     color: color-mix(in srgb, var(--primary-color) 50%, white) !important;
+    font-size: clamp(0.9rem, 1.6vw, 0.95rem) !important;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.9rem 0.8rem !important;
+    font-size: 1rem !important;
+  }
+
+  @media (max-width: 576px) {
+    padding: 0.8rem 0.7rem !important;
+    font-size: 16px !important; /* Prevents zoom on iOS */
+  }
+}
+
+/* Specific override for Formie selects */
+select.fui-select {
+  cursor: pointer !important;
+  appearance: none !important;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 1rem center !important;
+  background-size: 1rem !important;
+  padding-right: 3rem !important;
+
+  @media (max-width: 576px) {
+    background-position: right 0.8rem center !important;
+    padding-right: 2.5rem !important;
   }
 }
 
 /* Specific override for Formie textareas */
 textarea.fui-textarea {
   resize: vertical !important;
-  min-height: 120px !important;
+  min-height: clamp(100px, 15vw, 120px) !important;
   line-height: 1.6 !important;
+  font-family: inherit !important;
+
+  @media (max-width: 768px) {
+    min-height: 100px !important;
+  }
+
+  @media (max-width: 576px) {
+    min-height: 80px !important;
+  }
+}
+
+/* Formie field labels responsive styling */
+.fui-field-label,
+label.fui-field-label {
+  font-size: clamp(0.95rem, 1.8vw, 1rem) !important;
+  margin-block-end: clamp(0.6rem, 1.2vw, 0.8rem) !important;
+  line-height: 1.4 !important;
+  font-weight: 500 !important;
+  color: var(--primary-color) !important;
+}
+
+/* Formie error messages responsive styling */
+.fui-error-message,
+.fui-field-error {
+  font-size: clamp(0.8rem, 1.5vw, 0.875rem) !important;
+  line-height: 1.4 !important;
+  margin-block-start: 0.5rem !important;
+
+  @media (max-width: 576px) {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Formie field containers responsive spacing */
+.fui-field,
+.fui-field-container {
+  /* margin-block-end: clamp(1.2rem, 2vw, 1.5rem) !important; */
+
+  @media (max-width: 768px) {
+    /* margin-block-end: 1.2rem !important; */
+  }
+
+  @media (max-width: 576px) {
+    /* margin-block-end: 1rem !important; */
+  }
 }
 
 

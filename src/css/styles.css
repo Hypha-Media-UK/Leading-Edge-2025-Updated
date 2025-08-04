@@ -146,6 +146,16 @@ img {
 }
 
 /* Layout */
+main {
+  /* Dynamic padding based on header height with small buffer */
+  padding-top: calc(var(--header-height) + 0);
+  
+  @media (max-width: 768px) {
+    /* Slightly less padding on mobile */
+    padding-top: calc(var(--header-height) + 0);
+  }
+}
+
 .section {
   padding: var(--section-padding) 0;
   

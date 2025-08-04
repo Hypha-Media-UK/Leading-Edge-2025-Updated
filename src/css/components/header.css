@@ -7,13 +7,13 @@ header {
   left: 0;
   width: 100%;
   z-index: var(--z-index-fixed);
-  padding-block: 1.5rem;
+  padding-block: var(--header-padding-block);
   background-color: rgba(255, 255, 255, 0.98);
   will-change: transform, padding;
   transform: translateZ(0); /* Force GPU acceleration */
 
   &.scrolled {
-    padding-block: 0.8rem;
+    padding-block: var(--header-padding-block-scrolled);
     background-color: rgba(255, 255, 255, 1);
     box-shadow: 0 2px 10px color-mix(in srgb, var(--primary-color) 10%, transparent);
   }
