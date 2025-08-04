@@ -28,7 +28,7 @@
         height: 100%;
         object-fit: cover;
         display: block;
-        transition: var(--transition-transform);
+        transition: var(--transition-standard);
         will-change: transform;
       }
     }
