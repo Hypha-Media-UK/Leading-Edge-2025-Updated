@@ -104,6 +104,9 @@
   --space-24: 6rem;     /* 96px */
   --space-32: 8rem;     /* 128px */
 
+  /* Extended spacing scale */
+  --space-3xl: var(--space-16);  /* 4rem / 64px */
+
   /* Semantic spacing tokens */
   --section-padding: var(--space-20);
   --section-padding-mobile: var(--space-16);
@@ -117,6 +120,15 @@
   --gap-md: var(--space-6);
   --gap-lg: var(--space-8);
   --gap-xl: var(--space-12);
+
+  /* Grid system tokens */
+  --grid-columns-cards: repeat(auto-fit, minmax(300px, 1fr));
+  --grid-columns-gallery: repeat(auto-fit, minmax(160px, 1fr));
+  --grid-columns-large-cards: repeat(auto-fit, minmax(320px, 1fr));
+  --grid-columns-small-cards: repeat(auto-fit, minmax(250px, 1fr));
+  --grid-gap-standard: 2rem;
+  --grid-gap-small: 1rem;
+  --grid-gap-large: 3rem;
 
   /* === LAYOUT === */
   /* Breakpoints */
@@ -149,6 +161,13 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* Card-specific shadows */
+  --card-shadow-light: 0 5px 20px color-mix(in srgb, var(--primary-color) 5%, transparent);
+  --card-shadow-medium: 0 5px 20px color-mix(in srgb, var(--primary-color) 8%, transparent);
+  --card-shadow-strong: 0 5px 20px color-mix(in srgb, var(--primary-color) 10%, transparent);
+  --card-shadow-hover-light: 0 15px 30px color-mix(in srgb, var(--primary-color) 10%, transparent);
+  --card-shadow-hover-medium: 0 15px 30px color-mix(in srgb, var(--primary-color) 15%, transparent);
 
   /* === INTERACTIONS === */
   /* Transitions */
